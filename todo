@@ -1,0 +1,4 @@
+Users:
+Create validation forms and handle integrityException in mysql for customer/employees table if they try to create someone with same name
+fix null for username in both
+

@@ -1,0 +1,27 @@
+UserDAO line 16 constructor:
+should I try/catch and throw it again here, this would be an redudant issue, maybe then just try/catch and throw?
+
+UserDAO getCustomer(int phone)
+    -figure out how to take a string and use that as claus (make "" inside "")
+    -salt password
+
+UserDAO
+
+
+getAllEmployees:
+is left join to none-maintainable and what should I instead do with role?
+    -Thinking that maybe i could use Roles entity and ask for ordinal() some way?
+
+Exceptions
+    - worried that i throw to much and it becomes to chaotic see UserDAO/UseFacade as example
+    - Thinking about using command pattern for exceptions but it strikes me as overkill since it's still the same place the exception will be thrown
+
+Facade
+    Keep making UserDAO how can i only make it once as singleton w/o exceptions ?
+
+
+Servet CreateCustomer
+    I can recover from this mistake, should I just redirect back to create page?
+
+Late in the game:
+Consider travis/jenkins --> build from github
