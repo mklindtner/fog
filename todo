@@ -2,3 +2,8 @@ Users:
 Create validation forms and handle integrityException in mysql for customer/employees table if they try to create someone with same name
 fix null for username in both
 
+Orders:
+add OrderDAO
+    -create orders(int id, boolean hasShed)
+    -create shed (helper for orders)
+    -create materials(helper for orders)

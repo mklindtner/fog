@@ -23,13 +23,13 @@ public class loginServlet extends HttpServlet
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 			User   user     = UserFacade.evaluateLogin(username, password );
-			if( user instanceof Customer) { //check instanceof
-				request.setAttribute("customer", user);
-				request.getRequestDispatcher("/WEB-INF/employeeHomepage.jsp");
+			if( user instanceof Customer ) {
+				request.getSession().setAttribute("customer", user);
+				request.getRequestDispatcher("/WEB-INF/customerHomepage.jsp").forward(request, response);
 			}
 			if( user instanceof Employee) {
 				request.setAttribute("employee" , user);
-				request.getRequestDispatcher("/WEB-INF/customerHomepage.jsp");
+				request.getRequestDispatcher("/WEB-INF/employeeHomepage.jsp").forward(request, response);
 			}
 			response.sendRedirect("index.jsp");
 

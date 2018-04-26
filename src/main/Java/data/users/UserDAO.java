@@ -183,6 +183,4 @@ public class UserDAO
 	public boolean employeeHasValidLogin(String username, String password ) throws UserAccessException {
 		return employeeByUsername( username ).getPassword().equals(password) ? true : false;
 	}
-
-
 }

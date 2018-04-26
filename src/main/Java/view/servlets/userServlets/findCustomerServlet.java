@@ -19,6 +19,6 @@ public class findCustomerServlet extends HttpServlet
 {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-
+		//implement customer information here
 	}
 }
