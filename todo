@@ -1,7 +1,3 @@
-Users:
-Create validation forms and handle integrityException in mysql for customer/employees table if they try to create someone with same name
-fix null for username in both
-
 Orders:
 add OrderDAO
     -create orders(int id, boolean hasShed)
@@ -11,8 +7,14 @@ add OrderDAO
 UserDAO:
 change customer/employee to have builders instead
 
+index:
+fix singleCustomer search so that it returns to the main page instead of throwing an exception
 
 JUnit:
 Create testDatabase
 Create connection to testDatabase
 Create test for customer login
+
+
+Servlet:
+Setup server in cloud for db

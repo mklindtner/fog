@@ -29,6 +29,11 @@ public class Order
 		this.status = orderBuilder.status;
 	}
 
+	@Override
+	public String toString() {
+		return "id: " + id + "+, status: " + status + ", length: " + length;
+	}
+
 	public static class OrderBuilder
 	{
 		private int id, height, width, length, slope;

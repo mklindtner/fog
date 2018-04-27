@@ -19,6 +19,12 @@ public class findCustomerServlet extends HttpServlet
 {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		//implement customer information here
+		try {
+			Customer customer = UserFacade.findCustomerByUsername( request.getParameter("username") );
+			request.setAttribute("foundCustomer", customer);
+			request.getRequestDispatcher("/WEB-INF/singleCustomer.jsp").forward(request, response);
+		} catch(UserAccessException | DataAccessException finalDistException) {
+			throw new ServletException(finalDistException);
+		}
 	}
 }

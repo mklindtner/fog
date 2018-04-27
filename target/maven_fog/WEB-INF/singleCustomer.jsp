@@ -12,8 +12,8 @@
 </head>
 <body>
     <%
-        Customer customer = (Customer) request.getAttribute("customer");
-        out.print(customer);
+        Customer customer = (Customer) request.getAttribute("foundCustomer");
+        out.print("customer found is: " + customer.getUsername());
     %>
 </body>
 </html>

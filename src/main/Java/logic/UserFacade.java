@@ -24,15 +24,22 @@ public class UserFacade
 		return userDao.createAndReturnCustomer(username, password, phone);
 	}
 
-	public static User evaluateLogin( String username, String password) throws DataAccessException,
-																			   UserAccessException {
+	public static User evaluateLogin(String username, String password) throws DataAccessException,
+																			  UserAccessException
+	{
 		UserDAO userDao = new UserDAO();
-		if(userDao.isCustomer( username ) && userDao.customerHasValidLogin( username, password ))
-			return userDao.customerByUsername( username );
+		if (userDao.isCustomer(username) && userDao.customerHasValidLogin(username, password))
+			return userDao.customerByUsername(username);
 
-		if(!userDao.isCustomer( username ) && userDao.employeeHasValidLogin( username, password ))
-			return userDao.employeeByUsername( username );
+		if (!userDao.isCustomer(username) && userDao.employeeHasValidLogin(username, password))
+			return userDao.employeeByUsername(username);
 		return new unknownUser();
+	}
+
+	public static Customer findCustomerByUsername(String username) throws UserAccessException, DataAccessException
+	{
+		UserDAO userDAO = new UserDAO();
+		return userDAO.customerByUsername( username );
 	}
 
 

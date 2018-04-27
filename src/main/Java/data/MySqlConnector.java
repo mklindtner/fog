@@ -11,19 +11,19 @@ public class MySqlConnector
 	private static MysqlDataSource source = null;
 	private static Connection con;
 
-	private static void setInformationForMySql()
+	private static void setInformationForLocalMySql()
 	{
 		if (source == null) {
 			source = new MysqlDataSource();
-			source.setUser("root");
-			source.setPassword("Hightech4u");
+			source.setUser("fog");
+			source.setPassword("Coding4u@snail");
 			source.setDatabaseName("fogdb");
 		}
 	}
 
-	public static Connection getMySqlConnection() throws DataAccessException
+	public static Connection getLocalMySqlConnection() throws DataAccessException
 	{
-		setInformationForMySql();
+		setInformationForLocalMySql();
 		try {
 			if (con == null) {
 				con = source.getConnection();
@@ -32,6 +32,12 @@ public class MySqlConnector
 			return con;
 		} catch (SQLException throwSql) {
 			throw new DataAccessException(throwSql);
+		}
+	}
+
+	public static void setInformationForCloudMySql() {
+		if(source == null) {
+
 		}
 	}
 }
