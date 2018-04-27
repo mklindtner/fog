@@ -74,16 +74,15 @@ public class Order
 			this.length = length;
 			return this;
 		}
+		public OrderBuilder insertRequiredSlope(int slope)
+		{
+			this.slope = slope;
+			return this;
+		}
 
 		public OrderBuilder insertRequiredCustomer(Customer customer)
 		{
 			this.customer = customer;
-			return this;
-		}
-
-		public OrderBuilder insertRequiredSlope(int slope)
-		{
-			this.slope = slope;
 			return this;
 		}
 

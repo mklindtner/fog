@@ -9,10 +9,11 @@ import java.sql.SQLException;
 public class MySqlConnector
 {
 	private static MysqlDataSource source = null;
-	private static Connection      con;
+	private static Connection con;
 
-	private static void setInformationForMySql() {
-		if(source == null) {
+	private static void setInformationForMySql()
+	{
+		if (source == null) {
 			source = new MysqlDataSource();
 			source.setUser("root");
 			source.setPassword("Hightech4u");
@@ -24,12 +25,12 @@ public class MySqlConnector
 	{
 		setInformationForMySql();
 		try {
-			if(con == null) {
+			if (con == null) {
 				con = source.getConnection();
 				//con.setAutoCommit(false);
 			}
-		return con;
-		} catch(SQLException throwSql) {
+			return con;
+		} catch (SQLException throwSql) {
 			throw new DataAccessException(throwSql);
 		}
 	}

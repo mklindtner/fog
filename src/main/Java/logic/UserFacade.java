@@ -6,7 +6,7 @@ import data.entities.userEntities.User;
 import data.entities.userEntities.unknownUser;
 import data.exceptions.DataAccessException;
 import data.exceptions.UserAccessException;
-import data.users.UserDAO;
+import data.dao.UserDAO;
 
 import java.util.List;
 

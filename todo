@@ -7,3 +7,12 @@ add OrderDAO
     -create orders(int id, boolean hasShed)
     -create shed (helper for orders)
     -create materials(helper for orders)
+
+UserDAO:
+change customer/employee to have builders instead
+
+
+JUnit:
+Create testDatabase
+Create connection to testDatabase
+Create test for customer login

@@ -11,9 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-    this is the employee homepage, get to work <%
+    this is the employee homepage, get to work
+    <%
         Employee emp = (Employee) request.getAttribute("employee");
         out.print(emp.getUsername());
     %>!
+    <form method="get" action="OrderCatalog">
+        <input type="submit" value="see all orders">
+    </form>
 </body>
 </html>

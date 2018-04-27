@@ -22,7 +22,7 @@ public class Material
 			this.id = id;
 		}
 
-		public MaterialBuilder createMaterial(int id, int price, String typeSpecificaton, String type)
+		public MaterialBuilder createRequiredMaterial(int price, String typeSpecificaton, String type)
 		{
 			insertPrice(price);
 			insertType(type);
@@ -35,13 +35,13 @@ public class Material
 			return this;
 		}
 
-		public MaterialBuilder insertTypeSpecification(String typeSpecificaton) {
-			this.typeSpecificaton = typeSpecificaton;
+		public MaterialBuilder insertType(String type) {
+			this.type = type;
 			return this;
 		}
 
-		public MaterialBuilder insertType(String type) {
-			this.type = type;
+		public MaterialBuilder insertTypeSpecification(String typeSpecificaton) {
+			this.typeSpecificaton = typeSpecificaton;
 			return this;
 		}
 

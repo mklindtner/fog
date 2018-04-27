@@ -6,7 +6,7 @@
 </form>
 <h3>Login User</h3>
 <form method="get" action="login">
-    <input type="text" name="username" value="test" required>
+    <input type="text" name="username" value="empTest" required>
     <input type="password" name="password" value="123" required>
     <input type="submit" value="login">
 </form>

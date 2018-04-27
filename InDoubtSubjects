@@ -5,8 +5,17 @@ UserDAO getCustomer(int phone)
     -figure out how to take a string and use that as claus (make "" inside "")
     -salt password
 
-UserDAO
+ServiceDAO
+    -Should i send the connection as parameter everytime or create a method that establishes the connection?
+    -should I move material method into OrderDAO or have Material/shed creatig be in serviceDAO for now?
 
+OrderDAO
+    -Could I justify creating a customer private helper methodi nside OrderDAO instead of creating tight coupling between OrderDAO and UserDAO?
+        -or: how could i avoid tight coupling and not creating helperMethod that returns customer in OrderDAO?
+
+DAO's
+Should all methods be static, I then create a method that I call everytime to get connection
+Should I create the connection inside each method? <-- this seems bad too
 
 getAllEmployees:
 is left join to none-maintainable and what should I instead do with role?
@@ -15,6 +24,7 @@ is left join to none-maintainable and what should I instead do with role?
 Exceptions
     - worried that i throw to much and it becomes to chaotic see UserDAO/UseFacade as example
     - Thinking about using command pattern for exceptions but it strikes me as overkill since it's still the same place the exception will be thrown
+    - Would like talk of how to handle exceptions in DAO compared to other places, should they still end up at servlet?
 
 Facade
     Keep making UserDAO how can i only make it once as singleton w/o exceptions ?
