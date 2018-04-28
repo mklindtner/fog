@@ -21,7 +21,7 @@ public class UserDAO
 
 	public UserDAO() throws DataAccessException
 	{
-		con = MySqlConnector.getLocalMySqlConnection();
+		con = MySqlConnector.connectLocalMySql();
 	}
 
 	public List<String> employeeRoles() throws DataAccessException

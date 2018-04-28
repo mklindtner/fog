@@ -20,7 +20,7 @@ public class OrderDAO
 
 	public OrderDAO() throws DataAccessException
 	{
-		con = MySqlConnector.getLocalMySqlConnection();
+		con = MySqlConnector.connectLocalMySql();
 	}
 
 	public List<Order> allOrdersWithoutShed() throws OrderAccessException

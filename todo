@@ -11,10 +11,14 @@ index:
 fix singleCustomer search so that it returns to the main page instead of throwing an exception
 
 JUnit:
-Create testDatabase
+Create testDatabase (DONE)
 Create connection to testDatabase
+    -probably have something to do with ssh connection
 Create test for customer login
 
+
+MysqlConnector:
+Find out why I can't find my own created environment variable
 
 Servlet:
 Setup server in cloud for db
