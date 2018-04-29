@@ -7,8 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Employee.java" afterPath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Employee.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/environment.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/InDoubtSubjects" afterPath="$PROJECT_DIR$/InDoubtSubjects" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" afterPath="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/exceptions/DataAccessException.java" afterPath="$PROJECT_DIR$/src/main/Java/data/exceptions/DataAccessException.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/MySqlConnector.class" afterPath="$PROJECT_DIR$/target/classes/data/MySqlConnector.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/exceptions/DataAccessException.class" afterPath="$PROJECT_DIR$/target/classes/data/exceptions/DataAccessException.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,35 +37,113 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="todo" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todo">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MySqlConnector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="978">
-              <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state relative-caret-position="1007">
+              <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDAOTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserDAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="135" column="4" lean-forward="false" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
+            <state relative-caret-position="252">
+              <caret line="30" column="55" lean-forward="false" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
               <folding>
-                <marker date="1525020461438" expanded="true" signature="880:892" ph="DELETE FROM USERS... " />
-                <marker date="1525020461438" expanded="true" signature="880:901" ph="DELETE FROM customers... " />
-                <marker date="1525020461438" expanded="true" signature="939:960" ph="DELETE FROM employees... " />
+                <marker date="1525034458248" expanded="true" signature="881:893" ph="DELETE FROM USERS... " />
+                <marker date="1525034458248" expanded="true" signature="881:902" ph="DELETE FROM customers... " />
+                <marker date="1525034458248" expanded="true" signature="940:961" ph="DELETE FROM employees... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="environment.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environment.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDAOTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+              <folding>
+                <marker date="1525034677726" expanded="true" signature="750:768" ph="DELETE FROM orders... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InDoubtSubjects" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InDoubtSubjects">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="31" column="95" lean-forward="false" selection-start-line="31" selection-start-column="95" selection-end-line="31" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CloudConnectionTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+              <folding>
+                <marker date="1525039196627" expanded="true" signature="693:713" ph="Select * FRO... orders" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="25" column="110" lean-forward="false" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
+              <folding>
+                <marker date="1525000534640" expanded="true" signature="459:493" ph="Select * FRO... customers" />
+                <marker date="1525000534640" expanded="true" signature="1234:1268" ph="Select * FRO... materials" />
+                <marker date="1525000534640" expanded="true" signature="1937:1967" ph="Select * FRO... role" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <folding>
+                <marker date="1525039452633" expanded="true" signature="715:734" ph="Select * FRO... roles" />
+                <marker date="1525039452633" expanded="true" signature="1181:1204" ph="Select * FRO... employees" />
+                <marker date="1525039452633" expanded="true" signature="1181:1252" ph="Select * FRO... employees" />
+                <marker date="1525039452633" expanded="true" signature="2146:2169" ph="Select * FRO... customers" />
+                <marker date="1525039452633" expanded="true" signature="3017:3098" ph="INSERT INTO customers... " />
+                <marker date="1525039452633" expanded="true" signature="3017:3099" ph="INSERT INTO customers... " />
+                <marker date="1525039452633" expanded="true" signature="3594:3634" ph="Select * FRO... customers" />
+                <marker date="1525039452633" expanded="true" signature="4035:4075" ph="Select * FRO... employees" />
+                <marker date="1525039452633" expanded="true" signature="5462:5555" ph="INSERT INTO employees... " />
               </folding>
             </state>
           </provider>
@@ -66,46 +154,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
               <caret line="87" column="60" lean-forward="false" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-              <folding>
-                <marker date="1525018826883" expanded="true" signature="711:730" ph="Select * FRO... roles" />
-                <marker date="1525018826883" expanded="true" signature="1177:1200" ph="Select * FRO... employees" />
-                <marker date="1525018826883" expanded="true" signature="1177:1248" ph="Select * FRO... employees" />
-                <marker date="1525018826883" expanded="true" signature="2142:2165" ph="Select * FRO... customers" />
-                <marker date="1525018826883" expanded="true" signature="3013:3094" ph="INSERT INTO customers... " />
-                <marker date="1525018826883" expanded="true" signature="3013:3095" ph="INSERT INTO customers... " />
-                <marker date="1525018826883" expanded="true" signature="3590:3630" ph="Select * FRO... customers" />
-                <marker date="1525018826883" expanded="true" signature="4031:4071" ph="Select * FRO... employees" />
-                <marker date="1525018826883" expanded="true" signature="5458:5551" ph="INSERT INTO employees... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Customer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1009">
-              <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="45" column="15" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -150,11 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/userEntities/Roles.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Roles.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/entities/Roles.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/createCustomer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/displayEmployees.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/findCustomer.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/createCustomerServlet.java" />
@@ -165,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/unknown.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/createCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/exceptions/LoginException.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/exceptions/DataAccessException.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customerHomepage.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Shed.java" />
@@ -185,22 +227,28 @@
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/singleCustomer.jsp" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/MaterialTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/data/MySqlConnectorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/MySqlConnectorTest.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/exceptions/DatabaseConnectionException.java" />
         <option value="$PROJECT_DIR$/src/test/java/MySqlConnectorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/quickTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java" />
-        <option value="$PROJECT_DIR$/InDoubtSubjects" />
         <option value="$PROJECT_DIR$/todo" />
         <option value="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Employee.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/TestConnector.java" />
+        <option value="$PROJECT_DIR$/InDoubtSubjects" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/TestHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/environment.txt" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/exceptions/DataAccessException.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
+        <option value="$PROJECT_DIR$/environment.txt" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Employee.java" />
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java" />
       </list>
     </option>
   </component>
@@ -294,35 +342,6 @@
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
               <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="OrderEntities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="userEntities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -371,6 +390,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -392,7 +412,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserDAOTest">
+  <component name="RunManager" selected="Tomcat Server.LocalDevelopmentFog">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -425,6 +445,31 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="daoTest" />
       <option name="MAIN_CLASS_NAME" value="daoTest.CloudConnectionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="OrderDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="daoTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="maven_fog" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="daoTest" />
+      <option name="MAIN_CLASS_NAME" value="daoTest.OrderDAOTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -476,31 +521,6 @@
       <option name="PACKAGE_NAME" value="daoTest" />
       <option name="MAIN_CLASS_NAME" value="daoTest.UserDAOTest" />
       <option name="METHOD_NAME" value="allCustomersFromDAO" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="UserDAOTest.checkConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="daoTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="maven_fog" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="daoTest" />
-      <option name="MAIN_CLASS_NAME" value="daoTest.UserDAOTest" />
-      <option name="METHOD_NAME" value="checkConnection" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -673,19 +693,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.LocalDevelopmentFog" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.UserDAOTest.checkConnection" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.UserDAOTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CloudConnectionTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserDAOTest.allCustomersFromDAO" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.UserDAOTest.createCustomerLogic" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserDAOTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CloudConnectionTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.UserDAOTest.allCustomersFromDAO" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserDAOTest.createCustomerLogic" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.OrderDAOTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UserDAOTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDAOTest.createCustomerLogic" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserDAOTest.allCustomersFromDAO" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CloudConnectionTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.UserDAOTest.checkConnection" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CloudConnectionTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.OrderDAOTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserDAOTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.UserDAOTest.createCustomerLogic" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserDAOTest.allCustomersFromDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -709,22 +729,22 @@
       <workItem from="1524914624853" duration="2895000" />
       <workItem from="1524917532698" duration="2566000" />
       <workItem from="1524920108446" duration="3040000" />
-      <workItem from="1524923160298" duration="33960000" />
+      <workItem from="1524923160298" duration="41215000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDAOTest - 2018.04.29 at 18h 16m 55s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="CloudConnectionTest - 2018.04.30 at 00h 05m 35s.xml">
+      <configuration name="CloudConnectionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.04.29 at 18h 17m 55s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="OrderDAOTest - 2018.04.29 at 22h 45m 22s.xml">
+      <configuration name="OrderDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.04.29 at 18h 22m 11s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="OrderDAOTest - 2018.04.29 at 22h 48m 53s.xml">
+      <configuration name="OrderDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.04.29 at 18h 28m 42s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="OrderDAOTest - 2018.04.29 at 22h 49m 24s.xml">
+      <configuration name="OrderDAOTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserDAOTest - 2018.04.29 at 18h 30m 52s.xml">
       <configuration name="UserDAOTest" configurationId="JUnit" />
@@ -746,7 +766,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128521000" />
+    <option name="totallyTimeSpent" value="135776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -769,7 +789,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4198953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4198953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27086788" sideWeight="0.8068592" order="0" side_tool="false" content_ui="combo" />
@@ -859,10 +879,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/exceptions/ApplicationException.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/Command.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/UnknownCommand.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/test.ftl" />
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/userEntities/kj.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/kek.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Roles.java">
@@ -898,14 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/exceptions/DataAccessException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,14 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/MysqlDataSource.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1080,22 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InDoubtSubjects">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1132,54 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-          <folding>
-            <marker date="1524948311468" expanded="true" signature="689:709" ph="Select * FRO... orders" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="25" column="110" lean-forward="false" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
-          <folding>
-            <marker date="1525000534640" expanded="true" signature="459:493" ph="Select * FRO... customers" />
-            <marker date="1525000534640" expanded="true" signature="1234:1268" ph="Select * FRO... materials" />
-            <marker date="1525000534640" expanded="true" signature="1937:1967" ph="Select * FRO... role" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-          <folding>
-            <marker date="1525018826883" expanded="true" signature="711:730" ph="Select * FRO... roles" />
-            <marker date="1525018826883" expanded="true" signature="1177:1200" ph="Select * FRO... employees" />
-            <marker date="1525018826883" expanded="true" signature="1177:1248" ph="Select * FRO... employees" />
-            <marker date="1525018826883" expanded="true" signature="2142:2165" ph="Select * FRO... customers" />
-            <marker date="1525018826883" expanded="true" signature="3013:3094" ph="INSERT INTO customers... " />
-            <marker date="1525018826883" expanded="true" signature="3013:3095" ph="INSERT INTO customers... " />
-            <marker date="1525018826883" expanded="true" signature="3590:3630" ph="Select * FRO... customers" />
-            <marker date="1525018826883" expanded="true" signature="4031:4071" ph="Select * FRO... employees" />
-            <marker date="1525018826883" expanded="true" signature="5458:5551" ph="INSERT INTO employees... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="978">
-          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1009">
@@ -1196,15 +1132,129 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/TestConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InDoubtSubjects">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="31" column="95" lean-forward="false" selection-start-line="31" selection-start-column="95" selection-end-line="31" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/TestHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/exceptions/DataAccessException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="135" column="4" lean-forward="false" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
+        <state relative-caret-position="252">
+          <caret line="30" column="55" lean-forward="false" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
           <folding>
-            <marker date="1525020461438" expanded="true" signature="880:892" ph="DELETE FROM USERS... " />
-            <marker date="1525020461438" expanded="true" signature="880:901" ph="DELETE FROM customers... " />
-            <marker date="1525020461438" expanded="true" signature="939:960" ph="DELETE FROM employees... " />
+            <marker date="1525034458248" expanded="true" signature="881:893" ph="DELETE FROM USERS... " />
+            <marker date="1525034458248" expanded="true" signature="881:902" ph="DELETE FROM customers... " />
+            <marker date="1525034458248" expanded="true" signature="940:961" ph="DELETE FROM employees... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="30" column="40" lean-forward="false" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <marker date="1525034677726" expanded="true" signature="750:768" ph="DELETE FROM orders... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="25" column="110" lean-forward="false" selection-start-line="25" selection-start-column="110" selection-end-line="25" selection-end-column="110" />
+          <folding>
+            <marker date="1525000534640" expanded="true" signature="459:493" ph="Select * FRO... customers" />
+            <marker date="1525000534640" expanded="true" signature="1234:1268" ph="Select * FRO... materials" />
+            <marker date="1525000534640" expanded="true" signature="1937:1967" ph="Select * FRO... role" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <marker date="1525039452633" expanded="true" signature="715:734" ph="Select * FRO... roles" />
+            <marker date="1525039452633" expanded="true" signature="1181:1204" ph="Select * FRO... employees" />
+            <marker date="1525039452633" expanded="true" signature="1181:1252" ph="Select * FRO... employees" />
+            <marker date="1525039452633" expanded="true" signature="2146:2169" ph="Select * FRO... customers" />
+            <marker date="1525039452633" expanded="true" signature="3017:3098" ph="INSERT INTO customers... " />
+            <marker date="1525039452633" expanded="true" signature="3017:3099" ph="INSERT INTO customers... " />
+            <marker date="1525039452633" expanded="true" signature="3594:3634" ph="Select * FRO... customers" />
+            <marker date="1525039452633" expanded="true" signature="4035:4075" ph="Select * FRO... employees" />
+            <marker date="1525039452633" expanded="true" signature="5462:5555" ph="INSERT INTO employees... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding>
+            <marker date="1525039196627" expanded="true" signature="693:713" ph="Select * FRO... orders" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

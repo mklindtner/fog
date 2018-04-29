@@ -19,8 +19,8 @@ public class CloudConnectionTest
 	{
 		//should i handle the exception or not?
 		try {
-			cloudTestConnection = MySqlConnector.connectTestCloudMySql();
-			cloudConnection = MySqlConnector.connectCloudMySql();
+			cloudTestConnection = MySqlConnector.createConnection("TEST");
+			cloudConnection = MySqlConnector.createConnection("APP");
 		} catch ( DataAccessException dae) {
 			throw new DataAccessException(dae);
 		}

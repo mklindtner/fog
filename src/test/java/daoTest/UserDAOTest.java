@@ -28,7 +28,7 @@ public class UserDAOTest
 	{
 		//should i handle the exception or not?
 		try {
-			con = MySqlConnector.connectTestCloudMySql();
+			con = MySqlConnector.createConnection("TEST");
 			//con = MySqlConnector.connectLocalTestMysql();
 			con.createStatement().execute("DELETE FROM customers");
 			con.createStatement().execute("DELETE FROM employees");
@@ -113,11 +113,13 @@ public class UserDAOTest
 	}
 
 
+	//this for fixing time
 	@Test
 	public void allEmployeesFromDAO() throws UserAccessException
 	{
 		List<Employee> actual   = userDAO.allEmployees();
 		List<Employee> expected = expectedEmployeeGenerator(GENERATION_AMOUNT);
+		//assertEquals(actual, expected);
 		assertEquals(actual.get(0).toString(), expected.get(0).toString());
 		assertEquals(actual.get(actual.size()-1).toString(), expected.get(expected.size() - 1).toString());
 	}
@@ -128,11 +130,12 @@ public class UserDAOTest
 		for(int i = 0; i < size; i++) {
 			Employee employeeTmp = new Employee
 					.EmployeeBuilder(i, getCurrentTimeAsString())
-					.createSimpleEmployee("testEmp" + (i + 1), "123", "SALGSMEDARBEJDER", PHONE).build();
+					.createSimpleEmployee("testEmp" + (i + 1), "123", "SALGSMEDARBEJDER", PHONE)
+					.build();
 			employees.add(employeeTmp);
 		}
 		return employees;
 	}
-	
+
 
 }

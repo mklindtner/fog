@@ -20,7 +20,7 @@ public class OrderDAO
 
 	public OrderDAO() throws DataAccessException
 	{
-		con = MySqlConnector.connectLocalMySql();
+		con = MySqlConnector.createConnection("APP");
 	}
 
 	public List<Order> allOrdersWithoutShed() throws OrderAccessException
@@ -47,6 +47,11 @@ public class OrderDAO
 		} catch (SQLException throwSql) {
 			throw new OrderAccessException(throwSql);
 		}
+	}
+
+	public Order createAndReturnOrder() throws OrderAccessException {
+		final String SQL = "INSERT INTO order() ";
+		return null;
 	}
 
 	/**

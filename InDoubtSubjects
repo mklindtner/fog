@@ -28,7 +28,8 @@ Facade
 Servet CreateCustomer
     I can recover from this mistake, should I just redirect back to create page?
 
-
+JUnit
+Should I refactor the test i repeat into a class and somehow execute those test on every class?
 
 
 Late in the game:
