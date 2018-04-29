@@ -85,7 +85,7 @@ public class Employee implements User
 
 	@Override
 	public String toString() {
-		return username;
+		return "username: " + username + ", phone: " + phone;
 	}
 
 	public int getId()

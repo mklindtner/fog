@@ -1,6 +1,5 @@
 package daoTest;
 
-import com.mysql.cj.xdevapi.SqlDataResult;
 import data.MySqlConnector;
 import data.dao.UserDAO;
 import data.entities.userEntities.Customer;
@@ -11,25 +10,18 @@ import logic.UserFacade;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.xml.crypto.Data;
-
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.*;
 
-import static org.junit.Assert.*;
-
 public class UserDAOTest
 {
 	Connection con;
 	UserDAO    userDAO;
-	private final int PHONE = 1234567;
+	private final int PHONE = 1234567, STANDARD_EMPLOYEE_ROLE = 3, GENERATION_AMOUNT = 6;
 
 	@Before
 	public void setUp() throws DataAccessException, UserAccessException
@@ -77,17 +69,21 @@ public class UserDAOTest
 	//same
 	public void createEmployeeDAO() throws UserAccessException, DataAccessException
 	{
-		userDAO.createAndReturnEmployee("testEmp1", "123", PHONE, 1);
-		userDAO.createAndReturnEmployee("testEmp2", "123", PHONE, 1);
-		userDAO.createAndReturnEmployee("testEmp3", "123", PHONE, 1);
+		userDAO.createAndReturnEmployee("testEmp1", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
+		userDAO.createAndReturnEmployee("testEmp2", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
+		userDAO.createAndReturnEmployee("testEmp3", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
+		userDAO.createAndReturnEmployee("testEmp4", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
+		userDAO.createAndReturnEmployee("testEmp5", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
+		userDAO.createAndReturnEmployee("testEmp6", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
+
 	}
 
-	//this for fixing empl/cus time & id
+	//this for fixing empl/customer time
 	@Test
 	public void allCustomersFromDAO() throws DataAccessException
 	{
 		List<Customer> actual   = userDAO.allCustomers();
-		List<Customer> expected = expectedCustomersGenerator(6);
+		List<Customer> expected = expectedCustomersGenerator(GENERATION_AMOUNT);
 		//assertEquals(actual, expected);
 		assertEquals(expected.size(), actual.size());
 		assertEquals(actual.get(0).toString(), expected.get(0).toString());
@@ -95,10 +91,10 @@ public class UserDAOTest
 	}
 
 
-	private List<Customer> expectedCustomersGenerator(int amount)
+	private List<Customer> expectedCustomersGenerator(int size)
 	{
 		List<Customer> expected = new ArrayList<>();
-		for (int i = 0; i < amount; i++) {
+		for (int i = 0; i < size; i++) {
 			Customer customerTmp = new Customer
 					.CustomerBuilder(i, getCurrentTimeAsString())
 					.createSimpleCustomer("testUser" + (i + 1), "123", PHONE)
@@ -116,12 +112,27 @@ public class UserDAOTest
 		return currentTimeStamp.toString();
 	}
 
-	/*
+
 	@Test
 	public void allEmployeesFromDAO() throws UserAccessException
 	{
-		List<Employee> actual = userDAO.allEmployees();
-	//	List<Employee> expected =
-	} */
+		List<Employee> actual   = userDAO.allEmployees();
+		List<Employee> expected = expectedEmployeeGenerator(GENERATION_AMOUNT);
+		assertEquals(actual.get(0).toString(), expected.get(0).toString());
+		assertEquals(actual.get(actual.size()-1).toString(), expected.get(expected.size() - 1).toString());
+	}
+
+	private List<Employee> expectedEmployeeGenerator(int size)
+	{
+		List<Employee> employees = new ArrayList<>();
+		for(int i = 0; i < size; i++) {
+			Employee employeeTmp = new Employee
+					.EmployeeBuilder(i, getCurrentTimeAsString())
+					.createSimpleEmployee("testEmp" + (i + 1), "123", "SALGSMEDARBEJDER", PHONE).build();
+			employees.add(employeeTmp);
+		}
+		return employees;
+	}
+	
 
 }
