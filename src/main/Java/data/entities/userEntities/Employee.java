@@ -5,23 +5,62 @@ public class Employee implements User
 	private String username, password, reg_date, role;
 	private int phone, id;
 
-	/**
-	 * username must be email
-	 * @param username
-	 * @param password
-	 * @param phone
-	 * @param role
-	 * @param reg_date
-	 * @param id
-	 */
-	public Employee(String username, String password, int phone, String role, String reg_date, int id)
+	private Employee(EmployeeBuilder employeeBuilder)
 	{
-		this.username = username;
-		this.password = password;
-		this.role = role;
-		this.reg_date = reg_date;
-		this.phone = phone;
-		this.id = id;
+		this.username = employeeBuilder.username;
+		this.password = employeeBuilder.password;
+		this.role = employeeBuilder.role;
+		this.reg_date = employeeBuilder.reg_date;
+		this.phone = employeeBuilder.phone;
+		this.id = employeeBuilder.id;
+	}
+
+	public static class EmployeeBuilder {
+		private String username, password, role, reg_date;
+		private int phone, id;
+
+		public EmployeeBuilder(int id, String reg_date) {
+			this.reg_date = reg_date;
+			this.id = id;
+		}
+
+		public EmployeeBuilder createSimpleEmployee(String username, String password, String role, int phone) {
+			insertUsername(username);
+			insertPassword(password);
+			insertRole(role);
+			insertPhone(phone);
+			return this;
+		}
+
+		private EmployeeBuilder insertUsername(String username)
+		{
+			this.username = username;
+			return this;
+		}
+
+
+		private EmployeeBuilder insertPassword(String password)
+		{
+			this.password = password;
+			return this;
+		}
+
+		private EmployeeBuilder insertRole(String role)
+		{
+			this.role = role;
+			return this;
+		}
+
+
+		private EmployeeBuilder insertPhone(int phone)
+		{
+			this.phone = phone;
+			return this;
+		}
+
+		public Employee build() {
+			return new Employee(this);
+		}
 	}
 
 	public String getUsername()

@@ -47,13 +47,16 @@ public class UserDAO
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
-				String   username        = rs.getString("username");
-				String   password        = rs.getString("password");
-				int      phone           = rs.getInt("phone");
-				String   role            = rs.getString("role");
-				String   registered_date = rs.getString("reg_date");
-				int      id              = rs.getInt("id");
-				Employee employee        = new Employee(username, password, phone, role, registered_date, id);
+				String username        = rs.getString("username");
+				String password        = rs.getString("password");
+				int    phone           = rs.getInt("phone");
+				String role            = rs.getString("role");
+				String registered_date = rs.getString("reg_date");
+				int    id              = rs.getInt("id");
+				Employee employee = new Employee
+						.EmployeeBuilder(id, registered_date)
+						.createSimpleEmployee(username, password, role, phone)
+						.build();
 				employees.add(employee);
 			}
 			return employees;
@@ -74,9 +77,10 @@ public class UserDAO
 				String reg_date = rs.getString("reg_date");
 				int    phone    = rs.getInt("phone");
 				int    id       = rs.getInt("id");
-				customers.add(new Customer.CustomerBuilder(id, reg_date).createSimpleCustomer(username, password,
-																							  phone
-				).build());
+				customers.add(new Customer.CustomerBuilder(id, reg_date)
+									  .createSimpleCustomer(username, password, phone)
+									  .build()
+				);
 			}
 			return customers;
 		} catch (SQLException throwSql) {
@@ -98,6 +102,8 @@ public class UserDAO
 			throw new DataAccessException(throwSql);
 		}
 	}
+
+
 
 	/**
 	 * finds customer by username
@@ -142,16 +148,34 @@ public class UserDAO
 			int    phone             = rs.getInt("phone");
 			if (!isCustomer) {
 				String role = ServiceDAO.createRole(rs.getInt("role_id"), con);
-				return new Employee(username, password, phone, registration_date, role, id);
+				return new Employee
+						.EmployeeBuilder(id, registration_date)
+						.createSimpleEmployee(username, password, role, phone)
+						.build();
 			}
 			if (isCustomer) {
-				return new Customer.
-						CustomerBuilder(id, registration_date)
+				return new Customer
+						.CustomerBuilder(id, registration_date)
 						.createSimpleCustomer(username, password, phone)
 						.build();
 			}
 		}
 		return new unknownUser();
+	}
+
+	public Employee createAndReturnEmployee(String username, String password, int phone, int role) throws UserAccessException, DataAccessException
+	{
+		String SQL = "INSERT INTO employees(username, password, phone, role_id, reg_date) VALUES(?, ?, ?, ?, NOW())";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setString(1, username);
+			statement.setString(2, password);
+			statement.setInt(3, phone);
+			statement.setInt(4, role);
+			statement.executeUpdate();
+			return employeeByUsername(username);
+		} catch (SQLException throwSql) {
+			throw new DataAccessException(throwSql);
+		}
 	}
 
 	public boolean isCustomer(String username) throws UserAccessException, DataAccessException

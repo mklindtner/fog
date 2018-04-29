@@ -29,15 +29,21 @@ public class UserDAOTest
 {
 	Connection con;
 	UserDAO    userDAO;
+	private final int PHONE = 1234567;
 
 	@Before
-	public void setUp() throws DataAccessException
+	public void setUp() throws DataAccessException, UserAccessException
 	{
 		//should i handle the exception or not?
 		try {
 			con = MySqlConnector.connectTestCloudMySql();
+			//con = MySqlConnector.connectLocalTestMysql();
 			con.createStatement().execute("DELETE FROM customers");
+			con.createStatement().execute("DELETE FROM employees");
 			userDAO = new UserDAO();
+			createCustomerDAO();
+			createCustomerLogic();
+			createEmployeeDAO();
 		} catch (SQLException | DataAccessException dae) {
 			throw new DataAccessException(dae);
 		}
@@ -52,25 +58,29 @@ public class UserDAOTest
 		assertNotNull(con);
 	}
 
-
-	@Test
+	//have to call thsi before startup
 	public void createCustomerDAO() throws DataAccessException, UserAccessException
 	{
-		userDAO.createAndReturnCustomer("testUser1", "123", 1234567);
-		userDAO.createAndReturnCustomer("testUser2", "123", 2134567);
-		userDAO.createAndReturnCustomer("testUser3", "123", 3124567);
+		userDAO.createAndReturnCustomer("testUser1", "123", PHONE);
+		userDAO.createAndReturnCustomer("testUser2", "123", PHONE);
+		userDAO.createAndReturnCustomer("testUser3", "123", PHONE);
 	}
 
-	@Test
+	//samee
 	public void createCustomerLogic() throws DataAccessException, UserAccessException
 	{
-		UserFacade.createCustomer("testUser4", "123", 4123567);
-		UserFacade.createCustomer("testUser5", "123", 5123467);
-		UserFacade.createCustomer("testUser6", "123", 6123457);
+		UserFacade.createCustomer("testUser4", "123", PHONE);
+		UserFacade.createCustomer("testUser5", "123", PHONE);
+		UserFacade.createCustomer("testUser6", "123", PHONE);
 	}
 
-
-
+	//same
+	public void createEmployeeDAO() throws UserAccessException, DataAccessException
+	{
+		userDAO.createAndReturnEmployee("testEmp1", "123", PHONE, 1);
+		userDAO.createAndReturnEmployee("testEmp2", "123", PHONE, 1);
+		userDAO.createAndReturnEmployee("testEmp3", "123", PHONE, 1);
+	}
 
 	//this for fixing empl/cus time & id
 	@Test
@@ -91,7 +101,7 @@ public class UserDAOTest
 		for (int i = 0; i < amount; i++) {
 			Customer customerTmp = new Customer
 					.CustomerBuilder(i, getCurrentTimeAsString())
-					.createSimpleCustomer("testUser" + (i + 1), "123", 1234567)
+					.createSimpleCustomer("testUser" + (i + 1), "123", PHONE)
 					.build();
 			expected.add(customerTmp);
 		}

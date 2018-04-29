@@ -48,7 +48,7 @@ public class MySqlConnector
 
 	public static Connection connectLocalTestMysql() throws DataAccessException
 	{
-		insertLocalSourceInformation("root", "Hightech4u", "fogtest");
+		insertLocalSourceInformation("fog", "Coding4u@snail", "fogtest");
 		return connectionToSource();
 	}
 
