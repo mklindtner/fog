@@ -19,20 +19,14 @@ public class MySqlConnector
 	 */
 	public static Connection connectLocalMySql() throws DataAccessException
 	{
-		try {
-			insertLocalSourceInformation("fog", "Coding4u@snail", "fogdb");
-			if (con == null) {
-				con = source.getConnection();
-				//con.setAutoCommit(false);
-			}
-			return con;
-		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
-		}
+		insertLocalSourceInformation("fog", "Coding4u@snail", "fogdb");
+		return connectionToSource();
+
 	}
 
-	private static void insertLocalSourceInformation(String username, String password, String databaseName) {
-		if ( source == null ) {
+	private static void insertLocalSourceInformation(String username, String password, String databaseName)
+	{
+		if (source == null) {
 			source = new MysqlDataSource();
 			source.setUser(username);
 			source.setPassword(password);
@@ -40,92 +34,56 @@ public class MySqlConnector
 		}
 	}
 
-	public static Connection connectLocalTestMysql() throws DataAccessException
+	private static Connection connectionToSource() throws DataAccessException
 	{
 		try {
-			insertLocalSourceInformation("root", "Hightech4u", "fogtest");
-			if(con == null)
-				con = source.getConnection();
-			return con;
-		}catch(SQLException throwSql) {
-			throw new DataAccessException(throwSql);
-		}
-	}
-
-
-
-	/**
-	 * cloudTest server
-	 *
-	 * @return
-	 * @throws DataAccessException
-	 */
-
-	public static Connection connectCloudMySql() throws DataAccessException
-	{
-		try {
-			openTestCloudDB(); //this doesn't work due to ssh i think
-			if(con == null)
+			if (con == null)
 				con = source.getConnection();
 			return con;
 		} catch (SQLException throwSql) {
 			throw new DataAccessException(throwSql);
 		}
+
 	}
 
-	//this should be refactored into sql connection when global environment works
-	private static void openTestCloudDB()
+	public static Connection connectLocalTestMysql() throws DataAccessException
 	{
-		final String DBNAME = "fogTestdb";
-		final String HOST = "159.89.99.45";
-		final String URL = String.format("jdbc:mysql://%s:3306/%s", HOST, DBNAME);
-		final String USERNAME = "fog";
-		final String PASSWORD = "Coding4u@snail";
-		if (source == null) {
-			source = new MysqlDataSource();
-			source.setUser("fog");
-			source.setPassword("Coding4u@snail");
-			source.setDatabaseName("fogTestdb");
-			source.setServerName(HOST);
-			source.setUrl(URL);
-		}
-		/*
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		con = DriverManager.getConnection(URL, USERNAME, PASSWORD);*/
+		insertLocalSourceInformation("root", "Hightech4u", "fogtest");
+		return connectionToSource();
 	}
 
-		/*
-		final String HOST   = "159.89.99.45";
-		final String DBNAME = "fogTestdb";
-		final String PASSWORD = "Coding4u@snail";
-		final String USERNAME = "fog";
-		final String URL    = String.format("jdbc:mysql://%s:3306/%s", HOST, DBNAME);
-		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-		/*
+	private static void insertRemoteSourceInformation(String MysqlUsername, String MysqlPassword, String host, String dbName)
+	{
+		final String URL = String.format("jdbc:mysql://%s:3306/%s", host, dbName);
 		if (source == null) {
-
 			source = new MysqlDataSource();
-			source.setUser("fog");
-			source.setPassword("Coding4u@snail");
-			source.setDatabaseName("fogTestdb");
-			source.setServerName(HOST);
+			source.setUser(MysqlUsername);
+			source.setPassword(MysqlPassword);
+			source.setDatabaseName(dbName);
+			source.setServerName(host);
 			source.setUrl(URL);
-		} */
-
-//different way of setting up a connection
-		/*
-		if (con == null) {
-			final String USERNAME = "fog";
-			final String PASSWORD = "Coding4u@snail";
-			final String HOST     = "159.89.99.45";
-			final String DBNAME   = "fogdb";
-			final String URL      = String.format("jdbc:mysql://%s:3306/%s", HOST, DBNAME);
-			con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		}
-		return con; */
+	}
 
-//String devState = System.getenv("developmentState");
+	public static Connection connectTestCloudMySql() throws DataAccessException
+	{
+		insertRemoteSourceInformation("fogRemote", "", "159.89.99.45", "fogTestdb");
+		return connectionToSource();
+	}
+
+	/**
+	 * used for fog cloud server, fog wasn't included as we only operate on one server-side, should this change the
+	 * rename: connectionFogCloudMySql()
+	 *
+	 * @return
+	 */
+	public static Connection connectCloudMySql() throws DataAccessException
+	{
+		insertRemoteSourceInformation("fogRemote", "", "159.89.99.45", "fogdb");
+		return connectionToSource();
+	}
+
+	//String devState = System.getenv("developmentState");
 		/* I should set env variables and use this instead
 		switch (devState) {
 			case "development": //local

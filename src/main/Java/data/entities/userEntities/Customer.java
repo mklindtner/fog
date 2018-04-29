@@ -5,13 +5,50 @@ public class Customer implements User
 	private String username, password, reg_date;
 	private int phone, id;
 
-	public Customer(String username, String password, String reg_date, int phone, int id)
+	private Customer(CustomerBuilder customerBuilder)
 	{
-		this.username = username;
-		this.password = password;
-		this.reg_date = reg_date;
-		this.phone = phone;
-		this.id = id;
+		this.username = customerBuilder.username;
+		this.password = customerBuilder.password;
+		this.reg_date = customerBuilder.reg_date;
+		this.phone = customerBuilder.phone;
+		this.id = customerBuilder.id;
+	}
+
+	public static class CustomerBuilder
+	{
+		private String username, password, reg_date;
+		private int phone, id;
+
+		public CustomerBuilder(int id, String reg_date) {
+			this.id = id;
+			this.reg_date = reg_date;
+		}
+
+		public CustomerBuilder createSimpleCustomer(String username, String password, int phone) {
+			insertUsername(username);
+			insertPassword(password);
+			insertPhone(phone);
+			return this;
+		}
+
+		public CustomerBuilder insertUsername(String username) {
+			this.username = username;
+			return this;
+		}
+
+		public CustomerBuilder insertPassword(String password) {
+			this.password = password;
+			return this;
+		}
+
+		public CustomerBuilder insertPhone(int phone) {
+			this.phone = phone;
+			return this;
+		}
+
+		public Customer build() {
+			return new Customer(this);
+		}
 	}
 
 	public String getUsername()
@@ -26,7 +63,7 @@ public class Customer implements User
 
 	@Override
 	public String toString() {
-		return username + ", " + reg_date;
+		return "username: " + username + ", phone: " + phone;
 	}
 
 	public int getId()

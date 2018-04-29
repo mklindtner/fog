@@ -23,7 +23,7 @@ public class ServiceDAO
 				String password = rs.getString("password");
 				String reg_date = rs.getString("reg_date");
 				int    phone    = rs.getInt("phone");
-				return new Customer(username, password, reg_date, phone, id);
+				return new Customer.CustomerBuilder(id, reg_date).createSimpleCustomer(username, password, phone).build();
 			}
 			throw new SQLException();
 		} catch (SQLException throwSql) {

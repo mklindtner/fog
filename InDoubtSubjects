@@ -9,10 +9,6 @@ ServiceDAO
     -Should i send the connection as parameter everytime or create a method that establishes the connection?
     -should I move material method into OrderDAO or have Material/shed creatig be in serviceDAO for now?
 
-OrderDAO
-    -Could I justify creating a customer private helper methodi nside OrderDAO instead of creating tight coupling between OrderDAO and UserDAO?
-        -or: how could i avoid tight coupling and not creating helperMethod that returns customer in OrderDAO?
-
 DAO's
 Should all methods be static, I then create a method that I call everytime to get connection
 Should I create the connection inside each method? <-- this seems bad too
@@ -29,9 +25,14 @@ Exceptions
 Facade
     Keep making UserDAO how can i only make it once as singleton w/o exceptions ?
 
-
 Servet CreateCustomer
     I can recover from this mistake, should I just redirect back to create page?
 
+
+
+
 Late in the game:
 Consider travis/jenkins --> build from github
+Junit - I could make phoneGenerator/username generator
+
+

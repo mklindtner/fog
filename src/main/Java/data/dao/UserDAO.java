@@ -74,25 +74,15 @@ public class UserDAO
 				String reg_date = rs.getString("reg_date");
 				int    phone    = rs.getInt("phone");
 				int    id       = rs.getInt("id");
-				customers.add(new Customer(username, password, reg_date, phone, id));
+				customers.add(new Customer.CustomerBuilder(id, reg_date).createSimpleCustomer(username, password,
+																							  phone
+				).build());
 			}
 			return customers;
 		} catch (SQLException throwSql) {
 			throw new DataAccessException(throwSql);
 		}
 	}
-
-	/**
-	 * this was chosen over a builder or overloading a constructor as both would be more error-prone later on
-	 * the drawback of choosing this is that the UserAccessException is redundant and misplaced in this method
-	 *
-	 * @param username
-	 * @param password
-	 * @param phone
-	 * @return
-	 * @throws DataAccessException
-	 * @throws UserAccessException
-	 */
 
 	public Customer createAndReturnCustomer(String username, String password, int phone) throws DataAccessException,
 																								UserAccessException
@@ -111,12 +101,7 @@ public class UserDAO
 
 	/**
 	 * finds customer by username
-	 *
-	 * @param username
-	 * @return
-	 * @throws UserAccessException
 	 */
-
 	public Customer customerByUsername(String username) throws UserAccessException, DataAccessException
 	{
 		String SQL = "Select * FROM customers WHERE username=?";
@@ -129,13 +114,9 @@ public class UserDAO
 
 	/**
 	 * finds employee by username
-	 *
-	 * @param username
-	 * @return
-	 * @throws UserAccessException
 	 */
 
-	public Employee employeeByUsername( String username ) throws UserAccessException, DataAccessException
+	public Employee employeeByUsername(String username) throws UserAccessException, DataAccessException
 	{
 		String SQL = "Select * FROM employees WHERE username=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -145,16 +126,10 @@ public class UserDAO
 		}
 	}
 
-	/**
-	 * heler method to find whether it's customer or employee
-	 *
-	 * @param username
-	 * @param statement
-	 * @param isCustomer
-	 * @return
-	 * @throws SQLException
-	 */
 
+	/**
+	 * helper method to find whether it's customer or employee
+	 */
 	private User defineUser(String username, PreparedStatement statement, boolean isCustomer) throws SQLException,
 																									 UserAccessException
 	{
@@ -169,8 +144,12 @@ public class UserDAO
 				String role = ServiceDAO.createRole(rs.getInt("role_id"), con);
 				return new Employee(username, password, phone, registration_date, role, id);
 			}
-			if (isCustomer)
-				return new Customer(username, password, registration_date, phone, id);
+			if (isCustomer) {
+				return new Customer.
+						CustomerBuilder(id, registration_date)
+						.createSimpleCustomer(username, password, phone)
+						.build();
+			}
 		}
 		return new unknownUser();
 	}
@@ -199,7 +178,7 @@ public class UserDAO
 
 	public boolean customerHasValidLogin(String username, String password) throws UserAccessException, DataAccessException
 	{
-		return customerByUsername( username ).getPassword().equals(password) ? true : false;
+		return customerByUsername(username).getPassword().equals(password) ? true : false;
 	}
 
 	public boolean employeeHasValidLogin(String username, String password) throws UserAccessException, DataAccessException
