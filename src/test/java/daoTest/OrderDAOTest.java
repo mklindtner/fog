@@ -42,4 +42,13 @@ public class OrderDAOTest
 		assertNotNull(con);
 	}
 
+	/*
+	private void createOrder() {
+		Customer customer = new Customer.CustomerBuilder().createSimpleCustomer();
+
+		Order order = new Order
+				.OrderBuilder(1, ServiceTest.getCurrentTimeAsString())
+				.createOrderWithoutShed(10, 10, 10, customer, );
+	}*/
+
 }

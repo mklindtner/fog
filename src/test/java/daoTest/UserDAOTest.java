@@ -6,7 +6,6 @@ import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
 import data.exceptions.DataAccessException;
 import data.exceptions.UserAccessException;
-import logic.UserFacade;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +13,6 @@ import static org.junit.Assert.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.*;
 
 public class UserDAOTest
@@ -30,51 +28,15 @@ public class UserDAOTest
 		try {
 			con = MySqlConnector.createConnection("TEST");
 			//con = MySqlConnector.connectLocalTestMysql();
-			con.createStatement().execute("DELETE FROM customers");
-			con.createStatement().execute("DELETE FROM employees");
+			ServiceTest.establishConnections();
+			ServiceTest.eraseTables();
+			ServiceTest.populateTables();
+			ServiceTest.checkConnections(); //how do i run this?
 			userDAO = new UserDAO();
-			createCustomerDAO();
-			createCustomerLogic();
-			createEmployeeDAO();
 		} catch (SQLException | DataAccessException dae) {
 			throw new DataAccessException(dae);
 		}
 		//con = MySqlConnector.connectLocalMySql();
-
-	}
-
-
-	@Test
-	public void checkConnection()
-	{
-		assertNotNull(con);
-	}
-
-	//have to call thsi before startup
-	public void createCustomerDAO() throws DataAccessException, UserAccessException
-	{
-		userDAO.createAndReturnCustomer("testUser1", "123", PHONE);
-		userDAO.createAndReturnCustomer("testUser2", "123", PHONE);
-		userDAO.createAndReturnCustomer("testUser3", "123", PHONE);
-	}
-
-	//samee
-	public void createCustomerLogic() throws DataAccessException, UserAccessException
-	{
-		UserFacade.createCustomer("testUser4", "123", PHONE);
-		UserFacade.createCustomer("testUser5", "123", PHONE);
-		UserFacade.createCustomer("testUser6", "123", PHONE);
-	}
-
-	//same
-	public void createEmployeeDAO() throws UserAccessException, DataAccessException
-	{
-		userDAO.createAndReturnEmployee("testEmp1", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
-		userDAO.createAndReturnEmployee("testEmp2", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
-		userDAO.createAndReturnEmployee("testEmp3", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
-		userDAO.createAndReturnEmployee("testEmp4", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
-		userDAO.createAndReturnEmployee("testEmp5", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
-		userDAO.createAndReturnEmployee("testEmp6", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
 
 	}
 
@@ -90,28 +52,18 @@ public class UserDAOTest
 		assertEquals(actual.get(actual.size() - 1).toString(), expected.get(expected.size() - 1).toString());
 	}
 
-
 	private List<Customer> expectedCustomersGenerator(int size)
 	{
 		List<Customer> expected = new ArrayList<>();
 		for (int i = 0; i < size; i++) {
 			Customer customerTmp = new Customer
-					.CustomerBuilder(i, getCurrentTimeAsString())
+					.CustomerBuilder(i, ServiceTest.getCurrentTimeAsString())
 					.createSimpleCustomer("testUser" + (i + 1), "123", PHONE)
 					.build();
 			expected.add(customerTmp);
 		}
 		return expected;
 	}
-
-	private String getCurrentTimeAsString()
-	{
-		Calendar  calender         = Calendar.getInstance();
-		Date      now              = calender.getTime();
-		Timestamp currentTimeStamp = new Timestamp(now.getTime());
-		return currentTimeStamp.toString();
-	}
-
 
 	//this for fixing time
 	@Test
@@ -129,7 +81,7 @@ public class UserDAOTest
 		List<Employee> employees = new ArrayList<>();
 		for(int i = 0; i < size; i++) {
 			Employee employeeTmp = new Employee
-					.EmployeeBuilder(i, getCurrentTimeAsString())
+					.EmployeeBuilder(i, ServiceTest.getCurrentTimeAsString())
 					.createSimpleEmployee("testEmp" + (i + 1), "123", "SALGSMEDARBEJDER", PHONE)
 					.build();
 			employees.add(employeeTmp);

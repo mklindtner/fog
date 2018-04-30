@@ -4,11 +4,12 @@ import data.entities.userEntities.Customer;
 
 public class Order
 {
-	private int id, height, width, length, shedId, slope, materials_id;
+	private int id, height, width, length, slope;
 	private boolean  status;
 	private String   created_at;
 	private Customer customer;
 	private Material material;
+	private Shed shed;
 
 	/**
 	 * i choose not to implement an interface for the builders as the interface would be to abstract to be useful
@@ -27,11 +28,51 @@ public class Order
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
 		this.status = orderBuilder.status;
+		this.shed = orderBuilder.shed;
 	}
 
 	@Override
 	public String toString() {
 		return "id: " + id + "+, status: " + status + ", length: " + length;
+	}
+
+	public int getHeight()
+	{
+		return this.height;
+	}
+
+	public int getWidth()
+	{
+		return this.width;
+	}
+
+	public int getLength() {
+		return this.length;
+	}
+
+	public int getSlope()
+	{
+		return this.slope;
+	}
+
+	public Customer getCustomer()
+	{
+		return this.customer;
+	}
+
+	public Material getMaterial()
+	{
+		return this.material;
+	}
+
+	public String getCreated_at()
+	{
+		return this.created_at;
+	}
+
+	public Shed getShed()
+	{
+		return this.shed;
 	}
 
 	public static class OrderBuilder
@@ -58,6 +99,7 @@ public class Order
 			insertRequiredCustomer(customer);
 			insertRequiredMaterial(material);
 			status = false;
+			this.shed = null;
 			return this;
 		}
 

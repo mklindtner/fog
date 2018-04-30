@@ -17,6 +17,7 @@ Create test for reg_date for customer/employee
 Create test for id for customer/employee
     -mby create method in dao
 Create test for Facades(is that REALLY neccessary?)
+Refactor so that service instantiates tabels and drops them later
 
 
 Customer:

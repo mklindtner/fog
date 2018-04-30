@@ -13,6 +13,26 @@ public class Material
 		this.type = materialBuilder.type;
 	}
 
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public int getPrice()
+	{
+		return this.price;
+	}
+
+	public String getTypeSpecificaton()
+	{
+		return this.typeSpecificaton;
+	}
+
+	public String getType()
+	{
+		return this.type;
+	}
+
 	public static class MaterialBuilder
 	{
 		private int id, price;

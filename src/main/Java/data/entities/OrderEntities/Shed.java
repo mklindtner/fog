@@ -12,6 +12,12 @@ public class Shed
 		this.height = ShedBuilder.height;
 		this.hasFloor = ShedBuilder.hasFloor;
 	}
+
+	public int getId()
+	{
+		return this.id;
+	}
+
 	public static class ShedBuilder
 	{
 		private int id, length, width, height;

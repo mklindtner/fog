@@ -7,6 +7,7 @@ import data.entities.userEntities.Customer;
 import data.exceptions.DataAccessException;
 import data.exceptions.OrderAccessException;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +39,8 @@ public class OrderDAO
 				int      slope      = rs.getInt("slope");
 				Material material   = ServiceDAO.createMaterialById(rs.getInt("materials_as_roof"), con);
 				Customer customer   = ServiceDAO.createCustomerById(rs.getInt("customerId"), con);
-				Order order = new Order.OrderBuilder(id, created_at)
+				Order order = new Order
+						.OrderBuilder(id, created_at)
 						.createOrderWithoutShed(height, width, length, customer, slope, material)
 						.build();
 				ordersWithoutShed.add(order);
@@ -49,18 +51,24 @@ public class OrderDAO
 		}
 	}
 
-	public Order createAndReturnOrder() throws OrderAccessException {
-		final String SQL = "INSERT INTO order() ";
-		return null;
-	}
+	public void createOrder( Order order ) throws OrderAccessException {
+		final String SQL = "INSERT INTO orders" +
+						   "(height, width, length, status, slope, customerId, materials_as_roof, shedId, created_at)" +
+						   " VALUES(?, ?, ?, false, ?, ?, ?, ?, now()) ";
+		try( PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt( 1, order.getHeight());
+			statement.setInt( 2, order.getWidth());
+			statement.setInt( 3, order.getLength());
+			statement.setInt( 4, order.getSlope());
+			statement.setInt( 5, order.getCustomer().getId());
+			statement.setInt(6, order.getMaterial().getId());
+			statement.setInt(7, order.getShed().getId() ); //will this work if shed is null?
+			statement.executeUpdate();
+		}catch(SQLException throwSql) {
+			throw new OrderAccessException(throwSql);
+		}
 
-	/**
-	 * this is SO fucking debatable, but i choose this because it's the road to least resistance in the long term
-	 * It should not exist here, but I don't know a way to use this without creating tight coupling between both daos
-	 *
-	 * @param id
-	 * @return
-	 * @throws OrderAccessException
-	 */
+
+	}
 
 }
