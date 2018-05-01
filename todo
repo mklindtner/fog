@@ -4,9 +4,6 @@ add OrderDAO
     -create shed (helper for orders)
     -create materials(helper for orders)
 
-UserDAO:
-change customer/employee to have builders instead
-
 index:
 fix singleCustomer search so that it returns to the main page instead of throwing an exception
 
@@ -18,6 +15,9 @@ Create test for id for customer/employee
     -mby create method in dao
 Create test for Facades(is that REALLY neccessary?)
 Refactor so that service instantiates tabels and drops them later
+OrderDAOTEST
+    - should have generator added with order method that returns order
+    - Figure out why I get a integrityConstraintError when I run more than two tests?111+!?!?!!?
 
 
 Customer:
@@ -29,3 +29,9 @@ Find out why I can't find my own created environment variable
 
 Servlet:
 Setup server in cloud for db
+
+
+
+Currently:
+OrderDAO - createOrder
+orderDAO - createMaterial

@@ -1,5 +1,0 @@
-CLOUD
-
-#Alternatives:
-#CLOUD, LOCAL
-

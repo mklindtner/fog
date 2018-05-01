@@ -2,6 +2,7 @@ package data.dao;
 
 import data.entities.OrderEntities.Material;
 import data.entities.userEntities.Customer;
+import data.exceptions.DataAccessException;
 import data.exceptions.OrderAccessException;
 import data.exceptions.UserAccessException;
 
@@ -12,7 +13,7 @@ import java.sql.SQLException;
 
 public class ServiceDAO
 {
-	public static Customer createCustomerById(int id, Connection con) throws OrderAccessException
+	public static Customer getCustomerById(int id, Connection con) throws OrderAccessException
 	{
 		String SQL = "Select * FROM customers WHERE id=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -32,34 +33,23 @@ public class ServiceDAO
 
 	}
 
-	public static Material createMaterialById(int id, Connection con) throws OrderAccessException
+	public static Material getMaterialById(int id, Connection con) throws OrderAccessException, DataAccessException
 	{
-		String SQL = "Select * FROM materials WHERE id=?";
-		try (PreparedStatement statement = con.prepareStatement(SQL)) {
-			statement.setInt(1, id);
-			ResultSet rs = statement.executeQuery();
-			if (rs.next()) {
-				int    price             = rs.getInt("price");
-				String typeSpecification = rs.getString("typeSpecification");
-				String type              = rs.getString("type");
-				return new Material.MaterialBuilder(id).createRequiredMaterial(price, typeSpecification, type).build();
-			}
-			throw new SQLException();
-		} catch (SQLException throwSql) {
-			throw new OrderAccessException(throwSql);
-		}
+		MaterialDAO materialDAO = new MaterialDAO();
+		return materialDAO.getMaterialById( id );
 	}
 
-	public static String createRole(int roleId, Connection con) throws UserAccessException
+
+	public static String getRole(int roleId, Connection con) throws UserAccessException
 	{
 		String SQL = "Select * FROM roles WHERE id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, roleId);
 			ResultSet rs = statement.executeQuery();
-			if(rs.next())
+			if (rs.next())
 				return rs.getString("role");
 			throw new SQLException();
-		}catch(SQLException throwSql) {
+		} catch (SQLException throwSql) {
 			throw new UserAccessException(throwSql);
 		}
 	}

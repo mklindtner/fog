@@ -33,7 +33,7 @@ public class Order
 
 	@Override
 	public String toString() {
-		return "id: " + id + "+, status: " + status + ", length: " + length;
+		return  "status: " + status + ", length: " + length + ", slope: " + slope;
 	}
 
 	public int getHeight()

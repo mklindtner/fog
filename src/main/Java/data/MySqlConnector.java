@@ -3,35 +3,43 @@ package data;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import data.exceptions.DataAccessException;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class MySqlConnector
 {
 	private static MysqlDataSource source = null;
 	private static Connection con;
-	private final static String FILE      = "environment.txt";
+	private final static String FILE = "environment.properties";
+	//String connectionSelection
 
 	//instead of a file I could use an environment variable in the shell
 	public static Connection createConnection(String connectionSelection) throws DataAccessException
 	{
-		try {
-			BufferedReader br  = new BufferedReader(new FileReader(FILE));
-			String         env = br.readLine();
+		//this.connectionSelection = connectionSelect
+			//remove other params
+		/*
+		Properties  properties  = new Properties();
+		try(InputStream inputStream = MySqlConnector.class.getResourceAsStream(FILE)) {
+			if (inputStream == null)
+				throw new FileNotFoundException();
+			properties.load(inputStream);
+			String env = properties.getProperty("HOST");
 			return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
-		}catch(IOException fio) {
-			throw new DataAccessException(fio);
-		}
+		} catch(IOException throwIO) {
+			throw new DataAccessException(throwIO);
+		}*/
+		String env = "CLOUD";
+		return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
 	}
 
-	private static Connection findHostLocal(String connectionSelection) throws DataAccessException {
-		if(connectionSelection.equals("APP"))
+	private static Connection findHostLocal(String connectionSelection) throws DataAccessException
+	{
+		if (connectionSelection.equals("APP"))
 			return connectLocalMySql();
-		if( connectionSelection.equals("TEST"))
+		if (connectionSelection.equals("TEST"))
 			return connectLocalTestMysql();
 		throw new DataAccessException();
 	}
@@ -41,7 +49,7 @@ public class MySqlConnector
 		if (connectionSelection.equals("APP"))
 			return connectCloudMySql();
 		if (connectionSelection.equals("TEST"))
-			return connectLocalTestMysql();
+			return connectTestCloudMySql();
 		throw new DataAccessException();
 	}
 

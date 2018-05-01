@@ -18,6 +18,22 @@ public class Shed
 		return this.id;
 	}
 
+	public int getLength() {
+		return this.length;
+	}
+
+	public int getWidth() {
+		return this.width;
+	}
+
+	public int getHeight() {
+		return this.height;
+	}
+
+	public boolean getFloor() {
+		return this.hasFloor;
+	}
+
 	public static class ShedBuilder
 	{
 		private int id, length, width, height;

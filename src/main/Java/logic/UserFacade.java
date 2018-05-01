@@ -18,7 +18,8 @@ public class UserFacade
 		return userDao.allEmployees();
 	}
 
-	public static Customer createCustomer(String username, String password, int phone) throws DataAccessException, UserAccessException
+	public static Customer createCustomer(String username, String password, int phone) throws
+																					   DataAccessException, UserAccessException
 	{
 		UserDAO userDao = new UserDAO();
 		return userDao.createAndReturnCustomer(username, password, phone);
@@ -39,8 +40,6 @@ public class UserFacade
 	public static Customer findCustomerByUsername(String username) throws UserAccessException, DataAccessException
 	{
 		UserDAO userDAO = new UserDAO();
-		return userDAO.customerByUsername( username );
+		return userDAO.customerByUsername(username);
 	}
-
-
 }

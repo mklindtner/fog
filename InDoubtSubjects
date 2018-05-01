@@ -28,6 +28,12 @@ Facade
 Servet CreateCustomer
     I can recover from this mistake, should I just redirect back to create page?
 
+ORderDAO
+    -shed
+        -should it have a created_at?
+        -create return function for shed(takes sheds parameter)
+
+
 JUnit
 Should I refactor the test i repeat into a class and somehow execute those test on every class?
 
@@ -35,5 +41,6 @@ Should I refactor the test i repeat into a class and somehow execute those test 
 Late in the game:
 Consider travis/jenkins --> build from github
 Junit - I could make phoneGenerator/username generator
+
 
 

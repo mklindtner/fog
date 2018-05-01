@@ -19,9 +19,15 @@ public class UserDAO
 {
 	Connection con;
 
+
 	public UserDAO() throws DataAccessException
 	{
 		con = MySqlConnector.createConnection("APP");
+	}
+
+	//this is ugly
+	public UserDAO(String connectionSelection) throws DataAccessException {
+		con = MySqlConnector.createConnection(connectionSelection);
 	}
 
 	public List<String> employeeRoles() throws DataAccessException
@@ -104,7 +110,6 @@ public class UserDAO
 	}
 
 
-
 	/**
 	 * finds customer by username
 	 */
@@ -147,7 +152,7 @@ public class UserDAO
 			int    id                = rs.getInt("id");
 			int    phone             = rs.getInt("phone");
 			if (!isCustomer) {
-				String role = ServiceDAO.createRole(rs.getInt("role_id"), con);
+				String role = ServiceDAO.getRole(rs.getInt("role_id"), con);
 				return new Employee
 						.EmployeeBuilder(id, registration_date)
 						.createSimpleEmployee(username, password, role, phone)
@@ -208,5 +213,26 @@ public class UserDAO
 	public boolean employeeHasValidLogin(String username, String password) throws UserAccessException, DataAccessException
 	{
 		return employeeByUsername(username).getPassword().equals(password) ? true : false;
+	}
+
+	public Customer getCustomerById(int id ) throws UserAccessException, DataAccessException {
+		final String SQL = "Select * FROM customers WHERE id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, id);
+			ResultSet rs = statement.executeQuery();
+			if(rs.next () ) {
+				String username = rs.getString("username");
+				String password = rs.getString("password");
+				int phone = rs.getInt("phone");
+				String registration_date = rs.getString("reg_date");
+				return new Customer
+						.CustomerBuilder(id, registration_date)
+						.createSimpleCustomer(username, password, phone)
+						.build();
+			}
+			throw new SQLException();
+		} catch (SQLException throwSql) {
+			throw new UserAccessException(throwSql);
+		}
 	}
 }
