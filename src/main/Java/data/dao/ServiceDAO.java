@@ -2,9 +2,9 @@ package data.dao;
 
 import data.entities.OrderEntities.Material;
 import data.entities.userEntities.Customer;
-import data.exceptions.DataAccessException;
-import data.exceptions.OrderAccessException;
-import data.exceptions.UserAccessException;
+import data.exceptions.DataException;
+import data.exceptions.OrderException;
+import data.exceptions.UserException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class ServiceDAO
 {
-	public static Customer getCustomerById(int id, Connection con) throws OrderAccessException
+	public static Customer getCustomerById(int id, Connection con) throws OrderException
 	{
 		String SQL = "Select * FROM customers WHERE id=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -28,19 +28,19 @@ public class ServiceDAO
 			}
 			throw new SQLException();
 		} catch (SQLException throwSql) {
-			throw new OrderAccessException("Error within createCustomerInsideOrderDAO", throwSql);
+			throw new OrderException("Error within createCustomerInsideOrderDAO", throwSql);
 		}
 
 	}
 
-	public static Material getMaterialById(int id, Connection con) throws OrderAccessException, DataAccessException
+	public static Material getMaterialById(int id, Connection con) throws OrderException, DataException
 	{
 		MaterialDAO materialDAO = new MaterialDAO();
 		return materialDAO.getMaterialById( id );
 	}
 
 
-	public static String getRole(int roleId, Connection con) throws UserAccessException
+	public static String getRole(int roleId, Connection con) throws UserException
 	{
 		String SQL = "Select * FROM roles WHERE id=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -50,7 +50,7 @@ public class ServiceDAO
 				return rs.getString("role");
 			throw new SQLException();
 		} catch (SQLException throwSql) {
-			throw new UserAccessException(throwSql);
+			throw new UserException(throwSql);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package view.servlets.userServlets;
-import data.exceptions.DataAccessException;
-import data.exceptions.UserAccessException;
+import data.exceptions.DataException;
+import data.exceptions.UserException;
 import logic.UserFacade;
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class displayEmployeeServlet extends HttpServlet
 			request.setAttribute("employees", UserFacade.getAllEmployees());
 
 			request.getRequestDispatcher("/WEB-INF/displayEmployees.jsp").forward(request, response);
-		} catch (DataAccessException | UserAccessException e) {
+		} catch (DataException | UserException e) {
 			throw new ServletException(e);
 		}
 	}

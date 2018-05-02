@@ -4,29 +4,29 @@ import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
 import data.entities.userEntities.User;
 import data.entities.userEntities.unknownUser;
-import data.exceptions.DataAccessException;
-import data.exceptions.UserAccessException;
+import data.exceptions.DataException;
+import data.exceptions.UserException;
 import data.dao.UserDAO;
 
 import java.util.List;
 
 public class UserFacade
 {
-	public static List<Employee> getAllEmployees() throws DataAccessException, UserAccessException
+	public static List<Employee> getAllEmployees() throws DataException, UserException
 	{
 		UserDAO userDao = new UserDAO();
 		return userDao.allEmployees();
 	}
 
 	public static Customer createCustomer(String username, String password, int phone) throws
-																					   DataAccessException, UserAccessException
+																					   DataException, UserException
 	{
 		UserDAO userDao = new UserDAO();
 		return userDao.createAndReturnCustomer(username, password, phone);
 	}
 
-	public static User evaluateLogin(String username, String password) throws DataAccessException,
-																			  UserAccessException
+	public static User evaluateLogin(String username, String password) throws DataException,
+																			  UserException
 	{
 		UserDAO userDao = new UserDAO();
 		if (userDao.isCustomer(username) && userDao.customerHasValidLogin(username, password))
@@ -37,7 +37,7 @@ public class UserFacade
 		return new unknownUser();
 	}
 
-	public static Customer findCustomerByUsername(String username) throws UserAccessException, DataAccessException
+	public static Customer findCustomerByUsername(String username) throws UserException, DataException
 	{
 		UserDAO userDAO = new UserDAO();
 		return userDAO.customerByUsername(username);

@@ -31,11 +31,6 @@ public class Order
 		this.shed = orderBuilder.shed;
 	}
 
-	@Override
-	public String toString() {
-		return  "status: " + status + ", length: " + length + ", slope: " + slope;
-	}
-
 	public int getHeight()
 	{
 		return this.height;
@@ -88,6 +83,10 @@ public class Order
 		{
 			this.id = id;
 			this.created_at = created_at;
+		}
+
+		public OrderBuilder() {
+
 		}
 
 		public OrderBuilder createOrderWithoutShed(int height, int width, int length, Customer customer, int slope, Material material)

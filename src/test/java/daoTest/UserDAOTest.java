@@ -5,13 +5,12 @@ import daoTest.ServiceClasses.ServiceSeed;
 import data.dao.UserDAO;
 import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
-import data.exceptions.DataAccessException;
-import data.exceptions.OrderAccessException;
-import data.exceptions.ShedCreationException;
-import data.exceptions.UserAccessException;
+import data.exceptions.DataException;
+import data.exceptions.OrderException;
+import data.exceptions.ShedException;
+import data.exceptions.UserException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -22,36 +21,36 @@ import java.util.*;
 
 public class UserDAOTest
 {
-	Connection con;
 	UserDAO    userDAO;
 	private final int PHONE = 1234567, STANDARD_EMPLOYEE_ROLE = 3, GENERATION_AMOUNT = 6;
 
 	@Before
-	public void setUp() throws DataAccessException
+	public void setUp() throws DataException
 	{
 		try {
 			ServiceSeed.establishConnections();
 			ServiceSeed.populateTables();
 			userDAO = new UserDAO("TEST");
-		} catch (DataAccessException | UserAccessException | ShedCreationException | OrderAccessException dae)
+		} catch (DataException | UserException | ShedException | OrderException dae)
 		{
-			throw new DataAccessException(dae);
+			throw new DataException(dae);
 		}
 	}
 
 	@After
-	public void tearDown() throws DataAccessException
+	public void tearDown() throws DataException
 	{
 		try {
 			ServiceSeed.eraseTables();
+			ServiceSeed.resetLists();
 		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
+			throw new DataException(throwSql);
 		}
 	}
 
 	//this for fixing empl/customer time
 	@Test
-	public void allCustomersFromDAO() throws DataAccessException
+	public void allCustomersFromDAO() throws DataException
 	{
 		List<Customer> actual   = userDAO.allCustomers();
 		List<Customer> expected = expectedCustomersGenerator(GENERATION_AMOUNT);
@@ -73,10 +72,10 @@ public class UserDAOTest
 		}
 		return expected;
 	}
-/*
+
 	//this for fixing time
 	@Test
-	public void allEmployeesFromDAO() throws UserAccessException, DataAccessException
+	public void allEmployeesFromDAO() throws UserException, DataException
 	{
 		List<Employee> actual   = userDAO.allEmployees();
 		List<Employee> expected = expectedEmployeeGenerator(GENERATION_AMOUNT);
@@ -96,5 +95,5 @@ public class UserDAOTest
 			employees.add(employeeTmp);
 		}
 		return employees;
-	}*/
+	}
 }

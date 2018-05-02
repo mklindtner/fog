@@ -21,5 +21,15 @@
     <input type="text" name="username" value="testTwo">
     <input type="submit" value="findCustomer">
 </form>
+<h3>Create Order</h3>
+<form method="post" action="createOrder">
+    <input type="number" name="height" value="2" required>
+    <input type="number" name="width" value="2" required>
+    <input type="number" name="length" value="2" required>
+    <input type="number" name="slope" value="2" required>
+    <input type="text" name="orderee" value="customer" required>
+    <input type="text" name="type" value="semihardwood" required>
+    <input type="submit" value="send order">
+</form>
 </body>
 </html>

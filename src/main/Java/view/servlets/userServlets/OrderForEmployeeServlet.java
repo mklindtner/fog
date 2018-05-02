@@ -1,8 +1,8 @@
 package view.servlets.userServlets;
 
 import data.entities.OrderEntities.Order;
-import data.exceptions.DataAccessException;
-import data.exceptions.OrderAccessException;
+import data.exceptions.DataException;
+import data.exceptions.OrderException;
 import logic.OrderFacade;
 
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class OrderForEmployeeServlet extends HttpServlet
 			request.setAttribute("ordersWithoutShed", ordersWithoutShed);
 			request.getRequestDispatcher("/WEB-INF/employeeOrdersPage.jsp").forward(request, response);
 
-		} catch(DataAccessException | OrderAccessException finalDelegation) {
+		} catch(DataException | OrderException finalDelegation) {
 			throw new ServletException(finalDelegation);
 		}
 	}

@@ -1,12 +1,10 @@
 package data;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
-import data.exceptions.DataAccessException;
+import data.exceptions.DataException;
 
-import java.io.*;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class MySqlConnector
 {
@@ -16,7 +14,7 @@ public class MySqlConnector
 	//String connectionSelection
 
 	//instead of a file I could use an environment variable in the shell
-	public static Connection createConnection(String connectionSelection) throws DataAccessException
+	public static Connection createConnection(String connectionSelection) throws DataException
 	{
 		//this.connectionSelection = connectionSelect
 			//remove other params
@@ -35,28 +33,28 @@ public class MySqlConnector
 		return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
 	}
 
-	private static Connection findHostLocal(String connectionSelection) throws DataAccessException
+	private static Connection findHostLocal(String connectionSelection) throws DataException
 	{
 		if (connectionSelection.equals("APP"))
 			return connectLocalMySql();
 		if (connectionSelection.equals("TEST"))
 			return connectLocalTestMysql();
-		throw new DataAccessException();
+		throw new DataException();
 	}
 
-	private static Connection findHostCloud(String connectionSelection) throws DataAccessException
+	private static Connection findHostCloud(String connectionSelection) throws DataException
 	{
 		if (connectionSelection.equals("APP"))
 			return connectCloudMySql();
 		if (connectionSelection.equals("TEST"))
 			return connectTestCloudMySql();
-		throw new DataAccessException();
+		throw new DataException();
 	}
 
 	/**
 	 * localServer
 	 */
-	private static Connection connectLocalMySql() throws DataAccessException
+	private static Connection connectLocalMySql() throws DataException
 	{
 		insertLocalSourceInformation("fog", "Coding4u@snail", "fogdb");
 		return connectionToSource();
@@ -73,19 +71,19 @@ public class MySqlConnector
 		}
 	}
 
-	private static Connection connectionToSource() throws DataAccessException
+	private static Connection connectionToSource() throws DataException
 	{
 		try {
 			if (con == null)
 				con = source.getConnection();
 			return con;
 		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
+			throw new DataException(throwSql);
 		}
 
 	}
 
-	private static Connection connectLocalTestMysql() throws DataAccessException
+	private static Connection connectLocalTestMysql() throws DataException
 	{
 		insertLocalSourceInformation("fog", "Coding4u@snail", "fogtest");
 		return connectionToSource();
@@ -104,7 +102,7 @@ public class MySqlConnector
 		}
 	}
 
-	private static Connection connectTestCloudMySql() throws DataAccessException
+	private static Connection connectTestCloudMySql() throws DataException
 	{
 		insertRemoteSourceInformation("fogRemote", "", "159.89.99.45", "fogTestdb");
 		return connectionToSource();
@@ -116,7 +114,7 @@ public class MySqlConnector
 	 *
 	 * @return
 	 */
-	private static Connection connectCloudMySql() throws DataAccessException
+	private static Connection connectCloudMySql() throws DataException
 	{
 		insertRemoteSourceInformation("fogRemote", "", "159.89.99.45", "fogdb");
 		return connectionToSource();

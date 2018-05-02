@@ -7,18 +7,16 @@ import data.entities.OrderEntities.Order;
 import data.entities.OrderEntities.Shed;
 import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
-import data.exceptions.DataAccessException;
-import data.exceptions.OrderAccessException;
-import data.exceptions.ShedCreationException;
-import data.exceptions.UserAccessException;
+import data.exceptions.DataException;
+import data.exceptions.OrderException;
+import data.exceptions.ShedException;
+import data.exceptions.UserException;
 import logic.UserFacade;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.sql.Types.NULL;
 
 
 public class ServiceSeed
@@ -34,7 +32,7 @@ public class ServiceSeed
 	private final static int PHONE = 1234567, STANDARD_EMPLOYEE_ROLE = 3, GENERATION_AMOUNT = 6;
 	private static Connection con;
 
-	public static void establishConnections() throws DataAccessException
+	public static void establishConnections() throws DataException
 	{
 		con = MySqlConnector.createConnection("TEST");
 		userDAO = new UserDAO("TEST");
@@ -52,7 +50,15 @@ public class ServiceSeed
 		con.createStatement().execute("DELETE FROM sheds");
 	}
 
-	public static void populateTables() throws DataAccessException, UserAccessException, OrderAccessException, ShedCreationException
+	public static void resetLists() {
+		employees = new ArrayList<>();
+		customers = new ArrayList<>();
+		orders = new ArrayList<>();
+		materials = new ArrayList<>();
+		sheds = new ArrayList<>();
+	}
+
+	public static void populateTables() throws DataException, UserException, OrderException, ShedException
 	{
 		populateCustomerTable();
 		populateCustomerTableFacade();
@@ -64,21 +70,21 @@ public class ServiceSeed
 
 	}
 
-	private static void populateCustomerTable() throws DataAccessException, UserAccessException
+	private static void populateCustomerTable() throws DataException, UserException
 	{
 		customers.add(userDAO.createAndReturnCustomer("testUser1", "123", PHONE));
 		customers.add(userDAO.createAndReturnCustomer("testUser2", "123", PHONE));
 		customers.add(userDAO.createAndReturnCustomer("testUser3", "123", PHONE));
 	}
 
-	private static void populateCustomerTableFacade() throws DataAccessException, UserAccessException
+	private static void populateCustomerTableFacade() throws DataException, UserException
 	{
 		customers.add(UserFacade.createCustomer("testUser4", "123", PHONE));
 		customers.add(UserFacade.createCustomer("testUser5", "123", PHONE));
 		customers.add(UserFacade.createCustomer("testUser6", "123", PHONE));
 	}
 
-	private static void populateEmployeeTable() throws DataAccessException, UserAccessException
+	private static void populateEmployeeTable() throws DataException, UserException
 	{
 		userDAO.createAndReturnEmployee("testEmp1", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
 		userDAO.createAndReturnEmployee("testEmp2", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
@@ -88,7 +94,7 @@ public class ServiceSeed
 		userDAO.createAndReturnEmployee("testEmp6", "123", PHONE, STANDARD_EMPLOYEE_ROLE);
 	}
 
-	private static void populateMaterialTable() throws OrderAccessException, DataAccessException
+	private static void populateMaterialTable() throws OrderException, DataException
 	{
 		materials.add(materialDAO.createAndReturnMaterial(5, "20-25mm", "softwood"));
 		materials.add(materialDAO.createAndReturnMaterial(10, "25-30mm", "mediumwood"));
@@ -96,7 +102,7 @@ public class ServiceSeed
 		materials.add(materialDAO.createAndReturnMaterial(20, "35-40mm", "metalCoil"));
 	}
 
-	private static void populateShedTable() throws ShedCreationException
+	private static void populateShedTable() throws ShedException
 	{
 		sheds.add(orderDAO.createAndReturnShed(5, 5, 5, false));
 		sheds.add(orderDAO.createAndReturnShed(10, 10, 10, true));
@@ -106,7 +112,7 @@ public class ServiceSeed
 	}
 
 	//no sheds for now
-	private static void populateOrderTable() throws OrderAccessException
+	private static void populateOrderTable() throws OrderException
 	{
 		orderDAO.createOrder
 				(10, 10, 10, false, 45,

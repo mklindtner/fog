@@ -4,9 +4,9 @@ import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
 import data.entities.userEntities.User;
 import data.entities.userEntities.unknownUser;
-import data.exceptions.DataAccessException;
+import data.exceptions.DataException;
 import data.MySqlConnector;
-import data.exceptions.UserAccessException;
+import data.exceptions.UserException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,17 +20,18 @@ public class UserDAO
 	Connection con;
 
 
-	public UserDAO() throws DataAccessException
+	public UserDAO() throws DataException
 	{
 		con = MySqlConnector.createConnection("APP");
 	}
 
 	//this is ugly
-	public UserDAO(String connectionSelection) throws DataAccessException {
+	public UserDAO(String connectionSelection) throws DataException
+	{
 		con = MySqlConnector.createConnection(connectionSelection);
 	}
 
-	public List<String> employeeRoles() throws DataAccessException
+	public List<String> employeeRoles() throws DataException
 	{
 		String       SQL   = "Select * FROM roles";
 		List<String> Roles = new ArrayList<>();
@@ -42,11 +43,11 @@ public class UserDAO
 			}
 			return Roles;
 		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
+			throw new DataException(throwSql);
 		}
 	}
 
-	public List<Employee> allEmployees() throws UserAccessException
+	public List<Employee> allEmployees() throws UserException
 	{
 		String         SQL       = "Select * FROM employees LEFT JOIN roles ON employees.role_id = roles.id";
 		List<Employee> employees = new ArrayList<>();
@@ -67,11 +68,11 @@ public class UserDAO
 			}
 			return employees;
 		} catch (SQLException throwSql) {
-			throw new UserAccessException(throwSql);
+			throw new UserException(throwSql);
 		}
 	}
 
-	public List<Customer> allCustomers() throws DataAccessException
+	public List<Customer> allCustomers() throws DataException
 	{
 		String         SQL       = "Select * FROM customers";
 		List<Customer> customers = new ArrayList<>();
@@ -90,12 +91,12 @@ public class UserDAO
 			}
 			return customers;
 		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
+			throw new DataException(throwSql);
 		}
 	}
 
-	public Customer createAndReturnCustomer(String username, String password, int phone) throws DataAccessException,
-																								UserAccessException
+	public Customer createAndReturnCustomer(String username, String password, int phone) throws DataException,
+																								UserException
 	{
 		String SQL = "INSERT INTO customers(username, password, reg_date, phone) VALUES (?, ?, now(), ?)";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -105,7 +106,7 @@ public class UserDAO
 			statement.executeUpdate();
 			return customerByUsername(username);
 		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
+			throw new DataException(throwSql);
 		}
 	}
 
@@ -113,13 +114,13 @@ public class UserDAO
 	/**
 	 * finds customer by username
 	 */
-	public Customer customerByUsername(String username) throws UserAccessException, DataAccessException
+	public Customer customerByUsername(String username) throws UserException, DataException
 	{
 		String SQL = "Select * FROM customers WHERE username=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			return (Customer) defineUser(username, statement, true);
-		} catch (SQLException | UserAccessException throwSql) {
-			throw new UserAccessException(throwSql);
+		} catch (SQLException | UserException throwSql) {
+			throw new UserException(throwSql);
 		}
 	}
 
@@ -127,13 +128,13 @@ public class UserDAO
 	 * finds employee by username
 	 */
 
-	public Employee employeeByUsername(String username) throws UserAccessException, DataAccessException
+	public Employee employeeByUsername(String username) throws UserException, DataException
 	{
 		String SQL = "Select * FROM employees WHERE username=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			return (Employee) defineUser(username, statement, false);
-		} catch (SQLException | UserAccessException throwSql) {
-			throw new UserAccessException(throwSql);
+		} catch (SQLException | UserException throwSql) {
+			throw new UserException(throwSql);
 		}
 	}
 
@@ -142,7 +143,7 @@ public class UserDAO
 	 * helper method to find whether it's customer or employee
 	 */
 	private User defineUser(String username, PreparedStatement statement, boolean isCustomer) throws SQLException,
-																									 UserAccessException
+																									 UserException
 	{
 		statement.setString(1, username);
 		ResultSet rs = statement.executeQuery();
@@ -168,7 +169,7 @@ public class UserDAO
 		return new unknownUser();
 	}
 
-	public Employee createAndReturnEmployee(String username, String password, int phone, int role) throws UserAccessException, DataAccessException
+	public Employee createAndReturnEmployee(String username, String password, int phone, int role) throws UserException, DataException
 	{
 		String SQL = "INSERT INTO employees(username, password, phone, role_id, reg_date) VALUES(?, ?, ?, ?, NOW())";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -179,11 +180,11 @@ public class UserDAO
 			statement.executeUpdate();
 			return employeeByUsername(username);
 		} catch (SQLException throwSql) {
-			throw new DataAccessException(throwSql);
+			throw new DataException(throwSql);
 		}
 	}
 
-	public boolean isCustomer(String username) throws UserAccessException, DataAccessException
+	public boolean isCustomer(String username) throws UserException, DataException
 	{
 		List<Customer> customers = allCustomers();
 		for (int i = 0; i < customers.size(); i++) {
@@ -194,7 +195,7 @@ public class UserDAO
 		return false;
 	}
 
-	public boolean isEmployee(String username) throws UserAccessException
+	public boolean isEmployee(String username) throws UserException
 	{
 		List<Employee> employees = allEmployees();
 		for (int i = 0; i < employees.size(); i++) {
@@ -205,17 +206,18 @@ public class UserDAO
 		return false;
 	}
 
-	public boolean customerHasValidLogin(String username, String password) throws UserAccessException, DataAccessException
+	public boolean customerHasValidLogin(String username, String password) throws UserException, DataException
 	{
 		return customerByUsername(username).getPassword().equals(password) ? true : false;
 	}
 
-	public boolean employeeHasValidLogin(String username, String password) throws UserAccessException, DataAccessException
+	public boolean employeeHasValidLogin(String username, String password) throws UserException, DataException
 	{
 		return employeeByUsername(username).getPassword().equals(password) ? true : false;
 	}
 
-	public Customer getCustomerById(int id ) throws UserAccessException, DataAccessException {
+	public Customer getCustomerById(int id ) throws UserException, DataException
+	{
 		final String SQL = "Select * FROM customers WHERE id=?";
 		try(PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, id);
@@ -232,7 +234,7 @@ public class UserDAO
 			}
 			throw new SQLException();
 		} catch (SQLException throwSql) {
-			throw new UserAccessException(throwSql);
+			throw new UserException(throwSql);
 		}
 	}
 }

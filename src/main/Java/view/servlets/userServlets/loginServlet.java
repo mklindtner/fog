@@ -3,8 +3,8 @@ package view.servlets.userServlets;
 import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
 import data.entities.userEntities.User;
-import data.exceptions.DataAccessException;
-import data.exceptions.UserAccessException;
+import data.exceptions.DataException;
+import data.exceptions.UserException;
 import logic.UserFacade;
 
 import javax.servlet.ServletException;
@@ -33,7 +33,7 @@ public class loginServlet extends HttpServlet
 			}
 			response.sendRedirect("index.jsp");
 
-		} catch (DataAccessException | UserAccessException dau) {
+		} catch (DataException | UserException dau) {
 			throw new ServletException(dau);
 		}
 	}

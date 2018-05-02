@@ -1,11 +1,5 @@
 package daoTest;
 
-import data.MySqlConnector;
-import data.exceptions.DataAccessException;
-import data.exceptions.UserAccessException;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.sql.Connection;
 
 import static org.junit.Assert.assertNotNull;
