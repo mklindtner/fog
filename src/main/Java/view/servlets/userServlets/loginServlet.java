@@ -25,11 +25,11 @@ public class loginServlet extends HttpServlet
 			User   user     = UserFacade.evaluateLogin(username, password );
 			if( user instanceof Customer ) {
 				request.getSession().setAttribute("customer", user);
-				request.getRequestDispatcher("/WEB-INF/customerHomepage.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 			}
 			if( user instanceof Employee) {
 				request.setAttribute("employee" , user);
-				request.getRequestDispatcher("/WEB-INF/employeeHomepage.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
 			response.sendRedirect("index.jsp");
 

@@ -78,8 +78,8 @@ public class OrderDAO
 	public Order createAndReturnOrder(Order order) throws OrderException, DataException
 	{
 		final String SQL = "INSERT INTO orders" +
-						   "(height, width, length, status, slope, customerId, materials_as_roof, shedId, created_at)" +
-						   " VALUES(?, ?, ?, false, ?, ?, ?, ?, now()) ";
+						   "(height, width, length, status, slope, customerId, materials_as_roof, shedId, created_at, employeeId)" +
+						   " VALUES(?, ?, ?, false, ?, ?, ?, ?, now(), ?) ";
 		try (PreparedStatement statement = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS)) {
 			int setHeight = order.getHeight();
 			int setWidth = order.getWidth();
@@ -95,12 +95,48 @@ public class OrderDAO
 			statement.setInt(5, setCusId);
 			statement.setInt(6, setMaterialId);
 			statement.setNull(7, Types.INTEGER); //will this work if shed is null?
+			statement.setNull(8, Types.INTEGER);
 			statement.executeUpdate();
 			ResultSet resultId = statement.getGeneratedKeys();
 			resultId.next();
-			return generateOrder(resultId.getInt(1));
+			return orderById(resultId.getInt(1));
 		} catch (SQLException throwSql) {
 			throw new OrderException(throwSql);
+		}
+	}
+
+	//should fix so it can return with shed too, create that in ServiceDAO
+	public Order orderById(int id) throws OrderException, DataException
+	{
+		final String SQL = "SELECT * FROM orders WHERE id=?";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, id);
+			ResultSet rs       = statement.executeQuery();
+			rs.next();
+			int       height   = rs.getInt("height");
+			int       width    = rs.getInt("width");
+			int       length   = rs.getInt("length");
+			int       slope    = rs.getInt("slope");
+			Customer  customer = ServiceDAO.getCustomerById(rs.getInt("customerId"), con);
+			Material  material = ServiceDAO.getMaterialById(rs.getInt("materials_as_roof"), con);
+			Order order = new Order
+					.OrderBuilder(id, rs.getString("created_at"))
+					.createOrderWithoutShed(height, width, length, customer, slope, material)
+					.build();
+			return order;
+		} catch (SQLException throwSql) {
+			throw new OrderException(throwSql);
+		}
+	}
+
+	public void addEmployeeToOrder(int employeeId, int ordersId) throws DataException {
+		final String SQL =  "update orders set employeeId=? where orders.id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, employeeId);
+			statement.setInt(2, ordersId);
+			statement.executeUpdate();
+		} catch (SQLException throwSql) {
+			throw new DataException(throwSql);
 		}
 	}
 
@@ -127,28 +163,6 @@ public class OrderDAO
 		}
 	}
 
-	//should fix so it can return with shed too, create that in ServiceDAO
-	private Order generateOrder(int id) throws OrderException, DataException
-	{
-		final String SQL = "SELECT * FROM orders WHERE id=?";
-		try (PreparedStatement statement = con.prepareStatement(SQL)) {
-			statement.setInt(1, id);
-			ResultSet rs       = statement.executeQuery();
-			rs.next();
-			int       height   = rs.getInt("height");
-			int       width    = rs.getInt("width");
-			int       length   = rs.getInt("length");
-			int       slope    = rs.getInt("slope");
-			Customer  customer = ServiceDAO.getCustomerById(rs.getInt("customerId"), con);
-			Material  material = ServiceDAO.getMaterialById(rs.getInt("materials_as_roof"), con);
-			Order order = new Order
-					.OrderBuilder(id, rs.getString("created_at"))
-					.createOrderWithoutShed(height, width, length, customer, slope, material)
-					.build();
-			return order;
-		} catch (SQLException throwSql) {
-			throw new OrderException(throwSql);
-		}
-	}
+
 
 }

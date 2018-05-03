@@ -58,7 +58,6 @@ public class MySqlConnector
 	{
 		insertLocalSourceInformation("fog", "Coding4u@snail", "fogdb");
 		return connectionToSource();
-
 	}
 
 	private static void insertLocalSourceInformation(String username, String password, String databaseName)

@@ -26,7 +26,7 @@ public class OrderForEmployeeServlet extends HttpServlet
 		try {
 			List<Order> ordersWithoutShed = OrderFacade.allOthersWithoutShed();
 			request.setAttribute("ordersWithoutShed", ordersWithoutShed);
-			request.getRequestDispatcher("/WEB-INF/employeeOrdersPage.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/employee/employeeOrdersPage.jsp").forward(request, response);
 
 		} catch(DataException | OrderException finalDelegation) {
 			throw new ServletException(finalDelegation);

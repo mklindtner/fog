@@ -1,6 +1,7 @@
 package data.entities.OrderEntities;
 
 import data.entities.userEntities.Customer;
+import data.entities.userEntities.Employee;
 
 public class Order
 {
@@ -9,7 +10,8 @@ public class Order
 	private String   created_at;
 	private Customer customer;
 	private Material material;
-	private Shed shed;
+	private Shed     shed;
+	private Employee employee;
 
 	/**
 	 * i choose not to implement an interface for the builders as the interface would be to abstract to be useful
@@ -155,5 +157,10 @@ public class Order
 		{
 			return new Order(this);
 		}
+	}
+
+	@Override public String toString()
+	{
+		return "id: " + id +  ", material: " + material + "customer: " + customer.getUsername();
 	}
 }

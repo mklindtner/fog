@@ -1,7 +1,22 @@
+quickSribble:
+    -Create display w. link to all orders where employee can click on an order and the status will change
+        -see mysql
+    -Create auto-generated shed after customer orders
+    -Display all orders nicely and tidy
+    -move forms into their right place (LASTLY)
+
+SVG:
+calculate offset off rafters so they work specific
+
 Orders:
 add OrderDAO
     -Consider shedDAO
     -make shed possible for OrderDAO
+    -create list of orders and display those
+
+
+Mysql:
+    make status enum instead, "opret", "bekræft", "sendt"
 
 index:
 fix singleCustomer search so that it returns to the main page instead of throwing an exception

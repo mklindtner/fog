@@ -23,7 +23,7 @@ public class createCustomerServlet extends HttpServlet
 		try {
 			Customer customer = UserFacade.createCustomer(username, password, phone);
 			request.getSession().setAttribute("customer", customer);
-			request.getRequestDispatcher("/WEB-INF/customerHomepage.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 		} catch (DataException | UserException finalExceptionLayer) {
 			throw new ServletException(finalExceptionLayer); //this should be output for exception
 		}

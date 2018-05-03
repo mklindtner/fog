@@ -8,6 +8,7 @@ import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderException;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 
 public class OrderFacade
@@ -24,9 +25,19 @@ public class OrderFacade
 		return orderDAO.createAndReturnOrder( order );
 	}
 
-	public static Material getMaterialByType( String type ) throws DataException, MaterialException
+	public static Material materialByType(String type ) throws DataException, MaterialException
 	{
 		MaterialDAO materialDAO = new MaterialDAO();
 		return materialDAO.getMaterialByName( type );
+	}
+
+	public static void addEmployeeToOrder(int employeeId, int orderId) throws DataException {
+		OrderDAO orderDAO = new OrderDAO();
+		orderDAO.addEmployeeToOrder(employeeId, orderId);
+	}
+
+	public static Order orderById(int orderId) throws DataException, OrderException {
+		OrderDAO orderDAO = new OrderDAO();
+		return orderDAO.orderById( orderId );
 	}
 }
