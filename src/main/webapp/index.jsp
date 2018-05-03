@@ -1,4 +1,4 @@
-<%@ page import="logic.generators.SVGUTil" %>
+<%@ page import="logic.generators.SVGUtil" %>
 <html>
 <body>
 <h2>Hello World! Create a customer</h2>
@@ -27,8 +27,8 @@
 <h3>Create Order</h3>
 <form method="post" action="createOrder">
     <input type="number" name="height" value="0" required>
-    <input type="number" name="width" value="600" required>
-    <input type="number" name="length" value="500" required>
+    <input type="number" name="width" value="1200" required>
+    <input type="number" name="length" value="600" required>
     <input type="number" name="slope" value="45" required>
     <input type="text" name="orderee" value="customer" required>
     <input type="text" name="type" value="semihardwood" required>
