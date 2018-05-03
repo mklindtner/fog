@@ -10,6 +10,7 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/CalculateCarport.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/SVGUTil.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/addEmployeeToOrderServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/singleCustomer.jsp" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -25,12 +26,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customerHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/displayEmployees.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employees.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customerHomepage.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/displayEmployees.jsp" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/displayOrders.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employeeHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employeeHomepage.jsp" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employeeOrdersPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeOrdersPage.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/singleCustomer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/singleCustomer.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/singleCustomer.jsp" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       <change beforePath="$PROJECT_DIR$/target/classes/data/MySqlConnector.class" afterPath="$PROJECT_DIR$/target/classes/data/MySqlConnector.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/data/entities/userEntities/Customer.class" afterPath="$PROJECT_DIR$/target/classes/data/entities/userEntities/Customer.class" />
@@ -61,9 +62,9 @@
       <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/displayEmployeeServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/displayEmployeeServlet.class" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/findCustomerServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/findCustomerServlet.class" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/loginServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/loginServlet.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/customerHomepage.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/displayEmployees.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/employeeHomepage.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/customerHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/displayEmployees.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employees.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/employeeHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/singleCustomer.jsp" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog/index.jsp" afterPath="$PROJECT_DIR$/target/maven_fog/index.jsp" />
       <change beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
@@ -815,7 +816,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246688000" />
+    <option name="totallyTimeSpent" value="246703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
