@@ -6,12 +6,12 @@ import data.entities.userEntities.Employee;
 public class Order
 {
 	private int id, height, width, length, slope;
-	private boolean  status;
 	private String   created_at;
 	private Customer customer;
 	private Material material;
 	private Shed     shed;
 	private Employee employee;
+	private Status status;
 
 	/**
 	 * i choose not to implement an interface for the builders as the interface would be to abstract to be useful
@@ -29,9 +29,17 @@ public class Order
 		this.status = orderBuilder.status;
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
-		this.status = orderBuilder.status;
 		this.shed = orderBuilder.shed;
 	}
+	public enum Status  {
+		AVAILABLE, TAKEN, SEND, ACCEPTED
+	}
+
+	public Status getStatus()
+	{
+		return this.status;
+	}
+
 
 	public int getHeight()
 	{
@@ -72,14 +80,18 @@ public class Order
 		return this.shed;
 	}
 
+	public int getId() {
+		return this.id;
+	}
+
 	public static class OrderBuilder
 	{
 		private int id, height, width, length, slope;
-		private boolean  status;
 		private String   created_at;
 		private Customer customer;
 		private Shed     shed;
 		private Material material;
+		private Status status;
 
 		public OrderBuilder(int id, String created_at)
 		{
@@ -91,18 +103,19 @@ public class Order
 
 		}
 
-		public OrderBuilder createOrderWithoutShed(int height, int width, int length, Customer customer, int slope, Material material)
+		public OrderBuilder createOrderWithoutShed(int height, int width, int length, Customer customer, int slope)
 		{
 			insertRequiredHeight(height);
 			insertRequiredWidth(width);
 			insertRequiredLength(length);
 			insertRequiredSlope(slope);
 			insertRequiredCustomer(customer);
-			insertRequiredMaterial(material);
-			status = false;
+			status = Status.AVAILABLE;
 			this.shed = null;
 			return this;
 		}
+
+
 
 		public OrderBuilder insertRequiredHeight(int height)
 		{
@@ -140,16 +153,15 @@ public class Order
 			return this;
 		}
 
-
-		public OrderBuilder insertStatus(boolean status)
-		{
-			this.status = status;
-			return this;
-		}
-
 		public OrderBuilder insertOptionalShed(Shed shed)
 		{
 			this.shed = shed;
+			return this;
+		}
+
+		public OrderBuilder insertOptionalStatus(Status status)
+		{
+			this.status = status;
 			return this;
 		}
 
@@ -161,6 +173,7 @@ public class Order
 
 	@Override public String toString()
 	{
-		return "id: " + id +  ", material: " + material + "customer: " + customer.getUsername();
+		return "id: " + id + ", customer: " + customer.getUsername() + ", status: " +
+			   status + ", height: " + height + ", width: " + width + ", length: " + length;
 	}
 }

@@ -5,12 +5,12 @@ public class SVGUtil
 	//stopler
 	//rem
 	//spær
-	int width, height;
+	int width, length;
 	final int startDistancePillar = 110;
 
 	public SVGUtil(int length, int width)
 	{
-		this.height = length;
+		this.length = length;
 		this.width = width;
 	}
 
@@ -22,7 +22,7 @@ public class SVGUtil
 
 	private String mainBox()
 	{
-		String boxMeasurement = "<SVG width=\"760\" height=\"600\" viewBox=\"0 0 " + height + " " + width + " \">";
+		String boxMeasurement = "<SVG width=\"760\" height=\"600\" viewBox=\"0 0 " + length + " " + width + " \">";
 		return boxMeasurement + arrowsDefintion();
 	}
 
@@ -51,13 +51,14 @@ public class SVGUtil
 						"          style=\"stroke:#006600;\n" +
 						"        \t    marker-start: url(#beginArrow);\n" +
 						"               marker-end: url(#endArrow);\"/>\n" +
-						"    <text x=40% y=98% text-anchor=\"middle\" fill=\"black\"> Length: " + height + "\n" +
+						"    <text x=40% y=98% text-anchor=\"middle\" fill=\"black\"> Width: " + width + "\n" +
 						"    </text>\n" +
 						"    <line x1=\"95%\" y1=\"10%\" x2=\"95%\" y2=\"80%\"\n" +
 						"          style=\"stroke:#006600;\n" +
 						"\t            marker-start: url(#beginArrow);\n" +
 						"            marker-end: url(#endArrow);\"/>\n" +
-						"    <text x=97% y=50% text-anchor=\"middle\" style=\"writing-mode: tb;\"> Width: " + width + "</text>";
+						"    <text x=97% y=50% text-anchor=\"middle\" style=\"writing-mode: tb;\"> Length: " + length +
+						"</text>";
 		return arrows + roofCanvas();
 	}
 
@@ -96,11 +97,22 @@ public class SVGUtil
 	private String Pillars()
 	{
 		String pillars = "";
-		for (int x = startDistancePillar; x <= width; x += 250) {
-			pillars += " <rect x=\"" + x + "\" y=\"10%\" height=\"10\" width=\"10\" id=\"upperPillar\"\n" +
-					   "              style=\"stroke:black; fill:black\"/>\n" +
-					   "        <rect x=\"" + x + "\" y=\"85%\" height=\"10\" width=\"10\" id=\"lowerPillar\"\n" +
-					   "              style=\"stroke:black; fill:black\"/>";
+		if (width > 330) {
+			for (int x = startDistancePillar; x <= width; x += 250) {
+				pillars += " <rect x=\"" + x + "\" y=\"10%\" height=\"10\" width=\"10\" id=\"upperPillar\"\n" +
+						   "              style=\"stroke:black; fill:black\"/>\n" +
+						   "        <rect x=\"" + x + "\" y=\"85%\" height=\"10\" width=\"10\" id=\"lowerPillar\"\n" +
+						   "              style=\"stroke:black; fill:black\"/>";
+			}
+		} else { //place 4 if less smaller than 330
+			int rafterPosition = 0;
+			for (int x = 0; x < 2; x++) {
+				pillars += " <rect x=\"" + rafterPosition + "%\" y=\"10%\" height=\"10\" width=\"10\" " +
+						   "id=\"upperPillar\"\n" + " style=\"stroke:black; fill:black\"/>\n" +
+						   "<rect x=\"" + rafterPosition + "%\" y=\"85%\" height=\"10\" width=\"10\" " +
+						   "id=\"lowerPillar\"\n" + " style=\"stroke:black; fill:black\"/>";
+				rafterPosition = 73;
+			}
 		}
 		return pillars + dashLines();
 	}
@@ -116,7 +128,9 @@ public class SVGUtil
 
 
 
-/* future reference: something to consider: width = max.(length, width), length = min.(length, width)
+/* future reference: something to consider: width = max.(length, width), length = min.(length, width),
+shed doesn't work as expected
+
 <SVG width="760" height="600" viewBox="0 0 <%=length%> <%=width%> ">
     <defs>
         <marker id="beginArrow"
@@ -165,7 +179,11 @@ public class SVGUtil
               style="stroke-dasharray: 2 2; stroke: blue; fill: none"/>
         <line x1="12%" y1="85.5%" x2="81.5%" y2="12%"
               style="stroke-dasharray: 2 2; stroke: blue; fill: none"/>
+
+
+        <rect x="<%=shedWidth%>" y="<%=shedLength%>" width="<%=shedWidth%>" height="<%=shedLength%>"
+              stroke-dasharray="2, 2" style="stroke:black; stroke-width: 2; fill-opacity: 0;" />
     </svg>
 </SVG>
- */
+         */
 }

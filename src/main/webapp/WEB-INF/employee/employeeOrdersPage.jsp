@@ -1,5 +1,6 @@
 <%@ page import="data.entities.OrderEntities.Order" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="data.entities.userEntities.Employee" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 4/27/18
@@ -12,14 +13,30 @@
     <title>Title</title>
 </head>
 <body>
-    welcome to the employees ordersPage where you can see all orders and click on them too! (in the near future)
-    <%
+welcome to the employees ordersPage where you can see all orders and click on them too! (in the near future)
+<%
+    HttpSession session1 = request.getSession();
+    String choice = (String) request.getAttribute("choice");
+    Employee employee = (Employee) session1.getAttribute("employee");
+    if (choice.equals("ordersWithoutShed")) {
         List list = (List) request.getAttribute("ordersWithoutShed");
-        for(int i = 0; i < list.size(); i++) {
-        	Order order = (Order) list.get(i);
-        	out.print(order);
+        for (int i = 0; i < list.size(); i++) {
+            Order order = (Order) list.get(i);
+            out.print(order + "<br />");
         }
+    }
 
-    %>
+    if (choice.equals("ordersAvailable")) {
+        List list = (List) request.getAttribute("ordersAvailable");
+        for (int i = 0; i < list.size(); i++) {
+            Order order = (Order) list.get(i);
+            out.print(order); %>
+<form method="post" action="employeeChooseOrder">
+    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+    <input type="submit" value="take this order">
+</form>
+<%  out.print("<br />"); }
+}
+%>
 </body>
 </html>

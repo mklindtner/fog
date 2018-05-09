@@ -8,7 +8,6 @@ import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderException;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 public class OrderFacade
@@ -38,6 +37,21 @@ public class OrderFacade
 
 	public static Order orderById(int orderId) throws DataException, OrderException {
 		OrderDAO orderDAO = new OrderDAO();
-		return orderDAO.orderById( orderId );
+		return orderDAO.orderByIdWithoutShed(orderId );
+	}
+
+	public static List<Order> ordersOfCustomer( int id ) throws OrderException, DataException {
+		OrderDAO orderDAO = new OrderDAO();
+		return orderDAO.ordersOfCustomer( id );
+	}
+
+	public static List<Order> ordersAvailable() throws OrderException, DataException {
+		OrderDAO orderDAO = new OrderDAO();
+		return orderDAO.ordersAvailable();
+	}
+
+	public static void employeeChooseOrder(int employeeId, int orderId ) throws OrderException, DataException {
+		OrderDAO orderDAO = new OrderDAO();
+		orderDAO.employeeChooseOrder(employeeId, orderId );
 	}
 }

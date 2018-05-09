@@ -3,6 +3,7 @@ package daoTest.ServiceClasses;
 import data.MySqlConnector;
 import data.dao.*;
 import data.entities.OrderEntities.Material;
+import data.entities.OrderEntities.MaterialDimensions;
 import data.entities.OrderEntities.Order;
 import data.entities.OrderEntities.Shed;
 import data.entities.userEntities.Customer;
@@ -96,10 +97,12 @@ public class ServiceSeed
 
 	private static void populateMaterialTable() throws OrderException, DataException
 	{
-		materials.add(materialDAO.createAndReturnMaterial(5, "20-25mm", "softwood"));
-		materials.add(materialDAO.createAndReturnMaterial(10, "25-30mm", "mediumwood"));
-		materials.add(materialDAO.createAndReturnMaterial(15, "30-35mm", "hardwood"));
-		materials.add(materialDAO.createAndReturnMaterial(20, "35-40mm", "metalCoil"));
+		/*
+		MaterialDimensions materialDimensions = new MaterialDimensions(10, 10, 10);
+		materials.add(materialDAO.createAndReturnMaterial(50, "mediumWood", materialDimensions, "", 10));
+		materials.add(materialDAO.createAndReturnMaterial(150, "wetWood", materialDimensions, "", 15));
+		materials.add(materialDAO.createAndReturnMaterial(200, "hardWood", materialDimensions, "", 20));
+		materials.add(materialDAO.createAndReturnMaterial(250, "mediumWood", materialDimensions, "", 25)); */
 	}
 
 	private static void populateShedTable() throws ShedException

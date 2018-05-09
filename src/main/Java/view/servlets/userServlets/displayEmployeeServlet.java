@@ -18,10 +18,10 @@ public class displayEmployeeServlet extends HttpServlet
 	{
 		try {
 			request.setAttribute("employees", UserFacade.getAllEmployees());
-
-			request.getRequestDispatcher("/WEB-INF/employee/employees.jsp").forward(request, response);
 		} catch (DataException | UserException e) {
 			throw new ServletException(e);
 		}
+		request.getRequestDispatcher("/WEB-INF/employee/employees.jsp").forward(request, response);
+
 	}
 }

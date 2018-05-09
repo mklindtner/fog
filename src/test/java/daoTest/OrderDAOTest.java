@@ -62,7 +62,7 @@ public class OrderDAOTest
 		//List<Order> expected = new ArrayList<>();
 		Order order = new  Order
 				.OrderBuilder(1, ServiceMethods.getCurrentTimeAsString())
-				.createOrderWithoutShed(10, 10, 10, customer, 35, materialDAO.getMaterialById(1) )
+				.createOrderWithoutShed(10, 10, 10, customer, 35)
 				.build();
 		return order;
 	}

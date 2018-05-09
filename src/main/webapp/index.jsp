@@ -1,6 +1,7 @@
 <%@ page import="logic.generators.SVGUtil" %>
 <html>
 <body>
+<%@ include file="WEB-INF/shared/header.jsp" %>
 <h2>Hello World! Create a customer</h2>
 <!-- rem, spær, stolper -->
 
@@ -25,15 +26,7 @@
     <input type="submit" value="findCustomer">
 </form>
 <h3>Create Order</h3>
-<form method="post" action="createOrder">
-    <input type="number" name="height" value="0" required>
-    <input type="number" name="width" value="1200" required>
-    <input type="number" name="length" value="600" required>
-    <input type="number" name="slope" value="45" required>
-    <input type="text" name="orderee" value="customer" required>
-    <input type="text" name="type" value="semihardwood" required>
-    <input type="submit" value="send order">
-</form>
+
 
 <form method="post" action="employeeToOrder">
     <input type="number" name="employeeId" value="1" required>

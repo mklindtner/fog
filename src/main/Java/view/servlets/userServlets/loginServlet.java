@@ -28,7 +28,7 @@ public class loginServlet extends HttpServlet
 				request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 			}
 			if( user instanceof Employee) {
-				request.setAttribute("employee" , user);
+				request.getSession().setAttribute("employee" , user);
 				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
 			response.sendRedirect("index.jsp");

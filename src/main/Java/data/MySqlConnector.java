@@ -29,7 +29,7 @@ public class MySqlConnector
 		} catch(IOException throwIO) {
 			throw new DataAccessException(throwIO);
 		}*/
-		String env = "CLOUD";
+		String env = "LOCAL"; //CLOUD
 		return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
 	}
 

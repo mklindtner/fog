@@ -5,6 +5,11 @@ quickSribble:
     -Display all orders nicely and tidy
     -move forms into their right place (LASTLY)
 
+Stykliste:
+    få lavet entities med mål i db og hent dem i BoM
+    hent enhed i basen
+    find antal gennem calculator
+
 SVG:
 calculate offset off rafters so they work specific
 
@@ -12,7 +17,9 @@ Orders:
 add OrderDAO
     -Consider shedDAO
     -make shed possible for OrderDAO
+        -create private shedOrder, use for "available" and others
     -create list of orders and display those
+    -createOrderwithoutShed should not have a status? see servlet and fix status there
 
 
 Mysql:

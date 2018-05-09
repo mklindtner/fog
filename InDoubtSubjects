@@ -28,6 +28,9 @@ Facade
 Servet CreateCustomer
     I can recover from this mistake, should I just redirect back to create page?
 
+servlet ordersforemployeeservlet
+    Should all of them just read from one shared value and then i display them, regardless?
+
 ORderDAO
     -shed
         -should it have a created_at?

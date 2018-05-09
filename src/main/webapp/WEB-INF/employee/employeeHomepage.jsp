@@ -13,11 +13,18 @@
 <body>
     this is the employee homepage, get to work
     <%
-        Employee emp = (Employee) request.getAttribute("employee");
+        Employee emp = (Employee) request.getSession().getAttribute("employee");
         out.print(emp.getUsername());
     %>!
-    <form method="get" action="OrderCatalog">
-        <input type="submit" value="see all orders">
+    <form method="get" action="orderCatalog">
+        <input type="submit" value="see all orders withoutShed">
+        <input type="hidden" name="employeeChoice" value="ordersWithoutShed">
     </form>
+
+    <form method="get" action="orderCatalog">
+        <input type="submit" value="see available orders">
+        <input type="hidden" name="employeeChoice" value="ordersAvailable">
+    </form>
+
 </body>
 </html>
