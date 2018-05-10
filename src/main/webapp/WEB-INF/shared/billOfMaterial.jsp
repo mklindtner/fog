@@ -1,7 +1,8 @@
 <%@ page import="data.entities.billOfMaterial.BillOfMaterial" %>
 <%@ page import="data.entities.OrderEntities.Material" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.HashMap" %><%--
+<%@ page import="java.util.HashMap" %>
+<%@ page import="data.entities.OrderEntities.OrderLine" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/7/18
@@ -17,11 +18,7 @@
 <h2><i>The bill of material</i></h2>
 <%
     HttpSession sess = request.getSession();
-    HashMap billOfMaterial = (HashMap) sess.getAttribute("billOfMaterial");
-    Material nails = (Material) billOfMaterial.get("nail");
-    Material rafter = (Material) billOfMaterial.get("rafter");
-    Material stake = (Material) billOfMaterial.get("stake");
-    Material bracket = (Material) billOfMaterial.get("bracket");
+    List billOfMaterial = (List) sess.getAttribute("billOfMaterial");
     Integer totalPrice_int = (Integer) sess.getAttribute("totalPrice");
     int totalPrice = totalPrice_int.intValue();
 
@@ -54,55 +51,45 @@
     <tr>
         <th>Træ og TagPlader</th>
     </tr>
+    <%
+        for (int i = 0; i < billOfMaterial.size(); i++) {
+            OrderLine orderLine = (OrderLine) billOfMaterial.get(i);
+    %>
+    <% if (orderLine.isTreeOrRoof()) { %>
     <tr>
-        <td><%=rafter%>
+        <td><%=orderLine.getFirstDescription()%>
         </td>
-        <td><%=rafter.getDimensions().getHeight()%>
+        <td><%=orderLine.getLength()%>
         </td>
-        <td><%=rafter.getNumbers()%>
+        <td><%=orderLine.getAmount()%>
         </td>
-        <td><%=rafter.getPackageType()%>
+        <td><%=orderLine.getUnit()%>
         </td>
-        <td><%=rafter.getDescription()%>
+        <td><%=orderLine.getSecondDescription()%>
         </td>
     </tr>
-    <tr>
-        <td><%=stake%>
-        </td>
-        <td><%=stake.getDimensions().getHeight()%>
-        </td>
-        <td><%=stake.getNumbers()%>
-        </td>
-        <td><%=stake.getPackageType()%>
-        </td>
-        <td><%=stake.getDescription()%>
-        </td>
-    </tr>
+    <% }
+    } %>
     <tr>
         <th>Beslag og Skruer</th>
     </tr>
+    <%
+        for (int i = 0; i < billOfMaterial.size(); i++) {
+            OrderLine orderLine = (OrderLine) billOfMaterial.get(i);
+            if (!orderLine.isTreeOrRoof()) { %>
     <tr>
-        <td><%=nails%>
+        <td><%=orderLine.getFirstDescription()%>
         </td>
         <td></td>
-        <td><%=nails.getNumbers()%>
+        <td><%=orderLine.getAmount()%>
         </td>
-        <td><%=nails.getPackageType()%>
+        <td><%=orderLine.getUnit()%>
         </td>
-        <td><%=nails.getDescription()%>
-        </td>
-    </tr>
-    <tr>
-        <td><%=bracket%>
-        </td>
-        <td></td>
-        <td><%=bracket.getNumbers()%>
-        </td>
-        <td><%=bracket.getPackageType()%>
-        </td>
-        <td><%=bracket.getDescription()%>
+        <td><%=orderLine.getSecondDescription()%>
         </td>
     </tr>
+    <% }
+    }%>
 </table>
 </body>
 </html>

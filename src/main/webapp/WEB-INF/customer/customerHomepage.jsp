@@ -18,17 +18,17 @@ this is the homepage for customers after creating or logging in, Welcome
 %>!
 
 create order
-<form method="get" action="customerOrderView">
+<form method="post" action="createOrder">
     <input type="number" name="height" value="0" required> height
     <input type="number" name="width" value="280" required> width
     <input type="number" name="length" value="250" required> length
     <input type="number" name="slope" value="45" required> slope
-    <input type="number" name="shedWidth" value="200" required> shedWith
-    <input type="number" name="shedLength" value="300" required> shedLength
-    <input type="submit" value="see order">
+    <input type="number" name="shedWidth" value="200" > shedWith
+    <input type="number" name="shedLength" value="300" > shedLength
+    <input type="submit" value="insert order">
 </form>
 
-<form method="get" action="customerOrderList">
+<form method="get" action="customerOrders">
     <input type="submit" value="your orders">
 </form>
 </body>

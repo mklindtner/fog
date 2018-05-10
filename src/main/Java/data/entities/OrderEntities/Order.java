@@ -3,20 +3,19 @@ package data.entities.OrderEntities;
 import data.entities.userEntities.Customer;
 import data.entities.userEntities.Employee;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order
 {
-	private int id, height, width, length, slope;
-	private String   created_at;
-	private Customer customer;
-	private Material material;
-	private Shed     shed;
-	private Employee employee;
-	private Status status;
-
-	/**
-	 * i choose not to implement an interface for the builders as the interface would be to abstract to be useful
-	 * @param orderBuilder
-	 */
+	private int id, height, width, length, slope, price;
+	private String          created_at;
+	private Customer        customer;
+	private Material        material;
+	private Shed            shed;
+	private Employee        employee;
+	private Status          status;
+	private List<OrderLine> orderlines;
 
 	private Order(OrderBuilder orderBuilder)
 	{
@@ -30,14 +29,39 @@ public class Order
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
 		this.shed = orderBuilder.shed;
+		this.orderlines = new ArrayList<>();
 	}
+
+	public int getPrice()
+	{
+		return this.price;
+	}
+
+	public void setPrice(int price)
+	{
+		this.price = price;
+	}
+
+	public List<OrderLine> getOrderlines()
+	{
+		return this.orderlines;
+	}
+
+	public void addToOrderLines(OrderLine orderline) {
+		this.orderlines.add(orderline);
+	}
+
 	public enum Status  {
-		AVAILABLE, TAKEN, SEND, ACCEPTED
+		PENDING, OFFER, ACCEPTED, SEND
 	}
 
 	public Status getStatus()
 	{
 		return this.status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 
@@ -46,18 +70,34 @@ public class Order
 		return this.height;
 	}
 
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
 	public int getWidth()
 	{
 		return this.width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
 	}
 
 	public int getLength() {
 		return this.length;
 	}
 
+	public void setLength(int length) {
+		this.length = length;
+	}
+
 	public int getSlope()
 	{
 		return this.slope;
+	}
+
+	public void setSlope(int slope) {
+		this.slope = slope;
 	}
 
 	public Customer getCustomer()
@@ -110,7 +150,7 @@ public class Order
 			insertRequiredLength(length);
 			insertRequiredSlope(slope);
 			insertRequiredCustomer(customer);
-			status = Status.AVAILABLE;
+			status = Status.PENDING;
 			this.shed = null;
 			return this;
 		}

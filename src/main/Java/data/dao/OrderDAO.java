@@ -116,7 +116,7 @@ public class OrderDAO
 			statement.setInt(1, setHeight);
 			statement.setInt(2, setWidth);
 			statement.setInt(3, setLength);
-			statement.setString(4, "AVAILABLE");
+			statement.setString(4, order.getStatus().name());
 			statement.setInt(5, setSlope);
 			statement.setInt(6, setCusId);
 			statement.setNull(7, Types.INTEGER);
@@ -160,7 +160,7 @@ public class OrderDAO
 	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException{
 		final String SQL = "update orders SET status=? where orders.id=?";
 		try(PreparedStatement statement = con.prepareStatement(SQL)) {
-			statement.setString(1, "TAKEN");
+			statement.setString(1, "OFFER");
 			statement.setInt(2, orderId);
 			statement.executeUpdate();
 			addEmployeeToOrder(employeeId, orderId);
@@ -173,7 +173,7 @@ public class OrderDAO
 		List<Order> ordersAvailable = new ArrayList<>();
 		final String SQL = "select * from orders where status=?";
 		try(PreparedStatement statement = con.prepareStatement(SQL)) {
-			statement.setString(1, "AVAILABLE");
+			statement.setString(1, "PENDING");
 			ResultSet rs = statement.executeQuery();
 			while(rs.next()) {
 				ordersAvailable.add(returnOrderWithoutShed(rs));
@@ -198,9 +198,7 @@ public class OrderDAO
 	}
 
 	public void createOrder(
-			int height, int width, int length, boolean status, int slope, int customerId, int materials_as_roof,
-			int shedId)
-			throws OrderException
+			int height, int width, int length, boolean status, int slope, int customerId, int shedId) throws OrderException
 	{
 		final String SQL = "INSERT INTO orders" +
 						   "(height, width, length, status, slope, customerId, materials_as_roof, shedId, created_at)" +
@@ -211,7 +209,6 @@ public class OrderDAO
 			statement.setInt(3, length);
 			statement.setInt(4, slope);
 			statement.setInt(5, customerId);
-			statement.setInt(6, materials_as_roof);
 			statement.setInt(7, shedId); //will this work if shed is null?
 			statement.executeUpdate();
 			//ResultSet rs = statement.getGeneratedKeys();
@@ -220,5 +217,34 @@ public class OrderDAO
 		}
 	}
 
+	public List<Order> employeesChosenOrders( int employeeId ) throws OrderException {
+		List<Order> employeeOrders = new ArrayList<>();
+		final String SQL = "select * FROM orders WHERE orders.employeeId=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, employeeId);
+			ResultSet rs = statement.executeQuery();
+			while(rs.next())
+				employeeOrders.add(returnOrderWithoutShed(rs));
+			return employeeOrders;
+		} catch (SQLException throwSql) {
+			throw new OrderException(throwSql);
+		}
+	}
 
+
+	public void updateOrderOffer( Order order ) throws OrderException {
+		final String SQL = "UPDATE orders SET height=?, width=?, length=?, slope=?, price=?, status=? WHERE orders.id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, order.getHeight());
+			statement.setInt(2, order.getWidth());
+			statement.setInt(3, order.getLength());
+			statement.setInt(4, order.getSlope());
+			statement.setInt(5, order.getPrice());
+			statement.setString(6, order.getStatus().name());
+			statement.setInt(7, order.getId());
+			statement.executeUpdate();
+		} catch(SQLException throwSql) {
+			throw new OrderException( throwSql );
+		}
+	}
 }

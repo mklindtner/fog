@@ -1,0 +1,27 @@
+<%@ page import="data.entities.OrderEntities.Order" %>
+<%@ page import="java.util.List" %><%--
+  Created by IntelliJ IDEA.
+  User: mkl
+  Date: 5/9/18
+  Time: 12:22 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <%
+        List employeeOrders = (List) request.getAttribute("employeeOrders");
+        for(int i = 0; i < employeeOrders.size(); i++) {
+        	Order order = (Order) employeeOrders.get(i);
+        	out.print( order ); %>
+    <form method="get" action="employeeEditOffer">
+        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+        <input type="submit" value="edit and send offer">
+    </form>
+        <%}
+    %>
+</body>
+</html>

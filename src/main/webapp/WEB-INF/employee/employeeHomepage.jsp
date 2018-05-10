@@ -17,14 +17,17 @@
         out.print(emp.getUsername());
     %>!
     <form method="get" action="orderCatalog">
-        <input type="submit" value="see all orders withoutShed">
         <input type="hidden" name="employeeChoice" value="ordersWithoutShed">
+        <input type="submit" value="see all orders withoutShed">
     </form>
 
     <form method="get" action="orderCatalog">
-        <input type="submit" value="see available orders">
         <input type="hidden" name="employeeChoice" value="ordersAvailable">
+        <input type="submit" value="see available orders">
     </form>
 
+    <form method="get" action="employeeCurrentOrders">
+        <input type="submit" value="display your current order-cases">
+    </form>
 </body>
 </html>

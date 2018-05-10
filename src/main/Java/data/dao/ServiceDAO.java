@@ -3,6 +3,7 @@ package data.dao;
 import data.entities.OrderEntities.Material;
 import data.entities.userEntities.Customer;
 import data.exceptions.DataException;
+import data.exceptions.MaterialException;
 import data.exceptions.OrderException;
 import data.exceptions.UserException;
 
@@ -33,10 +34,10 @@ public class ServiceDAO
 
 	}
 
-	public static Material getMaterialById(int id, Connection con) throws OrderException, DataException
+	public static Material getMaterialById(int id, Connection con) throws OrderException, DataException, MaterialException
 	{
 		MaterialDAO materialDAO = new MaterialDAO();
-		return materialDAO.getMaterialById( id );
+		return materialDAO.materialById( id );
 	}
 
 
@@ -53,4 +54,6 @@ public class ServiceDAO
 			throw new UserException(throwSql);
 		}
 	}
+
+
 }

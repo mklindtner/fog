@@ -1,4 +1,5 @@
-<%@ page import="logic.generators.SVGUtil" %><%--
+<%@ page import="logic.generators.SVGUtil" %>
+<%@ page import="data.entities.OrderEntities.Order" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/8/18
@@ -13,9 +14,8 @@
 <body>
     <%
         HttpSession sess = request.getSession();
-        Integer length = (Integer) sess.getAttribute("length");
-        Integer width = (Integer) sess.getAttribute("width");
-        SVGUtil carport = new SVGUtil(length.intValue(), width.intValue());
+        Order order = (Order) sess.getAttribute("order");
+        SVGUtil carport = new SVGUtil(order.getLength(), order.getWidth());
         out.print(carport.createCarport());
     %>
 </body>

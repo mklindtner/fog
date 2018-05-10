@@ -66,7 +66,7 @@ public class ServiceSeed
 		populateEmployeeTable();
 		populateMaterialTable();
 		populateShedTable();
-		populateOrderTable();
+		//populateOrderTable();
 		//populate here
 
 	}
@@ -114,11 +114,12 @@ public class ServiceSeed
 
 	}
 
+	/*
 	//no sheds for now
 	private static void populateOrderTable() throws OrderException
 	{
 		orderDAO.createOrder
 				(10, 10, 10, false, 45,
 				 customers.get(0).getId(), materials.get(0).getId(), sheds.get(0).getId());
-	}
+	} */
 }

@@ -14,6 +14,11 @@
     <input type="password" name="password" value="123" required>
     <input type="submit" value="login">
 </form>
+<form method="get" action="login">
+    <input type="text" name="username" value="customer" required>
+    <input type="password" name="password" value="123" required>
+    <input type="submit" value="login">
+</form>
 <h3>Create user</h3>
 <form method="post" action="createCustomer">
     <input type="text" name="username" value="test" required>
@@ -26,13 +31,5 @@
     <input type="submit" value="findCustomer">
 </form>
 <h3>Create Order</h3>
-
-
-<form method="post" action="employeeToOrder">
-    <input type="number" name="employeeId" value="1" required>
-    <input type="number" name="orderId" value="2" required>
-    <input type="submit" value="added employeeToOrder">
-</form>
-
 </body>
 </html>

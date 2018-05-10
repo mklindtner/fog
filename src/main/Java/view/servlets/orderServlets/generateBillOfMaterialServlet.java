@@ -1,5 +1,6 @@
 package view.servlets.orderServlets;
 
+import data.entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import logic.generators.BillOfMaterialsCalculator;
@@ -23,12 +24,13 @@ public class generateBillOfMaterialServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		HttpSession session = request.getSession();
+		Order       order   = (Order) session.getAttribute("order");
 		try {
-			BillOfMaterialsCalculator billOfMaterialsCalculator = new BillOfMaterialsCalculator( (int) session.getAttribute("height"), (int) session.getAttribute("width"), (int) session.getAttribute("length"));
+			BillOfMaterialsCalculator billOfMaterialsCalculator = new BillOfMaterialsCalculator(order);
 			session.setAttribute("billOfMaterial", billOfMaterialsCalculator.createCarportListWithoutShed());
 			session.setAttribute("totalPrice", billOfMaterialsCalculator.caportPrice());
 
-		} catch(DataException | MaterialException finalDist) {
+		} catch (DataException | MaterialException finalDist) {
 			throw new ServletException(finalDist);
 		}
 		request.getRequestDispatcher("/WEB-INF/shared/billOfMaterial.jsp").forward(request, response);

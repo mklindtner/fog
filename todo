@@ -20,6 +20,7 @@ add OrderDAO
         -create private shedOrder, use for "available" and others
     -create list of orders and display those
     -createOrderwithoutShed should not have a status? see servlet and fix status there
+    -display stykliste and svg for employee
 
 
 Mysql:
