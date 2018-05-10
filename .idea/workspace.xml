@@ -7,45 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/OrderLine.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCurrentOrdersServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOfferServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCurrentOrders.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeEditOffer.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Material.java" afterPath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Material.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Order.java" afterPath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Order.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/OrderForEmployeeServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOrderCatalogServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/addEmployeeToOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeAddToOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/chooseOrderEmployeeServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/customerOrderListServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/customerOrderViewServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderViewServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/singleCustomer.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeOrdersPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeOrderCatalog.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/carportPicture.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/carportPicture.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog.war" afterPath="$PROJECT_DIR$/target/maven_fog.war" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/index.jsp" afterPath="$PROJECT_DIR$/target/maven_fog/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -804,7 +766,7 @@
       <workItem from="1524920108446" duration="3040000" />
       <workItem from="1524923160298" duration="48987000" />
       <workItem from="1525432079715" duration="7972000" />
-      <workItem from="1525508730183" duration="136598000" />
+      <workItem from="1525508730183" duration="136639000" />
     </task>
     <servers />
   </component>
@@ -841,7 +803,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402776000" />
+    <option name="totallyTimeSpent" value="402817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -1067,12 +1029,12 @@
         <state relative-caret-position="280">
           <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
           <folding>
-            <marker date="1525866881994" expanded="true" signature="1541:1559" ph="DELETE FROM orders... " />
-            <marker date="1525866881994" expanded="true" signature="1596:1617" ph="DELETE FROM customers... " />
-            <marker date="1525866881994" expanded="true" signature="1654:1675" ph="DELETE FROM employees... " />
-            <marker date="1525866881994" expanded="true" signature="1712:1733" ph="DELETE FROM materials... " />
-            <marker date="1525866881994" expanded="true" signature="1714:1733" ph="deLETE FROM materials... " />
-            <marker date="1525866881994" expanded="true" signature="1770:1787" ph="DELETE FROM sheds... " />
+            <marker date="1525966894074" expanded="true" signature="1541:1559" ph="DELETE FROM orders... " />
+            <marker date="1525966894074" expanded="true" signature="1596:1617" ph="DELETE FROM customers... " />
+            <marker date="1525966894074" expanded="true" signature="1654:1675" ph="DELETE FROM employees... " />
+            <marker date="1525966894074" expanded="true" signature="1712:1733" ph="DELETE FROM materials... " />
+            <marker date="1525966894074" expanded="true" signature="1714:1733" ph="deLETE FROM materials... " />
+            <marker date="1525966894074" expanded="true" signature="1770:1787" ph="DELETE FROM sheds... " />
           </folding>
         </state>
       </provider>
@@ -1114,8 +1076,8 @@
         <state relative-caret-position="418">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <marker date="1525945840172" expanded="true" signature="518:552" ph="Select * FRO... customers" />
-            <marker date="1525945840172" expanded="true" signature="1487:1517" ph="Select * FRO... role" />
+            <marker date="1525966894070" expanded="true" signature="518:552" ph="Select * FRO... customers" />
+            <marker date="1525966894070" expanded="true" signature="1487:1517" ph="Select * FRO... role" />
           </folding>
         </state>
       </provider>
@@ -1185,8 +1147,8 @@
         <state relative-caret-position="1790">
           <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
           <folding>
-            <marker date="1525949741753" expanded="true" signature="768:802" ph="Select * FRO... materials" />
-            <marker date="1525949741753" expanded="true" signature="1176:1229" ph="Select * FRO... materials" />
+            <marker date="1525966894066" expanded="true" signature="768:802" ph="Select * FRO... materials" />
+            <marker date="1525966894066" expanded="true" signature="1176:1229" ph="Select * FRO... materials" />
           </folding>
         </state>
       </provider>
@@ -1221,12 +1183,12 @@
             <element signature="method#orderByIdWithoutShed#0;class#OrderDAO#0" expanded="false" />
             <element signature="method#addEmployeeToOrder#0;class#OrderDAO#0" expanded="false" />
             <element signature="method#createOrder#0;class#OrderDAO#0" expanded="false" />
-            <marker date="1525950171227" expanded="true" signature="2033:2079" ph="Select * FRO... orders" />
-            <marker date="1525950171227" expanded="true" signature="3306:3486" ph="INSERT INTO orders... " />
-            <marker date="1525950171227" expanded="true" signature="5563:5607" ph="update orders... " />
-            <marker date="1525950171227" expanded="true" signature="6036:6071" ph="select * fro... orders" />
-            <marker date="1525950171227" expanded="true" signature="7779:7825" ph="select * FRO... orders" />
-            <marker date="1525950171227" expanded="true" signature="8246:8337" ph="UPDATE orders... " />
+            <marker date="1525966894066" expanded="true" signature="2033:2079" ph="Select * FRO... orders" />
+            <marker date="1525966894066" expanded="true" signature="3306:3486" ph="INSERT INTO orders... " />
+            <marker date="1525966894066" expanded="true" signature="5563:5607" ph="update orders... " />
+            <marker date="1525966894066" expanded="true" signature="6036:6071" ph="select * fro... orders" />
+            <marker date="1525966894066" expanded="true" signature="7779:7825" ph="select * FRO... orders" />
+            <marker date="1525966894066" expanded="true" signature="8246:8337" ph="UPDATE orders... " />
           </folding>
         </state>
       </provider>
