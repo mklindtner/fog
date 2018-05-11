@@ -3,12 +3,13 @@ package data.entities.OrderEntities;
 public class Material
 {
 	private String description;
-	private int pricePrUnit;
+	private int pricePrUnit, id;
 
-	public Material(String description, int pricePrUnit)
+	public Material(String description, int pricePrUnit, int id)
 	{
 		this.description = description;
 		this.pricePrUnit = pricePrUnit;
+		this.id = id;
 	}
 
 	public String getDescription()
@@ -19,5 +20,15 @@ public class Material
 	public int getPricePrUnit()
 	{
 		return this.pricePrUnit;
+	}
+
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
 	}
 }

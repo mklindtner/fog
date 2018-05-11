@@ -30,6 +30,26 @@ public class OrderLine
 		return this.isTreeOrRoof;
 	}
 
+	public int getMaterialId()
+	{
+		return this.materialId;
+	}
+
+	public void setMaterialId(int materialId)
+	{
+		this.materialId = materialId;
+	}
+
+	public int getOrderId()
+	{
+		return this.orderId;
+	}
+
+	public void setOrderId(int orderId)
+	{
+		this.orderId = orderId;
+	}
+
 
 	public static class OrderLineBuilder
 	{
@@ -72,7 +92,7 @@ public class OrderLine
 			return this;
 		}
 
-		public OrderLineBuilder insertIsTreeOrRoff(boolean istreeOrRoof) {
+		public OrderLineBuilder insertIsTreeOrRoof(boolean istreeOrRoof) {
 			this.isTreeOrRoof = istreeOrRoof;
 			return this;
 		}

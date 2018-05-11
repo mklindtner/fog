@@ -19,7 +19,6 @@ public class UserDAO
 {
 	Connection con;
 
-
 	public UserDAO() throws DataException
 	{
 		con = MySqlConnector.createConnection("APP");

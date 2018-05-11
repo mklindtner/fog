@@ -2,14 +2,9 @@ package data.dao;
 
 import data.MySqlConnector;
 import data.entities.OrderEntities.Material;
-import data.entities.OrderEntities.MaterialDimensions;
-import data.entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
-import data.exceptions.OrderException;
 
-import javax.xml.transform.Result;
-import java.awt.*;
 import java.sql.*;
 
 public class MaterialDAO
@@ -57,16 +52,12 @@ public class MaterialDAO
 			if (resultSet.next()) {
 				String description = resultSet.getString("description");
 				int    pricePrUnit = resultSet.getInt("pricePrUnit");
-				return new Material(description, pricePrUnit);
+				int id = resultSet.getInt("id");
+				return new Material(description, pricePrUnit, id);
 			}
 			throw new SQLException();
 		} catch (SQLException throwSql) {
 			throw new MaterialException(throwSql);
 		}
 	}
-
-	/*
-	public static void saveOrderLineDB(int orderId, int materialId) throws MaterialException {
-		final String SQL = "";
-	} */
 }

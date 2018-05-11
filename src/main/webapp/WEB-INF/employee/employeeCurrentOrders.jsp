@@ -12,16 +12,36 @@
     <title>Title</title>
 </head>
 <body>
-    <%
-        List employeeOrders = (List) request.getAttribute("employeeOrders");
-        for(int i = 0; i < employeeOrders.size(); i++) {
-        	Order order = (Order) employeeOrders.get(i);
-        	out.print( order ); %>
-    <form method="get" action="employeeEditOffer">
-        <input type="hidden" name="orderId" value="<%=order.getId()%>">
-        <input type="submit" value="edit and send offer">
-    </form>
-        <%}
-    %>
+<h3>Pending </h3> <br/>
+<%
+    List employeeOrders = (List) request.getSession().getAttribute("employeeOrders");
+    for (int i = 0; i < employeeOrders.size(); i++) {
+        Order order = (Order) employeeOrders.get(i);
+        if (order.getStatus() == Order.Status.OFFER) {
+            out.print(order + "<br />");
+%>
+<form method="get" action="employeeEditOffer">
+    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+    <input type="submit" value="edit and send offer">
+</form>
+<%
+        }
+    }
+%>
+<h3>Let customer know the order is on the way</h3> <br/>
+<%
+    for (int i = 0; i < employeeOrders.size(); i++) {
+        Order order = (Order) employeeOrders.get(i);
+        if (order.getStatus() == Order.Status.ACCEPTED) {
+            out.print(order + "<br />");
+%>
+<form method="post" action="sendOrder">
+    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+    <input type="submit" value="conferm Order is on the way">
+</form>
+<%
+        }
+    }
+%>
 </body>
 </html>

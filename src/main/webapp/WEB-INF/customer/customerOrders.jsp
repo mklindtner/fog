@@ -13,16 +13,61 @@
     <title>Orders</title>
 </head>
 <body>
+<h3>Pending</h3><br />
 <%
     //TODO: add if's for rest of states
     List customerOrders = (List) request.getSession().getAttribute("customerOrders");
     for (int i = 0; i < customerOrders.size(); i++) {
         Order order = (Order) customerOrders.get(i);
+        if (order.getStatus() == Order.Status.PENDING) {
+            out.print(order + "<br />");
+        }
+    }
+%>
+<h3>Offers</h3> <br/>
+
+<%
+    for (int i = 0; i < customerOrders.size(); i++) {
+        Order order = (Order) customerOrders.get(i);
         if (order.getStatus() == Order.Status.OFFER) {
-            out.print(order); %>
+            out.print(order + "<br />");
+%>
 <form method="post" action="customerAcceptOrder">
     <input type="hidden" name="orderId" value="<%=order.getId()%>">
     <input type="submit" value="accept offer">
+</form>
+<%
+        }
+    }
+%>
+<h3>Accepted Orders</h3> <br/>
+<% for (int i = 0; i < customerOrders.size(); i++) {
+    Order order = (Order) customerOrders.get(i);
+    if (order.getStatus() == Order.Status.ACCEPTED) {
+        out.print(order + "<br />");
+%>
+<form method="get" action="redirect">
+    <input type="hidden" name="goToPage" value="customerOrderInformation">
+    <input type="hidden" name="role" value="customer">
+    <input type="hidden" name="orderId" value=<%=order.getId()%>>
+    <input type="submit" value="order information">
+</form>
+<%
+        }
+    }
+%>
+<h3>Orders on the way</h3> <br/>
+<%
+    for (int i = 0; i < customerOrders.size(); i++) {
+        Order order = (Order) customerOrders.get(i);
+        if (order.getStatus() == Order.Status.SEND) {
+            out.print(order + "<br />");
+%>
+<form method="get" action="redirect">
+    <input type="hidden" name="goToPage" value="customerOrderInformation">
+    <input type="hidden" name="role" value="customer">
+    <input type="hidden" name="orderId" value=<%=order.getId()%>>
+    <input type="submit" value="order information">
 </form>
 <%
         }

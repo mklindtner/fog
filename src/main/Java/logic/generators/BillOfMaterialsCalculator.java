@@ -2,38 +2,25 @@ package logic.generators;
 
 import data.dao.MaterialDAO;
 import data.entities.OrderEntities.Material;
-import data.entities.OrderEntities.MaterialDimensions;
 import data.entities.OrderEntities.Order;
 import data.entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
+import data.exceptions.OrderLineException;
+import logic.OrderFacade;
 
 import java.util.List;
 
 public class BillOfMaterialsCalculator
 {
 	private int totalPrice = 0, area;
-	private final double TREEWIDTH                 = 0.97; //mm
-	private final int    MINIMUMSTAKEDISTANCE      = 360;
-	private final int    RAFTERDISTANCE            = 55;
-	private final int    REMS                      = 2;
-	private final int    STAKESTARTPOSITION        = 110;
-	private final int    STAKEDISTANCE             = 250;
-	private final int    BRACKETS_EACH_STAKE       = 2;
-	private final double REMHEIGHT                 = 1.95;
-	private final double REMWIDTH                  = 0.45;
-	private final int    hulbånd                   = 2;
-	private final int    galjeScrews               = 8;
-	private final int    screwsForOneBracket       = 9;
-	private final int    EKSTRA_LENGTH_STAKE       = 40;
-	//in centimeter
-	private final double PolesEachCentimeter       = 0.000023504;
-	private final double POLESLENGTH               = 0.000641026;
-	private final double STAKES_LENGTH_UNDER_STERN = 0.000769231;
-	private final double STAKES_LENGTH_SIDES       = 0.001153846;
+	private final double TREEWIDTH           = 0.97;
+	private final int    EKSTRA_LENGTH_STAKE = 40;
 	private MaterialDAO materialDAO;
-	//private Map<String, Material> materials;
 	private Order       order;
+	//amount and length is shown pr.centimeter
+	//General formula: amount / area
+	//the amount is found in the examples of fog
 
 
 	public BillOfMaterialsCalculator(Order order) throws DataException
@@ -59,18 +46,74 @@ public class BillOfMaterialsCalculator
 
 	private void setValuesWithoutShed() throws MaterialException
 	{
-		Material m_nail = findMaterial("4,5 x 60 mm. skruer 200stk");
-		order.addToOrderLines(nail(m_nail));
-
-		Material m_pole = findMaterial("97x97mm. trykimp. Stolpe");
-		order.addToOrderLines(pole(m_pole));
-
 		Material m_rafter = findMaterial("25x200mm. trykimp. Brædt");
 		order.addToOrderLines(rafterUnderStern(m_rafter));
 		order.addToOrderLines(rafterSides(m_rafter));
 
+		Material m_lath = findMaterial("38x73mm. Lægte ubh.");
+		order.addToOrderLines(lath(m_lath));
+
+		Material m_pole = findMaterial("97x97mm. trykimp. Stolpe");
+		order.addToOrderLines(pole(m_pole));
+
+		Material m_nail = findMaterial("4,5 x 60 mm. skruer 200stk");
+		order.addToOrderLines(nail(m_nail));
+
 		Material m_bracket = findMaterial("4,0 x 50 mm. beslagsskruer 250stk");
 		order.addToOrderLines(bracket(m_bracket));
+
+		//shed material
+		/*
+		Material m_reglar = findMaterial("45x95mm. Reglar ubh.");
+		order.addToOrderLines(reglarShedHeadBoards(m_reglar));
+		order.addToOrderLines(reglarShedSides(m_reglar)); */
+
+
+	}
+
+	public void saveOrderLinesToDB() throws OrderLineException, DataException
+	{
+		for (OrderLine orderLine : order.getOrderlines())
+			OrderFacade.createOrderLine(orderLine);
+	}
+
+	private OrderLine reglarShedSides(Material m_reglar)
+	{
+		final double reglarShedSideLength = 0.00057692307;
+		final double reglarShedSideAmount = 0.00002564102;
+		int          length               = (int) Math.ceil(reglarShedSideLength * area);
+		int          amount               = (int) Math.ceil(reglarShedSideAmount * area);
+		return new OrderLine
+				.OrderLineBuilder()
+				.insertAmount(amount)
+				.insertLength(length)
+				.insertUnit("stk")
+				.insertFirstDescription(m_reglar.getDescription())
+				.insertSecondDescription("løsholter til skur sider")
+				.insertIsTreeOrRoof(true)
+				.insertMaterialId(m_reglar.getId())
+				.insertOrderId(order.getId())
+				.build();
+	}
+
+	private OrderLine reglarShedHeadBoards(Material reglar)
+	{
+
+		final double REGLAR_LENGTH = 0.00057692307;
+		final double REGLAR_AMOUNT = 0.00002564102;
+		int          length        = (int) Math.ceil(REGLAR_LENGTH * area);
+		int          amount        = (int) Math.ceil(REGLAR_AMOUNT * area);
+		return new OrderLine
+				.OrderLineBuilder()
+				.insertAmount(amount)
+				.insertLength(length)
+				.insertUnit("stk")
+				.insertFirstDescription(reglar.getDescription())
+				.insertSecondDescription("løsholter til skur gavle")
+				.insertIsTreeOrRoof(true)
+				.insertMaterialId(reglar.getId())
+				.insertOrderId(order.getId())
+				.build();
 	}
 
 	private Material findMaterial(String description) throws MaterialException
@@ -78,10 +121,29 @@ public class BillOfMaterialsCalculator
 		return materialDAO.materialByDescription(description);
 	}
 
+	public OrderLine lath(Material lath) throws MaterialException
+	{
+		final double LATH_LENGTH = 0.00089743589;
+		int          LATH_AMOUNT = 1;
+		int          length      = (int) Math.ceil(LATH_LENGTH * area);
+		return new OrderLine
+				.OrderLineBuilder()
+				.insertAmount(LATH_AMOUNT)
+				.insertLength(length)
+				.insertUnit("stk")
+				.insertFirstDescription(lath.getDescription())
+				.insertSecondDescription("til z på bagside af dør")
+				.insertIsTreeOrRoof(true)
+				.insertMaterialId(lath.getId())
+				.insertOrderId(order.getId())
+				.build();
+	}
+
 
 	private OrderLine pole(Material pole) //rename: pole
 	{
-		int length = (int) Math.ceil(POLESLENGTH * area);
+		final double POLESLENGTH = 0.000641026;
+		int          length      = (int) Math.ceil(POLESLENGTH * area);
 		return new OrderLine
 				.OrderLineBuilder()
 				.insertAmount(stakeAmount())
@@ -90,13 +152,17 @@ public class BillOfMaterialsCalculator
 				.insertFirstDescription(pole.getDescription())
 				.insertSecondDescription("Stolper nedgraves 90 cm. i jord")
 				.insertPriceForOrderLine(stakeAmount() * pole.getPricePrUnit())
-				.insertIsTreeOrRoff(true)
+				.insertIsTreeOrRoof(true)
+				.insertMaterialId(pole.getId())
+				.insertOrderId(order.getId())
 				.build();
 	}
 
 	private int stakeAmount()
 	{
-		int stakeAmount = 0;
+		final int STAKESTARTPOSITION = 110;
+		final int STAKEDISTANCE      = 250;
+		int       stakeAmount        = 0;
 		if (order.getWidth() < 360)
 			return 4;
 		for (int i = STAKESTARTPOSITION; i < order.getWidth(); i += STAKEDISTANCE + TREEWIDTH)
@@ -106,37 +172,45 @@ public class BillOfMaterialsCalculator
 
 	private OrderLine rafterUnderStern(Material rafter)
 	{
-		int length = (int) Math.ceil(STAKES_LENGTH_UNDER_STERN * area);
+		final double STAKES_LENGTH_UNDER_STERN = 0.000769231;
+		int          length                    = (int) Math.ceil(STAKES_LENGTH_UNDER_STERN * area);
 		return new OrderLine
 				.OrderLineBuilder()
 				.insertAmount(rafterAmount())
 				.insertLength(length)
 				.insertUnit("stk")
 				.insertFirstDescription(rafter.getDescription())
-				.insertSecondDescription("understernbrædder	til	for	& bag ende")
+				.insertSecondDescription("understernbrædder til for & bag ende")
 				.insertPriceForOrderLine(rafterAmount() * rafter.getPricePrUnit())
-				.insertIsTreeOrRoff(true)
+				.insertIsTreeOrRoof(true)
+				.insertMaterialId(rafter.getId())
+				.insertOrderId(order.getId())
 				.build();
 	}
 
 	private OrderLine rafterSides(Material rafter)
 	{
-		int length = (int) Math.ceil(STAKES_LENGTH_SIDES * area);
+		final double STAKES_LENGTH_SIDES = 0.001153846;
+		int          length              = (int) Math.ceil(STAKES_LENGTH_SIDES * area);
 		return new OrderLine
 				.OrderLineBuilder()
 				.insertAmount(rafterAmount())
 				.insertLength(length)
 				.insertUnit("stk")
 				.insertFirstDescription(rafter.getDescription())
-				.insertSecondDescription("understernbrædder	til	siderne")
+				.insertSecondDescription("understernbrædder til siderne")
 				.insertPriceForOrderLine(rafterAmount() * rafter.getPricePrUnit() + EKSTRA_LENGTH_STAKE)
-				.insertIsTreeOrRoff(true)
+				.insertIsTreeOrRoof(true)
+				.insertMaterialId(rafter.getId())
+				.insertOrderId(order.getId())
 				.build();
 	}
 
 	private int rafterAmount()
 	{
-		int rafterAmountUnderStern = 0;
+		final int RAFTERDISTANCE         = 55;
+		final int MINIMUMSTAKEDISTANCE   = 360;
+		int       rafterAmountUnderStern = 0;
 		if (order.getWidth() < MINIMUMSTAKEDISTANCE)
 			return 4; //the amount of rafters for 4 stakes
 		for (int x = rafterAmountUnderStern; x < order.getWidth(); x += RAFTERDISTANCE + TREEWIDTH)
@@ -154,13 +228,16 @@ public class BillOfMaterialsCalculator
 				.insertFirstDescription(bracket.getDescription())
 				.insertSecondDescription("Til montering af universalbeslag + hulbånd")
 				.insertPriceForOrderLine(bracketAmount() * bracket.getPricePrUnit())
-				.insertIsTreeOrRoff(false)
+				.insertIsTreeOrRoof(false)
+				.insertMaterialId(bracket.getId())
+				.insertOrderId(order.getId())
 				.build();
 	}
 
 	private int bracketAmount() //190 mm
 	{
-		int bracketAmount = 4; //extra brackets
+		final int BRACKETS_EACH_STAKE = 2;
+		int       bracketAmount       = 4; //extra brackets
 		for (int x = 0; x < stakeAmount(); x++)
 			bracketAmount += BRACKETS_EACH_STAKE;
 		return bracketAmount; //left and right */
@@ -176,22 +253,21 @@ public class BillOfMaterialsCalculator
 				.insertFirstDescription(nail.getDescription())
 				.insertSecondDescription("Til montering af stern&vandbrædt")
 				.insertPriceForOrderLine(nailsAmount() * nail.getPricePrUnit())
-				.insertIsTreeOrRoff(false)
+				.insertIsTreeOrRoof(false)
+				.insertMaterialId(nail.getId())
+				.insertOrderId(order.getId())
 				.build();
 	}
 
 	private int nailsAmount()
 	{
-		//add more
-		int galje        = 4 * galjeScrews;
-		int bracketNails = 0;
+		final int galjeScrews         = 8;
+		final int screwsForOneBracket = 9;
+		int       galje               = 4 * galjeScrews; //always 4 galjer
+		int       bracketNails        = 0;
 		for (int x = 0; x < rafterAmount(); x++)
 			bracketNails = screwsForOneBracket * bracketAmount(); //beslagsskruer
 		return bracketNails + galje; //tbc need to calculate different kind of screws etc.*/
 	}
 
-	private int nailsForBracket()
-	{
-		return 0; //implement me
-	}
 }
