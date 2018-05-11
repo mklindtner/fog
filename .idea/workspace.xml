@@ -7,30 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/data/exceptions/OrderLineException.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Material.java" afterPath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Material.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/MaterialDimensions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/OrderLine.java" afterPath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/OrderLine.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderViewServlet.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCurrentOrdersServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCurrentOrdersServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOrderOfferServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOrderCatalogServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCurrentOrders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCurrentOrders.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog.war" afterPath="$PROJECT_DIR$/target/maven_fog.war" />
+      <change beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,8 +30,8 @@
       <file leaf-file-name="BillOfMaterialsCalculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4340">
-              <caret line="200" column="65" lean-forward="false" selection-start-line="200" selection-start-column="65" selection-end-line="200" selection-end-column="65" />
+            <state relative-caret-position="308">
+              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -66,6 +44,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
               <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SVGUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1395">
+              <caret line="198" column="1" lean-forward="false" selection-start-line="198" selection-start-column="1" selection-end-line="198" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -133,7 +121,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/EmployeeSendOfferServlet.java" />
-        <option value="$PROJECT_DIR$/todo" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" />
@@ -180,9 +167,10 @@
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
+        <option value="$PROJECT_DIR$/todo" />
+        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
       </list>
     </option>
   </component>
@@ -246,167 +234,6 @@
               <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="OrderEntities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="generators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-              <item name="orderServlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-              <item name="orderServlets" type="462c0819:PsiDirectoryNode" />
-              <item name="orderCustomer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-              <item name="orderServlets" type="462c0819:PsiDirectoryNode" />
-              <item name="orderEmployee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-              <item name="userServlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="customer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="employee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
@@ -811,7 +638,7 @@
       <workItem from="1524920108446" duration="3040000" />
       <workItem from="1524923160298" duration="48987000" />
       <workItem from="1525432079715" duration="7972000" />
-      <workItem from="1525508730183" duration="152995000" />
+      <workItem from="1525508730183" duration="165174000" />
     </task>
     <servers />
   </component>
@@ -848,11 +675,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419173000" />
+    <option name="totallyTimeSpent" value="431352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -874,8 +700,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4198953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27750137" sideWeight="0.78519857" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27750137" sideWeight="0.21480145" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.7895288" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25815368" sideWeight="0.2104712" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1013,14 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="22" column="43" lean-forward="false" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/CloudConnectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="784">
@@ -1048,14 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="58" column="69" lean-forward="false" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1271,14 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1391,16 +1193,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
+        <state relative-caret-position="-1064">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-560">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="11" column="72" lean-forward="false" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="198" column="1" lean-forward="false" selection-start-line="198" selection-start-column="1" selection-end-line="198" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4340">
-          <caret line="200" column="65" lean-forward="false" selection-start-line="200" selection-start-column="65" selection-end-line="200" selection-end-column="65" />
+        <state relative-caret-position="308">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>

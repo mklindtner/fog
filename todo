@@ -9,6 +9,7 @@ Stykliste:
     få lavet entities med mål i db og hent dem i BoM
     hent enhed i basen
     find antal gennem calculator
+    refactor methods so I only take amount, length and secondDescription
 
 SVG:
 calculate offset off rafters so they work specific
