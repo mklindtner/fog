@@ -30,6 +30,5 @@
     <input type="text" name="username" value="testTwo">
     <input type="submit" value="findCustomer">
 </form>
-<h3>Create Order</h3>
 </body>
 </html>
