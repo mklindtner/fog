@@ -1,7 +1,7 @@
 package data.dao;
 
-import data.entities.OrderEntities.Material;
-import data.entities.userEntities.Customer;
+import entities.OrderEntities.Material;
+import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderException;

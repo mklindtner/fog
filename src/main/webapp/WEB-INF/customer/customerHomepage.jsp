@@ -1,4 +1,4 @@
-<%@ page import="data.entities.userEntities.Customer" %><%--
+<%@ page import="entities.userEntities.Customer" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 4/25/18
@@ -28,7 +28,9 @@ create order
     <input type="submit" value="insert order">
 </form>
 
-<form method="get" action="customerOrders">
+<form method="get" action="redirect">
+    <input type="hidden" name="goToPage" value="customerOrders">
+    <input type="hidden" name="role" value="customer">
     <input type="submit" value="your orders">
 </form>
 </body>

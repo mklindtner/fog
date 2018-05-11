@@ -1,5 +1,5 @@
-<%@ page import="data.entities.userEntities.Customer" %>
-<%@ page import="data.entities.OrderEntities.Order" %>
+<%@ page import="entities.userEntities.Customer" %>
+<%@ page import="entities.OrderEntities.Order" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: mkl
@@ -46,9 +46,7 @@
     if (order.getStatus() == Order.Status.ACCEPTED) {
         out.print(order + "<br />");
 %>
-<form method="get" action="redirect">
-    <input type="hidden" name="goToPage" value="customerOrderInformation">
-    <input type="hidden" name="role" value="customer">
+<form method="get" action="orderInformation">
     <input type="hidden" name="orderId" value=<%=order.getId()%>>
     <input type="submit" value="order information">
 </form>
@@ -63,9 +61,7 @@
         if (order.getStatus() == Order.Status.SEND) {
             out.print(order + "<br />");
 %>
-<form method="get" action="redirect">
-    <input type="hidden" name="goToPage" value="customerOrderInformation">
-    <input type="hidden" name="role" value="customer">
+<form method="get" action="orderInformation">
     <input type="hidden" name="orderId" value=<%=order.getId()%>>
     <input type="submit" value="order information">
 </form>

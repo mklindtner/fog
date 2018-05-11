@@ -1,7 +1,7 @@
 package data.dao;
 
 import data.MySqlConnector;
-import data.entities.OrderEntities.Material;
+import entities.OrderEntities.Material;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 

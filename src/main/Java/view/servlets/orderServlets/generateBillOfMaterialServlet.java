@@ -1,6 +1,6 @@
 package view.servlets.orderServlets;
 
-import data.entities.OrderEntities.Order;
+import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import logic.generators.BillOfMaterialsCalculator;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/BillOfMaterial")
+@WebServlet(urlPatterns = "/billOfMaterial")
 public class generateBillOfMaterialServlet extends HttpServlet
 {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

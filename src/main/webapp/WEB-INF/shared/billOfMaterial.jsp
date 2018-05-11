@@ -1,8 +1,8 @@
-<%@ page import="data.entities.billOfMaterial.BillOfMaterial" %>
-<%@ page import="data.entities.OrderEntities.Material" %>
+<%@ page import="entities.billOfMaterial.BillOfMaterial" %>
+<%@ page import="entities.OrderEntities.Material" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="data.entities.OrderEntities.OrderLine" %><%--
+<%@ page import="entities.OrderEntities.OrderLine" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/7/18

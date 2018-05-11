@@ -1,7 +1,7 @@
-<%@ page import="data.entities.userEntities.Customer" %>
+<%@ page import="entities.userEntities.Customer" %>
 <%@ page import="logic.generators.SVGUtil" %>
 <%@ page import="logic.generators.CalculateCarport" %>
-<%@ page import="data.entities.OrderEntities.Order" %>
+<%@ page import="entities.OrderEntities.Order" %>
 <%@ page import="logic.generators.BillOfMaterialsCalculator" %><%--
   Created by IntelliJ IDEA.
   User: mkl
@@ -18,7 +18,7 @@
 <form method="get" action="generateCarport">
     <input type="submit" value="see carport picture">
 </form>
-<form method="get" action="BillOfMaterial">
+<form method="get" action="billOfMaterial">
     <input type="submit" value="generate BillOfMaterial">
 </form>
 </body>

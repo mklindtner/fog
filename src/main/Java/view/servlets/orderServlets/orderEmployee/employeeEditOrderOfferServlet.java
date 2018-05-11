@@ -1,6 +1,6 @@
 package view.servlets.orderServlets.orderEmployee;
 
-import data.entities.OrderEntities.Order;
+import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderException;

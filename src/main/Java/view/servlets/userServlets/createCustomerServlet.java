@@ -1,6 +1,6 @@
 package view.servlets.userServlets;
 
-import data.entities.userEntities.Customer;
+import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
 import logic.UserFacade;

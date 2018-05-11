@@ -1,11 +1,10 @@
 package view.servlets.orderServlets.orderCustomer;
 
-import data.entities.OrderEntities.Order;
-import data.entities.userEntities.Customer;
+import entities.OrderEntities.Order;
+import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import logic.OrderFacade;
-import logic.UserFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

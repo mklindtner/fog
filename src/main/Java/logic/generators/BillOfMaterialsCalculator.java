@@ -1,9 +1,9 @@
 package logic.generators;
 
 import data.dao.MaterialDAO;
-import data.entities.OrderEntities.Material;
-import data.entities.OrderEntities.Order;
-import data.entities.OrderEntities.OrderLine;
+import entities.OrderEntities.Material;
+import entities.OrderEntities.Order;
+import entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderLineException;

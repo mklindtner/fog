@@ -1,6 +1,6 @@
-<%@ page import="data.entities.OrderEntities.Order" %>
+<%@ page import="entities.OrderEntities.Order" %>
 <%@ page import="java.util.List" %>
-<%@ page import="data.entities.userEntities.Employee" %><%--
+<%@ page import="entities.userEntities.Employee" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 4/27/18

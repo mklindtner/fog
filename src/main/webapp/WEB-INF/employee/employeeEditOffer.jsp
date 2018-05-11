@@ -1,4 +1,4 @@
-<%@ page import="data.entities.OrderEntities.Order" %><%--
+<%@ page import="entities.OrderEntities.Order" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/9/18

@@ -1,8 +1,7 @@
 package view.servlets.orderServlets.orderEmployee;
 
-import data.entities.OrderEntities.Order;
-import data.entities.userEntities.Employee;
-import data.entities.userEntities.User;
+import entities.OrderEntities.Order;
+import entities.userEntities.Employee;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import logic.OrderFacade;

@@ -1,9 +1,9 @@
 package logic;
 
-import data.entities.userEntities.Customer;
-import data.entities.userEntities.Employee;
-import data.entities.userEntities.User;
-import data.entities.userEntities.unknownUser;
+import entities.userEntities.Customer;
+import entities.userEntities.Employee;
+import entities.userEntities.User;
+import entities.userEntities.unknownUser;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
 import data.dao.UserDAO;

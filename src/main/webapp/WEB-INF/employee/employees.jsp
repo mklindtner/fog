@@ -1,4 +1,4 @@
-<%@ page import="data.entities.userEntities.Employee" %>
+<%@ page import="entities.userEntities.Employee" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: mkl

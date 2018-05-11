@@ -1,6 +1,6 @@
 package view.servlets.orderServlets.orderEmployee;
 
-import data.entities.userEntities.Employee;
+import entities.userEntities.Employee;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import logic.OrderFacade;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/employeeChooseOrder")
 public class employeeChooseOrderServlet extends HttpServlet

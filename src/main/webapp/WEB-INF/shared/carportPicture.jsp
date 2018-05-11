@@ -1,5 +1,5 @@
 <%@ page import="logic.generators.SVGUtil" %>
-<%@ page import="data.entities.OrderEntities.Order" %><%--
+<%@ page import="entities.OrderEntities.Order" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/8/18

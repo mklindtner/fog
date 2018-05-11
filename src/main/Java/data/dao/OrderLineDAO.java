@@ -1,9 +1,7 @@
 package data.dao;
 
 import data.MySqlConnector;
-import data.entities.OrderEntities.Material;
-import data.entities.OrderEntities.Order;
-import data.entities.OrderEntities.OrderLine;
+import entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.OrderLineException;
 

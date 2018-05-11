@@ -7,8 +7,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderInformationServlet.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Material.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Order.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/OrderLine.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Shed.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/billOfMaterial/BillOfMaterial.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Customer.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Employee.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Roles.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/User.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/entities/userEntities/unknownUser.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/UserFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/UserFacade.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeAddToOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeAddToOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCurrentOrdersServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCurrentOrdersServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOrderOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOrderOfferServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/createCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/createCustomerServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCurrentOrders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCurrentOrders.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeEditOffer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeEditOffer.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeOrderCatalog.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeOrderCatalog.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employees.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employees.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/carportPicture.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/carportPicture.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entities/userEntities/Customer.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entities/userEntities/Employee.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entities/userEntities/Roles.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entities/userEntities/User.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/entities/userEntities/unknownUser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logic/UserFacade.class" afterPath="$PROJECT_DIR$/target/classes/logic/UserFacade.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/createCustomerServlet.class" afterPath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/createCustomerServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/findCustomerServlet.class" afterPath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/findCustomerServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/loginServlet.class" afterPath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/loginServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog.war" afterPath="$PROJECT_DIR$/target/maven_fog.war" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/entities/userEntities/Customer.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/entities/userEntities/Employee.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/entities/userEntities/Roles.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/entities/userEntities/User.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/entities/userEntities/unknownUser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/logic/UserFacade.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/logic/UserFacade.class" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/createCustomerServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/createCustomerServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/findCustomerServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/findCustomerServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/loginServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/loginServlet.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,11 +93,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BillOfMaterialsCalculator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customerOrders.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-150">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customerOrderInformationServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderInformationServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generateBillOfMaterialServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BillOfMaterialsCalculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+            <state relative-caret-position="258">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -39,44 +135,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
+      <file leaf-file-name="redirectToPageServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="74">
+              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SVGUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="198" column="1" lean-forward="false" selection-start-line="198" selection-start-column="1" selection-end-line="198" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="80" column="46" lean-forward="false" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderLineDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-              <folding>
-                <marker date="1526026842912" expanded="true" signature="749:856" ph="Insert into orderLines... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -120,12 +184,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/EmployeeSendOfferServlet.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/orders.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/SVGUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/employeeSendOfferServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" />
@@ -150,12 +212,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeEditOffer.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderViewServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/carportPicture.jsp" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCurrentOrders.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCurrentOrdersServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" />
@@ -167,10 +226,15 @@
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/OrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
         <option value="$PROJECT_DIR$/todo" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp" />
+        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp" />
+        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderInformationServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java" />
       </list>
     </option>
   </component>
@@ -239,31 +303,79 @@
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
               <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
               <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
               <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="daoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
               <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="daoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="ServiceClasses" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="orderServlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="orderServlets" type="462c0819:PsiDirectoryNode" />
+              <item name="orderCustomer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -295,11 +407,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/customerPages" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/singleCustomerPages" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -638,7 +750,7 @@
       <workItem from="1524920108446" duration="3040000" />
       <workItem from="1524923160298" duration="48987000" />
       <workItem from="1525432079715" duration="7972000" />
-      <workItem from="1525508730183" duration="165174000" />
+      <workItem from="1525508730183" duration="167708000" />
     </task>
     <servers />
   </component>
@@ -675,10 +787,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="431352000" />
+    <option name="totallyTimeSpent" value="433886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -690,18 +803,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39895287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4198953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4198953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.7895288" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25815368" sideWeight="0.2104712" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.77874565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.22125435" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -758,7 +871,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="106" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="112" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -783,14 +904,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -807,7 +920,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/userEntities/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/entities/userEntities/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1456">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -852,12 +965,12 @@
         <state relative-caret-position="280">
           <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
           <folding>
-            <marker date="1525968181718" expanded="true" signature="1486:1504" ph="DELETE FROM orders... " />
-            <marker date="1525968181718" expanded="true" signature="1541:1562" ph="DELETE FROM customers... " />
-            <marker date="1525968181718" expanded="true" signature="1599:1620" ph="DELETE FROM employees... " />
-            <marker date="1525968181718" expanded="true" signature="1657:1678" ph="DELETE FROM materials... " />
-            <marker date="1525968181718" expanded="true" signature="1659:1678" ph="deLETE FROM materials... " />
-            <marker date="1525968181718" expanded="true" signature="1715:1732" ph="DELETE FROM sheds... " />
+            <marker date="1526044569097" expanded="true" signature="1461:1479" ph="DELETE FROM orders... " />
+            <marker date="1526044569097" expanded="true" signature="1516:1537" ph="DELETE FROM customers... " />
+            <marker date="1526044569097" expanded="true" signature="1574:1595" ph="DELETE FROM employees... " />
+            <marker date="1526044569097" expanded="true" signature="1632:1653" ph="DELETE FROM materials... " />
+            <marker date="1526044569097" expanded="true" signature="1634:1653" ph="deLETE FROM materials... " />
+            <marker date="1526044569097" expanded="true" signature="1690:1707" ph="DELETE FROM sheds... " />
           </folding>
         </state>
       </provider>
@@ -875,8 +988,8 @@
         <state relative-caret-position="418">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <marker date="1525966894070" expanded="true" signature="518:552" ph="Select * FRO... customers" />
-            <marker date="1525966894070" expanded="true" signature="1487:1517" ph="Select * FRO... role" />
+            <marker date="1526044568949" expanded="true" signature="508:542" ph="Select * FRO... customers" />
+            <marker date="1526044568949" expanded="true" signature="1477:1507" ph="Select * FRO... role" />
           </folding>
         </state>
       </provider>
@@ -977,22 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="7" lean-forward="false" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="27" column="104" lean-forward="false" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/cartportPictureServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-29">
@@ -1005,14 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1055,12 +1144,12 @@
             <element signature="method#orderByIdWithoutShed#0;class#OrderDAO#0" expanded="false" />
             <element signature="method#addEmployeeToOrder#0;class#OrderDAO#0" expanded="false" />
             <element signature="method#createOrder#0;class#OrderDAO#0" expanded="false" />
-            <marker date="1525966894066" expanded="true" signature="2033:2079" ph="Select * FRO... orders" />
-            <marker date="1525966894066" expanded="true" signature="3306:3486" ph="INSERT INTO orders... " />
-            <marker date="1525966894066" expanded="true" signature="5563:5607" ph="update orders... " />
-            <marker date="1525966894066" expanded="true" signature="6036:6071" ph="select * fro... orders" />
-            <marker date="1525966894066" expanded="true" signature="7779:7825" ph="select * FRO... orders" />
-            <marker date="1525966894066" expanded="true" signature="8246:8337" ph="UPDATE orders... " />
+            <marker date="1526044568989" expanded="true" signature="2018:2064" ph="Select * FRO... orders" />
+            <marker date="1526044568989" expanded="true" signature="3291:3471" ph="INSERT INTO orders... " />
+            <marker date="1526044568989" expanded="true" signature="5548:5592" ph="update orders... " />
+            <marker date="1526044568989" expanded="true" signature="6021:6056" ph="select * fro... orders" />
+            <marker date="1526044568989" expanded="true" signature="7764:7810" ph="select * FRO... orders" />
+            <marker date="1526044568989" expanded="true" signature="8231:8322" ph="UPDATE orders... " />
           </folding>
         </state>
       </provider>
@@ -1086,19 +1175,19 @@
         <state relative-caret-position="84">
           <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <marker date="1525987963057" expanded="true" signature="841:860" ph="Select * FRO... roles" />
-            <marker date="1525987963057" expanded="true" signature="1295:1366" ph="Select * FRO... employees" />
-            <marker date="1525987963057" expanded="true" signature="2248:2271" ph="Select * FRO... customers" />
-            <marker date="1525987963057" expanded="true" signature="3101:3183" ph="INSERT INTO customers... " />
-            <marker date="1525987963057" expanded="true" signature="3659:3699" ph="Select * FRO... customers" />
-            <marker date="1525987963057" expanded="true" signature="4076:4116" ph="Select * FRO... employees" />
-            <marker date="1525987963057" expanded="true" signature="5470:5563" ph="INSERT INTO employees... " />
-            <marker date="1525987963057" expanded="true" signature="7002:7036" ph="Select * FRO... customers" />
+            <marker date="1526044569077" expanded="true" signature="821:840" ph="Select * FRO... roles" />
+            <marker date="1526044569077" expanded="true" signature="1275:1346" ph="Select * FRO... employees" />
+            <marker date="1526044569077" expanded="true" signature="2228:2251" ph="Select * FRO... customers" />
+            <marker date="1526044569077" expanded="true" signature="3081:3163" ph="INSERT INTO customers... " />
+            <marker date="1526044569077" expanded="true" signature="3639:3679" ph="Select * FRO... customers" />
+            <marker date="1526044569077" expanded="true" signature="4056:4096" ph="Select * FRO... employees" />
+            <marker date="1526044569077" expanded="true" signature="5450:5543" ph="INSERT INTO employees... " />
+            <marker date="1526044569077" expanded="true" signature="6982:7016" ph="Select * FRO... customers" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Material.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Material.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
@@ -1114,7 +1203,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-142">
           <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
@@ -1130,7 +1219,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/entities/OrderEntities/OrderLine.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/OrderLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="4" column="70" lean-forward="false" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
@@ -1141,9 +1230,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
-          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding>
-            <marker date="1526026842912" expanded="true" signature="749:856" ph="Insert into orderLines... " />
+            <marker date="1526044568941" expanded="true" signature="657:764" ph="Insert into orderLines... " />
           </folding>
         </state>
       </provider>
@@ -1153,25 +1242,9 @@
         <state relative-caret-position="279">
           <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
           <folding>
-            <marker date="1525989771546" expanded="true" signature="578:612" ph="Select * FRO... materials" />
-            <marker date="1525989771546" expanded="true" signature="986:1039" ph="Select * FRO... materials" />
+            <marker date="1526044569153" expanded="true" signature="573:607" ph="Select * FRO... materials" />
+            <marker date="1526044569153" expanded="true" signature="981:1034" ph="Select * FRO... materials" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,30 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="56" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1064">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-560">
-          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1223,13 +1272,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrdersServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/billOfMaterial.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1204">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrderInformation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/redirectToPageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/generateBillOfMaterialServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state relative-caret-position="258">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerOrderInformationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

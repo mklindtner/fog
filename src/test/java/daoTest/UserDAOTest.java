@@ -3,8 +3,8 @@ package daoTest;
 import daoTest.ServiceClasses.ServiceMethods;
 import daoTest.ServiceClasses.ServiceSeed;
 import data.dao.UserDAO;
-import data.entities.userEntities.Customer;
-import data.entities.userEntities.Employee;
+import entities.userEntities.Customer;
+import entities.userEntities.Employee;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.ShedException;
@@ -15,7 +15,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
 

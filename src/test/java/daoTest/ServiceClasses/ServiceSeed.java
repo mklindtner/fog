@@ -2,11 +2,11 @@ package daoTest.ServiceClasses;
 
 import data.MySqlConnector;
 import data.dao.*;
-import data.entities.OrderEntities.Material;
-import data.entities.OrderEntities.Order;
-import data.entities.OrderEntities.Shed;
-import data.entities.userEntities.Customer;
-import data.entities.userEntities.Employee;
+import entities.OrderEntities.Material;
+import entities.OrderEntities.Order;
+import entities.OrderEntities.Shed;
+import entities.userEntities.Customer;
+import entities.userEntities.Employee;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.ShedException;

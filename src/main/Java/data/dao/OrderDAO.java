@@ -1,9 +1,9 @@
 package data.dao;
 
 import data.MySqlConnector;
-import data.entities.OrderEntities.Order;
-import data.entities.OrderEntities.Shed;
-import data.entities.userEntities.Customer;
+import entities.OrderEntities.Order;
+import entities.OrderEntities.Shed;
+import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.ShedException;
