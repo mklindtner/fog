@@ -29,5 +29,9 @@
     <form method="get" action="employeeCurrentOrders">
         <input type="submit" value="display your current order-cases">
     </form>
+
+    <form method="get" action="employees">
+        <input type="submit" value="see employees">
+    </form>
 </body>
 </html>

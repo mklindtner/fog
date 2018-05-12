@@ -5,9 +5,7 @@
 <h2>Hello World! Create a customer</h2>
 <!-- rem, spær, stolper -->
 
-<form method="get" action="employees">
-    <input type="submit" value="see employees">
-</form>
+
 <h3>Login User</h3>
 <form method="get" action="login">
     <input type="text" name="username" value="empTest" required>
