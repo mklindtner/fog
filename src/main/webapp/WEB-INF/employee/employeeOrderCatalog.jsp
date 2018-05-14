@@ -1,43 +1,78 @@
+<%@ page import="entities.userEntities.Employee" %>
 <%@ page import="entities.OrderEntities.Order" %>
 <%@ page import="java.util.List" %>
-<%@ page import="entities.userEntities.Employee" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: mkl
-  Date: 4/27/18
-  Time: 12:04 PM
+  Date: 4/26/18
+  Time: 12:43 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="css/orderList.css"></script>
 </head>
 <body>
-welcome to the employees ordersPage where you can see all orders and click on them too! (in the near future)
-<%
-    HttpSession session1 = request.getSession();
-    String choice = (String) request.getAttribute("choice");
-    Employee employee = (Employee) session1.getAttribute("employee");
+<%@ include file="/WEB-INF/shared/header.jsp" %>
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="redirect?goToPage=employeeHomepage&role=employee">currentOrderCases</a>
+        </li>
 
-    if (choice.equals("ordersWithoutShed")) {
-        List list = (List) request.getAttribute("ordersWithoutShed");
-        for (int i = 0; i < list.size(); i++) {
-            Order order = (Order) list.get(i);
-            out.print(order + "<br />");
-        }
-    }
+        <li role="presentation" class="active">
+            <a href="orderCatalog?employeeChoice=ordersAvailable">ordersAvailable</a>
+        </li>
 
-    if (choice.equals("ordersAvailable")) {
-        List list = (List) request.getAttribute("ordersAvailable");
-        for (int i = 0; i < list.size(); i++) {
-            Order order = (Order) list.get(i);
-            out.print(order); %>
-<form method="post" action="employeeChooseOrder">
-    <input type="hidden" name="orderId" value="<%=order.getId()%>">
-    <input type="submit" value="take this order">
-</form>
-<%  out.print("<br />"); }
-}
-%>
+        <li role="presentation">
+            <a href="employees">See employees</a>
+        </li>
+    </ul>
+    <div class="bd-example">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Height</th>
+                <th scope="col">Width</th>
+                <th scope="col">Length</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                List ordersAvailable = (List) request.getSession().getAttribute("ordersAvailable");
+                for (int i = 0; i < ordersAvailable.size(); i++) {
+                Order order = (Order) ordersAvailable.get(i);
+                if (order.getStatus() == Order.Status.PENDING) {
+            %>
+            <tr>
+                <th scope="row"><%=order.getId()%>
+                </th>
+                <td><%=order.getHeight()%>
+                </td>
+                <td><%=order.getWidth()%>
+                </td>
+                <td><%=order.getLength()%>
+                </td>
+                <td>
+                    <form method="post" action="employeeChooseOrder">
+                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                        <button class="btn btn-primary" type="submit">Choose this order</button>
+                    </form>
+                </td>
+            </tr>
+
+            <% }
+            }%>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

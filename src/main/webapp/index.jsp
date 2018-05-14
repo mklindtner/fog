@@ -9,10 +9,96 @@
     <link rel="stylesheet" href="css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/hidden.js"></script>
+    <script>
+        hideShedOption()
+    </script>
 </head>
 <body>
 <%@ include file="WEB-INF/shared/header.jsp" %>
+<div class="container">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <img src="img/carport_fog.JPG">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group col-md-12">
+        <h1><i>Send a order for a garage</i></h1>
+    </div>
+    <form method="post" action="createOrder">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="lengthChoice">Length</label>
+                <select class="form-control form-control-lg" id="lengthChoice">
+                    <option>choose a value</option>
+                    <option>240cm</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="widthChoice">Width</label>
+                <select class="form-control form-control-lg" id="widthChoice">
+                    <option>choose a value</option>
+                    <option>240cm</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6 col-md-6">
+                <label for="heightChoice">Height</label>
+                <select class="form-control form-control-lg" id="heightChoice">
+                    <option>choose a value</option>
+                    <option>240cm</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="slopeChoice">slope</label>
+                <select class="form-control form-control-lg" id="slopeChoice">
+                    <option>choose a value</option>
+                    <option>45cm</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="contactInformation">contact</label>
+                <input type="text" class="form-control" id="contactInformation" placeholder="contactInformation"
+                       required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 col-md-4">
+                <div class="btn-group-toggle" data-toggle="buttons" style="padding-top: 20px;">
+                    <a class="btn btn-secondary active" id="checkShedTwo">WithShed</a>
+                </div>
+            </div>
+            <div class="hidden" id="shedVisible">
+                <div class="col-md-4 col-md-4">
+                    <label for="shedWidth">shedWidth</label>
+                    <select class="form-control form-control-lg" id="shedWidth">
+                        <option>choose a value</option>
+                        <option>60cm</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-md-4">
+                    <label for="shedLength">shedLength</label>
+                    <select class="form-control form-control-lg" id="shedLength">
+                        <opton>choose a value</opton>
+                        <option>40cm</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12 col-md-12" style="padding-top: 20px">
+                <button class="btn btn-primary" type="submit">create Order</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
 <!-- rem, spær, stolper -->
+<!--
 <h3>Login User</h3>
 <form method="get" action="login">
     <input type="text" name="username" value="empTest" required>
@@ -40,5 +126,7 @@
     <input type="hidden" name="role" value="customer">
     <input type="submit" value="go to create user">
 </form>
+-->
 </body>
+
 </html>

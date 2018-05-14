@@ -1,5 +1,6 @@
 <%@ page import="entities.OrderEntities.Order" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/9/18
@@ -12,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Pending </h3> <br/>
+<h3>Offers </h3> <br/>
 <%
     List employeeOrders = (List) request.getSession().getAttribute("employeeOrders");
     for (int i = 0; i < employeeOrders.size(); i++) {
@@ -22,7 +23,7 @@
 %>
 <form method="get" action="employeeEditOffer">
     <input type="hidden" name="orderId" value="<%=order.getId()%>">
-    <input type="submit" value="edit and send offer">
+    <button class="btn btn-primary" type="submit" value="edit and send offer" />
 </form>
 <%
         }

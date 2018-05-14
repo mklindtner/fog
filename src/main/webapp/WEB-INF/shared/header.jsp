@@ -1,4 +1,4 @@
-<%--
+<%@ page import="entities.userEntities.User" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/6/18
@@ -23,17 +23,24 @@
             <a class="navbar-brand" href="#">create order</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form method="get" action="login" class="navbar-form navbar-right"> <!-- doesn't work -->
+            <form method="get" action="login" class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control" value="empTest" name="username" required>
+                    <input type="text" placeholder="Email" class="form-control" value="empTest" name="username"
+                           required>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control" value="123" name="password" required>
+                    <input type="password" placeholder="Password" class="form-control" value="123" name="password"
+                           required>
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 </body>
 </html>

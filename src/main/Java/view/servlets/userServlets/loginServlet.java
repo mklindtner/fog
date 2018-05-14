@@ -28,31 +28,40 @@ public class loginServlet extends HttpServlet
 			String      username = request.getParameter("username");
 			String      password = request.getParameter("password");
 			HttpSession session  = request.getSession();
-			User        user     = UserFacade.evaluateLogin(username, password );
-			if( user instanceof Customer ) {
+			User        user     = UserFacade.evaluateLogin(username, password);
+			if (user instanceof Customer) {
 				session.setAttribute("customer", user);
-				try {
-					generateCustomerOrders(session, (Customer) user);
-				} catch(OrderException finalDist) {
-					throw new ServletException(finalDist);
-				}
+				generateCustomerOrders(session, (Customer) user);
 				request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 			}
-			if( user instanceof Employee) {
-				session.setAttribute("employee" , user);
+			if (user instanceof Employee) {
+				session.setAttribute("employee", user);
+				generateEmployeeOrders(session, (Employee) user);
+				genreateOrdersAvailable(session);
 				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
 			response.sendRedirect("index.jsp");
 
-		} catch (DataException | UserException dau) {
+		} catch (DataException | UserException | OrderException dau) {
 			throw new ServletException(dau);
 		}
 	}
 
 	private void generateCustomerOrders(HttpSession session, Customer customer) throws OrderException,
-																							  DataException
+																					   DataException
 	{
-		List<Order> customerOrders = OrderFacade.ordersOfCustomer(customer.getId() );
+		List<Order> customerOrders = OrderFacade.ordersOfCustomer(customer.getId());
 		session.setAttribute("customerOrders", customerOrders);
+	}
+
+	private void generateEmployeeOrders(HttpSession session, Employee employee) throws OrderException,
+																					   DataException
+	{
+		List<Order> employeeOrders = OrderFacade.employeeChosenOrders(employee.getId());
+		session.setAttribute("employeeOrders", employeeOrders);
+	}
+
+	private void genreateOrdersAvailable(HttpSession session) throws OrderException, DataException {
+		session.setAttribute("ordersAvailable", OrderFacade.ordersAvailable());
 	}
 }

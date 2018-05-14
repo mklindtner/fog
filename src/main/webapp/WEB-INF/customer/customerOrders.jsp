@@ -15,7 +15,6 @@
 <body>
 <h3>Pending</h3><br />
 <%
-    //TODO: add if's for rest of states
     List customerOrders = (List) request.getSession().getAttribute("customerOrders");
     for (int i = 0; i < customerOrders.size(); i++) {
         Order order = (Order) customerOrders.get(i);

@@ -25,12 +25,23 @@ add OrderDAO
 
 
 Design
-    create "have already an account?" link
-    confirm password
+    createUser
+        confirm password
+    currentOrderCases
+        redirect / ensure order goes away when send
+    NavBar
+        create navbar for employee
+        create navbar for customer
+        make sure index redirects proberly
+    OrdersWithoutShed
+        create new jsp page for this one, change to that tab
+    Employee Homepage
+        see rejected offers (able to throw them out too)
+        see date for offers that are still awaiting customer approval (able to throw them out too)
+        figure out why it doesn't update when you "take order" from ordersAvailable
 
-
-index:
-fix singleCustomer search so that it returns to the main page instead of throwing an exception
+    Index
+        make sure you can order on frontpage, add extra column "contact information" can be null
 
 JUnit:
 Create test for customer login

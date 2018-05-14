@@ -17,11 +17,6 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/employeeEditOffer")
 public class employeeEditOrderOfferServlet extends HttpServlet
 {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
