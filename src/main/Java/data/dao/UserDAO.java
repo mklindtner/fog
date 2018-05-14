@@ -109,6 +109,18 @@ public class UserDAO
 		}
 	}
 
+	public Customer createAndReturnCustomer(String username, String password) throws DataException, UserException {
+		String SQL = "INSERT INTO customers(username, password, reg_date) VALUES (?, ?, now())";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setString(1, username);
+			statement.setString(2, password);
+			statement.executeUpdate();
+			return customerByUsername(username);
+		} catch (SQLException throwSql) {
+			throw new DataException(throwSql);
+		}
+	}
+
 
 	/**
 	 * finds customer by username

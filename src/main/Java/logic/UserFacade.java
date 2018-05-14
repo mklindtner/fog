@@ -25,6 +25,12 @@ public class UserFacade
 		return userDao.createAndReturnCustomer(username, password, phone);
 	}
 
+	public static Customer createCustomerWithoutPhone(String username, String password) throws
+																						DataException, UserException {
+		UserDAO userDAO = new UserDAO();
+		return userDAO.createAndReturnCustomer(username, password);
+	}
+
 	public static User evaluateLogin(String username, String password) throws DataException,
 																			  UserException
 	{

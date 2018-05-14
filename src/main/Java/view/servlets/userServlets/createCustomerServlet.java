@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.file.attribute.UserDefinedFileAttributeView;
 
 @WebServlet(urlPatterns = "/createCustomer")
 public class createCustomerServlet extends HttpServlet
@@ -19,9 +20,13 @@ public class createCustomerServlet extends HttpServlet
 	{
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		int    phone    = Integer.parseInt(request.getParameter("phone"));
+		Customer customer;
 		try {
-			Customer customer = UserFacade.createCustomer(username, password, phone);
+			if(phoneIsValid(request)) {
+				int    phone    = Integer.parseInt(request.getParameter("phoneNumber"));
+				customer = UserFacade.createCustomer(username, password, phone);
+			} else
+				customer = UserFacade.createCustomerWithoutPhone(username, password);
 			request.getSession().setAttribute("customer", customer);
 			request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 		} catch (DataException | UserException finalExceptionLayer) {
@@ -29,8 +34,9 @@ public class createCustomerServlet extends HttpServlet
 		}
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	private boolean phoneIsValid(HttpServletRequest request) throws ServletException, IOException
 	{
-
+		String test = request.getParameter("phoneNumber");
+		return test.equals("") ? false : true;
 	}
 }

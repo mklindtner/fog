@@ -24,8 +24,10 @@ add OrderDAO
     -display stykliste and svg for employee
 
 
-Mysql:
-    make status enum instead, "opret", "bekræft", "sendt"
+Design
+    create "have already an account?" link
+    confirm password
+
 
 index:
 fix singleCustomer search so that it returns to the main page instead of throwing an exception
