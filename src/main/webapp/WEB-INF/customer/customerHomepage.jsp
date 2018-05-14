@@ -20,10 +20,11 @@
     <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-<%@ include file="/WEB-INF/shared/header.jsp" %> <!-- this is createOrder-->
+<%@ include file="/WEB-INF/customer/customerHeader.jsp" %>
+<!-- this is createOrder-->
+<!-- calls customer ref from customer headder -->
 
 <div class="container">
-    <% Customer customer = (Customer) request.getSession().getAttribute("customer");%>
     <ul class="nav nav-tabs">
         <li role="presentation" >
             <a href="redirect?goToPage=customerOrders&role=customer">Your Orders</a>

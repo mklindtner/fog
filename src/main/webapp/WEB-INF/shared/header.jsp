@@ -19,14 +19,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <% if((Customer) request.getSession().getAttribute("customer") != null) {%>
-            <a class="navbar-brand" href="redirect?">Home</a>
+            <a class="navbar-brand" href="#">Home</a>
             <a class="navbar-brand" href="redirect?goToPage=customerCreateUser&role=customer">signup</a>
             <a class="navbar-brand" href="#">create order</a>
-            <% } %>
-            <% if((Customer) request.getSession().getAttribute("customer") != null) {%>
-
-            <% } %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form method="get" action="login" class="navbar-form navbar-right">

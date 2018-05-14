@@ -21,7 +21,7 @@
     <script src="css/orderList.css"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/shared/header.jsp" %>
+<%@ include file="/WEB-INF/customer/customerHeader.jsp" %>
 <div class="container">
     <ul class="nav nav-tabs">
         <li role="presentation" class="active">
