@@ -15,7 +15,7 @@
     <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-<%@ include file="/WEB-INF/shared/header.jsp" %>
+<%@ include file="/WEB-INF/employee/employeeHeader.jsp" %>
 
 <div class="container">
     <div class="row">

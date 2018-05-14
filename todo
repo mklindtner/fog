@@ -27,13 +27,9 @@ add OrderDAO
 Design
     createUser
         confirm password
-    currentOrderCases
-        redirect / ensure order goes away when send (NSL)
     NavBar
-        create navbar for employee
-        create navbar for customer
         make sure index redirects proberly
-    OrdersWithoutShed
+    OrdersWithoutShed //this is wierd consider deleting this and find a way to just display orders w/without shed
         create new jsp page for this one, change to that tab
     Employee Homepage
         see rejected offers (able to throw them out too)
@@ -42,12 +38,24 @@ Design
     Customer homepage
         make choice required
     Customer Orders
-        create 1-2-3 page
-        Consider making each genre a tab
-    Signout
-        unable to sign out
-            -calls login page, WHY?
+        Be able to "cancel order"
+    Employee navbar
+        create "find customer"
+    Employee
+        create logout the same way
 
+    NSL
+        currentOrderCases
+            redirect / ensure order goes away when send
+
+        Customer Orders (pagination)
+            same for employee (late)
+
+
+
+extra Design:
+    Employee
+        have a way to find users orders etc. (use findCustomerServlet & send a new redirect)
 
 
     Index

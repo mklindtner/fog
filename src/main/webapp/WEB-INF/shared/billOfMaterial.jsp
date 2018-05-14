@@ -13,6 +13,10 @@
 <html>
 <head>
     <title>BillOfMaterial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <h2><i>The bill of material</i></h2>
@@ -91,5 +95,12 @@
     <% }
     }%>
 </table>
+<form method="get" action="redirect">
+    <input type="hidden" name="goToPage" value="customerOrders"/>
+    <input type="hidden" name="role" value="customer"/>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="submit" class="btn btn-primary">Orders</button>
+    </div>
+</form>
 </body>
 </html>

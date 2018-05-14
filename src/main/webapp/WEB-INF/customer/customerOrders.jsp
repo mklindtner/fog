@@ -1,6 +1,7 @@
 <%@ page import="entities.userEntities.Employee" %>
 <%@ page import="entities.OrderEntities.Order" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -48,9 +49,38 @@
             <tbody>
             <%
                 List customerOrders = (List) request.getSession().getAttribute("customerOrders");
+                List pending = new ArrayList();
+                List offer = new ArrayList();
+                List accepted = new ArrayList();
+                List send = new ArrayList();
                 for (int i = 0; i < customerOrders.size(); i++) {
                     Order order = (Order) customerOrders.get(i);
-                    if (order.getStatus() == Order.Status.PENDING) {
+                    if (order.getStatus() == Order.Status.PENDING)
+                        pending.add(order);
+                    if (order.getStatus() == Order.Status.OFFER)
+                        offer.add(order);
+                    if (order.getStatus() == Order.Status.ACCEPTED)
+                        accepted.add(order);
+                    if (order.getStatus() == Order.Status.SEND)
+                        send.add(order);
+                }
+                String pendingIndexString = request.getParameter("pendingIndex");
+                String offerIndexString = request.getParameter("offerIndex");
+                String acceptedIndexString = request.getParameter("acceptedIndex");
+                String sendIndexString = request.getParameter("sendIndex");
+                int pendingIndex = 0, offerIndex = 0, acceptedIndex = 0, sendIndex = 0;
+                if (pendingIndexString != null)
+                    pendingIndex = Integer.parseInt(pendingIndexString);
+                if (offerIndexString != null)
+                    offerIndex = Integer.parseInt(offerIndexString);
+                if (acceptedIndexString != null)
+                    acceptedIndex = Integer.parseInt(acceptedIndexString);
+                if (sendIndexString != null)
+                    sendIndex = Integer.parseInt(sendIndexString);
+
+
+                for (int i = pendingIndex; i < pendingIndex + 5 && i < pending.size(); i++) {
+                    Order order = (Order) pending.get(i);
             %>
             <tr>
                 <th scope="row"><%=order.getId()%>
@@ -63,16 +93,24 @@
                 </td>
             </tr>
             <%
-                    }
                 }
             %>
+            <% if (pending.size() > 5) { %>
+            <tr>
+                <td colspan="4">
+                    <%for (int i = 0; i < pending.size() / 5 + 1; i++) { %>
+                    <a href="redirect?goToPage=customerOrders&role=customer&pendingIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                    </a>
+                    <% }%>
+                </td>
+            </tr>
+            <% } %>
             <tr>
                 <th scope="colgroup">Offers from FOG</th>
             </tr>
             <%
-                for (int i = 0; i < customerOrders.size(); i++) {
-                    Order order = (Order) customerOrders.get(i);
-                    if (order.getStatus() == Order.Status.OFFER) {
+                for (int i = offerIndex; i < offerIndex + 5 && i < offer.size(); i++) {
+                    Order order = (Order) offer.get(i);
             %>
             <tr>
                 <th scope="row"><%=order.getId()%>
@@ -91,16 +129,24 @@
                 </td>
             </tr>
             <%
-                    }
                 }
             %>
+            <% if (offer.size() > 5) { %>
+            <tr>
+                <td colspan="4">
+                    <%for (int i = 0; i < offer.size() / 5 + 1; i++) { %>
+                    <a href="redirect?goToPage=customerOrders&role=customer&offerIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                    </a>
+                    <% }%>
+                </td>
+            </tr>
+            <% } %>
             <tr>
                 <th scope="colgroup">Orders Accepted</th>
             </tr>
             <%
-                for (int i = 0; i < customerOrders.size(); i++) {
+                for (int i = acceptedIndex; i < acceptedIndex + 5 && i < accepted.size(); i++) {
                     Order order = (Order) customerOrders.get(i);
-                    if (order.getStatus() == Order.Status.ACCEPTED) {
             %>
             <th scope="row"><%=order.getId()%>
             </th>
@@ -110,7 +156,8 @@
             </td>
             <td><%=order.getLength()%>
             <td>
-                <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order Information</a>
+                <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order
+                    Information</a>
                 <div class="modal fade" id="myModal<%=order.getId()%>" role="dialog">
                     <div class="modal-dialog">
 
@@ -143,18 +190,25 @@
             </td>
             </td>
             </tbody>
-            <% }
-            }
+            <%
+                }
             %>
-
-
+            <% if (accepted.size() > 5) { %>
+            <tr>
+                <td colspan="4">
+                    <%for (int i = 0; i < offer.size() / 5 + 1; i++) { %>
+                    <a href="redirect?goToPage=customerOrders&role=customer&acceptedIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                    </a>
+                    <% }%>
+                </td>
+            </tr>
+            <% } %>
             <tr>
                 <th scope="colgroup">Orders on the way</th>
             </tr>
             <%
-                for (int i = 0; i < customerOrders.size(); i++) {
-                    Order order = (Order) customerOrders.get(i);
-                    if (order.getStatus() == Order.Status.SEND) {
+                for (int i = sendIndex; i < sendIndex + 5 && i < send.size(); i++) {
+                    Order order = (Order) send.get(i);
             %>
             <th scope="row"><%=order.getId()%>
             </th>
@@ -165,7 +219,8 @@
             <td><%=order.getLength()%>
             </td>
             <td>
-                <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order Information</a>
+                <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order
+                    Information</a>
                 <div class="modal fade" id="myModal<%=order.getId()%>" role="dialog">
                     <div class="modal-dialog">
 
@@ -197,9 +252,19 @@
                 </div>
             </td>
             </tbody>
-            <% }
-            }
+            <%
+                }
             %>
+            <% if (send.size() > 5) { %>
+            <tr>
+                <td colspan="4">
+                    <%for (int i = 0; i < send.size() / 5 + 1; i++) { %>
+                    <a href="redirect?goToPage=customerOrders&role=customer&sendIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                    </a>
+                    <% }%>
+                </td>
+            </tr>
+            <% } %>
         </table>
     </div>
 </div>

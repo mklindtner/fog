@@ -64,7 +64,7 @@ public class OrderDAO
 	}
 
 	public List<Order> ordersOfCustomer( int id ) throws OrderException {
-		final String SQL = "Select * FROM orders WHERE orders.customerId=?";
+		final String SQL = "Select * FROM orders WHERE orders.customerId=? order by STATUS";
 		List<Order> customerOrder = new ArrayList<>();
 		try(PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, id);
@@ -219,7 +219,7 @@ public class OrderDAO
 
 	public List<Order> employeesChosenOrders( int employeeId ) throws OrderException {
 		List<Order> employeeOrders = new ArrayList<>();
-		final String SQL = "select * FROM orders WHERE orders.employeeId=?";
+		final String SQL = "select * FROM orders WHERE orders.employeeId=? order by status";
 		try(PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, employeeId);
 			ResultSet rs = statement.executeQuery();

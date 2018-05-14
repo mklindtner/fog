@@ -30,11 +30,6 @@ public class customerAcceptOfferServlet extends HttpServlet
 		}
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-
-	}
-
 	private void changeOrderStatus(int orderId) throws DataException, OrderException {
 		Order order = OrderFacade.orderById(orderId);
 		order.setStatus(Order.Status.ACCEPTED);

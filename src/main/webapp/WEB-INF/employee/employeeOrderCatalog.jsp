@@ -20,7 +20,7 @@
     <script src="css/orderList.css"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/shared/header.jsp" %>
+<%@ include file="/WEB-INF/employee/employeeHeader.jsp" %>
 <div class="container">
     <ul class="nav nav-tabs">
         <li role="presentation"><a href="redirect?goToPage=employeeHomepage&role=employee">currentOrderCases</a>

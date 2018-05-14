@@ -18,16 +18,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="redirect?goToPage=customerHomePage&role=customer">Home</a>
-            <a class="navbar-brand" href="#">create order</a>
+            <a class="navbar-brand" href="redirect?goToPage=customerOrders&role=customer">Home</a>
+            <a class="navbar-brand" href="redirect?goToPage=customerHomepage&role=customer">create order</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <% Customer customer = (Customer) request.getSession().getAttribute("customer");%>
-            <form class="navbar-form navbar-right">
-                <p class="navbar-text"><%= customer.getUsername() %>
-                </p>
+            <form class="navbar-form navbar-right" method="get" action="logout">
+                <div class="form-group">
+                    <span class="text-light" style="color: #9d9d9d; font-size: 18px;"><%=customer.getUsername()%></span>
+                </div>
                 <form action="get" method="signout">
-                    <button type="submit" class="btn btn-danger">Sign Out</button>
+                    <button type="submit" class="btn btn-danger" id="signout">Sign Out</button>
                 </form>
             </form>
         </div><!--/.navbar-collapse -->
@@ -40,3 +41,4 @@
 <br/>
 </body>
 </html>
+</div><!--/.navbar-collapse -->
