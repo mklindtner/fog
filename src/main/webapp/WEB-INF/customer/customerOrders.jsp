@@ -27,7 +27,7 @@
         <li role="presentation" class="active">
             <a href="redirect?goToPage=customerOrders&role=customer">Your Orders</a>
         </li>
-        <li role="presentation" >
+        <li role="presentation">
             <a href="redirect?goToPage=customerHomepage&role=customer">Create Order </a>
         </li>
     </ul>
@@ -109,12 +109,38 @@
             <td><%=order.getWidth()%>
             </td>
             <td><%=order.getLength()%>
-            </td>
             <td>
-                <form method="get" action="orderInformation">
-                    <input type="hidden" name="orderId" value="<%=order.getId()%>">
-                    <button class="btn btn-primary" type="submit">See OrderInformation</button>
-                </form>
+                <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order Information</a>
+                <div class="modal fade" id="myModal<%=order.getId()%>" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Order Information</h4>
+                            </div>
+                            <div class="col-md-8 col-md-offset-0 modal-body">
+                                <div class="form-group col-md-4">
+                                    <form method="get" action="generateCarport">
+                                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                                        <button class="btn btn-primary" type="submit">see 2D carport</button>
+                                    </form>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <form method="get" action="billOfMaterial">
+                                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                                        <button class="btn btn-primary" type="submit">see OrderList carport</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
             </td>
             </tbody>
             <% }
@@ -139,10 +165,36 @@
             <td><%=order.getLength()%>
             </td>
             <td>
-                <form method="get" action="orderInformation">
-                    <input type="hidden" name="orderId" value="<%=order.getId()%>">
-                    <button class="btn btn-primary" type="submit">See OrderInformation</button>
-                </form>
+                <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order Information</a>
+                <div class="modal fade" id="myModal<%=order.getId()%>" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Order Information</h4>
+                            </div>
+                            <div class="col-md-8 col-md-offset-0 modal-body">
+                                <div class="form-group col-md-4">
+                                    <form method="get" action="generateCarport">
+                                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                                        <button class="btn btn-primary" type="submit">see 2D carport</button>
+                                    </form>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <form method="get" action="billOfMaterial">
+                                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                                        <button class="btn btn-primary" type="submit">see OrderList carport</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
             </tbody>
             <% }

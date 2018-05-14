@@ -41,6 +41,9 @@ Design
         figure out why it doesn't update when you "take order" from ordersAvailable
     Customer homepage
         make choice required
+    Customer Orders
+        create 1-2-3 page
+        Consider making each genre a tab
 
     Index
         make sure you can order on frontpage, add extra column "contact information" can be null

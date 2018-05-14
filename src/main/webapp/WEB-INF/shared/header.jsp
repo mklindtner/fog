@@ -1,4 +1,5 @@
-<%@ page import="entities.userEntities.User" %><%--
+<%@ page import="entities.userEntities.User" %>
+<%@ page import="entities.userEntities.Customer" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/6/18
@@ -18,9 +19,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Home</a>
+            <% if((Customer) request.getSession().getAttribute("customer") != null) {%>
+            <a class="navbar-brand" href="redirect?">Home</a>
             <a class="navbar-brand" href="redirect?goToPage=customerCreateUser&role=customer">signup</a>
             <a class="navbar-brand" href="#">create order</a>
+            <% } %>
+            <% if((Customer) request.getSession().getAttribute("customer") != null) {%>
+
+            <% } %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form method="get" action="login" class="navbar-form navbar-right">
