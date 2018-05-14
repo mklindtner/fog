@@ -1,72 +1,155 @@
-<%@ page import="entities.userEntities.Customer" %>
+<%@ page import="entities.userEntities.Employee" %>
 <%@ page import="entities.OrderEntities.Order" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+
+<%--
   Created by IntelliJ IDEA.
   User: mkl
-  Date: 5/8/18
-  Time: 7:36 PM
+  Date: 4/26/18
+  Time: 12:43 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Orders</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="css/orderList.css"></script>
 </head>
 <body>
-<h3>Pending</h3><br />
-<%
-    List customerOrders = (List) request.getSession().getAttribute("customerOrders");
-    for (int i = 0; i < customerOrders.size(); i++) {
-        Order order = (Order) customerOrders.get(i);
-        if (order.getStatus() == Order.Status.PENDING) {
-            out.print(order + "<br />");
-        }
-    }
-%>
-<h3>Offers</h3> <br/>
+<%@ include file="/WEB-INF/shared/header.jsp" %>
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+            <a href="redirect?goToPage=customerOrders&role=customer">Your Orders</a>
+        </li>
+        <li role="presentation" >
+            <a href="redirect?goToPage=customerHomepage&role=customer">Create Order </a>
+        </li>
+    </ul>
 
-<%
-    for (int i = 0; i < customerOrders.size(); i++) {
-        Order order = (Order) customerOrders.get(i);
-        if (order.getStatus() == Order.Status.OFFER) {
-            out.print(order + "<br />");
-%>
-<form method="post" action="customerAcceptOrder">
-    <input type="hidden" name="orderId" value="<%=order.getId()%>">
-    <input type="submit" value="accept offer">
-</form>
-<%
-        }
-    }
-%>
-<h3>Accepted Orders</h3> <br/>
-<% for (int i = 0; i < customerOrders.size(); i++) {
-    Order order = (Order) customerOrders.get(i);
-    if (order.getStatus() == Order.Status.ACCEPTED) {
-        out.print(order + "<br />");
-%>
-<form method="get" action="orderInformation">
-    <input type="hidden" name="orderId" value=<%=order.getId()%>>
-    <input type="submit" value="order information">
-</form>
-<%
-        }
-    }
-%>
-<h3>Orders on the way</h3> <br/>
-<%
-    for (int i = 0; i < customerOrders.size(); i++) {
-        Order order = (Order) customerOrders.get(i);
-        if (order.getStatus() == Order.Status.SEND) {
-            out.print(order + "<br />");
-%>
-<form method="get" action="orderInformation">
-    <input type="hidden" name="orderId" value=<%=order.getId()%>>
-    <input type="submit" value="order information">
-</form>
-<%
-        }
-    }
-%>
+    <div class="bd-example">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Height</th>
+                <th scope="col">Width</th>
+                <th scope="col">Length</th>
+            </tr>
+            <tr>
+                <th scope="colgroup">PENDING</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                List customerOrders = (List) request.getSession().getAttribute("customerOrders");
+                for (int i = 0; i < customerOrders.size(); i++) {
+                    Order order = (Order) customerOrders.get(i);
+                    if (order.getStatus() == Order.Status.PENDING) {
+            %>
+            <tr>
+                <th scope="row"><%=order.getId()%>
+                </th>
+                <td><%=order.getHeight()%>
+                </td>
+                <td><%=order.getWidth()%>
+                </td>
+                <td><%=order.getLength()%>
+                </td>
+            </tr>
+            <%
+                    }
+                }
+            %>
+            <tr>
+                <th scope="colgroup">Offers from FOG</th>
+            </tr>
+            <%
+                for (int i = 0; i < customerOrders.size(); i++) {
+                    Order order = (Order) customerOrders.get(i);
+                    if (order.getStatus() == Order.Status.OFFER) {
+            %>
+            <tr>
+                <th scope="row"><%=order.getId()%>
+                </th>
+                <td><%=order.getHeight()%>
+                </td>
+                <td><%=order.getWidth()%>
+                </td>
+                <td><%=order.getLength()%>
+                </td>
+                <td>
+                    <form method="post" action="customerAcceptOrder">
+                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                        <button class="btn btn-primary" type="submit">Accept Offer</button>
+                    </form>
+                </td>
+            </tr>
+            <%
+                    }
+                }
+            %>
+            <tr>
+                <th scope="colgroup">Orders Accepted</th>
+            </tr>
+            <%
+                for (int i = 0; i < customerOrders.size(); i++) {
+                    Order order = (Order) customerOrders.get(i);
+                    if (order.getStatus() == Order.Status.ACCEPTED) {
+            %>
+            <th scope="row"><%=order.getId()%>
+            </th>
+            <td><%=order.getHeight()%>
+            </td>
+            <td><%=order.getWidth()%>
+            </td>
+            <td><%=order.getLength()%>
+            </td>
+            <td>
+                <form method="get" action="orderInformation">
+                    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                    <button class="btn btn-primary" type="submit">See OrderInformation</button>
+                </form>
+            </td>
+            </tbody>
+            <% }
+            }
+            %>
+
+
+            <tr>
+                <th scope="colgroup">Orders on the way</th>
+            </tr>
+            <%
+                for (int i = 0; i < customerOrders.size(); i++) {
+                    Order order = (Order) customerOrders.get(i);
+                    if (order.getStatus() == Order.Status.SEND) {
+            %>
+            <th scope="row"><%=order.getId()%>
+            </th>
+            <td><%=order.getHeight()%>
+            </td>
+            <td><%=order.getWidth()%>
+            </td>
+            <td><%=order.getLength()%>
+            </td>
+            <td>
+                <form method="get" action="orderInformation">
+                    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                    <button class="btn btn-primary" type="submit">See OrderInformation</button>
+                </form>
+            </td>
+            </tbody>
+            <% }
+            }
+            %>
+        </table>
+    </div>
+</div>
 </body>
 </html>

@@ -28,7 +28,7 @@ Design
     createUser
         confirm password
     currentOrderCases
-        redirect / ensure order goes away when send
+        redirect / ensure order goes away when send (NSL)
     NavBar
         create navbar for employee
         create navbar for customer
@@ -39,6 +39,8 @@ Design
         see rejected offers (able to throw them out too)
         see date for offers that are still awaiting customer approval (able to throw them out too)
         figure out why it doesn't update when you "take order" from ordersAvailable
+    Customer homepage
+        make choice required
 
     Index
         make sure you can order on frontpage, add extra column "contact information" can be null

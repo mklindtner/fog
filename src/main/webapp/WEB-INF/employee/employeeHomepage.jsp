@@ -107,24 +107,6 @@
             </tbody>
         </table>
     </div>
-    <!--
-    <form method="get" action="orderCatalog">
-        <input type="hidden" name="employeeChoice" value="ordersWithoutShed">
-        <input type="submit" value="see all orders withoutShed">
-    </form>
-
-    <form method="get" action="orderCatalog">
-        <input type="hidden" name="employeeChoice" value="ordersAvailable">
-        <input type="submit" value="see available orders">
-    </form>
-
-    <form method="get" action="employeeCurrentOrders">
-        <input type="submit" value="display your current order-cases">
-    </form>
-
-    <form method="get" action="employees">
-        <input type="submit" value="see employees">
-    </form>
-    -->
+</div>
 </body>
 </html>
