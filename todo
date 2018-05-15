@@ -44,12 +44,18 @@ Design
     Employee
         create logout the same way
 
+    Customer Orders (pagination)
+        same for employee (late)
+
     NSL
         currentOrderCases
-            redirect / ensure order goes away when send
+            redirect / ensure order goes away when send (request is saved)
+            edit and send offer, doesn't disappear
 
-        Customer Orders (pagination)
-            same for employee (late)
+        Employee editOffer
+            error when loading employee
+
+
 
 
 

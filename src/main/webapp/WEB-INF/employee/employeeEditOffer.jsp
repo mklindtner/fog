@@ -20,7 +20,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form role="form" method="get" action="employeeOfferOrder">
+            <form role="form" method="post" action="employeeOfferOrder">
                 <legend class="text-center">Send Offer to Customer</legend>
                 <% Order order = (Order) request.getSession().getAttribute("order"); %>
                 <fieldset>

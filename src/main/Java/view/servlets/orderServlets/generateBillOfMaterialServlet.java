@@ -4,7 +4,8 @@ import data.exceptions.OrderException;
 import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
-import logic.OrderFacade;
+import logic.facades.MySqlOrderFacade;
+import logic.facades.OrderFacade;
 import logic.generators.BillOfMaterialsCalculator;
 
 import javax.servlet.ServletException;
@@ -18,11 +19,6 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/billOfMaterial")
 public class generateBillOfMaterialServlet extends HttpServlet
 {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		HttpSession session = request.getSession();
@@ -43,6 +39,9 @@ public class generateBillOfMaterialServlet extends HttpServlet
 		String id_string = request.getParameter("orderId");
 		int    orderId;
 		orderId = Integer.parseInt(id_string);
-		request.getSession().setAttribute("order", OrderFacade.orderById(orderId));
+		OrderFacade orderFacade = new MySqlOrderFacade();
+		orderFacade.getInstanceOrderDAO();
+		request.getSession().setAttribute("order", orderFacade.orderById(orderId));
+		//request.getSession().setAttribute("order", MySqlOrderFacade.orderById(orderId));
 	}
 }

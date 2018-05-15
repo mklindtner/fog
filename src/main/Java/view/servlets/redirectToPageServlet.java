@@ -1,9 +1,5 @@
 package view.servlets;
 
-import data.exceptions.DataException;
-import data.exceptions.OrderException;
-import logic.OrderFacade;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -11,7 +11,8 @@ import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.ShedException;
 import data.exceptions.UserException;
-import logic.UserFacade;
+import logic.facades.MySqlUserFacade;
+import logic.facades.UserFacade;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -79,9 +80,14 @@ public class ServiceSeed
 
 	private static void populateCustomerTableFacade() throws DataException, UserException
 	{
-		customers.add(UserFacade.createCustomer("testUser4", "123", PHONE));
-		customers.add(UserFacade.createCustomer("testUser5", "123", PHONE));
-		customers.add(UserFacade.createCustomer("testUser6", "123", PHONE));
+		UserFacade userFacade = new MySqlUserFacade();
+		userFacade.getUserDAOInstance();
+		/*customers.add(MySqlUserFacade.createCustomer("testUser4", "123", PHONE));
+		customers.add(MySqlUserFacade.createCustomer("testUser5", "123", PHONE));
+		customers.add(MySqlUserFacade.createCustomer("testUser6", "123", PHONE)); */
+		customers.add(userFacade.createCustomer("testUser4", "123", PHONE));
+		customers.add(userFacade.createCustomer("testUser5", "123", PHONE));
+		customers.add(userFacade.createCustomer("testUser6", "123", PHONE));
 	}
 
 	private static void populateEmployeeTable() throws DataException, UserException

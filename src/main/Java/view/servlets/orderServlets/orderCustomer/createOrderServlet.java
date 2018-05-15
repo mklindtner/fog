@@ -3,7 +3,8 @@ package view.servlets.orderServlets.orderCustomer;
 import entities.OrderEntities.Order;
 import entities.userEntities.Customer;
 import data.exceptions.*;
-import logic.OrderFacade;
+import logic.facades.MySqlOrderFacade;
+import logic.facades.OrderFacade;
 import logic.generators.BillOfMaterialsCalculator;
 
 import javax.servlet.ServletException;
@@ -21,7 +22,11 @@ public class createOrderServlet extends HttpServlet
 	{
 		Order order = createOrder(request);
 		try {
-			order = OrderFacade.createAndReturnOrder(order);
+			OrderFacade orderFacade = new MySqlOrderFacade();
+
+			//order = MySqlOrderFacade.createAndReturnOrder(order);
+			orderFacade.getInstanceOrderDAO();
+			order = orderFacade.createAndReturnOrder(order);
 			saveOrderLineDB(order);
 			request.getSession().setAttribute("order", order);
 			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);

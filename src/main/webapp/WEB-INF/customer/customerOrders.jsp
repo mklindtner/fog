@@ -98,10 +98,17 @@
             <% if (pending.size() > 5) { %>
             <tr>
                 <td colspan="4">
-                    <%for (int i = 0; i < pending.size() / 5 + 1; i++) { %>
-                    <a href="redirect?goToPage=customerOrders&role=customer&pendingIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
-                    </a>
-                    <% }%>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <%for (int i = 0; i < pending.size() / 5 + 1; i++) { %>
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="redirect?goToPage=customerOrders&role=customer&pendingIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                                </a>
+                            </li>
+                            <% }%>
+                        </ul>
+                    </nav>
                 </td>
             </tr>
             <% } %>
@@ -134,10 +141,17 @@
             <% if (offer.size() > 5) { %>
             <tr>
                 <td colspan="4">
-                    <%for (int i = 0; i < offer.size() / 5 + 1; i++) { %>
-                    <a href="redirect?goToPage=customerOrders&role=customer&offerIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
-                    </a>
-                    <% }%>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <%for (int i = 0; i < offer.size() / 5 + 1; i++) { %>
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="redirect?goToPage=customerOrders&role=customer&offerIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                                </a>
+                            </li>
+                            <% }%>
+                        </ul>
+                    </nav>
                 </td>
             </tr>
             <% } %>
@@ -196,10 +210,17 @@
             <% if (accepted.size() > 5) { %>
             <tr>
                 <td colspan="4">
-                    <%for (int i = 0; i < offer.size() / 5 + 1; i++) { %>
-                    <a href="redirect?goToPage=customerOrders&role=customer&acceptedIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
-                    </a>
-                    <% }%>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <%for (int i = 0; i < accepted.size() / 5 + 1; i++) { %>
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="redirect?goToPage=customerOrders&role=customer&acceptedIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                                </a>
+                            </li>
+                            <% }%>
+                        </ul>
+                    </nav>
                 </td>
             </tr>
             <% } %>
@@ -258,10 +279,17 @@
             <% if (send.size() > 5) { %>
             <tr>
                 <td colspan="4">
-                    <%for (int i = 0; i < send.size() / 5 + 1; i++) { %>
-                    <a href="redirect?goToPage=customerOrders&role=customer&sendIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
-                    </a>
-                    <% }%>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <%for (int i = 0; i < send.size() / 5 + 1; i++) { %>
+                            <li class="page-item">
+                                <a class="page-link"
+                                   href="redirect?goToPage=customerOrders&role=customer&sendIndex=<%=(i * 5) + 1%>">side<%=i + 1%>
+                                </a>
+                            </li>
+                            <% }%>
+                        </ul>
+                    </nav>
                 </td>
             </tr>
             <% } %>

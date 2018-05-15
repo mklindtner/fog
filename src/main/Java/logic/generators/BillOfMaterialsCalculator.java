@@ -7,7 +7,8 @@ import entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderLineException;
-import logic.OrderFacade;
+import logic.facades.MySqlOrderFacade;
+import logic.facades.OrderFacade;
 
 import java.util.List;
 
@@ -432,8 +433,11 @@ public class BillOfMaterialsCalculator
 
 	public void saveOrderLinesToDB() throws OrderLineException, DataException
 	{
+		OrderFacade orderFacade = new MySqlOrderFacade();
+		orderFacade.getInstanceOrderLineDAO();
 		for (OrderLine orderLine : order.getOrderlines())
-			OrderFacade.createOrderLine(orderLine);
+			//MySqlOrderFacade.createOrderLine(orderLine);
+			orderFacade.createOrderLine(orderLine);
 	}
 
 	private OrderLine reglarShedSides(Material m_reglar)

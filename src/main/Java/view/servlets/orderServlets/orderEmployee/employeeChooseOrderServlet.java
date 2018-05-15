@@ -3,7 +3,9 @@ package view.servlets.orderServlets.orderEmployee;
 import entities.userEntities.Employee;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
-import logic.OrderFacade;
+import logic.facades.MySqlOrderFacade;
+import logic.facades.OrderFacade;
+import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,17 +21,14 @@ public class employeeChooseOrderServlet extends HttpServlet
 	{
 		Employee employee = (Employee) request.getSession().getAttribute("employee");
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
-
 		try {
-			OrderFacade.employeeChooseOrder(employee.getId(), orderId);
+			OrderFacade orderFacade = new MySqlOrderFacade();
+			orderFacade.getInstanceOrderDAO().employeeChooseOrder(employee.getId(), orderId);
+			//MySqlOrderFacade.employeeChooseOrder(employee.getId(), orderId);
+			UpdateOrderList.generateEmployeeOrders(request.getSession(), employee);
 		} catch (OrderException | DataException finalDist) {
 			throw new ServletException(finalDist);
 		}
 		request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
-	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-
 	}
 }

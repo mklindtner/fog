@@ -2,7 +2,10 @@ package view.servlets;
 
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
-import logic.OrderFacade;
+import logic.facades.MySqlOrderFacade;
+import logic.facades.MySqlUserFacade;
+import logic.facades.OrderFacade;
+import logic.facades.UserFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.file.attribute.UserDefinedFileAttributeView;
 
 @WebServlet(urlPatterns = "/generateCarport")
 public class cartportPictureServlet extends HttpServlet
@@ -29,6 +33,10 @@ public class cartportPictureServlet extends HttpServlet
 		String id_string = request.getParameter("orderId");
 		int    orderId;
 		orderId = Integer.parseInt(id_string);
-		request.getSession().setAttribute("order", OrderFacade.orderById(orderId));
+		OrderFacade orderFacade = new MySqlOrderFacade();
+		orderFacade.getInstanceOrderDAO();
+		//request.getSession().setAttribute("order", MySqlOrderFacade.orderById(orderId));
+		request.getSession().setAttribute("order", orderFacade.orderById(orderId));
+
 	}
 }

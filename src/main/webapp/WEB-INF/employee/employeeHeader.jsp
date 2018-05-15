@@ -24,13 +24,11 @@
 
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <% Employee employee = (Employee) request.getSession().getAttribute("employee");%>
-            <form class="navbar-form navbar-right">
-                <p class="navbar-text"><%= employee.getUsername() %>
-                </p>
-
-                <form action="get" method="signout" style="margin-top: 14px; padding: 1px;">
-                    <button type="submit" class="btn btn-danger">Sign Out</button>
+            <form class="navbar-form navbar-right" method="get" action="logout">
+                <div class="form-group">
+                </div>
+                <form action="get" method="signout">
+                    <button type="submit" class="btn btn-danger" id="signout">Sign Out</button>
                 </form>
             </form>
         </div><!--/.navbar-collapse -->

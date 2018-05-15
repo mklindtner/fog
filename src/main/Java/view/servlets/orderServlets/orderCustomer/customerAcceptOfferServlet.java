@@ -4,7 +4,8 @@ import entities.OrderEntities.Order;
 import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
-import logic.OrderFacade;
+import logic.facades.MySqlOrderFacade;
+import logic.facades.OrderFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,24 +23,29 @@ public class customerAcceptOfferServlet extends HttpServlet
 	{
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		try {
-			changeOrderStatus(orderId);
-			generateCustomerOrders(request.getSession(), (Customer)request.getSession().getAttribute("customer"));
+			OrderFacade orderFacade = new MySqlOrderFacade();
+			orderFacade.getInstanceOrderDAO();
+			changeOrderStatus(orderId, orderFacade);
+			generateCustomerOrders(request.getSession(), (Customer)request.getSession().getAttribute("customer"), orderFacade);
 			request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 		} catch( OrderException | DataException finalDist) {
 			throw new ServletException( finalDist );
 		}
 	}
 
-	private void changeOrderStatus(int orderId) throws DataException, OrderException {
-		Order order = OrderFacade.orderById(orderId);
+	private void changeOrderStatus(int orderId, OrderFacade orderFacade) throws DataException, OrderException {
+		Order order = orderFacade.orderById(orderId);
+		//Order order = MySqlOrderFacade.orderById(orderId);
 		order.setStatus(Order.Status.ACCEPTED);
-		OrderFacade.updateOrderOffer( order );
+		orderFacade.updateOrderOffer(order );
+		//MySqlOrderFacade.updateOrderOffer(order );
 	}
 
-	private void generateCustomerOrders(HttpSession session, Customer customer) throws OrderException,
+	private void generateCustomerOrders(HttpSession session, Customer customer, OrderFacade orderFacade) throws OrderException,
 																					   DataException
 	{
-		List<Order> customerOrders = OrderFacade.ordersOfCustomer(customer.getId() );
+		List<Order> customerOrders = orderFacade.ordersOfCustomer(customer.getId() );
+		//List<Order> customerOrders = MySqlOrderFacade.ordersOfCustomer(customer.getId() );
 		session.setAttribute("customerOrders", customerOrders);
 	}
 }

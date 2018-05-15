@@ -22,9 +22,10 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/employee/employeeHeader.jsp" %>
+
 <div class="container">
     <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="employeeCurrentOrders">currentOrderCases</a>
+        <li role="presentation" class="active"><a href="redirect?goToPage=employeeHomepage&role=employee">currentOrderCases</a>
         </li>
 
         <li role="presentation">

@@ -19,14 +19,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Home</a>
+            <a class="navbar-brand" href="index.jsp">Home</a>
             <a class="navbar-brand" href="redirect?goToPage=customerCreateUser&role=customer">signup</a>
-            <a class="navbar-brand" href="#">create order</a>
+            <a class="navbar-brand" href="index.jsp">create order</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form method="get" action="login" class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control" value="customer" name="username"
+                    <input type="text" placeholder="Email" class="form-control" value="empTest" name="username"
                            required>
                 </div>
                 <div class="form-group">

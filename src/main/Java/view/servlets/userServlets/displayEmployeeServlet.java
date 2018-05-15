@@ -1,7 +1,8 @@
 package view.servlets.userServlets;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import logic.UserFacade;
+import logic.facades.MySqlUserFacade;
+import logic.facades.UserFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,10 @@ public class displayEmployeeServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		try {
-			request.setAttribute("employees", UserFacade.getAllEmployees());
+			UserFacade userFacade = new MySqlUserFacade();
+			userFacade.getUserDAOInstance();
+			//request.setAttribute("employees", MySqlUserFacade.getAllEmployees());
+			request.setAttribute("employees", userFacade.getAllEmployees());
 		} catch (DataException | UserException e) {
 			throw new ServletException(e);
 		}

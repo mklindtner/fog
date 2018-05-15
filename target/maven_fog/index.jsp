@@ -96,6 +96,10 @@
     </form>
 </div>
 
+<form method="get" action="TestServlet">
+    <input type="submit" value="press me">
+</form>
+
 
 <!-- rem, spær, stolper -->
 <!--
