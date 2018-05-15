@@ -36,7 +36,6 @@ public class employeeEditOrderOfferServlet extends HttpServlet
 		OrderFacade orderFacade = new MySqlOrderFacade();
 		orderFacade.getInstanceOrderDAO();
 		Order order = orderFacade.orderById(orderId);
-		//Order                     order                     = MySqlOrderFacade.orderById(orderId);
 		BillOfMaterialsCalculator billOfMaterialsCalculator = new BillOfMaterialsCalculator(order);
 		billOfMaterialsCalculator.createCarportListWithoutShed();
 		order.setPrice(billOfMaterialsCalculator.caportPrice());

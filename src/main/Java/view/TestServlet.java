@@ -22,6 +22,7 @@ public class TestServlet extends HttpServlet
 			throw new DataException("this is a test");
 		} catch (DataException dae) {
 			Conf.getLogger().log(Level.SEVERE, "This is a test Message");
+			Conf.getLogger().log(Level.SEVERE, "This is a test Message");
 		}
 
 	}

@@ -35,7 +35,7 @@ Design
         see rejected offers (able to throw them out too)
         see date for offers that are still awaiting customer approval (able to throw them out too)
         figure out why it doesn't update when you "take order" from ordersAvailable
-    Customer homepage
+    Customer homepage (current)
         make choice required
     Customer Orders
         Be able to "cancel order"
@@ -56,7 +56,8 @@ Design
             error when loading employee
 
 
-
+    Ask
+    Logger writes message
 
 
 extra Design:

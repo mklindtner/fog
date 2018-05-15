@@ -1,4 +1,5 @@
-<%@ page import="entities.OrderEntities.Order" %><%--
+<%@ page import="entities.OrderEntities.Order" %>
+<%@ page import="entities.userEntities.Employee" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/13/18
@@ -16,7 +17,6 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/employee/employeeHeader.jsp" %>
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

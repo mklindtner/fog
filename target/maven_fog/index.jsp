@@ -61,7 +61,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <label for="contactInformation">contact</label>
-                <input type="text" class="form-control" id="contactInformation" placeholder="contactInformation"
+                <input type="email" class="form-control" id="contactInformation" placeholder="email"
                        required>
             </div>
         </div>
