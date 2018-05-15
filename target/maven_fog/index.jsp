@@ -27,42 +27,41 @@
     <div class="form-group col-md-12">
         <h1><i>Send a order for a garage</i></h1>
     </div>
-    <form method="post" action="createOrder">
+    <form method="post" action="indexCreateOrderUser">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="lengthChoice">Length</label>
-                <select class="form-control form-control-lg" id="lengthChoice">
+                <label for="length">Length</label>
+                <select class="form-control form-control-lg" id="length" name="length">
+                    <option>240</option>cm
                     <option>choose a value</option>
-                    <option>240cm</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="widthChoice">Width</label>
-                <select class="form-control form-control-lg" id="widthChoice">
+                <label for="width">Width</label>
+                <select class="form-control form-control-lg" id="width" name="width">
+                    <option>240</option>cm
                     <option>choose a value</option>
-                    <option>240cm</option>
                 </select>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-6 col-md-6">
-                <label for="heightChoice">Height</label>
-                <select class="form-control form-control-lg" id="heightChoice">
+                <label for="height">Height</label>
+                <select class="form-control form-control-lg" id="height" name="height">
+                    <option>240</option>cm
                     <option>choose a value</option>
-                    <option>240cm</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
-                <label for="slopeChoice">slope</label>
-                <select class="form-control form-control-lg" id="slopeChoice">
+                <label for="slope">slope</label>
+                <select class="form-control form-control-lg" id="slope" name="slope">
+                    <option>45</option>cm
                     <option>choose a value</option>
-                    <option>45cm</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="contactInformation">contact</label>
-                <input type="email" class="form-control" id="contactInformation" placeholder="email"
-                       required>
+                <input type="email" class="form-control" name="contactInformation" id="contactInformation" placeholder="email" value="indexUser@email.com">
             </div>
         </div>
         <div class="form-row">
@@ -74,16 +73,16 @@
             <div class="hidden" id="shedVisible">
                 <div class="col-md-4 col-md-4">
                     <label for="shedWidth">shedWidth</label>
-                    <select class="form-control form-control-lg" id="shedWidth">
+                    <select class="form-control form-control-lg" id="shedWidth" name="shedWidth">
+                        <option>60</option>cm
                         <option>choose a value</option>
-                        <option>60cm</option>
                     </select>
                 </div>
                 <div class="col-md-4 col-md-4">
                     <label for="shedLength">shedLength</label>
-                    <select class="form-control form-control-lg" id="shedLength">
+                    <select class="form-control form-control-lg" id="shedLength" name="shedLength">
+                        <option>40</option>cm
                         <opton>choose a value</opton>
-                        <option>40cm</option>
                     </select>
                 </div>
             </div>

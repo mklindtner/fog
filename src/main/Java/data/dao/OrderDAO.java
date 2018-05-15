@@ -111,7 +111,6 @@ public class OrderDAO
 			int setLength = order.getLength();
 			int setSlope  = order.getSlope();
 			int setCusId  = order.getCustomer().getId();
-			//int setMaterialId = order.getMaterial().getId();
 
 			statement.setInt(1, setHeight);
 			statement.setInt(2, setWidth);
@@ -122,6 +121,7 @@ public class OrderDAO
 			statement.setNull(7, Types.INTEGER);
 			statement.setNull(8, Types.INTEGER);
 			statement.executeUpdate();
+
 			ResultSet resultId = statement.getGeneratedKeys();
 			resultId.next();
 			return orderByIdWithoutShed(resultId.getInt(1));

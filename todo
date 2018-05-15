@@ -1,15 +1,12 @@
 quickSribble:
-    -Create display w. link to all orders where employee can click on an order and the status will change
-        -see mysql
     -Create auto-generated shed after customer orders
-    -Display all orders nicely and tidy
-    -move forms into their right place (LASTLY)
 
 Stykliste:
     få lavet entities med mål i db og hent dem i BoM
     hent enhed i basen
     find antal gennem calculator
     refactor methods so I only take amount, length and secondDescription
+    Employee must be able to edit stykListe
 
 SVG:
 calculate offset off rafters so they work specific
@@ -47,18 +44,21 @@ Design
     Customer Orders (pagination)
         same for employee (late)
 
+    Logger
+        add more logger to servlet
+
     NSL
-        currentOrderCases
-            redirect / ensure order goes away when send (request is saved)
-            edit and send offer, doesn't disappear
-
-        Employee editOffer
-            error when loading employee
-
 
     Ask
-    Logger writes message
+        Logger writes message create nw log every time
 
+    Index
+        Send thank you for the order notifcation
+        create all options
+        validations
+
+Servlet
+    -create logger for errors
 
 extra Design:
     Employee
