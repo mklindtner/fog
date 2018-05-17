@@ -42,7 +42,13 @@
                     <div class="form-group col-md-6">
                         <label for="height">Height</label>
                         <select class="form-control form-control-lg" name="height" id="height" required>
-                            <option>240</option>cm
+                            <option>480</option>cm
+                            <option>540</option>cm
+                            <option>600</option>cm
+                            <option>720</option>cm
+                            <option>780</option>cm
+                            <option>810</option>cm
+                            <option>910</option>cm
                             <option>choose a value</option>
                         </select>
                     </div>
@@ -50,7 +56,9 @@
                     <div class="form-group col-md-6">
                         <label for="width">Width</label>
                         <select class="form-control form-control-lg" name="width" id="width" required>
-                            <option>240</option>cm
+                            <option>300</option>cm
+                            <option>360</option>cm
+                            <option>390</option>cm
                             <option>choose a value</option>
                         </select>
                     </div>
@@ -58,7 +66,13 @@
                     <div class="form-group col-md-6">
                         <label for="length">Length</label>
                         <select class="form-control form-control-lg" name="length" id="length" required>
-                            <option>240</option>cm
+                            <option>480</option>cm
+                            <option>540</option>cm
+                            <option>600</option>cm
+                            <option>720</option>cm
+                            <option>780</option>cm
+                            <option>810</option>cm
+                            <option>910</option>cm
                             <option>choose a value</option>
                         </select>
                     </div>

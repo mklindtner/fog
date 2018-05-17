@@ -2,11 +2,9 @@ package daoTest;
 
 import daoTest.ServiceClasses.ServiceMethods;
 import daoTest.ServiceClasses.ServiceSeed;
-import data.dao.MaterialDAO;
 import data.dao.OrderDAO;
 import data.dao.UserDAO;
 import data.exceptions.*;
-import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
@@ -22,13 +20,12 @@ import static junit.framework.TestCase.assertEquals;
 public class OrderDAOTest
 {
 	OrderDAO orderDAO;
-
+	private final int USER_PHONE = 1234567;
+	private final String USER_PASSWORD = "123";
 	@Before
 	public void setUp() throws DataException, UserException, OrderException, ShedException, MaterialException,
 							   SQLException
 	{
-		//con = MySqlConnector.createConnection("TEST");
-		//con.createStatement().execute("DELETE FROM orders");
 		ServiceSeed.establishConnections();
 		ServiceSeed.populateTables();
 		orderDAO = new OrderDAO("TEST");
@@ -48,16 +45,21 @@ public class OrderDAOTest
 
 	@Test
 	public void firstOrder() throws OrderException, DataException, UserException {
-		List<Order> orders = orderDAO.allOrdersWithoutShed();
+		List<Order> orders = orderDAO.allOrders();
 		assertEquals(orders.get(0), expectedOrder());
 	}
 
 	private Order expectedOrder() throws DataException, UserException, OrderException
 	{
-		//this is garbage
 		UserDAO     userDAO     = new UserDAO();
-		MaterialDAO materialDAO = new MaterialDAO();
-		Customer    customer    = userDAO.customerByUsername("testUser1");
+
+		Customer    customer    = new Customer
+				.CustomerBuilder(1, ServiceMethods.getCurrentTimeAsString())
+				.insertUsername("testUser1")
+				.insertPassword(USER_PASSWORD)
+				.insertPhone(USER_PHONE)
+				.build();
+
 		Shed shed = new Shed.ShedBuilder()
 			 	.insertWidth(5)
 				.insertLength(5)
@@ -65,7 +67,7 @@ public class OrderDAOTest
 				.insertShedId(1)
 				.build();
 
-		Material firstMaterial = new Material("25x200mm. trykimp. Brædt", 80, 1);
+		//Material firstMaterial = new Material("25x200mm. trykimp. Brædt", 80, 1);
 
 		Order order = new Order
 				.OrderBuilder(1, ServiceMethods.getCurrentTimeAsString())
@@ -73,7 +75,7 @@ public class OrderDAOTest
 				.insertRequiredWidth(5)
 				.insertRequiredLength(5)
 				.insertRequiredSlope(45)
-				.insertRequiredMaterial(firstMaterial)
+				//.insertRequiredMaterial(firstMaterial)
 				.insertRequiredCustomer(customer)
 				.insertOptionalStatus(Order.Status.PENDING)
 				.insertOptionalShed(shed)

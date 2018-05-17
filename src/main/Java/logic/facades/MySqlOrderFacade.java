@@ -45,7 +45,7 @@ public class MySqlOrderFacade implements OrderFacade
 
 	public List<Order> allOrdersWithoutShed() throws OrderException, DataException
 	{
-		return orderDAO.allOrdersWithoutShed();
+		return orderDAO.allOrders();
 	}
 
 	public Order createAndReturnOrder(Order order) throws DataException, OrderException

@@ -5,6 +5,7 @@ import entities.userEntities.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Order
 {
@@ -24,7 +25,7 @@ public class Order
 		this.width = orderBuilder.width;
 		this.length = orderBuilder.length;
 		this.slope = orderBuilder.slope;
-		this.material = orderBuilder.material;
+		//this.material = orderBuilder.material;
 		this.status = orderBuilder.status;
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
@@ -50,6 +51,10 @@ public class Order
 	public void addToOrderLines(OrderLine orderline)
 	{
 		this.orderLines.add(orderline);
+	}
+
+	public void setOrderLines(List<OrderLine> orderLines) {
+		this.orderLines = orderLines;
 	}
 
 	public enum Status
@@ -144,7 +149,7 @@ public class Order
 		private String   created_at;
 		private Customer customer;
 		private Shed     shed;
-		private Material material;
+		//private Material material;
 		private Status   status;
 
 		public OrderBuilder(int id, String created_at)
@@ -201,11 +206,12 @@ public class Order
 			return this;
 		}
 
+		/*
 		public OrderBuilder insertRequiredMaterial(Material material)
 		{
 			this.material = material;
 			return this;
-		}
+		} */
 
 		public OrderBuilder insertOptionalShed(Shed shed)
 		{
@@ -227,9 +233,30 @@ public class Order
 
 	@Override public String toString()
 	{
-		return "id: " + id + ", customer: " + customer.getUsername() + ", status: " +
+		return "customer: " + customer.getUsername() + ", status: " +
 			   status + ", height: " + height + ", width: " + width + ", length: " + length;
 	}
 
+	@Override public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Order order = (Order) o;
+		//should check for orderLines too
+		return height == order.height &&
+			   width == order.width &&
+			   length == order.length &&
+			   slope == order.slope &&
+			   price == order.price &&
+			   Objects.equals(customer, order.customer) &&
+			   Objects.equals(shed, order.shed) &&
+			   Objects.equals(employee, order.employee) &&
+			   status == order.status;
+	}
 
+	@Override public int hashCode()
+	{
+
+		return Objects.hash(height, width, length, slope, price, customer, shed, employee, status, orderLines);
+	}
 }

@@ -26,7 +26,7 @@ public class OrderDAO
 		con = MySqlConnector.createConnection(connectionSelection);
 	}
 
-	public List<Order> allOrdersWithoutShed() throws OrderException, DataException
+	public List<Order> allOrders() throws OrderException, DataException
 	{
 		final String SQL               = "Select * FROM orders";
 		List<Order>  ordersWithoutShed = new ArrayList<>();
