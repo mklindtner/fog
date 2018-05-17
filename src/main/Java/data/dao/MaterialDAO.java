@@ -74,4 +74,9 @@ public class MaterialDAO
 			throw new MaterialException(throwSql);
 		}
 	}
+
+	public Connection getCon()
+	{
+		return this.con;
+	}
 }

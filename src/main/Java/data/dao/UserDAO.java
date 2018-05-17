@@ -24,7 +24,6 @@ public class UserDAO
 		con = MySqlConnector.createConnection("APP");
 	}
 
-	//this is ugly
 	public UserDAO(String connectionSelection) throws DataException
 	{
 		con = MySqlConnector.createConnection(connectionSelection);
@@ -247,5 +246,10 @@ public class UserDAO
 		} catch (SQLException throwSql) {
 			throw new UserException(throwSql);
 		}
+	}
+
+	public Connection getCon()
+	{
+		return this.con;
 	}
 }

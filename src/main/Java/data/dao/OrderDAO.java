@@ -230,4 +230,9 @@ public class OrderDAO
 			throw new OrderException(throwSql);
 		}
 	}
+
+	public Connection getCon()
+	{
+		return this.con;
+	}
 }

@@ -17,7 +17,7 @@ import java.util.*;
 
 public class UserDAOTest
 {
-	UserDAO    userDAO;
+	private UserDAO    userDAO;
 	private final int PHONE = 1234567, STANDARD_EMPLOYEE_ROLE = 3, GENERATION_AMOUNT = 6;
 
 	@Before
@@ -69,7 +69,6 @@ public class UserDAOTest
 		return expected;
 	}
 
-	//this for fixing time
 	@Test
 	public void allEmployeesFromDAO() throws UserException, DataException
 	{

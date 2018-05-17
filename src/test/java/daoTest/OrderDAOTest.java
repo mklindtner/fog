@@ -50,25 +50,7 @@ public class OrderDAOTest
 		assertEquals(orders.get(0), expectedOrder());
 	}
 
-/*
-	@Test
-	public void testSomething() {
-		Customer    customer    = new Customer
-				.CustomerBuilder(1, ServiceMethods.getCurrentTimeAsString())
-				.insertUsername("testUser1")
-				.insertPassword(USER_PASSWORD)
-				.insertPhone(USER_PHONE)
-				.build();
 
-		Customer    customerTwo    = new Customer
-				.CustomerBuilder(1, ServiceMethods.getCurrentTimeAsString())
-				.insertUsername("testUser1")
-				.insertPassword(USER_PASSWORD)
-				.insertPhone(USER_PHONE)
-				.build();
-
-		assertEquals(customer, customerTwo);
-	} */
 
 	private Order expectedOrder() throws DataException, UserException, OrderException
 	{

@@ -39,5 +39,8 @@ public class OrderLineDAO
 		}
 	}
 
-
+	public Connection getCon()
+	{
+		return this.con;
+	}
 }
