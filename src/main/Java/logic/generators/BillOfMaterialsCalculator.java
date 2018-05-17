@@ -19,22 +19,25 @@ public class BillOfMaterialsCalculator
 	private final int    EKSTRA_LENGTH_STAKE = 40, NOLENGTH = 0;
 	private MaterialDAO materialDAO;
 	private Order       order;
-	private final String PLANK_LARGE          = "25x200mm. trykimp. Brædt";
-	private final String LATH                 = "38x73mm. Lægte ubh.";
-	private final String RAFTER               = "45x195mm. spærtræ ubh.";
-	private final String POLE                 = "97x97mm. trykimp. Stolpe";
-	private final String PLANKSMALL           = "19x100mm. trykimp. Brædt";
-	private final String PLASTMO_ECOLITE_BLUE = "Plastmo Ecolite blåtonet";
+	private final String PLANK_LARGE           = "25x200mm. trykimp. Brædt";
+	private final String PLANK_MEDIUM          = "25x125mm. trykimp. Brædt";
+	private final String LATH                  = "38x73mm. Lægte ubh.";
+	private final String REGLAR                = "45x95mm. Reglar ubh.";
+	private final String RAFTER                = "45x195mm. spærtræ ubh.";
+	private final String POLE                  = "97x97mm. trykimp. Stolpe";
+	private final String PLANKSMALL            = "19x100mm. trykimp. Brædt";
+	private final String PLASTMO_ECOLITE_BLUE  = "Plastmo Ecolite blåtonet";
 	private final String PLASTMO_BOTTOM_SCREWS = "Plastmo bundskruer 200stk";
-	private final String PERFORATED_BAND =  "hulbånd 1x20mm. 10mtr.";
-	private final String UNIVERSAL_RIGHT = "universal 190mm højre";
-	private final String UNIVERSAL_LEFT = "universal 190mm venstre";
-	private final String NAIL = "4,5 x 60 mm. skruer 200stk";
-	private final String BRACKET = "4,0 x 50 mm. beslagsskruer 250stk";
-	private final String CARRIAGE_BOLT = "bræddebolt 10 x 120 mm";
-	private final String SQUARE_SLICES = "firkantskiver 40x40x11mm";
-	private final String SCREWS_FIFTY = "4,5 x 50 mm. skruer 300 stk";
-	private final String SCREWS_SEVENTY = "4,5 x 70 mm. skruer 400 stk";
+	private final String PERFORATED_BAND       = "hulbånd 1x20mm. 10mtr.";
+	private final String UNIVERSAL_RIGHT       = "universal 190mm højre";
+	private final String UNIVERSAL_LEFT        = "universal 190mm venstre";
+	private final String NAIL                  = "4,5 x 60 mm. skruer 200stk";
+	private final String BRACKET               = "4,0 x 50 mm. beslagsskruer 250stk";
+	private final String CARRIAGE_BOLT         = "bræddebolt 10 x 120 mm";
+	private final String SQUARE_SLICES         = "firkantskiver 40x40x11mm";
+	private final String SCREWS_FIFTY          = "4,5 x 50 mm. skruer 300 stk";
+	private final String SCREWS_SEVENTY        = "4,5 x 70 mm. skruer 400 stk";
+
 
 	//amount and length is shown pr.centimeter
 	//General formula: amount / area
@@ -68,6 +71,10 @@ public class BillOfMaterialsCalculator
 		order.addToOrderLines(plankUnderStern(m_plankLarge));
 		order.addToOrderLines(plankSides(m_plankLarge));
 
+		Material m_plankMedium = findMaterial(PLANK_MEDIUM);
+		order.addToOrderLines(plankMediumOverStern(m_plankMedium));
+		order.addToOrderLines(plankMediumSides(m_plankMedium));
+
 		Material m_lath = findMaterial(LATH);
 		order.addToOrderLines(lath(m_lath));
 
@@ -94,7 +101,7 @@ public class BillOfMaterialsCalculator
 		order.addToOrderLines(performedBand(m_perforatedBand));
 
 		Material m_universalRight = findMaterial(UNIVERSAL_RIGHT);
-		Material m_universalLeft = findMaterial(UNIVERSAL_LEFT);
+		Material m_universalLeft  = findMaterial(UNIVERSAL_LEFT);
 		order.addToOrderLines(universalBoth(m_universalRight));
 		order.addToOrderLines(universalBoth(m_universalLeft));
 
@@ -133,6 +140,38 @@ public class BillOfMaterialsCalculator
 
 		order.addToOrderLines(rafterShedSides(m_rafter));
 		*/
+	}
+
+	private OrderLine plankMediumSides(Material m_plankMedium)
+	{
+		final double PLANK_MEDIUM_SIDES_AMOUNT = 0.000008547;
+		final double PLANK_MEDIUM_SIDES_LENGTH = 0.00115384615;
+		return new OrderLine
+				.OrderLineBuilder()
+				.insertAmount(orderLine_amount(PLANK_MEDIUM_SIDES_AMOUNT))
+				.insertLength(orderLine_length(PLANK_MEDIUM_SIDES_LENGTH))
+				.insertUnit("stk")
+				.insertFirstDescription(m_plankMedium.getDescription())
+				.insertSecondDescription("oversternbrædder til siderne")
+				.insertMaterialId(m_plankMedium.getId())
+				.insertOrderId(order.getId())
+				.build();
+	}
+
+	private OrderLine plankMediumOverStern(Material m_plankMedium)
+	{
+		final double PLANK_MEDIUM_OVERSTERN_AMOUNT = 0.0000042735;
+		final double PLANK_MEDIUM_OVERSTERN_LENGTH = 0.00076923076;
+		return new OrderLine
+				.OrderLineBuilder()
+				.insertAmount(orderLine_amount(PLANK_MEDIUM_OVERSTERN_AMOUNT))
+				.insertLength(orderLine_amount(PLANK_MEDIUM_OVERSTERN_LENGTH))
+				.insertUnit("stk")
+				.insertFirstDescription(m_plankMedium.getDescription())
+				.insertSecondDescription("oversternbrædder til forenden")
+				.insertMaterialId(m_plankMedium.getId())
+				.insertOrderId(order.getId())
+				.build();
 	}
 
 	private OrderLine angelBracket(Material m_angelBracket)
@@ -294,7 +333,8 @@ public class BillOfMaterialsCalculator
 				.build();
 	}
 
-	private OrderLine plastmoSmall(Material m_plastmo_ecolite_blue) {
+	private OrderLine plastmoSmall(Material m_plastmo_ecolite_blue)
+	{
 		final double PLASTMO_SMALL_LENGTH = 0.00076923076;
 		final double PLASTMO_SMALL_AMOUNT = 0.00001282051;
 		return new OrderLine

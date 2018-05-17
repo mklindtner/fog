@@ -10,31 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/ShedDAO.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/configurations/Conf.java" afterPath="$PROJECT_DIR$/src/main/Java/configurations/Conf.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java" afterPath="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Shed.java" afterPath="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Shed.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/OrderFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/facades/OrderFacade.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/logger/Logging.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/logger/VerySimpleFomarter.java" afterPath="$PROJECT_DIR$/src/main/Java/configurations/VerySimpleFomarter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderAndUserServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderAndUserServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog.war" afterPath="$PROJECT_DIR$/target/maven_fog.war" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/index.jsp" afterPath="$PROJECT_DIR$/target/maven_fog/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,8 +40,8 @@
       <file leaf-file-name="OrderDAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+            <state relative-caret-position="186">
+              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -69,28 +50,25 @@
       <file leaf-file-name="ServiceSeed.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="118" column="39" lean-forward="false" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
+            <state relative-caret-position="-2">
+              <caret line="233" column="60" lean-forward="false" selection-start-line="233" selection-start-column="60" selection-end-line="233" selection-end-column="60" />
               <folding>
-                <marker date="1526551649727" expanded="true" signature="1527:1545" ph="DELETE FROM orders... " />
-                <marker date="1526551649727" expanded="true" signature="1582:1603" ph="DELETE FROM customers... " />
-                <marker date="1526551649727" expanded="true" signature="1640:1661" ph="DELETE FROM employees... " />
-                <marker date="1526551649727" expanded="true" signature="1698:1719" ph="DELETE FROM materials... " />
-                <marker date="1526551649727" expanded="true" signature="1756:1773" ph="DELETE FROM sheds... " />
+                <marker date="1526560910676" expanded="true" signature="1563:1581" ph="DELETE FROM orders... " />
+                <marker date="1526560910676" expanded="true" signature="1618:1639" ph="DELETE FROM customers... " />
+                <marker date="1526560910676" expanded="true" signature="1676:1697" ph="DELETE FROM employees... " />
+                <marker date="1526560910676" expanded="true" signature="1734:1755" ph="DELETE FROM materials... " />
+                <marker date="1526560910676" expanded="true" signature="1792:1809" ph="DELETE FROM sheds... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaterialDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java">
+      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-              <folding>
-                <marker date="1526551549106" expanded="true" signature="661:695" ph="Select * FRO... materials" />
-                <marker date="1526551549106" expanded="true" signature="1069:1122" ph="Select * FRO... materials" />
-              </folding>
+            <state relative-caret-position="6440">
+              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/css/both_headers.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHeader.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/logoutServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/logger/VerySimpleFormatter.java" />
@@ -189,14 +166,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHomepage.jsp" />
         <option value="$PROJECT_DIR$/todo" />
-        <option value="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java" />
         <option value="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/MaterialDescription.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/Java/configurations/VerySimpleFomarter.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java" />
       </list>
     </option>
   </component>
@@ -816,44 +794,44 @@
       <workItem from="1525508730183" duration="167738000" />
       <workItem from="1526047470833" duration="6692000" />
       <workItem from="1526071089653" duration="78404000" />
-      <workItem from="1526402637583" duration="40536000" />
+      <workItem from="1526402637583" duration="46939000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_maven_fog - 2018.05.16 at 18h 39m 47s.xml">
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 23m 46s.xml">
       <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_maven_fog - 2018.05.17 at 11h 03m 20s.xml">
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 24m 59s.xml">
       <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_maven_fog - 2018.05.17 at 11h 57m 02s.xml">
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 25m 54s.xml">
       <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_maven_fog - 2018.05.17 at 12h 18m 26s.xml">
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 28m 00s.xml">
       <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_maven_fog - 2018.05.17 at 12h 51m 13s.xml">
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 28m 31s.xml">
       <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.05.01 at 22h 23m 19s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 29m 08s.xml">
+      <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.05.01 at 22h 23m 56s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 30m 46s.xml">
+      <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.05.01 at 22h 30m 15s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 32m 22s.xml">
+      <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.05.01 at 22h 32m 44s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 32m 46s.xml">
+      <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDAOTest - 2018.05.01 at 22h 36m 47s.xml">
-      <configuration name="UserDAOTest" configurationId="JUnit" />
+    <history-entry file="All_in_maven_fog - 2018.05.17 at 14h 41m 54s.xml">
+      <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="559548000" />
+    <option name="totallyTimeSpent" value="565951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -937,7 +915,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="138" />
+      <option name="time" value="146" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -962,14 +940,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeOrderCatalog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderAndUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -1278,14 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-644">
-          <caret line="31" column="61" lean-forward="true" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/logic/logger/Logging.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1302,22 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3762">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/configurations/Conf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceMethods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -1326,25 +1272,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/configurations/Conf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/TestServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterialsCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="78" column="44" lean-forward="false" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="86" column="67" lean-forward="false" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+          <folding>
+            <marker date="1526557736620" expanded="true" signature="573:607" ph="Select * FRO... materials" />
+            <marker date="1526557736620" expanded="true" signature="981:1034" ph="Select * FRO... materials" />
+            <marker date="1526557736620" expanded="true" signature="1870:1931" ph="Insert Into materials... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Material.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="194">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="700">
           <caret line="114" column="18" lean-forward="false" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
           <folding>
             <marker date="1526486851594" expanded="true" signature="700:720" ph="Select * FRO... orders" />
@@ -1364,41 +1354,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <marker date="1526551549106" expanded="true" signature="661:695" ph="Select * FRO... materials" />
-            <marker date="1526551549106" expanded="true" signature="1069:1122" ph="Select * FRO... materials" />
-          </folding>
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6440">
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="118" column="39" lean-forward="false" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
+        <state relative-caret-position="-2">
+          <caret line="233" column="60" lean-forward="false" selection-start-line="233" selection-start-column="60" selection-end-line="233" selection-end-column="60" />
           <folding>
-            <marker date="1526551649727" expanded="true" signature="1527:1545" ph="DELETE FROM orders... " />
-            <marker date="1526551649727" expanded="true" signature="1582:1603" ph="DELETE FROM customers... " />
-            <marker date="1526551649727" expanded="true" signature="1640:1661" ph="DELETE FROM employees... " />
-            <marker date="1526551649727" expanded="true" signature="1698:1719" ph="DELETE FROM materials... " />
-            <marker date="1526551649727" expanded="true" signature="1756:1773" ph="DELETE FROM sheds... " />
+            <marker date="1526560910676" expanded="true" signature="1563:1581" ph="DELETE FROM orders... " />
+            <marker date="1526560910676" expanded="true" signature="1618:1639" ph="DELETE FROM customers... " />
+            <marker date="1526560910676" expanded="true" signature="1676:1697" ph="DELETE FROM employees... " />
+            <marker date="1526560910676" expanded="true" signature="1734:1755" ph="DELETE FROM materials... " />
+            <marker date="1526560910676" expanded="true" signature="1792:1809" ph="DELETE FROM sheds... " />
           </folding>
         </state>
       </provider>

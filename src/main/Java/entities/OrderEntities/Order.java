@@ -230,4 +230,6 @@ public class Order
 		return "id: " + id + ", customer: " + customer.getUsername() + ", status: " +
 			   status + ", height: " + height + ", width: " + width + ", length: " + length;
 	}
+
+
 }

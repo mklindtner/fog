@@ -1,14 +1,11 @@
 package data.dao;
 
-import configurations.Conf;
 import data.MySqlConnector;
 import entities.OrderEntities.Material;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 
-import java.io.IOException;
 import java.sql.*;
-import java.util.logging.Level;
 
 public class MaterialDAO
 {
@@ -30,7 +27,7 @@ public class MaterialDAO
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, materialId);
 			ResultSet rs = statement.executeQuery();
-			return createMaterial(rs);
+			return returnMaterial(rs);
 		} catch (SQLException throwSql) {
 			throw new MaterialException(throwSql);
 		}
@@ -42,14 +39,14 @@ public class MaterialDAO
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setString(1, description);
 			ResultSet rs = statement.executeQuery();
-			return createMaterial(rs);
+			return returnMaterial(rs);
 
 		} catch (SQLException throwSql) {
 			throw new MaterialException(throwSql);
 		}
 	}
 
-	private Material createMaterial(ResultSet resultSet) throws MaterialException
+	private Material returnMaterial(ResultSet resultSet) throws MaterialException
 	{
 		try {
 			if (resultSet.next()) {
@@ -60,6 +57,20 @@ public class MaterialDAO
 			}
 			throw new SQLException();
 		} catch (SQLException throwSql) {
+			throw new MaterialException(throwSql);
+		}
+	}
+
+	public Material createMaterial(String description, int pricePrUnit) throws MaterialException {
+		final String SQL = "Insert Into materials(description, pricePrUnit) VALUES (?, ?)";
+		try(PreparedStatement statement = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS)) {
+			statement.setString(1, description);
+			statement.setInt(2, pricePrUnit);
+			statement.executeUpdate();
+			ResultSet id = statement.getGeneratedKeys();
+			id.next();
+			return new Material(description, pricePrUnit, id.getInt(1));
+		} catch(SQLException throwSql) {
 			throw new MaterialException(throwSql);
 		}
 	}
