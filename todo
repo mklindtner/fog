@@ -1,33 +1,30 @@
-quickSribble:
-    -Create auto-generated shed after customer orders
-
 Stykliste:
     få lavet entities med mål i db og hent dem i BoM
     hent enhed i basen
     find antal gennem calculator
     refactor methods so I only take amount, length and secondDescription
     Employee must be able to edit stykListe
+    create stklist w. shed
 
 SVG:
-calculate offset off rafters so they work specific
+    create skur
 
 Orders:
 add OrderDAO
-    -Consider shedDAO
-    -make shed possible for OrderDAO
-        -create private shedOrder, use for "available" and others
     -create list of orders and display those
-    -createOrderwithoutShed should not have a status? see servlet and fix status there
     -display stykliste and svg for employee
+
+Customer
+    accept orders should display on orders accepted
+    pagination for accepted orders doesn't work
+        :find where i set accepted orders(in servlet)
+    dislay sheds if order has it
 
 
 Design
     createUser
         confirm password
-    NavBar
-        make sure index redirects proberly
-    OrdersWithoutShed //this is wierd consider deleting this and find a way to just display orders w/without shed
-        create new jsp page for this one, change to that tab
+
     Employee Homepage
         see rejected offers (able to throw them out too)
         see date for offers that are still awaiting customer approval (able to throw them out too)
@@ -90,3 +87,12 @@ Find out why I can't find my own created environment variable
 Currently:
 OrderDAO - createOrder
 orderDAO - createMaterial
+
+
+Carport:
+ OrdersWithoutShed //this is wierd consider deleting this and find a way to just display orders w/without shed
+        create new jsp page for this one, change to that tab
+
+ -Consider shedDAO
+     -make shed possible for OrderDAO
+         -create private shedOrder, use for "available" and others

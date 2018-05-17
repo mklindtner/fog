@@ -32,14 +32,22 @@
             <div class="form-group col-md-6">
                 <label for="length">Length</label>
                 <select class="form-control form-control-lg" id="length" name="length">
-                    <option>240</option>cm
+                    <option>480</option>cm
+                    <option>540</option>cm
+                    <option>600</option>cm
+                    <option>720</option>cm
+                    <option>780</option>cm
+                    <option>810</option>cm
+                    <option>910</option>cm
                     <option>choose a value</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="width">Width</label>
                 <select class="form-control form-control-lg" id="width" name="width">
-                    <option>240</option>cm
+                    <option>300</option>cm
+                    <option>360</option>cm
+                    <option>390</option>cm
                     <option>choose a value</option>
                 </select>
             </div>
@@ -48,7 +56,13 @@
             <div class="col-md-6 col-md-6">
                 <label for="height">Height</label>
                 <select class="form-control form-control-lg" id="height" name="height">
-                    <option>240</option>cm
+                    <option>480</option>cm
+                    <option>540</option>cm
+                    <option>600</option>cm
+                    <option>720</option>cm
+                    <option>780</option>cm
+                    <option>810</option>cm
+                    <option>910</option>cm
                     <option>choose a value</option>
                 </select>
             </div>
@@ -65,25 +79,30 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-4 col-md-4">
+            <div class="col-md-4 col-md-3">
                 <div class="btn-group-toggle" data-toggle="buttons" style="padding-top: 20px;">
                     <a class="btn btn-secondary active" id="checkShedTwo">WithShed</a>
                 </div>
             </div>
             <div class="hidden" id="shedVisible">
-                <div class="col-md-4 col-md-4">
+                <div class="col-md-4 col-md-3">
                     <label for="shedWidth">shedWidth</label>
                     <select class="form-control form-control-lg" id="shedWidth" name="shedWidth">
-                        <option>60</option>cm
                         <option>choose a value</option>
+                        <option>60</option>cm
                     </select>
                 </div>
-                <div class="col-md-4 col-md-4">
+                <div class="col-md-4 col-md-3">
                     <label for="shedLength">shedLength</label>
                     <select class="form-control form-control-lg" id="shedLength" name="shedLength">
+                        <option>choose a value</option>
                         <option>40</option>cm
-                        <opton>choose a value</opton>
                     </select>
+                </div>
+                <div class="col-md-4 col-md-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="hasFloor" name="hasFloor" value="hasFloor"> with Floor
+                    </label>
                 </div>
             </div>
         </div>
@@ -95,9 +114,10 @@
     </form>
 </div>
 
+<!--
 <form method="get" action="TestServlet">
     <input type="submit" value="press me">
-</form>
+</form> -->
 
 
 <!-- rem, spær, stolper -->

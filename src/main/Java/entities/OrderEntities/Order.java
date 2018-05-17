@@ -15,7 +15,7 @@ public class Order
 	private Shed            shed;
 	private Employee        employee;
 	private Status          status;
-	private List<OrderLine> orderlines;
+	private List<OrderLine> orderLines;
 
 	private Order(OrderBuilder orderBuilder)
 	{
@@ -29,7 +29,7 @@ public class Order
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
 		this.shed = orderBuilder.shed;
-		this.orderlines = new ArrayList<>();
+		this.orderLines = new ArrayList<>();
 	}
 
 	public int getPrice()
@@ -42,16 +42,18 @@ public class Order
 		this.price = price;
 	}
 
-	public List<OrderLine> getOrderlines()
+	public List<OrderLine> getOrderLines()
 	{
-		return this.orderlines;
+		return this.orderLines;
 	}
 
-	public void addToOrderLines(OrderLine orderline) {
-		this.orderlines.add(orderline);
+	public void addToOrderLines(OrderLine orderline)
+	{
+		this.orderLines.add(orderline);
 	}
 
-	public enum Status  {
+	public enum Status
+	{
 		PENDING, OFFER, ACCEPTED, SEND
 	}
 
@@ -60,7 +62,8 @@ public class Order
 		return this.status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(Status status)
+	{
 		this.status = status;
 	}
 
@@ -70,7 +73,8 @@ public class Order
 		return this.height;
 	}
 
-	public void setHeight(int height) {
+	public void setHeight(int height)
+	{
 		this.height = height;
 	}
 
@@ -79,15 +83,18 @@ public class Order
 		return this.width;
 	}
 
-	public void setWidth(int width) {
+	public void setWidth(int width)
+	{
 		this.width = width;
 	}
 
-	public int getLength() {
+	public int getLength()
+	{
 		return this.length;
 	}
 
-	public void setLength(int length) {
+	public void setLength(int length)
+	{
 		this.length = length;
 	}
 
@@ -96,7 +103,8 @@ public class Order
 		return this.slope;
 	}
 
-	public void setSlope(int slope) {
+	public void setSlope(int slope)
+	{
 		this.slope = slope;
 	}
 
@@ -115,12 +123,18 @@ public class Order
 		return this.created_at;
 	}
 
+	public void setshed(Shed shed)
+	{
+		this.shed = shed;
+	}
+
 	public Shed getShed()
 	{
 		return this.shed;
 	}
 
-	public int getId() {
+	public int getId()
+	{
 		return this.id;
 	}
 
@@ -131,7 +145,7 @@ public class Order
 		private Customer customer;
 		private Shed     shed;
 		private Material material;
-		private Status status;
+		private Status   status;
 
 		public OrderBuilder(int id, String created_at)
 		{
@@ -139,7 +153,8 @@ public class Order
 			this.created_at = created_at;
 		}
 
-		public OrderBuilder() {
+		public OrderBuilder()
+		{
 
 		}
 
@@ -154,8 +169,6 @@ public class Order
 			this.shed = null;
 			return this;
 		}
-
-
 
 		public OrderBuilder insertRequiredHeight(int height)
 		{
@@ -175,6 +188,7 @@ public class Order
 			this.length = length;
 			return this;
 		}
+
 		public OrderBuilder insertRequiredSlope(int slope)
 		{
 			this.slope = slope;

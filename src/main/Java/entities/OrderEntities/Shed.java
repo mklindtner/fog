@@ -2,14 +2,13 @@ package entities.OrderEntities;
 
 public class Shed
 {
-	private int id, length, width, height;
+	private int id, length, width;
 	private boolean hasFloor;
 
 	private Shed(ShedBuilder ShedBuilder) {
 		this.id = ShedBuilder.id;
 		this.length = ShedBuilder.length;
 		this.width = ShedBuilder.width;
-		this.height = ShedBuilder.height;
 		this.hasFloor = ShedBuilder.hasFloor;
 	}
 
@@ -26,45 +25,35 @@ public class Shed
 		return this.width;
 	}
 
-	public int getHeight() {
-		return this.height;
-	}
-
 	public boolean getFloor() {
 		return this.hasFloor;
 	}
 
 	public static class ShedBuilder
 	{
-		private int id, length, width, height;
+		private int id, length, width;
 		private boolean hasFloor;
 
-		public ShedBuilder(int id, boolean hasFloor) {
-			this.hasFloor = hasFloor;
-			this.id = id;
+		public ShedBuilder() {
 		}
 
-		public ShedBuilder insertMinimumRequiredShed(int length, int width, int height) {
-			insertRequiredHeight(height);
-			insertRequiredLength(length);
-			insertRequiredWidth(width);
-			return this;
-		}
-		public ShedBuilder insertRequiredLength(int length)
+		public ShedBuilder insertLength(int length)
 		{
 			this.length = length;
 			return this;
 		}
-		public ShedBuilder insertRequiredWidth(int width) {
+		public ShedBuilder insertWidth(int width) {
 			this.width = width;
 			return this;
 		}
-		public ShedBuilder insertRequiredHeight(int height) {
-			this.height = height;
-			return this;
-		}
+
 		public ShedBuilder insertHasFloor(boolean hasFloor) {
 			this.hasFloor = hasFloor;
+			return this;
+		}
+
+		public ShedBuilder insertShedId(int id) {
+			this.id = id;
 			return this;
 		}
 
@@ -75,6 +64,6 @@ public class Shed
 
 	@Override
 	public String toString() {
-		return "height: " + height + ", length: " + length + ", width: " + width + ", hasfloor: " + hasFloor;
+		return "length: " + length + ", width: " + width + ", hasfloor: " + hasFloor;
 	}
 }

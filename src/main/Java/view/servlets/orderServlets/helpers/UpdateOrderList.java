@@ -1,10 +1,8 @@
 package view.servlets.orderServlets.helpers;
 
-import data.exceptions.DataException;
-import data.exceptions.MaterialException;
-import data.exceptions.OrderException;
-import data.exceptions.OrderLineException;
+import data.exceptions.*;
 import entities.OrderEntities.Order;
+import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
 import entities.userEntities.User;
@@ -41,7 +39,6 @@ public class UpdateOrderList
 	{
 		OrderFacade orderFacade = new MySqlOrderFacade();
 		orderFacade.getInstanceOrderDAO();
-		//session.setAttribute("ordersAvailable", MySqlOrderFacade.ordersAvailable());
 		session.setAttribute("ordersAvailable", orderFacade.ordersAvailable());
 
 	}
@@ -57,31 +54,57 @@ public class UpdateOrderList
 
 	public static Order createOrderAndOrderLine(HttpServletRequest request, Customer user) throws MaterialException,
 																								  OrderLineException,
-																								  DataException, OrderException
+																								  DataException,
+																								  OrderException, ShedException
 	{
 		OrderFacade orderFacade = new MySqlOrderFacade();
 		orderFacade.getInstanceOrderDAO();
+		Shed shed;
 		Order order = createOrder(request, user);
+		if (haveShed(request)) {
+			shed = createShed(request, orderFacade);
+			order.setshed(shed);
+		}
 		order = orderFacade.createAndReturnOrder(order);
 		saveOrderLineDB(order);
 		return order;
 	}
 
+	private static Shed createShed(HttpServletRequest request, OrderFacade orderFacade) throws DataException,
+																							 ShedException
+	{
+		int    shedWidth  = Integer.parseInt(request.getParameter("shedWidth"));
+		int    shedLength = Integer.parseInt(request.getParameter("shedLength"));
+		String hasFloor   = request.getParameter("hasFloor");
+		orderFacade.getInstanceShedDAO();
+		return (hasFloor != null) ? orderFacade.createShed(shedWidth, shedLength, true) : orderFacade.createShed(shedWidth, shedLength, false);
+
+	}
+
 	private static Order createOrder(HttpServletRequest request, Customer user)
 	{
-		// TODO: add shed
-		int height     = Integer.parseInt(request.getParameter("height"));
-		int width      = Integer.parseInt(request.getParameter("width"));
-		int length     = Integer.parseInt(request.getParameter("length"));
-		int slope      = Integer.parseInt(request.getParameter("slope"));
-		int shedWidth  = Integer.parseInt(request.getParameter("shedWidth"));
-		int shedLength = Integer.parseInt(request.getParameter("shedLength"));
+		int    height     = Integer.parseInt(request.getParameter("height"));
+		int    width      = Integer.parseInt(request.getParameter("width"));
+		int    length     = Integer.parseInt(request.getParameter("length"));
+		int    slope      = Integer.parseInt(request.getParameter("slope"));
 
 		return new Order
 				.OrderBuilder()
 				.createOrderWithoutShed(height, width, length, user, slope)
 				.build();
 	}
+
+
+	private static boolean haveShed(HttpServletRequest request)
+	{
+		return  (request.getParameter("shedWidth").equals("choose a value")
+				 || request.getParameter("shedLength").equals("choose a value")) ? false : true;
+	}
+
+	/*
+	 (request.getParameter("shedWidth").equals("")
+				|| request.getParameter("shedLength").equals("")) ? false : true;
+	 */
 
 	private static void saveOrderLineDB(Order order) throws MaterialException, OrderLineException, DataException
 	{

@@ -3,13 +3,12 @@ package logic.facades;
 import data.dao.MaterialDAO;
 import data.dao.OrderDAO;
 import data.dao.OrderLineDAO;
-import data.exceptions.DataException;
-import data.exceptions.MaterialException;
-import data.exceptions.OrderException;
-import data.exceptions.OrderLineException;
+import data.dao.ShedDAO;
+import data.exceptions.*;
 import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
+import entities.OrderEntities.Shed;
 
 import java.util.List;
 
@@ -37,10 +36,13 @@ public interface OrderFacade
 
 	void createOrderLine(OrderLine orderLine) throws OrderLineException, DataException;
 
-
 	OrderDAO getInstanceOrderDAO() throws DataException;
 
 	MaterialDAO getInstanceMaterialDAO() throws DataException;
 
 	OrderLineDAO getInstanceOrderLineDAO() throws DataException;
+
+	ShedDAO getInstanceShedDAO() throws DataException;
+
+	Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException;
 }

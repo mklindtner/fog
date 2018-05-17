@@ -20,12 +20,14 @@ public class createOrderAndUserServlet extends HttpServlet
 	{
 		UserFacade facade = new MySqlUserFacade();
 		String username = request.getParameter("contactInformation");
+
 		try {
 			facade.getUserDAOInstance();
 			Customer   user   = facade.createCustomerWithoutPhone(username, "123");
 			UpdateOrderList.createOrderAndOrderLine(request, user);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
-		} catch(DataException | UserException | OrderLineException | MaterialException | OrderException finalDist) {
+		} catch(DataException | UserException | OrderLineException | MaterialException | OrderException | ShedException
+				finalDist) {
 			throw new ServletException(finalDist);
 		}
 	}

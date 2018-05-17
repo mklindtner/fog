@@ -5,12 +5,11 @@ import daoTest.ServiceClasses.ServiceSeed;
 import data.dao.MaterialDAO;
 import data.dao.OrderDAO;
 import data.dao.UserDAO;
+import data.exceptions.*;
+import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
+import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
-import data.exceptions.DataException;
-import data.exceptions.OrderException;
-import data.exceptions.ShedException;
-import data.exceptions.UserException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +24,7 @@ public class OrderDAOTest
 	OrderDAO orderDAO;
 
 	@Before
-	public void setUp() throws DataException, UserException, OrderException, ShedException,
+	public void setUp() throws DataException, UserException, OrderException, ShedException, MaterialException,
 							   SQLException
 	{
 		//con = MySqlConnector.createConnection("TEST");
@@ -59,11 +58,27 @@ public class OrderDAOTest
 		UserDAO     userDAO     = new UserDAO();
 		MaterialDAO materialDAO = new MaterialDAO();
 		Customer    customer    = userDAO.customerByUsername("testUser1");
-		//List<Order> expected = new ArrayList<>();
-		Order order = new  Order
-				.OrderBuilder(1, ServiceMethods.getCurrentTimeAsString())
-				.createOrderWithoutShed(10, 10, 10, customer, 35)
+		Shed shed = new Shed.ShedBuilder()
+			 	.insertWidth(5)
+				.insertLength(5)
+				.insertHasFloor(false)
+				.insertShedId(1)
 				.build();
+
+		Material firstMaterial = new Material("25x200mm. trykimp. Brædt", 80, 1);
+
+		Order order = new Order
+				.OrderBuilder(1, ServiceMethods.getCurrentTimeAsString())
+				.insertRequiredHeight(5)
+				.insertRequiredWidth(5)
+				.insertRequiredLength(5)
+				.insertRequiredSlope(45)
+				.insertRequiredMaterial(firstMaterial)
+				.insertRequiredCustomer(customer)
+				.insertOptionalStatus(Order.Status.PENDING)
+				.insertOptionalShed(shed)
+				.build();
+
 		return order;
 	}
 

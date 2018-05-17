@@ -3,21 +3,21 @@ package logic.facades;
 import data.dao.MaterialDAO;
 import data.dao.OrderDAO;
 import data.dao.OrderLineDAO;
+import data.dao.ShedDAO;
+import data.exceptions.*;
 import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
-import data.exceptions.DataException;
-import data.exceptions.MaterialException;
-import data.exceptions.OrderException;
-import data.exceptions.OrderLineException;
+import entities.OrderEntities.Shed;
 
 import java.util.List;
 
 public class MySqlOrderFacade implements OrderFacade
 {
-	private OrderDAO orderDAO;
-	private MaterialDAO materialDAO;
+	private OrderDAO     orderDAO;
+	private MaterialDAO  materialDAO;
 	private OrderLineDAO orderLineDAO;
+	private ShedDAO      shedDAO;
 
 	public OrderDAO getInstanceOrderDAO() throws DataException {
 		if(orderDAO == null)
@@ -35,6 +35,12 @@ public class MySqlOrderFacade implements OrderFacade
 		if(orderLineDAO == null)
 			orderLineDAO = new OrderLineDAO();
 		return orderLineDAO;
+	}
+
+	public ShedDAO getInstanceShedDAO() throws DataException {
+		if(shedDAO == null)
+			shedDAO = new ShedDAO();
+		return shedDAO;
 	}
 
 	public List<Order> allOrdersWithoutShed() throws OrderException, DataException
@@ -59,7 +65,7 @@ public class MySqlOrderFacade implements OrderFacade
 
 	public Order orderById(int orderId) throws DataException, OrderException
 	{
-		return orderDAO.orderByIdWithoutShed(orderId);
+		return orderDAO.orderById(orderId);
 	}
 
 	public List<Order> ordersOfCustomer(int id) throws OrderException
@@ -90,6 +96,11 @@ public class MySqlOrderFacade implements OrderFacade
 	public void createOrderLine(OrderLine orderLine) throws OrderLineException, DataException
 	{
 		orderLineDAO.createOrderLine(orderLine);
+	}
+
+	public Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException
+	{
+		return shedDAO.createAndReturnShed(shedLength, shedWidth, hasFloor);
 	}
 
 }

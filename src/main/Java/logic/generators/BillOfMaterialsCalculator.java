@@ -19,6 +19,23 @@ public class BillOfMaterialsCalculator
 	private final int    EKSTRA_LENGTH_STAKE = 40, NOLENGTH = 0;
 	private MaterialDAO materialDAO;
 	private Order       order;
+	private final String PLANK_LARGE          = "25x200mm. trykimp. Brædt";
+	private final String LATH                 = "38x73mm. Lægte ubh.";
+	private final String RAFTER               = "45x195mm. spærtræ ubh.";
+	private final String POLE                 = "97x97mm. trykimp. Stolpe";
+	private final String PLANKSMALL           = "19x100mm. trykimp. Brædt";
+	private final String PLASTMO_ECOLITE_BLUE = "Plastmo Ecolite blåtonet";
+	private final String PLASTMO_BOTTOM_SCREWS = "Plastmo bundskruer 200stk";
+	private final String PERFORATED_BAND =  "hulbånd 1x20mm. 10mtr.";
+	private final String UNIVERSAL_RIGHT = "universal 190mm højre";
+	private final String UNIVERSAL_LEFT = "universal 190mm venstre";
+	private final String NAIL = "4,5 x 60 mm. skruer 200stk";
+	private final String BRACKET = "4,0 x 50 mm. beslagsskruer 250stk";
+	private final String CARRIAGE_BOLT = "bræddebolt 10 x 120 mm";
+	private final String SQUARE_SLICES = "firkantskiver 40x40x11mm";
+	private final String SCREWS_FIFTY = "4,5 x 50 mm. skruer 300 stk";
+	private final String SCREWS_SEVENTY = "4,5 x 70 mm. skruer 400 stk";
+
 	//amount and length is shown pr.centimeter
 	//General formula: amount / area
 	//the amount is found in the examples of fog
@@ -34,12 +51,12 @@ public class BillOfMaterialsCalculator
 	public List<OrderLine> createCarportListWithoutShed() throws MaterialException
 	{
 		setValuesWithoutShed();
-		return order.getOrderlines();
+		return order.getOrderLines();
 	}
 
 	public int caportPrice()
 	{
-		for (OrderLine orderLine : order.getOrderlines()) {
+		for (OrderLine orderLine : order.getOrderLines()) {
 			totalPrice += orderLine.getPriceForOrderLine();
 		}
 		return totalPrice;
@@ -47,57 +64,57 @@ public class BillOfMaterialsCalculator
 
 	private void setValuesWithoutShed() throws MaterialException
 	{
-		Material m_plankLarge = findMaterial("25x200mm. trykimp. Brædt");
+		Material m_plankLarge = findMaterial(PLANK_LARGE);
 		order.addToOrderLines(plankUnderStern(m_plankLarge));
 		order.addToOrderLines(plankSides(m_plankLarge));
 
-		Material m_lath = findMaterial("38x73mm. Lægte ubh.");
+		Material m_lath = findMaterial(LATH);
 		order.addToOrderLines(lath(m_lath));
 
-		Material m_rafter = findMaterial("45x195mm. spærtræ ubh.");
+		Material m_rafter = findMaterial(RAFTER);
 		order.addToOrderLines(rafterSides(m_rafter));
 		order.addToOrderLines(RafterMountRem(m_rafter));
 
-		Material m_pole = findMaterial("97x97mm. trykimp. Stolpe");
+		Material m_pole = findMaterial(POLE);
 		order.addToOrderLines(pole(m_pole));
 
-		Material m_plankSmall = findMaterial("19x100mm. trykimp. Brædt");
+		Material m_plankSmall = findMaterial(PLANKSMALL);
 		order.addToOrderLines(plankShedClothing(m_plankSmall));
 		order.addToOrderLines(plankSternSides(m_plankSmall));
 		order.addToOrderLines(plankSternFront(m_plankSmall));
 
-		Material m_plastmoEcoliteBlue = findMaterial("Plastmo Ecolite blåtonet");
+		Material m_plastmoEcoliteBlue = findMaterial(PLASTMO_ECOLITE_BLUE);
 		order.addToOrderLines(plastmoBig(m_plastmoEcoliteBlue));
 		order.addToOrderLines(plastmoSmall(m_plastmoEcoliteBlue));
 
-		Material m_bottomScrews = findMaterial("Plastmo bundskruer 200stk");
+		Material m_bottomScrews = findMaterial(PLASTMO_BOTTOM_SCREWS);
 		order.addToOrderLines(bottomScrews(m_bottomScrews));
 
-		Material m_perforatedBand = findMaterial("hulbånd 1x20mm. 10mtr.");
+		Material m_perforatedBand = findMaterial(PERFORATED_BAND);
 		order.addToOrderLines(performedBand(m_perforatedBand));
 
-		Material m_universalRight = findMaterial("universal 190mm højre");
-		Material m_universalLeft = findMaterial("universal 190mm venstre");
+		Material m_universalRight = findMaterial(UNIVERSAL_RIGHT);
+		Material m_universalLeft = findMaterial(UNIVERSAL_LEFT);
 		order.addToOrderLines(universalBoth(m_universalRight));
 		order.addToOrderLines(universalBoth(m_universalLeft));
 
-		Material m_nail = findMaterial("4,5 x 60 mm. skruer 200stk");
+		Material m_nail = findMaterial(NAIL);
 		order.addToOrderLines(nail(m_nail));
 
-		Material m_bracket = findMaterial("4,0 x 50 mm. beslagsskruer 250stk");
+		Material m_bracket = findMaterial(BRACKET);
 		order.addToOrderLines(bracket(m_bracket));
 
-		Material m_carraigeBolt = findMaterial("bræddebolt 10 x 120 mm");
+		Material m_carraigeBolt = findMaterial(CARRIAGE_BOLT);
 		order.addToOrderLines(carriageBolt(m_carraigeBolt));
 
-		Material m_squareSlices = findMaterial("firkantskiver 40x40x11mm");
+		Material m_squareSlices = findMaterial(SQUARE_SLICES);
 		order.addToOrderLines(squareSlices(m_squareSlices));
 
-		Material m_screwsSeventy = findMaterial("4,5 x 70 mm. skruer 400 stk");
-		order.addToOrderLines(screwsSeventy(m_screwsSeventy));
-
-		Material m_screwsFifty = findMaterial("4,5 x 50 mm. skruer 300 stk");
+		Material m_screwsFifty = findMaterial(SCREWS_FIFTY);
 		order.addToOrderLines(screwsFifty(m_screwsFifty));
+
+		Material m_screwsSeventy = findMaterial(SCREWS_SEVENTY);
+		order.addToOrderLines(screwsSeventy(m_screwsSeventy));
 
 		//shed material from here
 		/*
@@ -435,7 +452,7 @@ public class BillOfMaterialsCalculator
 	{
 		OrderFacade orderFacade = new MySqlOrderFacade();
 		orderFacade.getInstanceOrderLineDAO();
-		for (OrderLine orderLine : order.getOrderlines())
+		for (OrderLine orderLine : order.getOrderLines())
 			//MySqlOrderFacade.createOrderLine(orderLine);
 			orderFacade.createOrderLine(orderLine);
 	}

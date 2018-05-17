@@ -1,8 +1,6 @@
 package configurations;
 
 
-import logic.logger.VerySimpleFomarter;
-
 import java.io.IOException;
 import java.util.logging.*;
 

@@ -26,7 +26,7 @@ public class createOrderServlet extends HttpServlet
 			Order order = UpdateOrderList.createOrderAndOrderLine(request, user);
 			request.getSession().setAttribute("order", order);
 			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
-		} catch (DataException | MaterialException | OrderException | OrderLineException finalDist) {
+		} catch (DataException | MaterialException | OrderException | OrderLineException | ShedException finalDist) {
 			throw new ServletException(finalDist);
 		}
 

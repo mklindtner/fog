@@ -79,7 +79,6 @@
                         <select class="form-control form-control-lg" name="shedWidth" id="shedWidth" >
                             <option>45</option>cm
                             <option>choose a value</option>
-                            <option>None</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
@@ -87,7 +86,6 @@
                         <select class="form-control form-control-lg" name="shedLength" id="shedLength">
                             <option>45</option>cm
                             <option>choose a value</option>
-                            <option>None</option>
                         </select>
                     </div>
                 </fieldset>

@@ -3,12 +3,9 @@ package daoTest;
 import daoTest.ServiceClasses.ServiceMethods;
 import daoTest.ServiceClasses.ServiceSeed;
 import data.dao.UserDAO;
+import data.exceptions.*;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
-import data.exceptions.DataException;
-import data.exceptions.OrderException;
-import data.exceptions.ShedException;
-import data.exceptions.UserException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +27,7 @@ public class UserDAOTest
 			ServiceSeed.establishConnections();
 			ServiceSeed.populateTables();
 			userDAO = new UserDAO("TEST");
-		} catch (DataException | UserException | ShedException | OrderException dae)
+		} catch (DataException | UserException | ShedException | OrderException | MaterialException dae)
 		{
 			throw new DataException(dae);
 		}
