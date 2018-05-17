@@ -54,8 +54,13 @@ Design
         create all options
         validations
 
+
 Servlet
     -create logger for errors
+
+
+SQL:
+    rollback
 
 extra Design:
     Employee

@@ -1,16 +1,11 @@
 package data.dao;
 
+import data.exceptions.*;
 import entities.OrderEntities.Material;
+import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
-import data.exceptions.DataException;
-import data.exceptions.MaterialException;
-import data.exceptions.OrderException;
-import data.exceptions.UserException;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ServiceDAO
 {
@@ -34,13 +29,6 @@ public class ServiceDAO
 
 	}
 
-	public static Material getMaterialById(int id, Connection con) throws OrderException, DataException, MaterialException
-	{
-		MaterialDAO materialDAO = new MaterialDAO();
-		return materialDAO.materialById( id );
-	}
-
-
 	public static String getRole(int roleId, Connection con) throws UserException
 	{
 		String SQL = "Select * FROM roles WHERE id=?";
@@ -52,6 +40,31 @@ public class ServiceDAO
 			throw new SQLException();
 		} catch (SQLException throwSql) {
 			throw new UserException(throwSql);
+		}
+	}
+
+	public static Shed getShedById(int id, Connection con) throws ShedException
+	{
+		final String SQL = "Select * FROM sheds WHERE id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, id);
+			ResultSet rs = statement.executeQuery();
+			if(rs.next()) {
+				int length = rs.getInt("length");
+				int width = rs.getInt("width");
+				boolean hasFloor = rs.getBoolean("hasFloor");
+				int idShed = rs.getInt("id");
+				return new Shed
+						.ShedBuilder()
+						.insertLength(length)
+						.insertWidth(width)
+						.insertHasFloor(hasFloor)
+						.insertShedId(idShed)
+						.build();
+			}
+			throw new SQLException();
+		} catch(SQLException throwSql) {
+			throw new ShedException(throwSql);
 		}
 	}
 

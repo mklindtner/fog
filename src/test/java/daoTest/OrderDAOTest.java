@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertSame;
 
 public class OrderDAOTest
 {
@@ -49,10 +50,28 @@ public class OrderDAOTest
 		assertEquals(orders.get(0), expectedOrder());
 	}
 
+/*
+	@Test
+	public void testSomething() {
+		Customer    customer    = new Customer
+				.CustomerBuilder(1, ServiceMethods.getCurrentTimeAsString())
+				.insertUsername("testUser1")
+				.insertPassword(USER_PASSWORD)
+				.insertPhone(USER_PHONE)
+				.build();
+
+		Customer    customerTwo    = new Customer
+				.CustomerBuilder(1, ServiceMethods.getCurrentTimeAsString())
+				.insertUsername("testUser1")
+				.insertPassword(USER_PASSWORD)
+				.insertPhone(USER_PHONE)
+				.build();
+
+		assertEquals(customer, customerTwo);
+	} */
+
 	private Order expectedOrder() throws DataException, UserException, OrderException
 	{
-		UserDAO     userDAO     = new UserDAO();
-
 		Customer    customer    = new Customer
 				.CustomerBuilder(1, ServiceMethods.getCurrentTimeAsString())
 				.insertUsername("testUser1")
@@ -67,7 +86,6 @@ public class OrderDAOTest
 				.insertShedId(1)
 				.build();
 
-		//Material firstMaterial = new Material("25x200mm. trykimp. Brædt", 80, 1);
 
 		Order order = new Order
 				.OrderBuilder(1, ServiceMethods.getCurrentTimeAsString())
@@ -75,7 +93,6 @@ public class OrderDAOTest
 				.insertRequiredWidth(5)
 				.insertRequiredLength(5)
 				.insertRequiredSlope(45)
-				//.insertRequiredMaterial(firstMaterial)
 				.insertRequiredCustomer(customer)
 				.insertOptionalStatus(Order.Status.PENDING)
 				.insertOptionalShed(shed)

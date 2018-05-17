@@ -1,9 +1,13 @@
 package entities.userEntities;
 
+import java.util.Objects;
+
 public class Customer implements User
 {
 	private String username, password, reg_date;
 	private int phone, id;
+
+
 
 	private Customer(CustomerBuilder customerBuilder)
 	{
@@ -61,11 +65,6 @@ public class Customer implements User
 		return this.reg_date;
 	}
 
-	@Override
-	public String toString() {
-		return "username: " + username + ", phone: " + phone;
-	}
-
 	public int getId()
 	{
 		return this.id;
@@ -79,5 +78,26 @@ public class Customer implements User
 	@Override public String getPassword()
 	{
 		return this.password;
+	}
+
+	@Override public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Customer customer = (Customer) o;
+		return phone == customer.phone &&
+			   Objects.equals(username, customer.username) &&
+			   Objects.equals(password, customer.password);
+	}
+
+	@Override public int hashCode()
+	{
+
+		return Objects.hash(username, password, reg_date, phone);
+	}
+
+	@Override
+	public String toString() {
+		return "username: " + username + ", phone: " + phone;
 	}
 }

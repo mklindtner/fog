@@ -1,6 +1,7 @@
 package data.dao;
 
 import data.MySqlConnector;
+import data.exceptions.ShedException;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
@@ -33,7 +34,7 @@ public class OrderDAO
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
-				ordersWithoutShed.add(returnOrderWithoutShed(rs));
+				ordersWithoutShed.add(returnOrder(rs));
 			}
 			return ordersWithoutShed;
 		} catch (SQLException throwSql) {
@@ -42,22 +43,21 @@ public class OrderDAO
 	}
 
 
-
-	public List<Order> ordersOfCustomer( int id ) throws OrderException {
-		final String SQL = "Select * FROM orders WHERE orders.customerId=? order by STATUS";
-		List<Order> customerOrder = new ArrayList<>();
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+	public List<Order> ordersOfCustomer(int id) throws OrderException
+	{
+		final String SQL           = "Select * FROM orders WHERE orders.customerId=? order by STATUS";
+		List<Order>  customerOrder = new ArrayList<>();
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, id);
 			ResultSet rs = statement.executeQuery();
-			while(rs.next()) {
-				customerOrder.add(returnOrderWithoutShed(rs));
+			while (rs.next()) {
+				customerOrder.add(returnOrder(rs));
 			}
 			return customerOrder;
 		} catch (SQLException throwSql) {
 			throw new OrderException(throwSql);
 		}
 	}
-
 
 
 	public Order createAndReturnOrder(Order order) throws OrderException, DataException
@@ -81,7 +81,7 @@ public class OrderDAO
 			statement.setInt(5, setSlope);
 			statement.setInt(6, setCusId);
 
-			if(shed != null)
+			if (shed != null)
 				statement.setInt(7, order.getShed().getId());
 			else
 				statement.setNull(7, Types.INTEGER);
@@ -98,7 +98,6 @@ public class OrderDAO
 	}
 
 
-
 	public Order orderById(int id) throws OrderException, DataException
 	{
 		final String SQL = "SELECT * FROM orders WHERE id=?";
@@ -106,13 +105,14 @@ public class OrderDAO
 			statement.setInt(1, id);
 			ResultSet rs = statement.executeQuery();
 			rs.next();
-			return returnOrderWithoutShed(rs);
+			return returnOrder(rs);
 		} catch (SQLException throwSql) {
 			throw new OrderException(throwSql);
 		}
 	}
 
-	private Order returnOrderWithoutShed(ResultSet rs) throws OrderException
+
+	private Order returnOrder(ResultSet rs) throws OrderException
 	{
 		try {
 			int          id         = rs.getInt("id");
@@ -123,19 +123,42 @@ public class OrderDAO
 			int          slope      = rs.getInt("slope");
 			Customer     customer   = ServiceDAO.getCustomerById(rs.getInt("customerId"), con);
 			Order.Status status     = Order.Status.valueOf(rs.getString("status"));
+			int          shedId     = rs.getInt("shedId");
+			Shed         shed;
+
+			if (shedId != 0) {
+				shed = ServiceDAO.getShedById(shedId, con);
+				return new Order
+						.OrderBuilder(id, created_at)
+						.insertRequiredHeight(height)
+						.insertRequiredLength(length)
+						.insertRequiredWidth(width)
+						.insertRequiredSlope(slope)
+						.insertRequiredCustomer(customer)
+						.insertOptionalStatus(status)
+						.insertOptionalShed(shed)
+						.build();
+			}
 			return new Order
 					.OrderBuilder(id, created_at)
-					.createOrderWithoutShed(height, width, length, customer, slope)
+					.insertRequiredHeight(height)
+					.insertRequiredLength(length)
+					.insertRequiredWidth(width)
+					.insertRequiredSlope(slope)
+					.insertRequiredCustomer(customer)
 					.insertOptionalStatus(status)
 					.build();
-		} catch (SQLException throwSql) {
+
+		} catch (SQLException | ShedException throwSql) {
 			throw new OrderException(throwSql);
 		}
 	}
 
-	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException{
+
+	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException
+	{
 		final String SQL = "update orders SET status=? where orders.id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setString(1, "OFFER");
 			statement.setInt(2, orderId);
 			statement.executeUpdate();
@@ -145,14 +168,15 @@ public class OrderDAO
 		}
 	}
 
-	public List<Order> ordersAvailable() throws OrderException {
-		List<Order> ordersAvailable = new ArrayList<>();
-		final String SQL = "select * from orders where status=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+	public List<Order> ordersAvailable() throws OrderException
+	{
+		List<Order>  ordersAvailable = new ArrayList<>();
+		final String SQL             = "select * from orders where status=?";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setString(1, "PENDING");
 			ResultSet rs = statement.executeQuery();
-			while(rs.next()) {
-				ordersAvailable.add(returnOrderWithoutShed(rs));
+			while (rs.next()) {
+				ordersAvailable.add(returnOrder(rs));
 			}
 			return ordersAvailable;
 		} catch (SQLException throwSql) {
@@ -174,15 +198,15 @@ public class OrderDAO
 	}
 
 
-
-	public List<Order> employeesChosenOrders( int employeeId ) throws OrderException {
-		List<Order> employeeOrders = new ArrayList<>();
-		final String SQL = "select * FROM orders WHERE orders.employeeId=? order by status";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+	public List<Order> employeesChosenOrders(int employeeId) throws OrderException
+	{
+		List<Order>  employeeOrders = new ArrayList<>();
+		final String SQL            = "select * FROM orders WHERE orders.employeeId=? order by status";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, employeeId);
 			ResultSet rs = statement.executeQuery();
-			while(rs.next())
-				employeeOrders.add(returnOrderWithoutShed(rs));
+			while (rs.next())
+				employeeOrders.add(returnOrder(rs));
 			return employeeOrders;
 		} catch (SQLException throwSql) {
 			throw new OrderException(throwSql);
@@ -190,9 +214,10 @@ public class OrderDAO
 	}
 
 
-	public void updateOrderOffer( Order order ) throws OrderException {
+	public void updateOrderOffer(Order order) throws OrderException
+	{
 		final String SQL = "UPDATE orders SET height=?, width=?, length=?, slope=?, price=?, status=? WHERE orders.id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, order.getHeight());
 			statement.setInt(2, order.getWidth());
 			statement.setInt(3, order.getLength());
@@ -201,8 +226,8 @@ public class OrderDAO
 			statement.setString(6, order.getStatus().name());
 			statement.setInt(7, order.getId());
 			statement.executeUpdate();
-		} catch(SQLException throwSql) {
-			throw new OrderException( throwSql );
+		} catch (SQLException throwSql) {
+			throw new OrderException(throwSql);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 package entities.userEntities;
 
+import java.util.Objects;
+
 public class Employee implements User
 {
 	private String username, password, reg_date, role;
@@ -96,5 +98,19 @@ public class Employee implements User
 	@Override public String getPassword()
 	{
 		return this.password;
+	}
+
+	@Override public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Employee employee = (Employee) o;
+		return Objects.equals(username, employee.username);
+	}
+
+	@Override public int hashCode()
+	{
+
+		return Objects.hash(username);
 	}
 }

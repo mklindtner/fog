@@ -1,5 +1,7 @@
 package entities.OrderEntities;
 
+import java.util.Objects;
+
 public class Shed
 {
 	private int id, length, width;
@@ -65,5 +67,21 @@ public class Shed
 	@Override
 	public String toString() {
 		return "length: " + length + ", width: " + width + ", hasfloor: " + hasFloor;
+	}
+
+	@Override public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Shed shed = (Shed) o;
+		return length == shed.length &&
+			   width == shed.width &&
+			   hasFloor == shed.hasFloor;
+	}
+
+	@Override public int hashCode()
+	{
+
+		return Objects.hash(length, width, hasFloor);
 	}
 }

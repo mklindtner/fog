@@ -12,7 +12,6 @@ public class Order
 	private int id, height, width, length, slope, price;
 	private String          created_at;
 	private Customer        customer;
-	private Material        material;
 	private Shed            shed;
 	private Employee        employee;
 	private Status          status;
@@ -25,7 +24,6 @@ public class Order
 		this.width = orderBuilder.width;
 		this.length = orderBuilder.length;
 		this.slope = orderBuilder.slope;
-		//this.material = orderBuilder.material;
 		this.status = orderBuilder.status;
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
@@ -116,11 +114,6 @@ public class Order
 	public Customer getCustomer()
 	{
 		return this.customer;
-	}
-
-	public Material getMaterial()
-	{
-		return this.material;
 	}
 
 	public String getCreated_at()
@@ -231,12 +224,6 @@ public class Order
 		}
 	}
 
-	@Override public String toString()
-	{
-		return "customer: " + customer.getUsername() + ", status: " +
-			   status + ", height: " + height + ", width: " + width + ", length: " + length;
-	}
-
 	@Override public boolean equals(Object o)
 	{
 		if (this == o) return true;
@@ -252,6 +239,13 @@ public class Order
 			   Objects.equals(shed, order.shed) &&
 			   Objects.equals(employee, order.employee) &&
 			   status == order.status;
+	}
+
+
+	@Override public String toString()
+	{
+		return "customer: " + customer.getUsername() + ", status: " +
+			   status + ", height: " + height + ", width: " + width + ", length: " + length;
 	}
 
 	@Override public int hashCode()
