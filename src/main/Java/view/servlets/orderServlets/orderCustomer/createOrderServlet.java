@@ -15,13 +15,13 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/createOrder")
 public class createOrderServlet extends HttpServlet
 {
-	//TODO: create a way to differentiate between carport or no carport
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		Customer user  = (Customer) request.getSession().getAttribute("customer");
 		try {
 			Order order = UpdateOrderList.createOrderAndOrderLine(request, user);
 			request.getSession().setAttribute("order", order);
+			UpdateOrderList.generateCustomerOrders(request.getSession(), user);
 			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 		} catch (DataException | MaterialException | OrderException | OrderLineException | ShedException finalDist) {
 			throw new ServletException(finalDist);

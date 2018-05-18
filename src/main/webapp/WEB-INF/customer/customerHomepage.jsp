@@ -49,7 +49,7 @@
                             <option>780</option>cm
                             <option>810</option>cm
                             <option>910</option>cm
-                            <option>choose a value</option>
+                            <option disabled>choose a value</option>
                         </select>
                     </div>
 
@@ -59,7 +59,7 @@
                             <option>300</option>cm
                             <option>360</option>cm
                             <option>390</option>cm
-                            <option>choose a value</option>
+                            <option disabled>choose a value</option>
                         </select>
                     </div>
 
@@ -73,7 +73,7 @@
                             <option>780</option>cm
                             <option>810</option>cm
                             <option>910</option>cm
-                            <option>choose a value</option>
+                            <option disabled>choose a value</option>
                         </select>
                     </div>
 
@@ -81,7 +81,7 @@
                         <label for="slope">Slope</label>
                         <select class="form-control form-control-lg" name="slope" id="slope" required>
                             <option>45</option>cm
-                            <option>choose a value</option>
+                            <option disabled>choose a value</option>
                         </select>
                     </div>
                 </fieldset>
@@ -92,14 +92,14 @@
                         <label for="ShedWidth">shedWidth</label>
                         <select class="form-control form-control-lg" name="shedWidth" id="shedWidth" >
                             <option>45</option>cm
-                            <option>choose a value</option>
+                            <option disabled>choose a value</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="shedLength">ShedLength</label>
                         <select class="form-control form-control-lg" name="shedLength" id="shedLength">
                             <option>45</option>cm
-                            <option>choose a value</option>
+                            <option disabled>choose a value</option>
                         </select>
                     </div>
                 </fieldset>

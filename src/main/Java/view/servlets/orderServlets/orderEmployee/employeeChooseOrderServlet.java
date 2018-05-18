@@ -24,8 +24,8 @@ public class employeeChooseOrderServlet extends HttpServlet
 		try {
 			OrderFacade orderFacade = new MySqlOrderFacade();
 			orderFacade.getInstanceOrderDAO().employeeChooseOrder(employee.getId(), orderId);
-			//MySqlOrderFacade.employeeChooseOrder(employee.getId(), orderId);
 			UpdateOrderList.generateEmployeeOrders(request.getSession(), employee);
+			UpdateOrderList.generateOrdersAvailable(request.getSession());
 		} catch (OrderException | DataException finalDist) {
 			throw new ServletException(finalDist);
 		}
