@@ -305,10 +305,20 @@ public class OrderDAO
 		}
 	}
 
+	public void deleteOrder(int orderId) throws OrderException
+	{
+		final String SQL = "delete from orders WHERE orders.id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, orderId);
+			statement.executeUpdate();
+		} catch (SQLException throwSql) {
+			throw new OrderException(throwSql);
+		}
+	}
+
 	public Connection getCon()
 	{
 		return this.con;
 	}
-
 
 }

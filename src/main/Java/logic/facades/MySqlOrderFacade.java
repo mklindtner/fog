@@ -113,4 +113,13 @@ public class MySqlOrderFacade implements OrderFacade
 		return orderLineDAO.orderLineByOrderId(orderId);
 	}
 
+	public void deleteOrder(int orderId) throws OrderException {
+		orderDAO.deleteOrder(orderId);
+	}
+
+	public void deleteOrderLineByOrderId(int orderId) throws OrderLineException
+	{
+		orderLineDAO.deleteOrderLineByOrderId(orderId);
+	}
+
 }

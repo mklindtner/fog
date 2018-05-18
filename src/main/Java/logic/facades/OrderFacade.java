@@ -50,5 +50,7 @@ public interface OrderFacade
 
 	List<OrderLine> orderLinesByOrderId(int orderId) throws OrderLineException, MaterialException;
 
+	void deleteOrder(int orderId) throws OrderException;
 
+	void deleteOrderLineByOrderId(int orderId) throws OrderLineException;
 }

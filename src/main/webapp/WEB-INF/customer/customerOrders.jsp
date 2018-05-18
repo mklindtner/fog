@@ -134,6 +134,12 @@
                         <button class="btn btn-primary" type="submit">Accept Offer</button>
                     </form>
                 </td>
+                <td>
+                    <form method="post" action="customerDeclineOrder">
+                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                        <button class="btn btn-primary" type="submit">Decline Offer</button>
+                    </form>
+                </td>
             </tr>
             <%
                 }

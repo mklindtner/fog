@@ -108,6 +108,18 @@ public class OrderLineDAO
 		}
 	}
 
+	public void deleteOrderLineByOrderId(int orderId) throws OrderLineException
+	{
+		final String SQL = "delete from orderLines WHERE orderLines.orderId=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL))
+		{
+			statement.setInt(1, orderId);
+			statement.executeUpdate();
+		} catch(SQLException throwSql) {
+			throw new OrderLineException(throwSql);
+		}
+	}
+
 	public Connection getCon()
 	{
 		return this.con;
