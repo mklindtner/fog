@@ -1,9 +1,12 @@
 Current:
     Logger check if done ok and finish rest of daos
     Tests (focus on making more or?)
-    AdministrationPanel (CRUD)
-    Validations
-    Customer can reject offer (THIS)
+    AdministrationPanel (CRUD) (THIS)
+        -Material Ansvarlig
+            -see all materials
+            -create new material
+    find customer
+        -Show orders of that particular customer
     Helper jsp footer & implement to employee
 
 

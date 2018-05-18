@@ -51,4 +51,10 @@ public class MySqlUserFacade implements UserFacade
 	{
 		return userDao.customerByUsername(username);
 	}
+
+	public void deleteEmployeeById(int employeeId) throws UserException
+	{
+		userDao.deleteEmployeeById(employeeId);
+	}
+
 }

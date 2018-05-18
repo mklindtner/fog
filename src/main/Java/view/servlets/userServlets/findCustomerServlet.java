@@ -20,13 +20,9 @@ public class findCustomerServlet extends HttpServlet
 	{
 		try {
 			UserFacade userFacade = new MySqlUserFacade();
-			//Customer customer = MySqlUserFacade.findCustomerByUsername(request.getParameter("username") );
 			userFacade.getUserDAOInstance();
 			Customer customer = userFacade.findCustomerByUsername(request.getParameter("username"));
 			request.setAttribute("foundCustomer", customer);
-			// needs new dispastcher
-			// request.getRequestDispatcher("/WEB-INF/customer/customerOrderInformation.jsp").forward(request,
-			// response);
 		} catch(UserException | DataException finalDistException) {
 			throw new ServletException(finalDistException);
 		}

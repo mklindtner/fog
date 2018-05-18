@@ -27,7 +27,8 @@
                     <legend>Order Details</legend>
                     <div class="form-group col-md-6">
                         <label for="height">Height</label>
-                        <input type="number" class="form-control" name="height" id="height" value="<%=order.getHeight()%>">
+                        <input type="number" class="form-control" name="height" id="height"
+                               value="<%=order.getHeight()%>">
                     </div>
 
                     <div class="form-group col-md-6">
@@ -38,7 +39,8 @@
 
                     <div class="form-group col-md-6">
                         <label for="length">Length</label>
-                        <input type="number" class="form-control" name="length" id="length" value="<%=order.getLength()%>">
+                        <input type="number" class="form-control" name="length" id="length"
+                               value="<%=order.getLength()%>">
                     </div>
 
                     <div class="form-group col-md-6">
@@ -52,11 +54,12 @@
                     </div>
 
                 </fieldset>
-                <% if(order.getShed() != null) {%>
+                <% if (order.getShed() != null) {%>
                 <fieldset>
                     <legend>Shed Details</legend>
                     <div class="form-group col-md-6">
-                        <input class="form-control form-control-lg" type="number" name="phoneNumber" id="phoneNumber" placeholder="phoneNumber" data-bind="value:replyNumber">
+                        <input class="form-control form-control-lg" type="number" name="phoneNumber" id="phoneNumber"
+                               placeholder="phoneNumber" data-bind="value:replyNumber">
                     </div>
 
                     <div class="form-group col-md-12 hidden">

@@ -31,7 +31,11 @@
         </li>
 
         <li role="presentation">
-            <a href="employees">See employees</a>
+            <% Employee currEmployee = (Employee) request.getSession().getAttribute("employee");
+                if (currEmployee.getRole().equals("CENTERCHEF")) {
+            %>
+            <a href="allEmployees">See employees</a>
+            <% }%>
         </li>
 
     </ul>

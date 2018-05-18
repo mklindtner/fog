@@ -24,4 +24,6 @@ public interface UserFacade
 
 	UserDAO getUserDAOInstance() throws DataException;
 
+	void deleteEmployeeById(int employeeId) throws UserException;
+
 }

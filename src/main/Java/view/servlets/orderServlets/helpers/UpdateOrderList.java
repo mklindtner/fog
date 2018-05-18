@@ -7,7 +7,9 @@ import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
 import logic.facades.MySqlOrderFacade;
+import logic.facades.MySqlUserFacade;
 import logic.facades.OrderFacade;
+import logic.facades.UserFacade;
 import logic.generators.BillOfMaterials;
 
 import javax.servlet.http.HttpServletRequest;
@@ -84,6 +86,7 @@ public class UpdateOrderList
 		session.setAttribute("totalPrice", order.fullPriceOfOrder());
 	}
 
+
 	private static Shed createShed(HttpServletRequest request, OrderFacade orderFacade) throws DataException,
 																							   ShedException
 	{
@@ -121,7 +124,6 @@ public class UpdateOrderList
 		billOfMaterials.createCarportListWithoutShed();
 		billOfMaterials.saveOrderLinesToDB();
 	}
-
 
 }
 

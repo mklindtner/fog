@@ -26,7 +26,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <form method="get" action="login" class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control" value="empTest" name="username"
+                    <input type="text" placeholder="Email" class="form-control" value="Martin@companyEmail.com" name="username"
                            required>
                 </div>
                 <div class="form-group">

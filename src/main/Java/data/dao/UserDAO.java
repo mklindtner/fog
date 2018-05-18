@@ -108,7 +108,8 @@ public class UserDAO
 		}
 	}
 
-	public Customer createAndReturnCustomer(String username, String password) throws DataException, UserException {
+	public Customer createAndReturnCustomer(String username, String password) throws DataException, UserException
+	{
 		String SQL = "INSERT INTO customers(username, password, reg_date) VALUES (?, ?, now())";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setString(1, username);
@@ -226,16 +227,16 @@ public class UserDAO
 		return employeeByUsername(username).getPassword().equals(password) ? true : false;
 	}
 
-	public Customer getCustomerById(int id ) throws UserException, DataException
+	public Customer getCustomerById(int id) throws UserException, DataException
 	{
 		final String SQL = "Select * FROM customers WHERE id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, id);
 			ResultSet rs = statement.executeQuery();
-			if(rs.next () ) {
-				String username = rs.getString("username");
-				String password = rs.getString("password");
-				int phone = rs.getInt("phone");
+			if (rs.next()) {
+				String username          = rs.getString("username");
+				String password          = rs.getString("password");
+				int    phone             = rs.getInt("phone");
 				String registration_date = rs.getString("reg_date");
 				return new Customer
 						.CustomerBuilder(id, registration_date)
@@ -248,8 +249,20 @@ public class UserDAO
 		}
 	}
 
+	public void deleteEmployeeById(int employeeId) throws UserException
+	{
+		final String SQL = "delete from employees WHERE id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, employeeId);
+			statement.executeUpdate();
+		} catch(SQLException throwSql) {
+			throw new UserException(throwSql);
+		}
+	}
+
 	public Connection getCon()
 	{
 		return this.con;
 	}
+
 }
