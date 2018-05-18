@@ -71,6 +71,7 @@ public class MaterialDAO
 			id.next();
 			return new Material(description, pricePrUnit, id.getInt(1));
 		} catch(SQLException throwSql) {
+
 			throw new MaterialException(throwSql);
 		}
 	}

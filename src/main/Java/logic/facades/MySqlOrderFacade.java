@@ -103,4 +103,14 @@ public class MySqlOrderFacade implements OrderFacade
 		return shedDAO.createAndReturnShed(shedLength, shedWidth, hasFloor);
 	}
 
+	public void updateOrderLineAmount(int orderLineId, int amount) throws OrderLineException
+	{
+		orderLineDAO.updateOrderLineAmount(orderLineId, amount);
+	}
+
+	public List<OrderLine> orderLinesByOrderId(int orderId) throws OrderLineException, MaterialException
+	{
+		return orderLineDAO.orderLineByOrderId(orderId);
+	}
+
 }

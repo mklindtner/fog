@@ -20,6 +20,7 @@ public class OrderLine
 		this.isTreeOrRoof = orderLineBuilder.isTreeOrRoof;
 		this.materialId = orderLineBuilder.materialId;
 		this.orderId = orderLineBuilder.orderId;
+		this.id = orderLineBuilder.id;
 	}
 
 	public String getFirstDescription()
@@ -50,6 +51,11 @@ public class OrderLine
 	public void setOrderId(int orderId)
 	{
 		this.orderId = orderId;
+	}
+
+	public int getId()
+	{
+		return this.id;
 	}
 
 
@@ -110,6 +116,11 @@ public class OrderLine
 		public OrderLineBuilder insertMaterialId(int materialId)
 		{
 			this.materialId = materialId;
+			return this;
+		}
+
+		public OrderLineBuilder insertOrderLineId(int id) {
+			this.id = id;
 			return this;
 		}
 

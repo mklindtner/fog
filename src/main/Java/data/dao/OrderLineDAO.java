@@ -1,17 +1,24 @@
 package data.dao;
 
 import data.MySqlConnector;
+import data.exceptions.MaterialException;
+import entities.OrderEntities.Material;
+import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.OrderLineException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderLineDAO
 {
 	private Connection con;
+
 
 	public OrderLineDAO() throws DataException
 	{
@@ -25,15 +32,77 @@ public class OrderLineDAO
 
 	public void createOrderLine(OrderLine orderLine) throws OrderLineException
 	{
-		final String SQL = "Insert into orderLines(amount, unit, description, orderId, materialId) VALUES (?, ?, ?, " +
-						   "?, ?);";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		final String SQL = "Insert into orderLines(amount, unit, description, orderId, materialId, length, " +
+						   "isTreeOrRoof) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, orderLine.getAmount());
 			statement.setString(2, orderLine.getUnit());
 			statement.setString(3, orderLine.getSecondDescription());
 			statement.setInt(4, orderLine.getOrderId());
 			statement.setInt(5, orderLine.getMaterialId());
+			statement.setInt(6, orderLine.getLength());
+			statement.setBoolean(7, orderLine.isTreeOrRoof());
 			statement.executeUpdate();
+		} catch (SQLException throwSql) {
+			throw new OrderLineException(throwSql);
+		}
+	}
+
+	public void updateOrderLineAmount(int orderLineId, int amount) throws OrderLineException
+	{
+		final String SQL = "UPDATE orderLines SET amount=? WHERE id=?";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, amount);
+			statement.setInt(2, orderLineId);
+			statement.executeUpdate();
+		} catch (SQLException throwSql) {
+			throw new OrderLineException(throwSql);
+		}
+	}
+
+	public List<OrderLine> orderLineByOrderId(int orderId) throws OrderLineException, MaterialException
+	{
+		List<OrderLine> orderLines = new ArrayList<>();
+		final String SQL = "Select * FROM orderLines WHERE orderLines.orderId=?";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, orderId);
+			ResultSet rs = statement.executeQuery();
+			while(rs.next()) {
+				orderLines.add(returnOrderLine(rs));
+			}
+			return orderLines;
+		} catch (SQLException throwSql) {
+			throw new OrderLineException(throwSql);
+		}
+	}
+
+	private OrderLine returnOrderLine(ResultSet resultSet) throws OrderLineException, MaterialException
+	{
+		OrderLine orderLine;
+		try {
+			int id = resultSet.getInt("id");
+			int amount = resultSet.getInt("amount");
+			String unit = resultSet.getString("unit");
+			String description = resultSet.getString("description");
+			int orderId = resultSet.getInt("orderId");
+			int materialId = resultSet.getInt("materialId");
+			int length = resultSet.getInt("length");
+			boolean isTreeOrRoof = resultSet.getBoolean("isTreeOrRoof");
+			Material material = ServiceDAO.materialById(materialId, con);
+
+			return new OrderLine
+					.OrderLineBuilder()
+					.insertAmount(amount)
+					.insertLength(length)
+					.insertUnit(unit)
+					.insertFirstDescription(material.getDescription())
+					.insertSecondDescription(description)
+					.insertPriceForOrderLine(amount * material.getPricePrUnit())
+					.insertIsTreeOrRoof(isTreeOrRoof)
+					.insertMaterialId(materialId)
+					.insertOrderId(orderId)
+					.insertOrderLineId(id)
+					.build();
 		} catch(SQLException throwSql) {
 			throw new OrderLineException(throwSql);
 		}

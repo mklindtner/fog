@@ -136,6 +136,14 @@ public class Order
 		return this.id;
 	}
 
+	public int fullPriceOfOrder() {
+		int amount = 0;
+		for(OrderLine orderLine: orderLines) {
+			amount += orderLine.getPriceForOrderLine();
+		}
+		return 0;
+	}
+
 	public static class OrderBuilder
 	{
 		private int id, height, width, length, slope;

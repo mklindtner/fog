@@ -1,3 +1,16 @@
+Current:
+    Logger check if done ok and finish rest of daos
+    Tests (focus on making more or?)
+    AdministrationPanel (CRUD)
+    Edit stykliste (doing this)
+    Validations
+    Helper jsp footer & implement to employee
+
+
+Observations:
+    Customer
+        create order doesn't update
+
 Stykliste:
     få lavet entities med mål i db og hent dem i BoM
     hent enhed i basen

@@ -99,6 +99,12 @@
                         <input type="hidden" name="orderId" value="<%=order.getId()%>">
                         <button class="btn btn-primary" type="submit">conferm order is on the way</button>
                     </form>
+
+                    <form method="get" action="billOfMaterial">
+                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                        <button class="btn btn-primary" type="submit">see BillOfMaterial</button>
+                    </form>
+
                 </td>
             </tr>
             <%

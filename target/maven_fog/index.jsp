@@ -31,7 +31,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="length">Length</label>
-                <select class="form-control form-control-lg" id="length" name="length">
+                <select class="form-control form-control-lg" id="length" name="length" required>
                     <option>480</option>cm
                     <option>540</option>cm
                     <option>600</option>cm
@@ -39,23 +39,23 @@
                     <option>780</option>cm
                     <option>810</option>cm
                     <option>910</option>cm
-                    <option>choose a value</option>
+                    <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="width">Width</label>
-                <select class="form-control form-control-lg" id="width" name="width">
+                <select class="form-control form-control-lg" id="width" name="width" required>
                     <option>300</option>cm
                     <option>360</option>cm
                     <option>390</option>cm
-                    <option>choose a value</option>
+                    <option disabled>choose a value</option>
                 </select>
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-6 col-md-6">
                 <label for="height">Height</label>
-                <select class="form-control form-control-lg" id="height" name="height">
+                <select class="form-control form-control-lg" id="height" name="height" required>
                     <option>480</option>cm
                     <option>540</option>cm
                     <option>600</option>cm
@@ -63,14 +63,14 @@
                     <option>780</option>cm
                     <option>810</option>cm
                     <option>910</option>cm
-                    <option>choose a value</option>
+                    <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="slope">slope</label>
-                <select class="form-control form-control-lg" id="slope" name="slope">
+                <select class="form-control form-control-lg" id="slope" name="slope" required>
                     <option>45</option>cm
-                    <option>choose a value</option>
+                    <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
@@ -87,15 +87,15 @@
             <div class="hidden" id="shedVisible">
                 <div class="col-md-4 col-md-3">
                     <label for="shedWidth">shedWidth</label>
-                    <select class="form-control form-control-lg" id="shedWidth" name="shedWidth">
-                        <option>choose a value</option>
+                    <select class="form-control form-control-lg" id="shedWidth" name="shedWidth" required>
+                        <option disabled>choose a value</option>
                         <option>60</option>cm
                     </select>
                 </div>
                 <div class="col-md-4 col-md-3">
                     <label for="shedLength">shedLength</label>
-                    <select class="form-control form-control-lg" id="shedLength" name="shedLength">
-                        <option>choose a value</option>
+                    <select class="form-control form-control-lg" id="shedLength" name="shedLength" required>
+                        <option disabled>choose a value</option>
                         <option>40</option>cm
                     </select>
                 </div>
@@ -114,10 +114,10 @@
     </form>
 </div>
 
-<!--
+
 <form method="get" action="TestServlet">
     <input type="submit" value="press me">
-</form> -->
+</form>
 
 
 <!-- rem, spær, stolper -->

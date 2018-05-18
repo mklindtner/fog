@@ -2,7 +2,8 @@
 <%@ page import="entities.OrderEntities.Material" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="entities.OrderEntities.OrderLine" %><%--
+<%@ page import="entities.OrderEntities.OrderLine" %>
+<%@ page import="entities.OrderEntities.Order" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/7/18
@@ -24,6 +25,7 @@
     HttpSession sess = request.getSession();
     List billOfMaterial = (List) sess.getAttribute("billOfMaterial");
     Integer totalPrice_int = (Integer) sess.getAttribute("totalPrice");
+    Order order = (Order) sess.getAttribute("order");
     int totalPrice = totalPrice_int.intValue();
 
 %>
@@ -71,6 +73,15 @@
         </td>
         <td><%=orderLine.getSecondDescription()%>
         </td>
+        <%if(sess.getAttribute("employee") != null) { %>
+        <td>
+            <form action="employeeEditBillOfMaterial" method="post">
+                <input type="hidden" name="orderLineId" value="<%=orderLine.getId()%>">
+                <input type="number" name="orderLineAmount">
+                <button class="btn btn-primary" type="submit">Change amount</button>
+            </form>
+        </td>
+        <% } %>
     </tr>
     <% }
     } %>
@@ -91,10 +102,20 @@
         </td>
         <td><%=orderLine.getSecondDescription()%>
         </td>
+        <%if(sess.getAttribute("employee") != null) { %>
+        <td>
+            <form action="employeeEditBillOfMaterial" method="post">
+                <input type="hidden" name="orderLineId" value="<%=orderLine.getId()%>">
+                <input type="number" name="orderLineAmount">
+                <button class="btn btn-primary" type="submit">Change amount</button>
+            </form>
+        </td>
+        <%} %>
     </tr>
     <% }
     }%>
 </table>
+<%if(request.getSession().getAttribute("customer") != null) { %>
 <form method="get" action="redirect">
     <input type="hidden" name="goToPage" value="customerOrders"/>
     <input type="hidden" name="role" value="customer"/>
@@ -102,5 +123,14 @@
         <button type="submit" class="btn btn-primary">Orders</button>
     </div>
 </form>
+<% } else {%>
+<form method="get" action="redirect">
+    <input type="hidden" name="goToPage" value="employeeHomepage"/>
+    <input type="hidden" name="role" value="employee"/>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="submit" class="btn btn-primary">Orders</button>
+    </div>
+</form>
+<% } %>
 </body>
 </html>

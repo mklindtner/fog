@@ -45,4 +45,10 @@ public interface OrderFacade
 	ShedDAO getInstanceShedDAO() throws DataException;
 
 	Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException;
+
+	void updateOrderLineAmount(int orderLineId, int amount) throws OrderLineException;
+
+	List<OrderLine> orderLinesByOrderId(int orderId) throws OrderLineException, MaterialException;
+
+
 }

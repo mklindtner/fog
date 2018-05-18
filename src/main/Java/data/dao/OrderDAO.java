@@ -1,5 +1,6 @@
 package data.dao;
 
+import configurations.Conf;
 import data.MySqlConnector;
 import data.exceptions.ShedException;
 import entities.OrderEntities.Order;
@@ -8,9 +9,11 @@ import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class OrderDAO
 {
@@ -38,6 +41,11 @@ public class OrderDAO
 			}
 			return ordersWithoutShed;
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"allOrders",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -55,6 +63,11 @@ public class OrderDAO
 			}
 			return customerOrder;
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"ordersOfCustomer",
+											  "find orders for customer"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -93,6 +106,11 @@ public class OrderDAO
 			resultId.next();
 			return orderById(resultId.getInt(1));
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"createAndReturnOrder",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -107,6 +125,11 @@ public class OrderDAO
 			rs.next();
 			return returnOrder(rs);
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"orderById",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -150,6 +173,11 @@ public class OrderDAO
 					.build();
 
 		} catch (SQLException | ShedException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"returnOrder",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -164,6 +192,11 @@ public class OrderDAO
 			statement.executeUpdate();
 			addEmployeeToOrder(employeeId, orderId);
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"employeeChooseOrder",
+											  "find employee or order"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -180,6 +213,11 @@ public class OrderDAO
 			}
 			return ordersAvailable;
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"ordersAvailable",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -193,6 +231,11 @@ public class OrderDAO
 			statement.setInt(2, ordersId);
 			statement.executeUpdate();
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"addEmployeeToOrder",
+											  "execute"
+								 }
+			);
 			throw new DataException(throwSql);
 		}
 	}
@@ -209,6 +252,12 @@ public class OrderDAO
 				employeeOrders.add(returnOrder(rs));
 			return employeeOrders;
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"employeesChosenOrders",
+											  "find employeeOrders"
+								 }
+			);
+
 			throw new OrderException(throwSql);
 		}
 	}
@@ -227,6 +276,11 @@ public class OrderDAO
 			statement.setInt(7, order.getId());
 			statement.executeUpdate();
 		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"updateOrderOffer",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}
@@ -235,13 +289,18 @@ public class OrderDAO
 	public int findCustomerIdByOrder(Order order) throws OrderException
 	{
 		final String SQL = "Select customerId FROM orders WHERE orders.customerId = ?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, order.getCustomer().getId());
 			ResultSet rs = statement.executeQuery();
 			rs.next();
 			int customerId = rs.getInt("customerId");
 			return customerId;
-		} catch(SQLException throwSql) {
+		} catch (SQLException throwSql) {
+			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+								 new Object[]{"findCustomerIdByOrder",
+											  "execute"
+								 }
+			);
 			throw new OrderException(throwSql);
 		}
 	}

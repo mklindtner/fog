@@ -39,7 +39,7 @@ public class loginServlet extends HttpServlet
 			if (user instanceof Employee) {
 				session.setAttribute("employee", user);
 				UpdateOrderList.generateEmployeeOrders(session, (Employee) user);
-				UpdateOrderList.genreateOrdersAvailable(session);
+				UpdateOrderList.generateOrdersAvailable(session);
 				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
 			response.sendRedirect("index.jsp");

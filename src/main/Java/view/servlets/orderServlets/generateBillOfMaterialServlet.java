@@ -1,12 +1,12 @@
 package view.servlets.orderServlets;
 
 import data.exceptions.OrderException;
+import data.exceptions.OrderLineException;
 import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
-import logic.generators.BillOfMaterials;
+import entities.OrderEntities.OrderLine;
+import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/billOfMaterial")
 public class generateBillOfMaterialServlet extends HttpServlet
@@ -23,25 +24,12 @@ public class generateBillOfMaterialServlet extends HttpServlet
 	{
 		HttpSession session = request.getSession();
 		try {
-			checkForOrder(request);
-			Order           order           = (Order) session.getAttribute("order");
-			BillOfMaterials billOfMaterials = new BillOfMaterials(order);
-			session.setAttribute("billOfMaterial", billOfMaterials.createCarportListWithoutShed());
-			session.setAttribute("totalPrice", billOfMaterials.caportPrice());
-		} catch (DataException | MaterialException | OrderException finalDist) {
+			UpdateOrderList.setOrderForSession(request);
+			Order order = (Order) session.getAttribute("order");
+			UpdateOrderList.updateOrderLinesSession(request, order);
+		} catch (DataException | MaterialException | OrderException | OrderLineException finalDist) {
 			throw new ServletException(finalDist);
 		}
 		request.getRequestDispatcher("/WEB-INF/shared/billOfMaterial.jsp").forward(request, response);
-	}
-
-	private void checkForOrder(HttpServletRequest request) throws OrderException, DataException
-	{
-		String id_string = request.getParameter("orderId");
-		int    orderId;
-		orderId = Integer.parseInt(id_string);
-		OrderFacade orderFacade = new MySqlOrderFacade();
-		orderFacade.getInstanceOrderDAO();
-		request.getSession().setAttribute("order", orderFacade.orderById(orderId));
-		//request.getSession().setAttribute("order", MySqlOrderFacade.orderById(orderId));
 	}
 }

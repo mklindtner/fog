@@ -72,6 +72,14 @@ public class BillOfMaterials
 		return totalPrice;
 	}
 
+	public void saveOrderLinesToDB() throws OrderLineException, DataException
+	{
+		OrderFacade orderFacade = new MySqlOrderFacade();
+		orderFacade.getInstanceOrderLineDAO();
+		for (OrderLine orderLine : order.getOrderLines())
+			orderFacade.createOrderLine(orderLine);
+	}
+
 	private void setValuesWithoutShed() throws MaterialException
 	{
 		Material m_plankLarge = findMaterial(PLANK_LARGE);
@@ -495,14 +503,6 @@ public class BillOfMaterials
 				.build();
 	}
 
-	public void saveOrderLinesToDB() throws OrderLineException, DataException
-	{
-		OrderFacade orderFacade = new MySqlOrderFacade();
-		orderFacade.getInstanceOrderLineDAO();
-		for (OrderLine orderLine : order.getOrderLines())
-			//MySqlOrderFacade.createOrderLine(orderLine);
-			orderFacade.createOrderLine(orderLine);
-	}
 
 	private OrderLine reglarShedSides(Material m_reglar)
 	{

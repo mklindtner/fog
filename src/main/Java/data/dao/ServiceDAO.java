@@ -46,14 +46,14 @@ public class ServiceDAO
 	public static Shed getShedById(int id, Connection con) throws ShedException
 	{
 		final String SQL = "Select * FROM sheds WHERE id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, id);
 			ResultSet rs = statement.executeQuery();
-			if(rs.next()) {
-				int length = rs.getInt("length");
-				int width = rs.getInt("width");
+			if (rs.next()) {
+				int     length   = rs.getInt("length");
+				int     width    = rs.getInt("width");
 				boolean hasFloor = rs.getBoolean("hasFloor");
-				int idShed = rs.getInt("id");
+				int     idShed   = rs.getInt("id");
 				return new Shed
 						.ShedBuilder()
 						.insertLength(length)
@@ -63,8 +63,23 @@ public class ServiceDAO
 						.build();
 			}
 			throw new SQLException();
-		} catch(SQLException throwSql) {
+		} catch (SQLException throwSql) {
 			throw new ShedException(throwSql);
+		}
+	}
+
+	public static Material materialById(int id, Connection con) throws MaterialException
+	{
+		final String SQL = "Select * FROM materials WHERE materials.id=?";
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, id);
+			ResultSet rs          = statement.executeQuery();
+			rs.next();
+			int       pricePrUnit = rs.getInt("pricePrUnit");
+			String    description = rs.getString("description");
+			return new Material(description, pricePrUnit, id);
+		} catch (SQLException throwSql) {
+			throw new MaterialException(throwSql);
 		}
 	}
 
