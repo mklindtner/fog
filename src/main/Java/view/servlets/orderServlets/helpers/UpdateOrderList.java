@@ -5,10 +5,9 @@ import entities.OrderEntities.Order;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
-import entities.userEntities.User;
 import logic.facades.MySqlOrderFacade;
 import logic.facades.OrderFacade;
-import logic.generators.BillOfMaterialsCalculator;
+import logic.generators.BillOfMaterials;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -108,9 +107,9 @@ public class UpdateOrderList
 
 	private static void saveOrderLineDB(Order order) throws MaterialException, OrderLineException, DataException
 	{
-		BillOfMaterialsCalculator billOfMaterialsCalculator = new BillOfMaterialsCalculator(order);
-		billOfMaterialsCalculator.createCarportListWithoutShed();
-		billOfMaterialsCalculator.saveOrderLinesToDB();
+		BillOfMaterials billOfMaterials = new BillOfMaterials(order);
+		billOfMaterials.createCarportListWithoutShed();
+		billOfMaterials.saveOrderLinesToDB();
 	}
 }
 

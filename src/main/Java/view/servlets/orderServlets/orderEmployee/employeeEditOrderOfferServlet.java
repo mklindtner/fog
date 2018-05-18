@@ -6,7 +6,7 @@ import data.exceptions.MaterialException;
 import data.exceptions.OrderException;
 import logic.facades.MySqlOrderFacade;
 import logic.facades.OrderFacade;
-import logic.generators.BillOfMaterialsCalculator;
+import logic.generators.BillOfMaterials;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,10 +35,10 @@ public class employeeEditOrderOfferServlet extends HttpServlet
 
 		OrderFacade orderFacade = new MySqlOrderFacade();
 		orderFacade.getInstanceOrderDAO();
-		Order order = orderFacade.orderById(orderId);
-		BillOfMaterialsCalculator billOfMaterialsCalculator = new BillOfMaterialsCalculator(order);
-		billOfMaterialsCalculator.createCarportListWithoutShed();
-		order.setPrice(billOfMaterialsCalculator.caportPrice());
+		Order           order           = orderFacade.orderById(orderId);
+		BillOfMaterials billOfMaterials = new BillOfMaterials(order);
+		billOfMaterials.createCarportListWithoutShed();
+		order.setPrice(billOfMaterials.caportPrice());
 		session.setAttribute("order", order);
 	}
 }

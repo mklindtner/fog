@@ -119,4 +119,9 @@ public class MySqlConnector
 		return connectionToSource();
 	}
 
+	public static void closeConnections() {
+		source = null;
+		con = null;
+	}
+
 }

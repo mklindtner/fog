@@ -43,13 +43,18 @@ public class ServiceSeed
 	}
 
 
-	public static void eraseTables() throws SQLException
+	public static void eraseTablesAndCloseConnection() throws DataException
 	{
-		con.createStatement().execute("DELETE FROM orders");
-		con.createStatement().execute("DELETE FROM customers");
-		con.createStatement().execute("DELETE FROM employees");
-		con.createStatement().execute("DELETE FROM materials");
-		con.createStatement().execute("DELETE FROM sheds");
+		try {
+			con.createStatement().execute("DELETE FROM orders");
+			con.createStatement().execute("DELETE FROM customers");
+			con.createStatement().execute("DELETE FROM employees");
+			con.createStatement().execute("DELETE FROM materials");
+			con.createStatement().execute("DELETE FROM sheds");
+			MySqlConnector.closeConnections();
+		} catch(SQLException throwSql) {
+			throw new DataException(throwSql);
+		}
 	}
 
 	public static void resetLists()
@@ -61,6 +66,7 @@ public class ServiceSeed
 		sheds = new ArrayList<>();
 		orderLines = new ArrayList<>();
 	}
+
 
 	public static void populateTables() throws DataException, UserException, OrderException, ShedException, MaterialException
 	{
@@ -215,7 +221,6 @@ public class ServiceSeed
 						   .insertRequiredWidth(30)
 						   .insertRequiredLength(30)
 						   .insertRequiredSlope(45)
-						   //.insertRequiredMaterial(materials.get(5))
 						   .insertRequiredCustomer(customers.get(5))
 						   .insertOptionalStatus(Order.Status.PENDING)
 						   .insertOptionalShed(sheds.get(5))

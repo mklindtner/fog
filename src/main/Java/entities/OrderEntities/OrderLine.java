@@ -1,5 +1,7 @@
 package entities.OrderEntities;
 
+import java.util.Objects;
+
 public class OrderLine
 {
 	private int id, amount, length, priceForOrderLine, materialId, orderId;
@@ -87,22 +89,26 @@ public class OrderLine
 			return this;
 		}
 
-		public OrderLineBuilder insertPriceForOrderLine(int priceForOrderLine) {
+		public OrderLineBuilder insertPriceForOrderLine(int priceForOrderLine)
+		{
 			this.priceForOrderLine = priceForOrderLine;
 			return this;
 		}
 
-		public OrderLineBuilder insertIsTreeOrRoof(boolean istreeOrRoof) {
+		public OrderLineBuilder insertIsTreeOrRoof(boolean istreeOrRoof)
+		{
 			this.isTreeOrRoof = istreeOrRoof;
 			return this;
 		}
 
-		public OrderLineBuilder insertOrderId(int orderId) {
+		public OrderLineBuilder insertOrderId(int orderId)
+		{
 			this.orderId = orderId;
 			return this;
 		}
 
-		public OrderLineBuilder insertMaterialId(int materialId) {
+		public OrderLineBuilder insertMaterialId(int materialId)
+		{
 			this.materialId = materialId;
 			return this;
 		}
@@ -164,5 +170,28 @@ public class OrderLine
 		this.secondDescription = secondDescription;
 	}
 
+	@Override public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		OrderLine orderLine = (OrderLine) o;
+		return amount == orderLine.amount &&
+			   length == orderLine.length &&
+			   priceForOrderLine == orderLine.priceForOrderLine &&
+			   isTreeOrRoof == orderLine.isTreeOrRoof &&
+			   Objects.equals(firstDescription, orderLine.firstDescription) &&
+			   Objects.equals(secondDescription, orderLine.secondDescription) &&
+			   Objects.equals(unit, orderLine.unit);
+	}
 
+	@Override public int hashCode()
+	{
+		return Objects.hash(amount, length, priceForOrderLine, materialId, orderId, firstDescription, secondDescription, unit, isTreeOrRoof);
+	}
+
+	@Override public String toString()
+	{
+		return "amount: " + amount + ", length: " + length + ", priceForOrderLine: " + priceForOrderLine
+			   + ", firstDescription: " + firstDescription + ", secondDescription: " + secondDescription + ", unit: " + unit + ", isTreeOrRoof: " + isTreeOrRoof;
+	}
 }

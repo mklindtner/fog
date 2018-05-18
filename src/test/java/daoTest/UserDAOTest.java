@@ -12,12 +12,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import java.sql.SQLException;
 import java.util.*;
 
 public class UserDAOTest
 {
-	private UserDAO    userDAO;
+	private UserDAO userDAO;
 	private final int PHONE = 1234567, STANDARD_EMPLOYEE_ROLE = 3, GENERATION_AMOUNT = 6;
 
 	@Before
@@ -27,8 +26,7 @@ public class UserDAOTest
 			ServiceSeed.establishConnections();
 			ServiceSeed.populateTables();
 			userDAO = new UserDAO("TEST");
-		} catch (DataException | UserException | ShedException | OrderException | MaterialException dae)
-		{
+		} catch (DataException | UserException | ShedException | OrderException | MaterialException dae) {
 			throw new DataException(dae);
 		}
 	}
@@ -36,21 +34,15 @@ public class UserDAOTest
 	@After
 	public void tearDown() throws DataException
 	{
-		try {
-			ServiceSeed.eraseTables();
-			ServiceSeed.resetLists();
-		} catch (SQLException throwSql) {
-			throw new DataException(throwSql);
-		}
+		ServiceSeed.eraseTablesAndCloseConnection();
+		ServiceSeed.resetLists();
 	}
 
-	//this for fixing empl/customer time
 	@Test
 	public void allCustomersFromDAO() throws DataException
 	{
 		List<Customer> actual   = userDAO.allCustomers();
 		List<Customer> expected = expectedCustomersGenerator(GENERATION_AMOUNT);
-		//assertEquals(actual, expected);
 		assertEquals(expected.size(), actual.size());
 		assertEquals(actual.get(0).toString(), expected.get(0).toString());
 		assertEquals(actual.get(actual.size() - 1).toString(), expected.get(expected.size() - 1).toString());
@@ -62,7 +54,9 @@ public class UserDAOTest
 		for (int i = 0; i < size; i++) {
 			Customer customerTmp = new Customer
 					.CustomerBuilder(i, ServiceMethods.getCurrentTimeAsString())
-					.createSimpleCustomer("testUser" + (i + 1), "123", PHONE)
+					.insertUsername("testUser" + (i + 1))
+					.insertPassword("123")
+					.insertPhone(PHONE)
 					.build();
 			expected.add(customerTmp);
 		}
@@ -74,7 +68,6 @@ public class UserDAOTest
 	{
 		List<Employee> actual   = userDAO.allEmployees();
 		List<Employee> expected = expectedEmployeeGenerator(GENERATION_AMOUNT);
-		//assertEquals(actual, expected);
 		assertEquals(actual.get(0).toString(), expected.get(0).toString());
 		assertEquals(actual.get(actual.size() - 1).toString(), expected.get(expected.size() - 1).toString());
 	}

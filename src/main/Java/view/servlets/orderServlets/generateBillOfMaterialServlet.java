@@ -6,7 +6,7 @@ import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import logic.facades.MySqlOrderFacade;
 import logic.facades.OrderFacade;
-import logic.generators.BillOfMaterialsCalculator;
+import logic.generators.BillOfMaterials;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,10 +24,10 @@ public class generateBillOfMaterialServlet extends HttpServlet
 		HttpSession session = request.getSession();
 		try {
 			checkForOrder(request);
-			Order                     order                     = (Order) session.getAttribute("order");
-			BillOfMaterialsCalculator billOfMaterialsCalculator = new BillOfMaterialsCalculator(order);
-			session.setAttribute("billOfMaterial", billOfMaterialsCalculator.createCarportListWithoutShed());
-			session.setAttribute("totalPrice", billOfMaterialsCalculator.caportPrice());
+			Order           order           = (Order) session.getAttribute("order");
+			BillOfMaterials billOfMaterials = new BillOfMaterials(order);
+			session.setAttribute("billOfMaterial", billOfMaterials.createCarportListWithoutShed());
+			session.setAttribute("totalPrice", billOfMaterials.caportPrice());
 		} catch (DataException | MaterialException | OrderException finalDist) {
 			throw new ServletException(finalDist);
 		}

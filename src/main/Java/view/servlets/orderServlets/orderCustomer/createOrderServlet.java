@@ -3,9 +3,6 @@ package view.servlets.orderServlets.orderCustomer;
 import entities.OrderEntities.Order;
 import data.exceptions.*;
 import entities.userEntities.Customer;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
-import logic.generators.BillOfMaterialsCalculator;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;

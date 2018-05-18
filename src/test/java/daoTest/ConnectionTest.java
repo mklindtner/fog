@@ -12,11 +12,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import static org.junit.Assert.assertNotNull;
 
 public class ConnectionTest
 {
+
 	private Connection appConnection, testConnection;
 	private MaterialDAO materialDAO, materialDAOTest;
 	private OrderDAO orderDAO, orderDAOTest;
@@ -25,32 +27,24 @@ public class ConnectionTest
 	private ShedDAO shedDAO, shedDAOTest;
 
 	@After
-	public void resetConnection() {
-		materialDAO = null;
-		materialDAOTest = null;
-		orderDAO = null;
-		orderDAOTest = null;
-		orderLineDAO = null;
-		orderLineDAOTest = null;
-		userDAO = null;
-		userDAOTest = null;
-		shedDAO = null;
-		shedDAOTest = null;
+	public void resetConnector() {
+		MySqlConnector.closeConnections();
 	}
 
-
 	@Test
-	public void CloudConnection() throws DataException
+	public void appConnection() throws DataException
 	{
 		appConnection = MySqlConnector.createConnection("APP");
 		assertNotNull(appConnection);
 	}
 
+
 	@Test
-	public void cloudTestConnection() throws DataException {
+	public void testConnection() throws DataException {
 		testConnection = MySqlConnector.createConnection("TEST");
 		assertNotNull(testConnection);
 	}
+
 
 	@Test
 	public void materialDAOConnection() throws DataException {
@@ -93,4 +87,5 @@ public class ConnectionTest
 		assertNotNull(shedDAO.getCon());
 		assertNotNull(shedDAOTest.getCon());
 	}
+
 }

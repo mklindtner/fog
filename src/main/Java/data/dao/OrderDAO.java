@@ -231,8 +231,25 @@ public class OrderDAO
 		}
 	}
 
+
+	public int findCustomerIdByOrder(Order order) throws OrderException
+	{
+		final String SQL = "Select customerId FROM orders WHERE orders.customerId = ?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, order.getCustomer().getId());
+			ResultSet rs = statement.executeQuery();
+			rs.next();
+			int customerId = rs.getInt("customerId");
+			return customerId;
+		} catch(SQLException throwSql) {
+			throw new OrderException(throwSql);
+		}
+	}
+
 	public Connection getCon()
 	{
 		return this.con;
 	}
+
+
 }
