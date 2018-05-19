@@ -122,4 +122,8 @@ public class MySqlOrderFacade implements OrderFacade
 		orderLineDAO.deleteOrderLineByOrderId(orderId);
 	}
 
+	public List<Material> allMaterials() throws MaterialException {
+		return materialDAO.allMaterials();
+	}
+
 }

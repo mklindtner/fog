@@ -1,4 +1,4 @@
-<%--
+<%@ page import="entities.userEntities.Employee" %><%--
   Created by IntelliJ IDEA.
   User: mkl
   Date: 5/18/18
@@ -14,11 +14,12 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
+<%@ include file="/WEB-INF/employee/employeeHeader.jsp" %>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <form role="form" method="POST" action="createEmployee">
-                <legend class="text-center">Register</legend>
+                <legend class="text-center">Create Employee</legend>
                 <fieldset>
                     <legend>Account Details</legend>
                     <div class="form-group col-md-12">

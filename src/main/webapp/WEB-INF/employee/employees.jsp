@@ -32,6 +32,15 @@
         <li role="presentation" class="active">
             <a href="allEmployees">See employees</a>
         </li>
+
+        <li role="presentation">
+            <%
+                Employee currEmployee = (Employee) request.getSession().getAttribute("employee");
+                if (currEmployee.getRole().equals("CENTERCHEF") || currEmployee.getRole().equals("MATERIALEANSVARLIG")) {
+            %>
+            <a href="employeeCatalogMaterial">Materials Available</a>
+            <% }%>
+        </li>
     </ul>
     <div class="bd-example">
         <table class="table">

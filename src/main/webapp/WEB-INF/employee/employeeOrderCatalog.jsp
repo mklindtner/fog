@@ -38,6 +38,13 @@
             <% }%>
         </li>
 
+        <li role="presentation">
+            <%
+                if (currEmployee.getRole().equals("CENTERCHEF") || currEmployee.getRole().equals("MATERIALEANSVARLIG")) {
+            %>
+            <a href="employeeCatalogMaterial">Materials Available</a>
+            <% }%>
+        </li>
     </ul>
     <div class="bd-example">
         <table class="table">

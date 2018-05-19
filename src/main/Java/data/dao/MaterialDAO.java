@@ -5,6 +5,9 @@ import entities.OrderEntities.Material;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import java.sql.*;
 
 public class MaterialDAO
@@ -76,8 +79,29 @@ public class MaterialDAO
 		}
 	}
 
+
+	public List<Material> allMaterials() throws MaterialException
+	{
+		final String SQL = "Select * FROM materials";
+		List<Material> materials = new ArrayList<>();
+		try(PreparedStatement statement = con.prepareStatement(SQL))
+		{
+			ResultSet rs = statement.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				int pricePrUnit = rs.getInt("pricePrUnit");
+				String description = rs.getString("description");
+				materials.add(new Material(description, pricePrUnit, id));
+			}
+			return materials;
+		} catch(SQLException throwSql) {
+			throw new MaterialException(throwSql);
+		}
+	}
+
 	public Connection getCon()
 	{
 		return this.con;
 	}
+
 }
