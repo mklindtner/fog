@@ -57,19 +57,40 @@
                 <td>
                     <%=tmpEmployee.getPhone()%>
                 </td>
-                <%if (tmpEmployee.getRole().equals("SALGSMEDARBEJDER") && currentUser.getRole().equals("CENTERCHEF")) { %>
+                <%if ((tmpEmployee.getRole().equals("SALGSMEDARBEJDER") || tmpEmployee.getRole().equals("MATERIALEANSVARLIG")) && currentUser.getRole().equals("CENTERCHEF")) { %>
                 <td>
-                    <form method="post" action="employeeEdit">
+                    <form method="post" action="deleteEmployee">
                         <input type="hidden" name="employeeId" value="<%=tmpEmployee.getId()%>">
                         <button class="btn btn-primary" type="submit">delete employee</button>
                     </form>
                 </td>
                 <% } %>
+                <%if ((tmpEmployee.getRole().equals("SALGSMEDARBEJDER") && !tmpEmployee.getRole().equals("MATERIALEANSVARLIG")) && currentUser.getRole().equals("CENTERCHEF")) { %>
+                <td>
+                    <form method="post" action="promoteEmployee">
+                        <input type="hidden" name="employeeId" value="<%=tmpEmployee.getId()%>">
+                        <button class="btn btn-success" type="submit">promote employee</button>
+                    </form>
+                </td>
+                <% } %>
+                <%if ((!tmpEmployee.getRole().equals("SALGSMEDARBEJDER") && tmpEmployee.getRole().equals("MATERIALEANSVARLIG")) && currentUser.getRole().equals("CENTERCHEF")) { %>
+                <td>
+                    <form method="post" action="demoteEmployee">
+                        <input type="hidden" name="employeeId" value="<%=tmpEmployee.getId()%>">
+                        <button class="btn btn-danger" type="submit">demote employee</button>
+                    </form>
+                </td>
+                <% } %>
             </tr>
-
             <% } %>
+            <td>
+                <form method="get" action="createEmployee">
+                    <button class="btn btn-primary" type="submit">create employee</button>
+                </form>
+            </td>
             </thead>
             <tbody>
+
             </tbody>
         </table>
     </div>

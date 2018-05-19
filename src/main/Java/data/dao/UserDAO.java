@@ -8,6 +8,7 @@ import data.exceptions.DataException;
 import data.MySqlConnector;
 import data.exceptions.UserException;
 
+import javax.servlet.ServletException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -260,9 +261,32 @@ public class UserDAO
 		}
 	}
 
+	public void promoteEmployee(int employeeId) throws UserException
+	{
+		final String SQL = "Update employees SET role_id=2 WHERE employees.id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL))
+		{
+			statement.setInt(1, employeeId);
+			statement.executeUpdate();
+		} catch(SQLException throwSql) {
+			throw new UserException(throwSql);
+		}
+	}
+
 	public Connection getCon()
 	{
 		return this.con;
 	}
 
+
+	public void demoteEmployee(int employeeId) throws UserException
+	{
+		final String SQL = "Update employees SET role_id=3 WHERE employees.id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+			statement.setInt(1, employeeId);
+			statement.executeUpdate();
+		} catch(SQLException throwSql) {
+			throw new UserException(throwSql);
+		}
+	}
 }

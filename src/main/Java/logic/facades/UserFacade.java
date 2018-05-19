@@ -26,4 +26,9 @@ public interface UserFacade
 
 	void deleteEmployeeById(int employeeId) throws UserException;
 
+	void createEmployee(String username, String password, int phone, int role) throws UserException, DataException;
+
+	void promoteEmployee(int employeeId) throws UserException;
+
+	void demoteEmployee(int employeeId) throws UserException;
 }

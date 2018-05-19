@@ -57,4 +57,19 @@ public class MySqlUserFacade implements UserFacade
 		userDao.deleteEmployeeById(employeeId);
 	}
 
+	public void createEmployee(String username, String password, int phone, int role) throws UserException, DataException
+	{
+		userDao.createAndReturnEmployee(username, password, phone, role);
+	}
+
+	public void promoteEmployee(int employeeId) throws UserException
+	{
+		userDao.promoteEmployee(employeeId);
+	}
+
+	public void demoteEmployee(int employeeId) throws UserException
+	{
+		userDao.demoteEmployee(employeeId);
+	}
+
 }
