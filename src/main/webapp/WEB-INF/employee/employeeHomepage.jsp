@@ -34,7 +34,7 @@
 
         <li role="presentation">
             <% Employee currEmployee = (Employee) request.getSession().getAttribute("employee");
-            if (currEmployee.getRole().equals("CENTERCHEF")) {
+                if (currEmployee.getRole().equals("CENTERCHEF")) {
             %>
             <a href="allEmployees">See employees</a>
             <% }%>
@@ -57,6 +57,7 @@
                 <th scope="col">Height</th>
                 <th scope="col">Width</th>
                 <th scope="col">Length</th>
+                <th scope="col">Price</th>
             </tr>
             <tr>
                 <th scope="colgroup">OFFERS</th>
@@ -72,11 +73,21 @@
             <tr>
                 <th scope="row"><%=order.getId()%>
                 </th>
-                <td><%=order.getHeight()%>
+                <td>
+                    <%=order.getHeight()%>
                 </td>
-                <td><%=order.getWidth()%>
+                <td>
+                    <%=order.getWidth()%>
                 </td>
-                <td><%=order.getLength()%>
+                <td>
+                    <%=order.getLength()%>
+                </td>
+                <td>
+                    <% if (order.getPrice() > 0) { %>
+                    <%=order.getPrice()%>
+                    <% } else {%>
+                    <i>no price</i>
+                    <% }%>
                 </td>
                 <td>
                     <form method="get" action="employeeEditOffer">

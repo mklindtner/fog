@@ -102,6 +102,14 @@
                             <option disabled>choose a value</option>
                         </select>
                     </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="hasFloor">withFloor</label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="hasFloor" name="hasFloor" value="hasFloor">
+                        </label>
+                    </div>
+
                 </fieldset>
 
                 <div class="form-group">

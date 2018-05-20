@@ -28,6 +28,7 @@ public class Order
 		this.customer = orderBuilder.customer;
 		this.created_at = orderBuilder.created_at;
 		this.shed = orderBuilder.shed;
+		this.price = orderBuilder.price;
 		this.orderLines = new ArrayList<>();
 	}
 
@@ -146,11 +147,10 @@ public class Order
 
 	public static class OrderBuilder
 	{
-		private int id, height, width, length, slope;
+		private int id, height, width, length, slope, price;
 		private String   created_at;
 		private Customer customer;
 		private Shed     shed;
-		//private Material material;
 		private Status   status;
 
 		public OrderBuilder(int id, String created_at)
@@ -223,6 +223,12 @@ public class Order
 		public OrderBuilder insertOptionalStatus(Status status)
 		{
 			this.status = status;
+			return this;
+		}
+
+		public OrderBuilder insertOptionalPrice(int price)
+		{
+			this.price = price;
 			return this;
 		}
 

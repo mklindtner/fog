@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="js/hidden.js"></script>
     <script>
         hideShedOption()
@@ -32,22 +34,32 @@
             <div class="form-group col-md-6">
                 <label for="length">Length</label>
                 <select class="form-control form-control-lg" id="length" name="length" required>
-                    <option>480</option>cm
-                    <option>540</option>cm
-                    <option>600</option>cm
-                    <option>720</option>cm
-                    <option>780</option>cm
-                    <option>810</option>cm
-                    <option>910</option>cm
+                    <option>480</option>
+                    cm
+                    <option>540</option>
+                    cm
+                    <option>600</option>
+                    cm
+                    <option>720</option>
+                    cm
+                    <option>780</option>
+                    cm
+                    <option>810</option>
+                    cm
+                    <option>910</option>
+                    cm
                     <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="width">Width</label>
                 <select class="form-control form-control-lg" id="width" name="width" required>
-                    <option>300</option>cm
-                    <option>360</option>cm
-                    <option>390</option>cm
+                    <option>300</option>
+                    cm
+                    <option>360</option>
+                    cm
+                    <option>390</option>
+                    cm
                     <option disabled>choose a value</option>
                 </select>
             </div>
@@ -56,26 +68,35 @@
             <div class="col-md-6 col-md-6">
                 <label for="height">Height</label>
                 <select class="form-control form-control-lg" id="height" name="height" required>
-                    <option>480</option>cm
-                    <option>540</option>cm
-                    <option>600</option>cm
-                    <option>720</option>cm
-                    <option>780</option>cm
-                    <option>810</option>cm
-                    <option>910</option>cm
+                    <option>480</option>
+                    cm
+                    <option>540</option>
+                    cm
+                    <option>600</option>
+                    cm
+                    <option>720</option>
+                    cm
+                    <option>780</option>
+                    cm
+                    <option>810</option>
+                    cm
+                    <option>910</option>
+                    cm
                     <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="slope">slope</label>
                 <select class="form-control form-control-lg" id="slope" name="slope" required>
-                    <option>45</option>cm
+                    <option>45</option>
+                    cm
                     <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="contactInformation">contact</label>
-                <input type="email" class="form-control" name="contactInformation" id="contactInformation" placeholder="email" value="indexUser@email.com">
+                <input type="email" class="form-control" name="contactInformation" id="contactInformation"
+                       placeholder="email" value="indexUser@email.com">
             </div>
         </div>
         <div class="form-row">
@@ -89,21 +110,29 @@
                     <label for="shedWidth">shedWidth</label>
                     <select class="form-control form-control-lg" id="shedWidth" name="shedWidth" required>
                         <option disabled>choose a value</option>
-                        <option>60</option>cm
+                        <option>60</option>
+                        cm
                     </select>
                 </div>
                 <div class="col-md-4 col-md-3">
                     <label for="shedLength">shedLength</label>
                     <select class="form-control form-control-lg" id="shedLength" name="shedLength" required>
                         <option disabled>choose a value</option>
-                        <option>40</option>cm
+                        <option>40</option>
+                        cm
                     </select>
                 </div>
+                <div class="col-md-4 col-md-3">
+                    <label for="hasFloor">withFloor</label>
+                    <br />
+                    <input type="checkbox" checked data-toggle="toggle" id="hasFloor" name="hasFloor">
+                </div>
+                <!--
                 <div class="col-md-4 col-md-3">
                     <label class="checkbox-inline">
                         <input type="checkbox" id="hasFloor" name="hasFloor" value="hasFloor"> with Floor
                     </label>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="form-row">

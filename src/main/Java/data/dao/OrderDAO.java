@@ -147,6 +147,7 @@ public class OrderDAO
 			Customer     customer   = ServiceDAO.getCustomerById(rs.getInt("customerId"), con);
 			Order.Status status     = Order.Status.valueOf(rs.getString("status"));
 			int          shedId     = rs.getInt("shedId");
+			int          price      = rs.getInt("price");
 			Shed         shed;
 
 			if (shedId != 0) {
@@ -160,6 +161,7 @@ public class OrderDAO
 						.insertRequiredCustomer(customer)
 						.insertOptionalStatus(status)
 						.insertOptionalShed(shed)
+						.insertOptionalPrice(price)
 						.build();
 			}
 			return new Order
@@ -308,7 +310,7 @@ public class OrderDAO
 	public void deleteOrder(int orderId) throws OrderException
 	{
 		final String SQL = "delete from orders WHERE orders.id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, orderId);
 			statement.executeUpdate();
 		} catch (SQLException throwSql) {

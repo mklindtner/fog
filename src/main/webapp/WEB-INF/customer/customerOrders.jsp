@@ -29,7 +29,7 @@
             <a href="redirect?goToPage=customerOrders&role=customer">Your Orders</a>
         </li>
         <li role="presentation">
-            <a href="redirect?goToPage=customerHomepage&role=customer">Create Order </a>
+            <a href="redirect?goToPage=customerHomepage&role=customer">Create Order</a>
         </li>
     </ul>
 
@@ -131,13 +131,13 @@
                 <td>
                     <form method="post" action="customerAcceptOrder">
                         <input type="hidden" name="orderId" value="<%=order.getId()%>">
-                        <button class="btn btn-primary" type="submit">Accept Offer</button>
+                        <button class="btn btn-success" type="submit">Accept Offer</button>
                     </form>
                 </td>
                 <td>
                     <form method="post" action="customerDeclineOrder">
                         <input type="hidden" name="orderId" value="<%=order.getId()%>">
-                        <button class="btn btn-primary" type="submit">Decline Offer</button>
+                        <button class="btn btn-danger" type="submit">Decline Offer</button>
                     </form>
                 </td>
             </tr>

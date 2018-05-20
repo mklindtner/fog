@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="price">Length</label>
+                        <label for="price">Price</label>
                         <input type="number" class="form-control" name="price" id="price" value="<%=order.getPrice()%>">
                     </div>
 
@@ -58,6 +58,7 @@
                 <fieldset>
                     <legend>Shed Details</legend>
                     <div class="form-group col-md-6">
+
                         <input class="form-control form-control-lg" type="number" name="phoneNumber" id="phoneNumber"
                                placeholder="phoneNumber" data-bind="value:replyNumber">
                     </div>
