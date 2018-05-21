@@ -33,7 +33,7 @@ public class SVGUtil
 
 	private void mainBox()
 	{
-		sb.append("<SVG width=\"760\" height=\"600\" viewBox=\"0 0 " + length + " " + width + " \">");
+		sb.append("<SVG width=\"760\" height=\"600\" viewBox=\"0 0 " + width + " " + length + " \">");
 	}
 
 	private void arrowsDefintion()

@@ -22,7 +22,7 @@
     <script src="css/orderList.css"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/customer/customerHeader.jsp"%>
+<%@ include file="/WEB-INF/customer/customerHeader.jsp" %>
 <div class="container">
     <ul class="nav nav-tabs">
         <li role="presentation" class="active">
@@ -38,9 +38,8 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Height</th>
-                <th scope="col">Width</th>
-                <th scope="col">Length</th>
+                <th scope="col">Area</th>
+                <th scope="col">Price</th>
             </tr>
             <tr>
                 <th scope="colgroup">PENDING</th>
@@ -81,15 +80,28 @@
 
                 for (int i = pendingIndex; i < pendingIndex + 5 && i < pending.size(); i++) {
                     Order order = (Order) pending.get(i);
+                    float orderLengthInMeter = (float) order.getLength() / 100;
+                    float orderWidthInMeter = (float) order.getWidth() / 100;
             %>
             <tr>
                 <th scope="row"><%=order.getId()%>
                 </th>
-                <td><%=order.getHeight()%>
+                <td>
+                    <%=orderLengthInMeter%> X <%=orderWidthInMeter%> MTR.
                 </td>
-                <td><%=order.getWidth()%>
                 </td>
-                <td><%=order.getLength()%>
+                <td>
+                    <% if (order.getPrice() > 0) { %>
+                    <%=order.getPrice()%>
+                    <% } else {%>
+                    <i>no price</i>
+                    <% }%>
+                </td>
+                <td>
+                    <form method="get" action="specificOrder">
+                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                        <button class="btn btn-primary" type="submit">Order Details</button>
+                    </form>
                 </td>
             </tr>
             <%
@@ -118,15 +130,27 @@
             <%
                 for (int i = offerIndex; i < offerIndex + 5 && i < offer.size(); i++) {
                     Order order = (Order) offer.get(i);
+                    float orderLengthInMeter = (float) order.getLength() / 100;
+                    float orderWidthInMeter = (float) order.getWidth() / 100;
             %>
             <tr>
                 <th scope="row"><%=order.getId()%>
                 </th>
-                <td><%=order.getHeight()%>
+                <td>
+                    <%=orderLengthInMeter%> X <%=orderWidthInMeter%> MTR.
                 </td>
-                <td><%=order.getWidth()%>
+                <td>
+                    <% if (order.getPrice() > 0) { %>
+                    <%=order.getPrice()%>
+                    <% } else {%>
+                    <i>no price</i>
+                    <% }%>
                 </td>
-                <td><%=order.getLength()%>
+                <td>
+                    <form method="get" action="specificOrder">
+                        <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                        <button class="btn btn-primary" type="submit">Order Details</button>
+                    </form>
                 </td>
                 <td>
                     <form method="post" action="customerAcceptOrder">
@@ -167,14 +191,27 @@
             <%
                 for (int i = acceptedIndex; i < acceptedIndex + 5 && i < accepted.size(); i++) {
                     Order order = (Order) customerOrders.get(i);
+                    float orderLengthInMeter = (float) order.getLength() / 100;
+                    float orderWidthInMeter = (float) order.getWidth() / 100;
             %>
             <th scope="row"><%=order.getId()%>
             </th>
-            <td><%=order.getHeight()%>
+            <td>
+                <%=orderLengthInMeter%> X <%=orderWidthInMeter%> MTR.
             </td>
-            <td><%=order.getWidth()%>
+            <td>
+                <% if (order.getPrice() > 0) { %>
+                <%=order.getPrice()%>
+                <% } else {%>
+                <i>no price</i>
+                <% }%>
             </td>
-            <td><%=order.getLength()%>
+            <td>
+                <form method="get" action="specificOrder">
+                    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                    <button class="btn btn-primary" type="submit">Order Details</button>
+                </form>
+            </td>
             <td>
                 <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order
                     Information</a>
@@ -208,7 +245,6 @@
                     </div>
                 </div>
             </td>
-            </td>
             </tbody>
             <%
                 }
@@ -236,14 +272,26 @@
             <%
                 for (int i = sendIndex; i < sendIndex + 5 && i < send.size(); i++) {
                     Order order = (Order) send.get(i);
+                    float orderLengthInMeter = (float) order.getLength() / 100;
+                    float orderWidthInMeter = (float) order.getWidth() / 100;
             %>
             <th scope="row"><%=order.getId()%>
             </th>
-            <td><%=order.getHeight()%>
+            <td>
+                <%=orderLengthInMeter%> X <%=orderWidthInMeter%> MTR.
             </td>
-            <td><%=order.getWidth()%>
+            <td>
+                <% if (order.getPrice() > 0) { %>
+                <%=order.getPrice()%>
+                <% } else {%>
+                <i>no price</i>
+                <% }%>
             </td>
-            <td><%=order.getLength()%>
+            <td>
+                <form method="get" action="specificOrder">
+                    <input type="hidden" name="orderId" value="<%=order.getId()%>">
+                    <button class="btn btn-primary" type="submit">Order Details</button>
+                </form>
             </td>
             <td>
                 <a class="button btn btn-primary" data-toggle="modal" data-target="#myModal<%=order.getId()%>">Order

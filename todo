@@ -7,19 +7,8 @@ Current:
     fix editOffer employee
         shedInformation in employee homepage
         shed details
-    customer order
-        edit so customer can choose withFloor (THIS)
-
-Observations:
-    Customer
-        create order doesn't update
 
 Stykliste:
-    få lavet entities med mål i db og hent dem i BoM
-    hent enhed i basen
-    find antal gennem calculator
-    refactor methods so I only take amount, length and secondDescription
-    Employee must be able to edit stykListe
     create stklist w. shed
 
 SVG:

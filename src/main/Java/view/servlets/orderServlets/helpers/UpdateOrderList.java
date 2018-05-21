@@ -114,8 +114,8 @@ public class UpdateOrderList
 
 	private static boolean haveShed(HttpServletRequest request)
 	{
-		return (request.getParameter("shedWidth").equals("choose a value")
-				|| request.getParameter("shedLength").equals("choose a value")) ? false : true;
+		return (request.getParameter("shedWidth").equals("None")
+				|| request.getParameter("shedLength").equals("None")) ? false : true;
 	}
 
 	private static void saveOrderLineDB(Order order) throws MaterialException, OrderLineException, DataException

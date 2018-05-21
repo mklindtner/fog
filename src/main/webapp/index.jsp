@@ -109,7 +109,7 @@
                 <div class="col-md-4 col-md-3">
                     <label for="shedWidth">shedWidth</label>
                     <select class="form-control form-control-lg" id="shedWidth" name="shedWidth" required>
-                        <option disabled>choose a value</option>
+                        <option>None</option>
                         <option>60</option>
                         cm
                     </select>
@@ -117,7 +117,7 @@
                 <div class="col-md-4 col-md-3">
                     <label for="shedLength">shedLength</label>
                     <select class="form-control form-control-lg" id="shedLength" name="shedLength" required>
-                        <option disabled>choose a value</option>
+                        <option>None</option>
                         <option>40</option>
                         cm
                     </select>

@@ -21,7 +21,7 @@ public class findCustomerServlet extends HttpServlet
 		try {
 			UserFacade userFacade = new MySqlUserFacade();
 			userFacade.getUserDAOInstance();
-			Customer customer = userFacade.findCustomerByUsername(request.getParameter("username"));
+			Customer customer = userFacade.customerByUsername(request.getParameter("username"));
 			request.setAttribute("foundCustomer", customer);
 		} catch(UserException | DataException finalDistException) {
 			throw new ServletException(finalDistException);

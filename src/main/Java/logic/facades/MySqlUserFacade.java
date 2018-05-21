@@ -47,7 +47,7 @@ public class MySqlUserFacade implements UserFacade
 		return new unknownUser();
 	}
 
-	public Customer findCustomerByUsername(String username) throws UserException, DataException
+	public Customer customerByUsername(String username) throws UserException, DataException
 	{
 		return userDao.customerByUsername(username);
 	}
@@ -70,6 +70,11 @@ public class MySqlUserFacade implements UserFacade
 	public void demoteEmployee(int employeeId) throws UserException
 	{
 		userDao.demoteEmployee(employeeId);
+	}
+
+	public Customer customerByOrderId(int customerId) throws UserException
+	{
+		return userDao.customerByOrderId(customerId);
 	}
 
 }

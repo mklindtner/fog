@@ -13,6 +13,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="/js/hidden.js"></script>
     <script>
         hideShedOption()
@@ -88,27 +90,27 @@
 
                 <fieldset>
                     <legend>Shed Details</legend>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="ShedWidth">shedWidth</label>
                         <select class="form-control form-control-lg" name="shedWidth" id="shedWidth" >
                             <option>45</option>cm
-                            <option disabled>choose a value</option>
+                            <option>None</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="shedLength">ShedLength</label>
                         <select class="form-control form-control-lg" name="shedLength" id="shedLength">
                             <option>45</option>cm
-                            <option disabled>choose a value</option>
+                            <option>None</option>
                         </select>
                     </div>
 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="hasFloor">withFloor</label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" id="hasFloor" name="hasFloor" value="hasFloor">
-                        </label>
+                        <br />
+                        <input type="checkbox" checked data-toggle="toggle" id="hasFloor" name="hasFloor">
                     </div>
+
 
                 </fieldset>
 

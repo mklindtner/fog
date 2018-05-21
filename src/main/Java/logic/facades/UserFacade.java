@@ -20,7 +20,7 @@ public interface UserFacade
 
 	User evaluateLogin(String username, String password) throws DataException, UserException;
 
-	Customer findCustomerByUsername(String username) throws UserException, DataException;
+	Customer customerByUsername(String username) throws UserException, DataException;
 
 	UserDAO getUserDAOInstance() throws DataException;
 
@@ -31,4 +31,6 @@ public interface UserFacade
 	void promoteEmployee(int employeeId) throws UserException;
 
 	void demoteEmployee(int employeeId) throws UserException;
+
+	Customer customerByOrderId(int customerId) throws UserException;
 }

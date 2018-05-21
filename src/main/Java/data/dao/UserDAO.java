@@ -289,4 +289,28 @@ public class UserDAO
 			throw new UserException(throwSql);
 		}
 	}
+
+	@Deprecated
+	public Customer customerByOrderId(int customerId) throws UserException
+	{
+		final String SQL = "select * FROM customers WHERE customers.id=?";
+		try(PreparedStatement statement = con.prepareStatement(SQL))
+		{
+			statement.setInt(1, customerId);
+			ResultSet rs = statement.executeQuery();
+			int id = rs.getInt("id");
+			String username = rs.getString("username");
+			String password = rs.getString("password");
+			int phone = rs.getInt("phone");
+			String reg_date = rs.getString("reg_date");
+			return new Customer
+					.CustomerBuilder(id, reg_date)
+					.insertUsername(username)
+					.insertPassword(password)
+					.insertPhone(phone)
+					.build();
+		} catch(SQLException throwSQl) {
+			throw new UserException(throwSQl);
+		}
+	}
 }
