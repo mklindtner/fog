@@ -13,6 +13,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
@@ -57,10 +59,22 @@
                 <% if (order.getShed() != null) {%>
                 <fieldset>
                     <legend>Shed Details</legend>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                        <label for="shedLength">shedLength</label>
+                        <input type="number" class="form-control" name="shedLength" id="shedLength"
+                               value="<%=order.getShed().getWidth()%>">
+                    </div>
 
-                        <input class="form-control form-control-lg" type="number" name="phoneNumber" id="phoneNumber"
-                               placeholder="phoneNumber" data-bind="value:replyNumber">
+                    <div class="form-group col-md-4">
+                        <label for="shedWidth">shedWidth</label>
+                        <input type="number" class="form-control" name="shedLength" id="shedWidth"
+                               value="<%=order.getShed().getLength()%>">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="hasFloor">withFloor</label>
+                        <br/>
+                        <input type="checkbox" checked data-toggle="toggle" id="hasFloor" name="hasFloor">
                     </div>
 
                     <div class="form-group col-md-12 hidden">
@@ -70,12 +84,22 @@
                 </fieldset>
                 <% }%>
                 <div class="form-group">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <button type="submit" class="btn btn-primary">
                             Send Offer to Customer
                         </button>
                     </div>
+                    <div class="col-md-6">
+                        <form method="get" action="redirect">
+                            <input type="hidden" name="goToPage" value="employeeHomepage">
+                            <input type="hidden" name="role" value="employee">
+                            <button type="submit" class="btn btn-primary">
+                                Go Back
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
             </form>
         </div>
     </div>
