@@ -259,7 +259,7 @@ public class Order
 	@Override public String toString()
 	{
 		return "customer: " + customer.getUsername() + ", status: " +
-			   status + ", height: " + height + ", width: " + width + ", length: " + length;
+			   status + ", height: " + height + ", width: " + width + ", length: " + length + ", price:" + price;
 	}
 
 	@Override public int hashCode()

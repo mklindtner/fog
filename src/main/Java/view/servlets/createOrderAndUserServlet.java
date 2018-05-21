@@ -1,4 +1,4 @@
-package view.servlets.orderServlets.orderCustomer;
+package view.servlets;
 
 import data.exceptions.*;
 import entities.userEntities.Customer;
@@ -28,7 +28,9 @@ public class createOrderAndUserServlet extends HttpServlet
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} catch(DataException | UserException | OrderLineException | MaterialException | OrderException | ShedException
 				finalDist) {
-			throw new ServletException(finalDist);
+			//throw new ServletException(finalDist);
+			request.setAttribute("error", "sorry that user already exists");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}
 

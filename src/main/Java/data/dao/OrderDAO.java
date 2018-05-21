@@ -172,6 +172,7 @@ public class OrderDAO
 					.insertRequiredSlope(slope)
 					.insertRequiredCustomer(customer)
 					.insertOptionalStatus(status)
+					.insertOptionalPrice(price)
 					.build();
 
 		} catch (SQLException | ShedException throwSql) {

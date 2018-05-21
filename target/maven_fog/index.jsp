@@ -27,6 +27,12 @@
 </div>
 <div class="container">
     <div class="form-group col-md-12">
+        <% if (request.getAttribute("error") != null) {%>
+        <h4><%=request.getAttribute("error")%>
+        </h4>
+        <% }%>
+    </div>
+    <div class="form-group col-md-12">
         <h1><i>Send a order for a garage</i></h1>
     </div>
     <form method="post" action="indexCreateOrderUser">
@@ -124,7 +130,7 @@
                 </div>
                 <div class="col-md-4 col-md-3">
                     <label for="hasFloor">withFloor</label>
-                    <br />
+                    <br/>
                     <input type="checkbox" checked data-toggle="toggle" id="hasFloor" name="hasFloor">
                 </div>
                 <!--

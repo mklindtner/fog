@@ -27,8 +27,9 @@ public class employeeOfferOrderServlet extends HttpServlet
 		order = editOrder(request, order);
 		try {
 			OrderFacade orderFacade = new MySqlOrderFacade();
-			orderFacade.getInstanceOrderDAO().updateOrderOffer(order);
-			UpdateOrderList.generateEmployeeOrders(request.getSession(), employee);
+			orderFacade.getInstanceOrderDAO();
+			orderFacade.updateOrderOffer(order);
+			UpdateOrderList.generateEmployeeOrders(session, employee);
 			session.setAttribute("order", order);
 		} catch (DataException | OrderException finalDist) {
 			throw new ServletException(finalDist);
