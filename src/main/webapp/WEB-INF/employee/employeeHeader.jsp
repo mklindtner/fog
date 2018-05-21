@@ -20,7 +20,12 @@
             </button>
             <a class="navbar-brand" href="redirect?goToPage=employeeHomepage&role=employee">Home</a>
             <a class="navbar-brand" href="redirect?goToPage=employeeOrderCatalog&role=employee">current Orders</a>
-            <a class="navbar-brand" href="#">find customer</a>
+            <form method="get" action="employeeAsCustomer" class="navbar-form navbar-right" _lpchecked="1">
+                <div class="form-group">
+                    <input style="width:200px;margin-top:4px;margin-right:50px" type="text"
+                           class="input-sm form-control" name="customerByUsername" id="customerByUsername" placeholder="find customer">
+                </div>
+            </form>
 
         </div>
         <div id="navbar" class="navbar-collapse collapse">

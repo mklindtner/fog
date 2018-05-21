@@ -290,7 +290,6 @@ public class UserDAO
 		}
 	}
 
-	@Deprecated
 	public Customer customerByOrderId(int customerId) throws UserException
 	{
 		final String SQL = "select * FROM customers WHERE customers.id=?";
@@ -298,6 +297,7 @@ public class UserDAO
 		{
 			statement.setInt(1, customerId);
 			ResultSet rs = statement.executeQuery();
+			rs.next();
 			int id = rs.getInt("id");
 			String username = rs.getString("username");
 			String password = rs.getString("password");

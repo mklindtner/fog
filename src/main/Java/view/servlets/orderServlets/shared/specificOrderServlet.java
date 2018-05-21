@@ -2,6 +2,7 @@ package view.servlets.orderServlets.shared;
 
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
+import data.exceptions.UserException;
 import entities.OrderEntities.Order;
 import logic.facades.MySqlOrderFacade;
 import logic.facades.MySqlUserFacade;
@@ -24,12 +25,15 @@ public class specificOrderServlet extends HttpServlet
 	{
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		OrderFacade orderFacade = new MySqlOrderFacade();
+		UserFacade userFacade = new MySqlUserFacade();
 		HttpSession session = request.getSession();
 		try {
 			orderFacade.getInstanceOrderDAO();
+			userFacade.getUserDAOInstance();
 			Order order =  orderFacade.orderById(orderId);
 			session.setAttribute("order", order);
-		}catch(DataException | OrderException finalDist) {
+			session.setAttribute("customer", userFacade.customerByOrderId(order.getCustomer().getId()));
+		}catch(DataException | OrderException | UserException finalDist) {
 			throw new ServletException(finalDist);
 		}
 		request.getRequestDispatcher("/WEB-INF/shared/specificOrder.jsp").forward(request, response);

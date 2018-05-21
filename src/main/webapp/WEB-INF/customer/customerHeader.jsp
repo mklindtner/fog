@@ -22,15 +22,26 @@
             <a class="navbar-brand" href="redirect?goToPage=customerHomepage&role=customer">create order</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <% Customer customer = (Customer) request.getSession().getAttribute("customer");%>
+            <% Customer customer = (Customer) request.getSession().getAttribute("customer");
+                if (request.getSession().getAttribute("employee") == null) {%>
             <form class="navbar-form navbar-right" method="get" action="logout">
                 <div class="form-group">
                     <span class="text-light" style="color: #9d9d9d; font-size: 18px;"><%=customer.getUsername()%></span>
                 </div>
-                <form action="get" method="signout">
+                <form action="signout" method="get">
                     <button type="submit" class="btn btn-danger" id="signout">Sign Out</button>
                 </form>
             </form>
+            <% } else { %>
+            <form class="navbar-form navbar-right" method="get" action="redirect">
+                <input type="hidden" name="goToPage" value="employeeHomepage">
+                <input type="hidden" name="role" value="employee">
+                <div class="form-group">
+                    <span class="text-light" style="color: #9d9d9d; font-size: 18px;">As:<%=customer.getUsername()%></span>
+                </div>
+                    <button type="submit" class="btn btn-danger" id="backToEmployee">Back to You</button>
+            </form>
+            <% } %>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>

@@ -1,79 +1,39 @@
 Current:
-    Logger check if done ok and finish rest of daos
-    Tests (focus on making more or?)
-    find customer
-        -Show orders of that partiacular customer
-    Helper jsp footer & implement to employee
+    searchbar
     fix editOffer employee
         shedInformation in employee homepage
         shed details
+    go back in edit order
 
-Stykliste:
-    create stklist w. shed
+    --- ALL functionality done, Sprint done ---
+    --backLog--
+    Logger check if done ok and finish rest of daos
+    Tests (focus on making more or?)
+    validators (so no exceptions)
+    SQL
+        rollback(transactions) for index order (so no customer becomes created w/o order)
 
-SVG:
-    create skur
-
-Orders:
-add OrderDAO
-    -create list of orders and display those
-    -display stykliste and svg for employee
-
-Customer
-    accept orders should display on orders accepted
-    pagination for accepted orders doesn't work
-        :find where i set accepted orders(in servlet)
-    dislay sheds if order has it
-
-
-Design
-    createUser
+    -- 2nd priorty--
+    improve svg stykliste
+        create skur
+        fix current picture
+     createUser
         confirm password
+    Helper jsp footer & implement to employee (pagination)
 
+
+    --3rd Priority--
     Employee Homepage
-        see rejected offers (able to throw them out too)
-        see date for offers that are still awaiting customer approval (able to throw them out too)
-        figure out why it doesn't update when you "take order" from ordersAvailable
-    Customer homepage (current)
-        make choice required
-    Customer Orders
-        Be able to "cancel order"
-    Employee navbar
-        create "find customer"
-    Employee
-        create logout the same way
-
-    Customer Orders (pagination)
-        same for employee (late)
-
-    Logger
-        add more logger to servlet
-
-    NSL
-
-    Ask
-        Logger writes message create nw log every time
-
+        -see rejected offers (able to throw them out too)
     Index
         Send thank you for the order notifcation
-        create all options
-        validations
+    MysqlConnector
+        Find out why I can't find my own created environment variable
+            when solved: set developmentState depending on local or remote environemnt
+    Stykliste
+        create stklist w. shed
 
 
-Servlet
-    -create logger for errors
-
-
-SQL:
-    rollback
-
-extra Design:
-    Employee
-        have a way to find users orders etc. (use findCustomerServlet & send a new redirect)
-
-
-    Index
-        make sure you can order on frontpage, add extra column "contact information" can be null
 
 JUnit:
 Create test for customer login
@@ -86,23 +46,3 @@ Refactor so that service instantiates tabels and drops them later
 OrderDAOTEST
     - should have generator added with order method that returns order
     - Figure out why I get a integrityConstraintError when I run more than two tests?111+!?!?!!?
-
-
-MysqlConnector:
-Find out why I can't find my own created environment variable
-    -when solved: set developmentState depending on local or remote environemnt
-
-
-
-Currently:
-OrderDAO - createOrder
-orderDAO - createMaterial
-
-
-Carport:
- OrdersWithoutShed //this is wierd consider deleting this and find a way to just display orders w/without shed
-        create new jsp page for this one, change to that tab
-
- -Consider shedDAO
-     -make shed possible for OrderDAO
-         -create private shedOrder, use for "available" and others
