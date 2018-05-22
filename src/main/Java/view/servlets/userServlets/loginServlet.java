@@ -8,6 +8,7 @@ import data.exceptions.OrderException;
 import data.exceptions.UserException;
 import logic.facades.MySqlUserFacade;
 import logic.facades.UserFacade;
+import view.servlets.orderServlets.helpers.ErrorHandler;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
@@ -30,7 +31,6 @@ public class loginServlet extends HttpServlet
 			UserFacade userFacade = new MySqlUserFacade();
 			userFacade.getUserDAOInstance();
 			User user = userFacade.evaluateLogin(username, password);
-			//User        user     = MySqlUserFacade.evaluateLogin(username, password);
 			if (user instanceof Customer) {
 				session.setAttribute("customer", user);
 				UpdateOrderList.generateCustomerOrders(session, (Customer) user);
@@ -42,10 +42,11 @@ public class loginServlet extends HttpServlet
 				UpdateOrderList.generateOrdersAvailable(session);
 				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
-			response.sendRedirect("index.jsp");
-
-		} catch (DataException | UserException | OrderException dau) {
-			throw new ServletException(dau);
+			ErrorHandler.loginError(request);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {
+			ErrorHandler.loginError(request);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}
 }

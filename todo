@@ -1,13 +1,12 @@
 Current:
-    SQL
-        rollback(transactions) for index order (so no customer becomes created w/o order)
-    editOrder not updating (THIS)
+    validators (so no exceptions)
+    Logger check if done ok and finish rest of daos
+    Tests (focus on making more or?)
 
     --- ALL functionality done, Sprint done ---
     --backLog--
-    Logger check if done ok and finish rest of daos
-    Tests (focus on making more or?)
-    validators (so no exceptions)
+    SQL
+        rollback(transactions) for index order (so no customer becomes created w/o order)
 
 
     -- 2nd priorty--

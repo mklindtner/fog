@@ -6,6 +6,7 @@ import data.exceptions.UserException;
 import entities.userEntities.Customer;
 import logic.facades.MySqlUserFacade;
 import logic.facades.UserFacade;
+import view.servlets.orderServlets.helpers.ErrorHandler;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
@@ -29,8 +30,9 @@ public class employeeAsCustomerServlet extends HttpServlet
 			Customer    customer       = userFacade.customerByUsername(customerUsername);
 			UpdateOrderList.generateCustomerOrders(session, customer);
 			session.setAttribute("customer", customer);
-		} catch (DataException | UserException | OrderException finalDist) {
-			throw new ServletException(finalDist);
+		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {
+			ErrorHandler.findCustomerError(request);
+			request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 		}
 		request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 	}

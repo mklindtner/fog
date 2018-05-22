@@ -126,7 +126,7 @@ public class UserDAO
 	/**
 	 * finds customer by username
 	 */
-	public Customer customerByUsername(String username) throws UserException, DataException
+	public Customer customerByUsername(String username) throws UserException, ClassCastException
 	{
 		String SQL = "Select * FROM customers WHERE username=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -140,7 +140,7 @@ public class UserDAO
 	 * finds employee by username
 	 */
 
-	public Employee employeeByUsername(String username) throws UserException, DataException
+	public Employee employeeByUsername(String username) throws UserException, ClassCastException
 	{
 		String SQL = "Select * FROM employees WHERE username=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -196,7 +196,7 @@ public class UserDAO
 		}
 	}
 
-	public boolean isCustomer(String username) throws UserException, DataException
+	public boolean isCustomer(String username) throws DataException
 	{
 		List<Customer> customers = allCustomers();
 		for (int i = 0; i < customers.size(); i++) {

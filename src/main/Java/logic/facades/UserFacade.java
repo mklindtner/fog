@@ -18,9 +18,9 @@ public interface UserFacade
 
 	Customer createCustomerWithoutPhone(String username, String password) throws DataException, UserException;
 
-	User evaluateLogin(String username, String password) throws DataException, UserException;
+	User evaluateLogin(String username, String password) throws DataException, UserException, ClassCastException;
 
-	Customer customerByUsername(String username) throws UserException, DataException;
+	Customer customerByUsername(String username) throws UserException, ClassCastException;
 
 	UserDAO getUserDAOInstance() throws DataException;
 

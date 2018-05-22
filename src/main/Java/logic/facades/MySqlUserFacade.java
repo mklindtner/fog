@@ -37,7 +37,7 @@ public class MySqlUserFacade implements UserFacade
 		return userDao.createAndReturnCustomer(username, password);
 	}
 
-	public User evaluateLogin(String username, String password) throws DataException, UserException
+	public User evaluateLogin(String username, String password) throws DataException, UserException, ClassCastException
 	{
 		if (userDao.isCustomer(username) && userDao.customerHasValidLogin(username, password))
 			return userDao.customerByUsername(username);
@@ -47,7 +47,7 @@ public class MySqlUserFacade implements UserFacade
 		return new unknownUser();
 	}
 
-	public Customer customerByUsername(String username) throws UserException, DataException
+	public Customer customerByUsername(String username) throws UserException, ClassCastException
 	{
 		return userDao.customerByUsername(username);
 	}
