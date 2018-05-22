@@ -1,7 +1,6 @@
 package view.servlets.orderServlets.helpers;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public class ErrorHandler
 {

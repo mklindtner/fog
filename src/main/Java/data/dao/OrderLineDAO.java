@@ -35,13 +35,21 @@ public class OrderLineDAO
 		final String SQL = "Insert into orderLines(amount, unit, description, orderId, materialId, length, " +
 						   "isTreeOrRoof) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
-			statement.setInt(1, orderLine.getAmount());
-			statement.setString(2, orderLine.getUnit());
-			statement.setString(3, orderLine.getSecondDescription());
-			statement.setInt(4, orderLine.getOrderId());
-			statement.setInt(5, orderLine.getMaterialId());
-			statement.setInt(6, orderLine.getLength());
-			statement.setBoolean(7, orderLine.isTreeOrRoof());
+			int amount = orderLine.getAmount();
+			String unit = orderLine.getUnit();
+			String secondDescription = orderLine.getSecondDescription();
+			int orderId = orderLine.getOrderId();
+			int materialId = orderLine.getMaterialId();
+			int length = orderLine.getLength();
+			boolean isTreeOrRoof = orderLine.isTreeOrRoof();
+
+			statement.setInt(1, amount);
+			statement.setString(2, unit);
+			statement.setString(3, secondDescription);
+			statement.setInt(4, orderId);
+			statement.setInt(5, materialId);
+			statement.setInt(6, length);
+			statement.setBoolean(7, isTreeOrRoof);
 			statement.executeUpdate();
 		} catch (SQLException throwSql) {
 			throw new OrderLineException(throwSql);

@@ -117,6 +117,10 @@ public class Order
 		return this.customer;
 	}
 
+	public void setCustomerId(int id) {
+		this.customer.setId(id);
+	}
+
 	public String getCreated_at()
 	{
 		return this.created_at;
@@ -130,6 +134,11 @@ public class Order
 	public Shed getShed()
 	{
 		return this.shed;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
 	}
 
 	public int getId()
@@ -207,13 +216,6 @@ public class Order
 			return this;
 		}
 
-		/*
-		public OrderBuilder insertRequiredMaterial(Material material)
-		{
-			this.material = material;
-			return this;
-		} */
-
 		public OrderBuilder insertOptionalShed(Shed shed)
 		{
 			this.shed = shed;
@@ -229,6 +231,12 @@ public class Order
 		public OrderBuilder insertOptionalPrice(int price)
 		{
 			this.price = price;
+			return this;
+		}
+
+		public OrderBuilder insertRequiredCreationDate(String created_at)
+		{
+			this.created_at = created_at;
 			return this;
 		}
 

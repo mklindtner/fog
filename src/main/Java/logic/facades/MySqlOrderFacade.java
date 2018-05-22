@@ -25,9 +25,21 @@ public class MySqlOrderFacade implements OrderFacade
 		return orderDAO;
 	}
 
+	public OrderDAO getInstanceOrderDAO(String connectionString) throws DataException {
+		if(orderDAO == null)
+			orderDAO = new OrderDAO(connectionString);
+		return orderDAO;
+	}
+
 	public MaterialDAO getInstanceMaterialDAO() throws DataException{
 		if(materialDAO == null)
 			materialDAO = new MaterialDAO();
+		return materialDAO;
+	}
+
+	public MaterialDAO getInstanceMaterialDAO(String connectionString) throws DataException{
+		if(materialDAO == null)
+			materialDAO = new MaterialDAO(connectionString);
 		return materialDAO;
 	}
 
@@ -37,7 +49,19 @@ public class MySqlOrderFacade implements OrderFacade
 		return orderLineDAO;
 	}
 
+	public OrderLineDAO getInstanceOrderLineDAO(String connectionString) throws DataException {
+		if(orderLineDAO == null)
+			orderLineDAO = new OrderLineDAO(connectionString);
+		return orderLineDAO;
+	}
+
 	public ShedDAO getInstanceShedDAO() throws DataException {
+		if(shedDAO == null)
+			shedDAO = new ShedDAO();
+		return shedDAO;
+	}
+
+	public ShedDAO getInstanceShedDAO(String connectionString) throws DataException {
 		if(shedDAO == null)
 			shedDAO = new ShedDAO();
 		return shedDAO;

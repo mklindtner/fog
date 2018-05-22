@@ -1,5 +1,6 @@
 package view.servlets.userServlets;
 
+import configurations.Conf;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
 import entities.userEntities.User;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.logging.Level;
 
 @WebServlet(urlPatterns = "/login")
 public class loginServlet extends HttpServlet
@@ -34,12 +36,14 @@ public class loginServlet extends HttpServlet
 			if (user instanceof Customer) {
 				session.setAttribute("customer", user);
 				UpdateOrderList.generateCustomerOrders(session, (Customer) user);
+				Conf.getLogger().log(Level.INFO, "[LOGGED] {0} signed in", user.getUsername());
 				request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 			}
 			if (user instanceof Employee) {
 				session.setAttribute("employee", user);
 				UpdateOrderList.generateEmployeeOrders(session, (Employee) user);
 				UpdateOrderList.generateOrdersAvailable(session);
+				Conf.getLogger().log(Level.INFO, "[LOGGED] {0} signed in", user.getUsername());
 				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
 			ErrorHandler.loginError(request);

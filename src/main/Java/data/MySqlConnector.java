@@ -10,26 +10,12 @@ public class MySqlConnector
 {
 	private static MysqlDataSource source = null;
 	private static Connection con;
-	private final static String FILE = "environment.properties";
-	//String connectionSelection
-
 	//instead of a file I could use an environment variable in the shell
+	private final static String FILE = "LOCAL"; //CLOUD
+
 	public static Connection createConnection(String connectionSelection) throws DataException
 	{
-		//this.connectionSelection = connectionSelect
-			//remove other params
-		/*
-		Properties  properties  = new Properties();
-		try(InputStream inputStream = MySqlConnector.class.getResourceAsStream(FILE)) {
-			if (inputStream == null)
-				throw new FileNotFoundException();
-			properties.load(inputStream);
-			String env = properties.getProperty("HOST");
-			return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
-		} catch(IOException throwIO) {
-			throw new DataAccessException(throwIO);
-		}*/
-		String env = "LOCAL"; //CLOUD
+		String env = FILE;
 		return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
 	}
 

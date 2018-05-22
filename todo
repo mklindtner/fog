@@ -1,12 +1,16 @@
 Current:
     validators (so no exceptions)
-    Logger check if done ok and finish rest of daos
-    Tests (focus on making more or?)
+    Tests (focus on making more or?) (THIS)
+    SETUP REMOTE intellij
+    CRAWLERS
 
     --- ALL functionality done, Sprint done ---
     --backLog--
     SQL
         rollback(transactions) for index order (so no customer becomes created w/o order)
+    ListOfCustomer
+        show list of customers if wrong
+
 
 
     -- 2nd priorty--
@@ -28,8 +32,16 @@ Current:
             when solved: set developmentState depending on local or remote environemnt
     Stykliste
         create stklist w. shed
+    Errorpage
+        redirect etc.
 
 
+    --MistakesToFix--
+    Exception when after creating customer and goes to customerList
+
+Spørgsmål:
+BillOfMaterials
+    linje 610 - doesn't check for loop, how can i in test?
 
 JUnit:
 Create test for customer login

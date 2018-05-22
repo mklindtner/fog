@@ -58,12 +58,6 @@ public class BillOfMaterials
 		this.area = order.getWidth() * order.getLength();
 	}
 
-	public List<OrderLine> createCarportListWithoutShed() throws MaterialException
-	{
-		setValuesWithoutShed();
-		return order.getOrderLines();
-	}
-
 	public int caportPrice()
 	{
 		for (OrderLine orderLine : order.getOrderLines()) {
@@ -72,12 +66,31 @@ public class BillOfMaterials
 		return totalPrice;
 	}
 
-	public void saveOrderLinesToDB() throws OrderLineException, DataException
+	public List<OrderLine> createCarportListWithoutShed() throws MaterialException
+	{
+		setValuesWithoutShed();
+		return order.getOrderLines();
+	}
+
+	public List<OrderLine> createCarportList() throws MaterialException
+	{
+		setValuesWithShed();
+		return order.getOrderLines();
+	}
+
+
+	public void saveOrderLinesToDB(String connectionString) throws OrderLineException, DataException
 	{
 		OrderFacade orderFacade = new MySqlOrderFacade();
-		orderFacade.getInstanceOrderLineDAO();
+		orderFacade.getInstanceOrderLineDAO(connectionString);
 		for (OrderLine orderLine : order.getOrderLines())
 			orderFacade.createOrderLine(orderLine);
+	}
+
+	private void setValuesWithShed() throws MaterialException
+	{
+		setValuesWithoutShed();
+		setValuesForShed();
 	}
 
 	private void setValuesWithoutShed() throws MaterialException
@@ -138,8 +151,10 @@ public class BillOfMaterials
 		Material m_screwsSeventy = findMaterial(SCREWS_SEVENTY);
 		order.addToOrderLines(screwsSeventy(m_screwsSeventy));
 
-		//shed material from here
-		/*
+	}
+
+	private void setValuesForShed() throws MaterialException
+	{
 		Material m_farmgateGrip = findMaterial("stalddørsgreb 50x75");
 		order.addToOrderLines(farmgateGrip(m_farmgateGrip));
 
@@ -153,8 +168,8 @@ public class BillOfMaterials
 		order.addToOrderLines(reglarShedHeadBoards(m_reglar));
 		order.addToOrderLines(reglarShedSides(m_reglar));
 
+		Material m_rafter = findMaterial(RAFTER);
 		order.addToOrderLines(rafterShedSides(m_rafter));
-		*/
 	}
 
 	private OrderLine plankMediumSides(Material m_plankMedium)
@@ -694,41 +709,6 @@ public class BillOfMaterials
 		int       bracketNails        = 0;
 		for (int x = 0; x < plankAmount(); x++)
 			bracketNails = screwsForOneBracket * bracketAmount(); //beslagsskruer
-		return bracketNails + galje; //tbc need to calculate different kind of screws etc.*/
+		return bracketNails + galje;
 	}
-
-
-	/* refactor to this instead
-	private void setValuesWoShed() throws MaterialException
-	{
-
-		final double PLANK_LENGTH = 0.00115384615;
-		final double PLANK_AMOUNT = 0.000008547;
-		OrderLine plank_small = planks_small(
-				orderLine_length(PLANK_LENGTH),
-				amountMaterial(PLANK_AMOUNT),
-				"vandbrædt på stern i sider"
-		);
-
-		order.addToOrderLines(plank_small);
-	}
-
-	// working on myself: to make repetition general
-	private OrderLine planks_small(int amount, int length, String description) throws MaterialException
-	{
-		Material plank = findMaterial("19x100 mm. trykimp. Brædt");
-		return new OrderLine
-				.OrderLineBuilder()
-				.insertAmount(amount)
-				.insertLength(length)
-				.insertUnit("stk")
-				.insertFirstDescription(plank.getDescription())
-				.insertSecondDescription(description)
-				.insertIsTreeOrRoof(true)
-				.insertMaterialId(plank.getId())
-				.insertOrderId(order.getId())
-				.build();
-	}
-
-	*/
 }

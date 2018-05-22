@@ -24,6 +24,9 @@
 <%@ include file="/WEB-INF/employee/employeeHeader.jsp" %>
 
 <div class="container">
+    <% if(request.getAttribute("error") != null) {%>
+    <h4><b><%=request.getAttribute("error")%></b></h4>
+    <%} %>
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="redirect?goToPage=employeeHomepage&role=employee">currentOrderCases</a>
         </li>

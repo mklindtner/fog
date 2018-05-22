@@ -46,8 +46,5 @@
 <br/>
 <br/>
 <br/>
-<% if(request.getAttribute("error") != null) {%>
-<p><%=request.getAttribute("error")%></p>
-<%} %>
 </body>
 </html>

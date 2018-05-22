@@ -121,8 +121,11 @@ public class UpdateOrderList
 	private static void saveOrderLineDB(Order order) throws MaterialException, OrderLineException, DataException
 	{
 		BillOfMaterials billOfMaterials = new BillOfMaterials(order);
-		billOfMaterials.createCarportListWithoutShed();
-		billOfMaterials.saveOrderLinesToDB();
+		if(order.getShed() != null)
+			billOfMaterials.createCarportList();
+		else
+			billOfMaterials.createCarportListWithoutShed();
+		billOfMaterials.saveOrderLinesToDB("APP");
 	}
 
 }

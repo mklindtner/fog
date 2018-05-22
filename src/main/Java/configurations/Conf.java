@@ -11,15 +11,15 @@ public class Conf
 	public static final boolean ISPRODUCTION  = false;
 
 	//for local
-	public static final String  LOGFILEPATH = "/home/mkl/.IntelliJIdea2017.3/system/tomcat/Unnamed_maven_fog/logs/maven_fog.txt";
+	public static final String LOGFILEPATH = "/home/mkl/.IntelliJIdea2017.3/system/tomcat/Unnamed_maven_fog/logs/maven_fog.txt";
 
 
 	public static Logger getLogger() {
 		if(LOGGER == null) {
 			//LOGGER =  Logger.getLogger("");
 			LOGGER = Logger.getLogger(Conf.class.getName());
+			addHandlers();
 		}
-		addHandlers();
 		return LOGGER;
 	}
 

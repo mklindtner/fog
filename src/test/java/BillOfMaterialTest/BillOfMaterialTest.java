@@ -1,8 +1,9 @@
 package BillOfMaterialTest;
 
-import daoTest.ServiceClasses.ServiceMethods;
-import daoTest.ServiceClasses.ServiceSeed;
+import ServiceClasses.ServiceMethods;
+import ServiceClasses.ServiceSeed;
 import data.exceptions.*;
+import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
 import logic.generators.BillOfMaterials;
 import org.junit.After;
@@ -33,9 +34,21 @@ public class BillOfMaterialTest
 	public void BillOfMaterial() throws DataException, MaterialException
 	{
 		BillOfMaterials billOfMaterials = new BillOfMaterials(ServiceMethods.expectedFirstOrder(), "TEST");
-		List<OrderLine> actualOrderLineList = billOfMaterials.createCarportListWithoutShed();
-		assertEquals(actualOrderLineList.size(), 23);
+		List<OrderLine> actualOrderLineList = billOfMaterials.createCarportList();
+		assertEquals(actualOrderLineList.size(), 29);
 		assertEquals(billOfMaterials.caportPrice(), 5620);
 		assertEquals(actualOrderLineList.get(0), ServiceMethods.expectedFirstOrderLine());
 	}
+
+	@Test
+	public void saveOrderLinesToDB() throws DataException, MaterialException, OrderLineException
+	{
+		Order           expected            = ServiceMethods.expectedFirstOrder();
+		expected.setId(ServiceSeed.getOrders().get(0).getId());
+
+		BillOfMaterials billOfMaterials     = new BillOfMaterials(expected, "TEST");
+		billOfMaterials.createCarportList();
+		billOfMaterials.saveOrderLinesToDB("TEST");
+	}
 }
+

@@ -36,14 +36,6 @@ public interface OrderFacade
 
 	void createOrderLine(OrderLine orderLine) throws OrderLineException, DataException;
 
-	OrderDAO getInstanceOrderDAO() throws DataException;
-
-	MaterialDAO getInstanceMaterialDAO() throws DataException;
-
-	OrderLineDAO getInstanceOrderLineDAO() throws DataException;
-
-	ShedDAO getInstanceShedDAO() throws DataException;
-
 	Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException;
 
 	void updateOrderLineAmount(int orderLineId, int amount) throws OrderLineException;
@@ -55,4 +47,21 @@ public interface OrderFacade
 	void deleteOrderLineByOrderId(int orderId) throws OrderLineException;
 
 	List<Material> allMaterials() throws MaterialException;
+
+	OrderDAO getInstanceOrderDAO() throws DataException;
+
+	OrderDAO getInstanceOrderDAO(String connectionString) throws DataException;
+
+	MaterialDAO getInstanceMaterialDAO() throws DataException;
+
+	MaterialDAO getInstanceMaterialDAO(String connctionString) throws DataException;
+
+	OrderLineDAO getInstanceOrderLineDAO() throws DataException;
+
+	OrderLineDAO getInstanceOrderLineDAO(String connectionString) throws DataException;
+
+	ShedDAO getInstanceShedDAO() throws DataException;
+
+	ShedDAO getInstanceShedDAO(String connectionString) throws DataException;
+
 }

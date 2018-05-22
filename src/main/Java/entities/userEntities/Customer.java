@@ -65,6 +65,11 @@ public class Customer implements User
 		return this.reg_date;
 	}
 
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
 	public int getId()
 	{
 		return this.id;

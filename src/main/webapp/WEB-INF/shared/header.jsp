@@ -33,7 +33,7 @@
                     <input type="password" placeholder="Password" class="form-control" value="123" name="password"
                            required>
                 </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
+                <button type="submit" class="btn btn-success" id="signInButton">Sign in</button>
             </form>
         </div><!--/.navbar-collapse -->
     </div>

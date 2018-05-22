@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic HTML File</title>
+    <title>Fog Frontpage</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -143,7 +143,7 @@
         </div>
         <div class="form-row">
             <div class="col-md-12 col-md-12" style="padding-top: 20px">
-                <button class="btn btn-primary" type="submit">create Order</button>
+                <button class="btn btn-primary" type="submit" name="clickCreate" id="clickCreate">create Order</button>
             </div>
         </div>
     </form>

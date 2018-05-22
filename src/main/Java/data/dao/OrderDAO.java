@@ -176,7 +176,7 @@ public class OrderDAO
 					.build();
 
 		} catch (SQLException | ShedException throwSql) {
-			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
+			Conf.getLogger().log(Level.SEVERE, "[{0}] were unable to {1}",
 								 new Object[]{"returnOrder",
 											  "execute"
 								 }

@@ -1,7 +1,7 @@
 package daoTest;
 
-import daoTest.ServiceClasses.ServiceMethods;
-import daoTest.ServiceClasses.ServiceSeed;
+import ServiceClasses.ServiceMethods;
+import ServiceClasses.ServiceSeed;
 import data.dao.OrderDAO;
 import data.exceptions.*;
 import entities.OrderEntities.Order;
