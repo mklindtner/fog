@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/logs/devLogs/dev-log.0.0.log.lck" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ServiceDAOTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ShedDAOTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" />
@@ -22,7 +24,8 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceSeed.java" afterPath="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceSeed.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ConnectionTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ConnectionTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ShedDAO.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ShedDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ShedDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven_fog.war" afterPath="$PROJECT_DIR$/target/maven_fog.war" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -801,7 +804,7 @@
       <workItem from="1526071089653" duration="78404000" />
       <workItem from="1526402637583" duration="158821000" />
       <workItem from="1526980644644" duration="594000" />
-      <workItem from="1526981275528" duration="25023000" />
+      <workItem from="1526981275528" duration="25103000" />
     </task>
     <servers />
   </component>
@@ -838,7 +841,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="703450000" />
+    <option name="totallyTimeSpent" value="703530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
