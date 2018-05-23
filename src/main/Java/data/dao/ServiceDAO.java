@@ -43,7 +43,7 @@ public class ServiceDAO
 		}
 	}
 
-	public static Shed getShedById(int id, Connection con) throws ShedException
+	public static Shed shedById(int id, Connection con) throws ShedException
 	{
 		final String SQL = "Select * FROM sheds WHERE id=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {

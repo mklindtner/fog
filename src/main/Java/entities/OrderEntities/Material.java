@@ -1,5 +1,7 @@
 package entities.OrderEntities;
 
+import java.util.Objects;
+
 public class Material
 {
 	private String description;
@@ -30,5 +32,21 @@ public class Material
 	public void setId(int id)
 	{
 		this.id = id;
+	}
+
+	@Override public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Material material = (Material) o;
+		return pricePrUnit == material.pricePrUnit &&
+			   id == material.id &&
+			   Objects.equals(description, material.description);
+	}
+
+	@Override public int hashCode()
+	{
+
+		return Objects.hash(description, pricePrUnit, id);
 	}
 }

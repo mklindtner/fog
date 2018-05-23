@@ -3,6 +3,7 @@ package ServiceClasses;
 import data.dao.OrderDAO;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
+import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
 import entities.OrderEntities.Shed;
@@ -55,6 +56,30 @@ public class ServiceMethods
 		return order;
 	}
 
+	public static Order expectedSecondOrder()
+	{
+		Customer customer = new Customer
+				.CustomerBuilder(ServiceSeed.getCustomers().get(1).getId(), ServiceMethods.getCurrentTimeAsString())
+				.insertUsername("testUser2")
+				.insertPassword(USER_PASSWORD)
+				.insertPhone(USER_PHONE)
+				.build();
+
+		Order order = new Order
+				.OrderBuilder(ServiceSeed.getOrders().get(1).getId(), ServiceMethods.getCurrentTimeAsString())
+				.insertRequiredHeight(400)
+				.insertRequiredWidth(400)
+				.insertRequiredLength(350)
+				.insertRequiredSlope(45)
+				.insertRequiredCustomer(customer)
+				.insertOptionalStatus(Order.Status.PENDING)
+				.insertOptionalShed(null)
+				.build();
+
+		return order;
+
+	}
+
 	public static OrderLine expectedFirstOrderLine()
 	{
 		//doesn't check id's
@@ -68,5 +93,11 @@ public class ServiceMethods
 				.insertIsTreeOrRoof(true)
 				.insertPriceForOrderLine(320)
 				.build();
+	}
+
+	public static Material expectedFirstMaterial()
+	{
+		final String PLANK_LARGE           = "25x200mm. trykimp. Brædt";
+		return new Material(PLANK_LARGE, 80, ServiceSeed.getMaterials().get(0).getId());
 	}
 }

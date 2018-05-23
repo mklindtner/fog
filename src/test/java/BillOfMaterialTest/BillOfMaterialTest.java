@@ -2,6 +2,7 @@ package BillOfMaterialTest;
 
 import ServiceClasses.ServiceMethods;
 import ServiceClasses.ServiceSeed;
+import data.dao.OrderDAO;
 import data.exceptions.*;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
@@ -38,6 +39,17 @@ public class BillOfMaterialTest
 		assertEquals(actualOrderLineList.size(), 29);
 		assertEquals(billOfMaterials.caportPrice(), 5620);
 		assertEquals(actualOrderLineList.get(0), ServiceMethods.expectedFirstOrderLine());
+	}
+
+
+	@Test
+	public void secondOrderWithoutShed() throws OrderException, DataException, MaterialException
+	{
+		OrderDAO orderDAO = new OrderDAO("TEST");
+		List<Order> ordersActual = orderDAO.allOrders();
+		assertEquals(ordersActual.get(1), ServiceMethods.expectedSecondOrder());
+		BillOfMaterials billOfMaterial = new BillOfMaterials(ServiceMethods.expectedSecondOrder(), "TEST");
+		billOfMaterial.createCarportListWithoutShed();
 	}
 
 	@Test

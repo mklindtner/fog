@@ -185,13 +185,13 @@ public class ServiceSeed
 
 		Order orderTwo = new Order
 				.OrderBuilder(2, ServiceMethods.getCurrentTimeAsString())
-						   .insertRequiredHeight(10)
-						   .insertRequiredWidth(10)
-						   .insertRequiredLength(10)
+						   .insertRequiredHeight(400)
+						   .insertRequiredWidth(400)
+						   .insertRequiredLength(350)
 						   .insertRequiredSlope(45)
 						   .insertRequiredCustomer(customers.get(1))
 						   .insertOptionalStatus(Order.Status.PENDING)
-						   .insertOptionalShed(sheds.get(1))
+						   .insertOptionalShed(null)
 						   .build();
 
 		Order orderThree = new Order
@@ -261,6 +261,11 @@ public class ServiceSeed
 	public static List<Shed> getShedsOn()
 	{
 		return sheds;
+	}
+
+	public static List<Material> getMaterials()
+	{
+		return materials;
 	}
 }
 

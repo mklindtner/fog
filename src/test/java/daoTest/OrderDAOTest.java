@@ -5,6 +5,8 @@ import ServiceClasses.ServiceSeed;
 import data.dao.OrderDAO;
 import data.exceptions.*;
 import entities.OrderEntities.Order;
+import entities.billOfMaterial.BillOfMaterial;
+import logic.generators.BillOfMaterials;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,14 +41,12 @@ public class OrderDAOTest
 	}
 
 	@Test
-	public void firstOrder() throws OrderException, DataException, UserException
+	public void firstOrder() throws OrderException, DataException
 	{
 		List<Order> ordersActual = orderDAO.allOrders();
 		assertEquals(ordersActual.get(0), ServiceMethods.expectedFirstOrder());
 		assertEquals(ordersActual.size(), 6);
-
 	}
-
 
 	@Test
 	public void customerOrders() throws OrderException, DataException, UserException
@@ -56,6 +56,5 @@ public class OrderDAOTest
 		List<Order> customerOrdersActual = orderDAO.ordersOfCustomer(userId);
 		assertEquals(customerOrdersActual.get(0), ServiceMethods.expectedFirstOrder());
 	}
-
 
 }

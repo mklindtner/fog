@@ -1,18 +1,12 @@
 package daoTest;
 
 import data.MySqlConnector;
-import data.dao.MaterialDAO;
-import data.dao.OrderDAO;
-import data.dao.OrderLineDAO;
-import data.dao.UserDAO;
+import data.dao.*;
 import data.exceptions.DataException;
-import entities.OrderEntities.OrderLine;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -20,11 +14,11 @@ public class ConnectionTest
 {
 
 	private Connection appConnection, testConnection;
-	private MaterialDAO materialDAO, materialDAOTest;
-	private OrderDAO orderDAO, orderDAOTest;
-	private OrderLineDAO orderLineDAO, orderLineDAOTest;
-	private UserDAO userDAO, userDAOTest;
-	private ShedDAO shedDAO, shedDAOTest;
+	private MaterialDAO materialDAO, materialDAOTest, materialDAOAPP;
+	private OrderDAO orderDAO, orderDAOTest, orderDAOAPP;
+	private OrderLineDAO orderLineDAO, orderLineDAOTest, orderLineAPP;
+	private UserDAO userDAO, userDAOTest, userDAOAPP;
+	private ShedDAO shedDAO, shedDAOTest, shedDAOAPP;
 
 	@After
 	public void resetConnector() {
@@ -50,16 +44,20 @@ public class ConnectionTest
 	public void materialDAOConnection() throws DataException {
 		materialDAO = new MaterialDAO("APP");
 		materialDAOTest = new MaterialDAO("TEST");
+		materialDAOAPP = new MaterialDAO();
 		assertNotNull(materialDAO.getCon());
 		assertNotNull(materialDAOTest.getCon());
+		assertNotNull(materialDAO.getCon());
 	}
 
 	@Test
 	public void orderDAOConnection() throws DataException {
 		orderDAO = new OrderDAO("APP");
 		orderDAOTest = new OrderDAO("TEST");
+		orderDAOAPP = new OrderDAO();
 		assertNotNull(orderDAO.getCon());
 		assertNotNull(orderDAOTest.getCon());
+		assertNotNull(orderDAOAPP.getCon());
 	}
 
 
@@ -67,8 +65,10 @@ public class ConnectionTest
 	public void orderLineDAOConnection() throws DataException {
 		orderLineDAO = new OrderLineDAO("APP");
 		orderLineDAOTest = new OrderLineDAO("TEST");
+		orderLineAPP = new OrderLineDAO();
 		assertNotNull(orderLineDAO.getCon());
 		assertNotNull(orderLineDAOTest.getCon());
+		assertNotNull(orderLineAPP.getCon());
 	}
 
 
@@ -76,16 +76,26 @@ public class ConnectionTest
 	public void serviceDAOConnection() throws DataException {
 		userDAO = new UserDAO("APP");
 		userDAOTest = new UserDAO("TEST");
+		userDAOAPP = new UserDAO();
 		assertNotNull(userDAO.getCon());
 		assertNotNull(userDAOTest.getCon());
+		assertNotNull(userDAOAPP.getCon());
 	}
 
 	@Test
 	public void shedDAOConnection() throws DataException {
 		shedDAO = new ShedDAO("APP");
 		shedDAOTest = new ShedDAO("TEST");
+		shedDAOAPP = new ShedDAO();
 		assertNotNull(shedDAO.getCon());
 		assertNotNull(shedDAOTest.getCon());
+		assertNotNull(shedDAOAPP.getCon());
+	}
+
+	@Test(expected = DataException.class)
+	public void connectionException() throws DataException
+	{
+		MySqlConnector.createConnection("HULLABULLA");
 	}
 
 }

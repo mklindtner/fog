@@ -46,4 +46,8 @@ public class ShedDAO
 		}
 	}
 
+	public Connection getCon()
+	{
+		return this.con;
+	}
 }

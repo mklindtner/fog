@@ -9,7 +9,6 @@ import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ public class OrderDAO
 		con = MySqlConnector.createConnection(connectionSelection);
 	}
 
-	public List<Order> allOrders() throws OrderException, DataException
+	public List<Order> allOrders() throws OrderException
 	{
 		final String SQL               = "Select * FROM orders";
 		List<Order>  ordersWithoutShed = new ArrayList<>();
@@ -151,7 +150,7 @@ public class OrderDAO
 			Shed         shed;
 
 			if (shedId != 0) {
-				shed = ServiceDAO.getShedById(shedId, con);
+				shed = ServiceDAO.shedById(shedId, con);
 				return new Order
 						.OrderBuilder(id, created_at)
 						.insertRequiredHeight(height)
