@@ -24,7 +24,7 @@ import java.util.logging.Level;
 @WebServlet(urlPatterns = "/login")
 public class loginServlet extends HttpServlet
 {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		try {
 			String      username = request.getParameter("username");

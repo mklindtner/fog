@@ -40,11 +40,7 @@ public class OrderDAO
 			}
 			return ordersWithoutShed;
 		} catch (SQLException throwSql) {
-			Conf.getLogger().log(Level.SEVERE, "{0} were unable to {1}",
-								 new Object[]{"allOrders",
-											  "execute"
-								 }
-			);
+			Conf.getLogger().log(Level.SEVERE, "[Exception] {0}", throwSql.getStackTrace().toString());
 			throw new OrderException(throwSql);
 		}
 	}
@@ -143,14 +139,14 @@ public class OrderDAO
 			int          width      = rs.getInt("width");
 			int          length     = rs.getInt("length");
 			int          slope      = rs.getInt("slope");
-			Customer     customer   = ServiceDAO.getCustomerById(rs.getInt("customerId"), con);
+			Customer     customer   = UtilityDAO.getCustomerById(rs.getInt("customerId"), con);
 			Order.Status status     = Order.Status.valueOf(rs.getString("status"));
 			int          shedId     = rs.getInt("shedId");
 			int          price      = rs.getInt("price");
 			Shed         shed;
 
 			if (shedId != 0) {
-				shed = ServiceDAO.shedById(shedId, con);
+				shed = UtilityDAO.shedById(shedId, con);
 				return new Order
 						.OrderBuilder(id, created_at)
 						.insertRequiredHeight(height)

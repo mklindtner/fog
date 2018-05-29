@@ -25,7 +25,6 @@ public class employeeAddToOrderServlet extends HttpServlet
 			orderFacade.getInstanceOrderDAO().addEmployeeToOrder(employeeId, orderId);
 			Order order = orderFacade.orderById(orderId);
 
-			//MySqlOrderFacade.orderById(orderId);
 			request.getSession().setAttribute("order", order);
 			request.getSession().setAttribute("ordersWithoutShed", orderFacade.allOrdersWithoutShed());
 			request.getRequestDispatcher("/WEB-INF/employee/orders.jsp").forward(request, response);

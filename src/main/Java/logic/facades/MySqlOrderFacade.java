@@ -97,9 +97,14 @@ public class MySqlOrderFacade implements OrderFacade
 		return orderDAO.ordersOfCustomer(id);
 	}
 
-	public List<Order> ordersAvailable() throws OrderException
+	public List<Order> ordersAvailable()
 	{
-		return orderDAO.ordersAvailable();
+		try {
+			return orderDAO.ordersAvailable();
+		} catch(OrderException finalDist)
+		{
+			throw new data.exceptions.ApplicationException(finalDist);
+		}
 	}
 
 	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException

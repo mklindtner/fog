@@ -24,7 +24,7 @@
             <a class="navbar-brand" href="index.jsp">create order</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form method="get" action="login" class="navbar-form navbar-right">
+            <form method="post" action="login" class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" placeholder="Email" class="form-control" value="empTest" name="username"
                            required>

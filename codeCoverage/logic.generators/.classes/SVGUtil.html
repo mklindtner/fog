@@ -1,0 +1,282 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SVGUtil</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">logic.generators</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SVGUtil (logic.generators)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SVGUtil</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 41)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package logic.generators;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;public class SVGUtil
+<i>4</i>&nbsp;{
+<i>5</i>&nbsp;	//stopler
+<i>6</i>&nbsp;	//rem
+<i>7</i>&nbsp;	//spær
+<i>8</i>&nbsp;	private int width, length;
+<b class="nc"><i>9</i>&nbsp;	private final int startDistancePillar = 110;</b>
+<i>10</i>&nbsp;	private StringBuilder sb;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;	public SVGUtil(int length, int width)
+<b class="nc"><i>14</i>&nbsp;	{</b>
+<b class="nc"><i>15</i>&nbsp;		this.length = length;</b>
+<b class="nc"><i>16</i>&nbsp;		this.width = width;</b>
+<b class="nc"><i>17</i>&nbsp;		sb = new StringBuilder();</b>
+<i>18</i>&nbsp;	}
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;	public String createCarport()
+<i>21</i>&nbsp;	{
+<b class="nc"><i>22</i>&nbsp;		mainBox();</b>
+<b class="nc"><i>23</i>&nbsp;		arrowsDefintion();</b>
+<b class="nc"><i>24</i>&nbsp;		arrowsCall();</b>
+<b class="nc"><i>25</i>&nbsp;		roofCanvas();</b>
+<b class="nc"><i>26</i>&nbsp;		roofMeasurements();</b>
+<b class="nc"><i>27</i>&nbsp;		rems();</b>
+<b class="nc"><i>28</i>&nbsp;		rafters();</b>
+<b class="nc"><i>29</i>&nbsp;		pillars();</b>
+<b class="nc"><i>30</i>&nbsp;		dashLines();</b>
+<b class="nc"><i>31</i>&nbsp;		return sb.toString();</b>
+<i>32</i>&nbsp;	}
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;	private void mainBox()
+<i>35</i>&nbsp;	{
+<b class="nc"><i>36</i>&nbsp;		sb.append(&quot;&lt;SVG width=\&quot;760\&quot; height=\&quot;600\&quot; viewBox=\&quot;0 0 &quot; + width + &quot; &quot; + length + &quot; \&quot;&gt;&quot;);</b>
+<i>37</i>&nbsp;	}
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;	private void arrowsDefintion()
+<i>40</i>&nbsp;	{
+<b class="nc"><i>41</i>&nbsp;		String arrowsDef = &quot; &lt;defs&gt;\n&quot; +</b>
+<i>42</i>&nbsp;						   &quot;        &lt;marker id=\&quot;beginArrow\&quot;\n&quot; +
+<i>43</i>&nbsp;						   &quot;                markerWidth=\&quot;9\&quot; markerHeight=\&quot;9\&quot;\n&quot; +
+<i>44</i>&nbsp;						   &quot;                refX=\&quot;0\&quot; refY=\&quot;4\&quot;\n&quot; +
+<i>45</i>&nbsp;						   &quot;                orient=\&quot;auto\&quot;&gt;\n&quot; +
+<i>46</i>&nbsp;						   &quot;            &lt;path d=\&quot;M0,4 L8,0 L8,8 L0,4\&quot; style=\&quot;fill: #000000s;\&quot;/&gt;\n&quot; +
+<i>47</i>&nbsp;						   &quot;        &lt;/marker&gt;\n&quot; +
+<i>48</i>&nbsp;						   &quot;        &lt;marker id=\&quot;endArrow\&quot;\n&quot; +
+<i>49</i>&nbsp;						   &quot;                markerWidth=\&quot;9\&quot; markerHeight=\&quot;9\&quot;\n&quot; +
+<i>50</i>&nbsp;						   &quot;                refX=\&quot;8\&quot; refY=\&quot;4\&quot;\n&quot; +
+<i>51</i>&nbsp;						   &quot;                orient=\&quot;auto\&quot;&gt;\n&quot; +
+<i>52</i>&nbsp;						   &quot;            &lt;path d=\&quot;M0,0 L8,4 L0,8 L0,0\&quot; style=\&quot;fill: #000000;\&quot;/&gt;\n&quot; +
+<i>53</i>&nbsp;						   &quot;        &lt;/marker&gt;\n&quot; +
+<i>54</i>&nbsp;						   &quot;    &lt;/defs&gt;&quot;;
+<b class="nc"><i>55</i>&nbsp;		sb.append(arrowsDef);</b>
+<i>56</i>&nbsp;	}
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;	private void arrowsCall()
+<i>59</i>&nbsp;	{
+<b class="nc"><i>60</i>&nbsp;		String arrows = &quot; &lt;line x1=\&quot;20%\&quot; y1=\&quot;95%\&quot; x2=\&quot;70%\&quot; y2=\&quot;95%\&quot;\n&quot; +</b>
+<i>61</i>&nbsp;						&quot;          style=\&quot;stroke:#006600;\n&quot; +
+<i>62</i>&nbsp;						&quot;        \t    marker-start: url(#beginArrow);\n&quot; +
+<i>63</i>&nbsp;						&quot;               marker-end: url(#endArrow);\&quot;/&gt;\n&quot; +
+<i>64</i>&nbsp;						&quot;    &lt;text x=40% y=98% text-anchor=\&quot;middle\&quot; fill=\&quot;black\&quot;&gt; Width: &quot; + width + &quot;\n&quot; +
+<i>65</i>&nbsp;						&quot;    &lt;/text&gt;\n&quot; +
+<i>66</i>&nbsp;						&quot;    &lt;line x1=\&quot;95%\&quot; y1=\&quot;10%\&quot; x2=\&quot;95%\&quot; y2=\&quot;80%\&quot;\n&quot; +
+<i>67</i>&nbsp;						&quot;          style=\&quot;stroke:#006600;\n&quot; +
+<i>68</i>&nbsp;						&quot;\t            marker-start: url(#beginArrow);\n&quot; +
+<i>69</i>&nbsp;						&quot;            marker-end: url(#endArrow);\&quot;/&gt;\n&quot; +
+<i>70</i>&nbsp;						&quot;    &lt;text x=97% y=50% text-anchor=\&quot;middle\&quot; style=\&quot;writing-mode: tb;\&quot;&gt; Length: &quot; + length +
+<i>71</i>&nbsp;						&quot;&lt;/text&gt;&quot;;
+<b class="nc"><i>72</i>&nbsp;		sb.append(arrows);</b>
+<i>73</i>&nbsp;	}
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;	private void roofCanvas()
+<i>76</i>&nbsp;	{
+<b class="nc"><i>77</i>&nbsp;		String roofCanvas = &quot;&lt;svg width=\&quot;90%\&quot; height=\&quot;90%\&quot;&gt;&quot;;</b>
+<b class="nc"><i>78</i>&nbsp;		sb.append(roofCanvas);</b>
+<i>79</i>&nbsp;	}
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;	private void roofMeasurements()
+<i>82</i>&nbsp;	{
+<b class="nc"><i>83</i>&nbsp;		String roofMeasurements = &quot;&lt;rect width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;roof\&quot;\n&quot; +</b>
+<i>84</i>&nbsp;								  &quot;style=\&quot;stroke:black; fill:none\&quot;/&gt;&quot;;
+<b class="nc"><i>85</i>&nbsp;		sb.append(roofMeasurements);</b>
+<i>86</i>&nbsp;	}
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;	private void rems()
+<i>89</i>&nbsp;	{
+<b class="nc"><i>90</i>&nbsp;		String rems = &quot; &lt;rect x=\&quot;0\&quot; y=\&quot;10%\&quot; height=\&quot;10\&quot; width=\&quot;&quot; + width + &quot;\&quot; id=\&quot;upperRem\&quot;\n&quot; +</b>
+<i>91</i>&nbsp;					  &quot;              style=\&quot;stroke:black; fill:none\&quot;/&gt;\n&quot; +
+<i>92</i>&nbsp;					  &quot;        &lt;rect x=\&quot;0\&quot; y=\&quot;85%\&quot; height=\&quot;10\&quot; width=\&quot;&quot; + width + &quot;\&quot; id=\&quot;lowerRem\&quot;\n&quot; +
+<i>93</i>&nbsp;					  &quot;              style=\&quot;stroke:black; fill:none\&quot;/&gt;&quot;;
+<b class="nc"><i>94</i>&nbsp;		sb.append(rems);</b>
+<i>95</i>&nbsp;	}
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;	private void rafters()
+<i>98</i>&nbsp;	{
+<b class="nc"><i>99</i>&nbsp;		String rafters = &quot;&quot;;</b>
+<b class="nc"><i>100</i>&nbsp;		for (int x = 0; x &lt;= width; x += 55) {</b>
+<b class="nc"><i>101</i>&nbsp;			rafters += &quot;  &lt;rect x=\&quot;&quot; + x + &quot;\&quot; y=\&quot;0%\&quot; height=\&quot;100%\&quot; width=\&quot;10\&quot; id=\&quot;rafter\&quot;\n&quot; +</b>
+<i>102</i>&nbsp;					   &quot;style=\&quot;stroke:black; fill:none\&quot;/&gt;&quot;;
+<i>103</i>&nbsp;		}
+<b class="nc"><i>104</i>&nbsp;		sb.append(rafters);</b>
+<i>105</i>&nbsp;	}
+<i>106</i>&nbsp;
+<i>107</i>&nbsp;	private void pillars()
+<i>108</i>&nbsp;	{
+<b class="nc"><i>109</i>&nbsp;		String pillars = &quot;&quot;;</b>
+<b class="nc"><i>110</i>&nbsp;		if (width &gt; 330) {</b>
+<b class="nc"><i>111</i>&nbsp;			for (int x = startDistancePillar; x &lt;= width; x += 250) {</b>
+<b class="nc"><i>112</i>&nbsp;				pillars += &quot; &lt;rect x=\&quot;&quot; + x + &quot;\&quot; y=\&quot;10%\&quot; height=\&quot;10\&quot; width=\&quot;10\&quot; id=\&quot;upperPillar\&quot;\n&quot; +</b>
+<i>113</i>&nbsp;						   &quot;              style=\&quot;stroke:black; fill:black\&quot;/&gt;\n&quot; +
+<i>114</i>&nbsp;						   &quot;        &lt;rect x=\&quot;&quot; + x + &quot;\&quot; y=\&quot;85%\&quot; height=\&quot;10\&quot; width=\&quot;10\&quot; id=\&quot;lowerPillar\&quot;\n&quot; +
+<i>115</i>&nbsp;						   &quot;              style=\&quot;stroke:black; fill:black\&quot;/&gt;&quot;;
+<i>116</i>&nbsp;			}
+<i>117</i>&nbsp;		} else { //place 4 if less smaller than 330
+<b class="nc"><i>118</i>&nbsp;			int rafterPosition = 0;</b>
+<b class="nc"><i>119</i>&nbsp;			for (int x = 0; x &lt; 2; x++) {</b>
+<b class="nc"><i>120</i>&nbsp;				pillars += &quot; &lt;rect x=\&quot;&quot; + rafterPosition + &quot;%\&quot; y=\&quot;10%\&quot; height=\&quot;10\&quot; width=\&quot;10\&quot; &quot; +</b>
+<i>121</i>&nbsp;						   &quot;id=\&quot;upperPillar\&quot;\n&quot; + &quot; style=\&quot;stroke:black; fill:black\&quot;/&gt;\n&quot; +
+<i>122</i>&nbsp;						   &quot;&lt;rect x=\&quot;&quot; + rafterPosition + &quot;%\&quot; y=\&quot;85%\&quot; height=\&quot;10\&quot; width=\&quot;10\&quot; &quot; +
+<i>123</i>&nbsp;						   &quot;id=\&quot;lowerPillar\&quot;\n&quot; + &quot; style=\&quot;stroke:black; fill:black\&quot;/&gt;&quot;;
+<b class="nc"><i>124</i>&nbsp;				rafterPosition = 73;</b>
+<i>125</i>&nbsp;			}
+<i>126</i>&nbsp;		}
+<b class="nc"><i>127</i>&nbsp;		sb.append(pillars);</b>
+<i>128</i>&nbsp;	}
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;	private void dashLines()
+<i>131</i>&nbsp;	{
+<b class="nc"><i>132</i>&nbsp;		String dashLines = &quot;&lt;line x1=\&quot;12%\&quot; y1=\&quot;12%\&quot; x2=\&quot;81.5%\&quot; y2=\&quot;85.5%\&quot;\n&quot; +</b>
+<i>133</i>&nbsp;						   &quot;              style=\&quot;stroke-dasharray: 2 2; stroke: blue; fill: none\&quot;/&gt;\n&quot; +
+<i>134</i>&nbsp;						   &quot;        &lt;line x1=\&quot;12%\&quot; y1=\&quot;85.5%\&quot; x2=\&quot;81.5%\&quot; y2=\&quot;12%\&quot;\n&quot; +
+<i>135</i>&nbsp;						   &quot;              style=\&quot;stroke-dasharray: 2 2; stroke: blue; fill: none\&quot;/&gt;&quot;;
+<b class="nc"><i>136</i>&nbsp;		sb.append(dashLines);</b>
+<i>137</i>&nbsp;	}
+<i>138</i>&nbsp;
+<i>139</i>&nbsp;
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;/* future reference: something to consider: width = max.(length, width), length = min.(length, width),
+<i>142</i>&nbsp;shed doesn&#39;t work as expected
+<i>143</i>&nbsp;
+<i>144</i>&nbsp;&lt;SVG width=&quot;760&quot; height=&quot;600&quot; viewBox=&quot;0 0 &lt;%=length%&gt; &lt;%=width%&gt; &quot;&gt;
+<i>145</i>&nbsp;    &lt;defs&gt;
+<i>146</i>&nbsp;        &lt;marker id=&quot;beginArrow&quot;
+<i>147</i>&nbsp;                markerWidth=&quot;9&quot; markerHeight=&quot;9&quot;
+<i>148</i>&nbsp;                refX=&quot;0&quot; refY=&quot;4&quot;
+<i>149</i>&nbsp;                orient=&quot;auto&quot;&gt;
+<i>150</i>&nbsp;            &lt;path d=&quot;M0,4 L8,0 L8,8 L0,4&quot; style=&quot;fill: #000000s;&quot;/&gt;
+<i>151</i>&nbsp;        &lt;/marker&gt;
+<i>152</i>&nbsp;        &lt;marker id=&quot;endArrow&quot;
+<i>153</i>&nbsp;                markerWidth=&quot;9&quot; markerHeight=&quot;9&quot;
+<i>154</i>&nbsp;                refX=&quot;8&quot; refY=&quot;4&quot;
+<i>155</i>&nbsp;                orient=&quot;auto&quot;&gt;
+<i>156</i>&nbsp;            &lt;path d=&quot;M0,0 L8,4 L0,8 L0,0&quot; style=&quot;fill: #000000;&quot;/&gt;
+<i>157</i>&nbsp;        &lt;/marker&gt;
+<i>158</i>&nbsp;    &lt;/defs&gt;
+<i>159</i>&nbsp;    &lt;line x1=&quot;20%&quot; y1=&quot;95%&quot; x2=&quot;70%&quot; y2=&quot;95%&quot;
+<i>160</i>&nbsp;          style=&quot;stroke:#006600;
+<i>161</i>&nbsp;        	    marker-start: url(#beginArrow);
+<i>162</i>&nbsp;               marker-end: url(#endArrow);&quot;/&gt;
+<i>163</i>&nbsp;    &lt;text x=40% y=98% text-anchor=&quot;middle&quot; fill=&quot;black&quot;&gt; Width: &lt;%= width %&gt;
+<i>164</i>&nbsp;    &lt;/text&gt;
+<i>165</i>&nbsp;    &lt;line x1=&quot;95%&quot; y1=&quot;10%&quot; x2=&quot;95%&quot; y2=&quot;80%&quot;
+<i>166</i>&nbsp;          style=&quot;stroke:#006600;
+<i>167</i>&nbsp;	            marker-start: url(#beginArrow);
+<i>168</i>&nbsp;            marker-end: url(#endArrow);&quot;/&gt;
+<i>169</i>&nbsp;    &lt;text x=97% y=50% text-anchor=&quot;middle&quot; style=&quot;writing-mode: tb;&quot;&gt; Length: &lt;%= length %&gt;
+<i>170</i>&nbsp;    &lt;/text&gt;
+<i>171</i>&nbsp;    &lt;svg width=&quot;90%&quot; height=&quot;90%&quot;&gt;
+<i>172</i>&nbsp;        &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; id=&quot;roof&quot;
+<i>173</i>&nbsp;              style=&quot;stroke:black; fill:none&quot;/&gt;
+<i>174</i>&nbsp;        &lt;rect x=&quot;0&quot; y=&quot;10%&quot; height=&quot;10&quot; width=&quot;&lt;%=width%&gt;&quot; id=&quot;upperRem&quot;
+<i>175</i>&nbsp;              style=&quot;stroke:black; fill:none&quot;/&gt;
+<i>176</i>&nbsp;        &lt;rect x=&quot;0&quot; y=&quot;85%&quot; height=&quot;10&quot; width=&quot;&lt;%=width%&gt;&quot; id=&quot;lowerRem&quot;
+<i>177</i>&nbsp;              style=&quot;stroke:black; fill:none&quot;/&gt;
+<i>178</i>&nbsp;        &lt;%for (int x = 0; x &lt;= width; x += 55) {%&gt;
+<i>179</i>&nbsp;        &lt;rect x=&quot;&lt;%= x %&gt;&quot; y=&quot;0%&quot; height=&quot;100%&quot; width=&quot;10&quot; id=&quot;rafter&quot;
+<i>180</i>&nbsp;              style=&quot;stroke:black; fill:none&quot;/&gt;
+<i>181</i>&nbsp;        &lt;%}%&gt;
+<i>182</i>&nbsp;        &lt;%for (int x = startDistancePillar; x &lt;= width; x += 250) { %&gt;
+<i>183</i>&nbsp;        &lt;rect x=&quot;&lt;%= x %&gt;&quot; y=&quot;10%&quot; height=&quot;10&quot; width=&quot;10&quot; id=&quot;upperPillar&quot;
+<i>184</i>&nbsp;              style=&quot;stroke:black; fill:black&quot;/&gt;
+<i>185</i>&nbsp;        &lt;rect x=&quot;&lt;%= x %&gt;&quot; y=&quot;85%&quot; height=&quot;10&quot; width=&quot;10&quot; id=&quot;lowerPillar&quot;
+<i>186</i>&nbsp;              style=&quot;stroke:black; fill:black&quot;/&gt;
+<i>187</i>&nbsp;        &lt;%}%&gt;
+<i>188</i>&nbsp;        &lt;line x1=&quot;12%&quot; y1=&quot;12%&quot; x2=&quot;81.5%&quot; y2=&quot;85.5%&quot;
+<i>189</i>&nbsp;              style=&quot;stroke-dasharray: 2 2; stroke: blue; fill: none&quot;/&gt;
+<i>190</i>&nbsp;        &lt;line x1=&quot;12%&quot; y1=&quot;85.5%&quot; x2=&quot;81.5%&quot; y2=&quot;12%&quot;
+<i>191</i>&nbsp;              style=&quot;stroke-dasharray: 2 2; stroke: blue; fill: none&quot;/&gt;
+<i>192</i>&nbsp;
+<i>193</i>&nbsp;
+<i>194</i>&nbsp;        &lt;rect x=&quot;&lt;%=shedWidth%&gt;&quot; y=&quot;&lt;%=shedLength%&gt;&quot; width=&quot;&lt;%=shedWidth%&gt;&quot; height=&quot;&lt;%=shedLength%&gt;&quot;
+<i>195</i>&nbsp;              stroke-dasharray=&quot;2, 2&quot; style=&quot;stroke:black; stroke-width: 2; fill-opacity: 0;&quot; /&gt;
+<i>196</i>&nbsp;    &lt;/svg&gt;
+<i>197</i>&nbsp;&lt;/SVG&gt;
+<i>198</i>&nbsp;         */
+<i>199</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

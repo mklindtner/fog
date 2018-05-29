@@ -1,0 +1,241 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MySqlOrderFacade</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">logic.facades</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MySqlOrderFacade (logic.facades)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MySqlOrderFacade</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    11.5%
+  </span>
+  <span class="absValue">
+    (3/ 26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    11.8%
+  </span>
+  <span class="absValue">
+    (6/ 51)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package logic.facades;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import data.dao.MaterialDAO;
+<i>4</i>&nbsp;import data.dao.OrderDAO;
+<i>5</i>&nbsp;import data.dao.OrderLineDAO;
+<i>6</i>&nbsp;import data.dao.ShedDAO;
+<i>7</i>&nbsp;import data.exceptions.*;
+<i>8</i>&nbsp;import entities.OrderEntities.Material;
+<i>9</i>&nbsp;import entities.OrderEntities.Order;
+<i>10</i>&nbsp;import entities.OrderEntities.OrderLine;
+<i>11</i>&nbsp;import entities.OrderEntities.Shed;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;import java.util.List;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;public class MySqlOrderFacade implements OrderFacade</b>
+<i>16</i>&nbsp;{
+<i>17</i>&nbsp;	private OrderDAO     orderDAO;
+<i>18</i>&nbsp;	private MaterialDAO  materialDAO;
+<i>19</i>&nbsp;	private OrderLineDAO orderLineDAO;
+<i>20</i>&nbsp;	private ShedDAO      shedDAO;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;	public OrderDAO getInstanceOrderDAO() throws DataException {
+<b class="nc"><i>23</i>&nbsp;		if(orderDAO == null)</b>
+<b class="nc"><i>24</i>&nbsp;			orderDAO = new OrderDAO();</b>
+<b class="nc"><i>25</i>&nbsp;		return orderDAO;</b>
+<i>26</i>&nbsp;	}
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;	public OrderDAO getInstanceOrderDAO(String connectionString) throws DataException {
+<b class="nc"><i>29</i>&nbsp;		if(orderDAO == null)</b>
+<b class="nc"><i>30</i>&nbsp;			orderDAO = new OrderDAO(connectionString);</b>
+<b class="nc"><i>31</i>&nbsp;		return orderDAO;</b>
+<i>32</i>&nbsp;	}
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;	public MaterialDAO getInstanceMaterialDAO() throws DataException{
+<b class="nc"><i>35</i>&nbsp;		if(materialDAO == null)</b>
+<b class="nc"><i>36</i>&nbsp;			materialDAO = new MaterialDAO();</b>
+<b class="nc"><i>37</i>&nbsp;		return materialDAO;</b>
+<i>38</i>&nbsp;	}
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;	public MaterialDAO getInstanceMaterialDAO(String connectionString) throws DataException{
+<b class="nc"><i>41</i>&nbsp;		if(materialDAO == null)</b>
+<b class="nc"><i>42</i>&nbsp;			materialDAO = new MaterialDAO(connectionString);</b>
+<b class="nc"><i>43</i>&nbsp;		return materialDAO;</b>
+<i>44</i>&nbsp;	}
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;	public OrderLineDAO getInstanceOrderLineDAO() throws DataException {
+<b class="nc"><i>47</i>&nbsp;		if(orderLineDAO == null)</b>
+<b class="nc"><i>48</i>&nbsp;			orderLineDAO = new OrderLineDAO();</b>
+<b class="nc"><i>49</i>&nbsp;		return orderLineDAO;</b>
+<i>50</i>&nbsp;	}
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;	public OrderLineDAO getInstanceOrderLineDAO(String connectionString) throws DataException {
+<b class="fc"><i>53</i>&nbsp;		if(orderLineDAO == null)</b>
+<b class="fc"><i>54</i>&nbsp;			orderLineDAO = new OrderLineDAO(connectionString);</b>
+<b class="fc"><i>55</i>&nbsp;		return orderLineDAO;</b>
+<i>56</i>&nbsp;	}
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;	public ShedDAO getInstanceShedDAO() throws DataException {
+<b class="nc"><i>59</i>&nbsp;		if(shedDAO == null)</b>
+<b class="nc"><i>60</i>&nbsp;			shedDAO = new ShedDAO();</b>
+<b class="nc"><i>61</i>&nbsp;		return shedDAO;</b>
+<i>62</i>&nbsp;	}
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;	public ShedDAO getInstanceShedDAO(String connectionString) throws DataException {
+<b class="nc"><i>65</i>&nbsp;		if(shedDAO == null)</b>
+<b class="nc"><i>66</i>&nbsp;			shedDAO = new ShedDAO();</b>
+<b class="nc"><i>67</i>&nbsp;		return shedDAO;</b>
+<i>68</i>&nbsp;	}
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;	public List&lt;Order&gt; allOrdersWithoutShed() throws OrderException, DataException
+<i>71</i>&nbsp;	{
+<b class="nc"><i>72</i>&nbsp;		return orderDAO.allOrders();</b>
+<i>73</i>&nbsp;	}
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;	public Order createAndReturnOrder(Order order) throws DataException, OrderException
+<i>76</i>&nbsp;	{
+<b class="nc"><i>77</i>&nbsp;		return orderDAO.createAndReturnOrder(order);</b>
+<i>78</i>&nbsp;	}
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;	public Material materialById(int id) throws MaterialException
+<i>81</i>&nbsp;	{
+<b class="nc"><i>82</i>&nbsp;		return materialDAO.materialById(id);</b>
+<i>83</i>&nbsp;	}
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;	public void addEmployeeToOrder(int employeeId, int orderId) throws DataException
+<i>86</i>&nbsp;	{
+<b class="nc"><i>87</i>&nbsp;		orderDAO.addEmployeeToOrder(employeeId, orderId);</b>
+<b class="nc"><i>88</i>&nbsp;	}</b>
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;	public Order orderById(int orderId) throws DataException, OrderException
+<i>91</i>&nbsp;	{
+<b class="nc"><i>92</i>&nbsp;		return orderDAO.orderById(orderId);</b>
+<i>93</i>&nbsp;	}
+<i>94</i>&nbsp;
+<i>95</i>&nbsp;	public List&lt;Order&gt; ordersOfCustomer(int id) throws OrderException
+<i>96</i>&nbsp;	{
+<b class="nc"><i>97</i>&nbsp;		return orderDAO.ordersOfCustomer(id);</b>
+<i>98</i>&nbsp;	}
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;	public List&lt;Order&gt; ordersAvailable()
+<i>101</i>&nbsp;	{
+<i>102</i>&nbsp;		try {
+<b class="nc"><i>103</i>&nbsp;			return orderDAO.ordersAvailable();</b>
+<b class="nc"><i>104</i>&nbsp;		} catch(OrderException finalDist)</b>
+<i>105</i>&nbsp;		{
+<b class="nc"><i>106</i>&nbsp;			throw new data.exceptions.ApplicationException(finalDist);</b>
+<i>107</i>&nbsp;		}
+<i>108</i>&nbsp;	}
+<i>109</i>&nbsp;
+<i>110</i>&nbsp;	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException
+<i>111</i>&nbsp;	{
+<b class="nc"><i>112</i>&nbsp;		orderDAO.employeeChooseOrder(employeeId, orderId);</b>
+<b class="nc"><i>113</i>&nbsp;	}</b>
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;	public List&lt;Order&gt; employeeChosenOrders(int employeeId) throws OrderException, DataException
+<i>116</i>&nbsp;	{
+<b class="nc"><i>117</i>&nbsp;		return orderDAO.employeesChosenOrders(employeeId);</b>
+<i>118</i>&nbsp;	}
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;	public void updateOrderOffer(Order order) throws OrderException, DataException
+<i>121</i>&nbsp;	{
+<b class="nc"><i>122</i>&nbsp;		orderDAO.updateOrderOffer(order);</b>
+<b class="nc"><i>123</i>&nbsp;	}</b>
+<i>124</i>&nbsp;
+<i>125</i>&nbsp;	public void createOrderLine(OrderLine orderLine) throws OrderLineException, DataException
+<i>126</i>&nbsp;	{
+<b class="fc"><i>127</i>&nbsp;		orderLineDAO.createOrderLine(orderLine);</b>
+<b class="fc"><i>128</i>&nbsp;	}</b>
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;	public Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException
+<i>131</i>&nbsp;	{
+<b class="nc"><i>132</i>&nbsp;		return shedDAO.createAndReturnShed(shedLength, shedWidth, hasFloor);</b>
+<i>133</i>&nbsp;	}
+<i>134</i>&nbsp;
+<i>135</i>&nbsp;	public void updateOrderLineAmount(int orderLineId, int amount) throws OrderLineException
+<i>136</i>&nbsp;	{
+<b class="nc"><i>137</i>&nbsp;		orderLineDAO.updateOrderLineAmount(orderLineId, amount);</b>
+<b class="nc"><i>138</i>&nbsp;	}</b>
+<i>139</i>&nbsp;
+<i>140</i>&nbsp;	public List&lt;OrderLine&gt; orderLinesByOrderId(int orderId) throws OrderLineException, MaterialException
+<i>141</i>&nbsp;	{
+<b class="nc"><i>142</i>&nbsp;		return orderLineDAO.orderLineByOrderId(orderId);</b>
+<i>143</i>&nbsp;	}
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;	public void deleteOrder(int orderId) throws OrderException {
+<b class="nc"><i>146</i>&nbsp;		orderDAO.deleteOrder(orderId);</b>
+<b class="nc"><i>147</i>&nbsp;	}</b>
+<i>148</i>&nbsp;
+<i>149</i>&nbsp;	public void deleteOrderLineByOrderId(int orderId) throws OrderLineException
+<i>150</i>&nbsp;	{
+<b class="nc"><i>151</i>&nbsp;		orderLineDAO.deleteOrderLineByOrderId(orderId);</b>
+<b class="nc"><i>152</i>&nbsp;	}</b>
+<i>153</i>&nbsp;
+<i>154</i>&nbsp;	public List&lt;Material&gt; allMaterials() throws MaterialException {
+<b class="nc"><i>155</i>&nbsp;		return materialDAO.allMaterials();</b>
+<i>156</i>&nbsp;	}
+<i>157</i>&nbsp;
+<i>158</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: BillOfMaterial</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">entities.billOfMaterial</a> ]
+</div>
+
+<h1>Coverage Summary for Class: BillOfMaterial (entities.billOfMaterial)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BillOfMaterial</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 15)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">BillOfMaterial$BillOfMaterialBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 14)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 29)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package entities.billOfMaterial;
+<i>2</i>&nbsp;
+<b class="nc"><i>3</i>&nbsp;public class BillOfMaterial</b>
+<i>4</i>&nbsp;{
+<i>5</i>&nbsp;	private int nails, stakes, brackets, rafters;
+<i>6</i>&nbsp;	private int height, width, length;
+<i>7</i>&nbsp;
+<b class="nc"><i>8</i>&nbsp;	private BillOfMaterial(BillOfMaterialBuilder billOfMaterialBuilder) {</b>
+<b class="nc"><i>9</i>&nbsp;		this.nails = billOfMaterialBuilder.nails;</b>
+<b class="nc"><i>10</i>&nbsp;		this.stakes = billOfMaterialBuilder.stakes;</b>
+<b class="nc"><i>11</i>&nbsp;		this.brackets = billOfMaterialBuilder.brackets;</b>
+<b class="nc"><i>12</i>&nbsp;		this.rafters = billOfMaterialBuilder.rafters;</b>
+<b class="nc"><i>13</i>&nbsp;		this.height = billOfMaterialBuilder.height;</b>
+<b class="nc"><i>14</i>&nbsp;		this.width = billOfMaterialBuilder.width;</b>
+<b class="nc"><i>15</i>&nbsp;		this.length = billOfMaterialBuilder.length;</b>
+<i>16</i>&nbsp;	}
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;	public int getNails()
+<i>19</i>&nbsp;	{
+<b class="nc"><i>20</i>&nbsp;		return this.nails;</b>
+<i>21</i>&nbsp;	}
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;	public int getStakes()
+<i>24</i>&nbsp;	{
+<b class="nc"><i>25</i>&nbsp;		return this.stakes;</b>
+<i>26</i>&nbsp;	}
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;	public int getBrackets()
+<i>29</i>&nbsp;	{
+<b class="nc"><i>30</i>&nbsp;		return this.brackets;</b>
+<i>31</i>&nbsp;	}
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;	public int getRafters()
+<i>34</i>&nbsp;	{
+<b class="nc"><i>35</i>&nbsp;		return this.rafters;</b>
+<i>36</i>&nbsp;	}
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;	public int lengthOfStake() {
+<b class="nc"><i>39</i>&nbsp;		return length + 10;</b>
+<i>40</i>&nbsp;	}
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;
+<b class="nc"><i>44</i>&nbsp;	public static class BillOfMaterialBuilder {</b>
+<i>45</i>&nbsp;		private int nails, stakes, brackets, rafters;
+<i>46</i>&nbsp;		private int height, width, length;
+<b class="nc"><i>47</i>&nbsp;		public BillOfMaterialBuilder(int height, int width, int length ) {</b>
+<b class="nc"><i>48</i>&nbsp;			this.height = height;</b>
+<b class="nc"><i>49</i>&nbsp;			this.width = width;</b>
+<b class="nc"><i>50</i>&nbsp;			this.length = length;</b>
+<i>51</i>&nbsp;		}
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;		public BillOfMaterialBuilder insertRequiedNails(int nails) {
+<b class="nc"><i>54</i>&nbsp;			this.nails = nails;</b>
+<b class="nc"><i>55</i>&nbsp;			return this;</b>
+<i>56</i>&nbsp;		}
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;		public BillOfMaterialBuilder insertRequiredStakes(int stakes) {
+<b class="nc"><i>59</i>&nbsp;			this.stakes = stakes;</b>
+<b class="nc"><i>60</i>&nbsp;			return this;</b>
+<i>61</i>&nbsp;		}
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;		public BillOfMaterialBuilder insertRequiredBrackets(int brackets) {
+<b class="nc"><i>64</i>&nbsp;			this.brackets = brackets;</b>
+<b class="nc"><i>65</i>&nbsp;			return this;</b>
+<i>66</i>&nbsp;		}
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;		public BillOfMaterialBuilder insertRequiredRafters(int rafters) {
+<b class="nc"><i>69</i>&nbsp;			this.rafters = rafters;</b>
+<b class="nc"><i>70</i>&nbsp;			return this;</b>
+<i>71</i>&nbsp;		}
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;		public BillOfMaterial build() {
+<b class="nc"><i>74</i>&nbsp;			return new BillOfMaterial(this);</b>
+<i>75</i>&nbsp;		}
+<i>76</i>&nbsp;	}
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;	@Override public String toString() {
+<b class="nc"><i>79</i>&nbsp;		return &quot;stakes: &quot; + stakes + &quot;, rafters: &quot; + rafters + &quot;, brackets: &quot; + brackets + &quot;, nails: &quot; + nails;</b>
+<i>80</i>&nbsp;	}
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

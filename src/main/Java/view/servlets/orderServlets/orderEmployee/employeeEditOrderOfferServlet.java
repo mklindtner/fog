@@ -23,7 +23,7 @@ public class employeeEditOrderOfferServlet extends HttpServlet
 	{
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		try {
-			billOfMaterialWithoutShed(orderId ,request.getSession());
+			billOfMaterialWithoutShed(orderId,request.getSession());
 			request.getRequestDispatcher("/WEB-INF/employee/employeeEditOffer.jsp").forward(request, response);
 		} catch (DataException | OrderException | MaterialException finalDist) {
 			throw new ServletException(finalDist);
@@ -37,7 +37,10 @@ public class employeeEditOrderOfferServlet extends HttpServlet
 		orderFacade.getInstanceOrderDAO();
 		Order           order           = orderFacade.orderById(orderId);
 		BillOfMaterials billOfMaterials = new BillOfMaterials(order);
-		billOfMaterials.createCarportListWithoutShed();
+		if(order.getShed() != null)
+			billOfMaterials.createCarportList();
+		else
+			billOfMaterials.createCarportListWithoutShed();
 		order.setPrice(billOfMaterials.caportPrice());
 		session.setAttribute("order", order);
 	}

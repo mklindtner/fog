@@ -1,0 +1,136 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: employeeCreateServlet</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">view.servlets.userServlets.crudEmployee</a> ]
+</div>
+
+<h1>Coverage Summary for Class: employeeCreateServlet (view.servlets.userServlets.crudEmployee)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">employeeCreateServlet</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 21)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package view.servlets.userServlets.crudEmployee;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import data.exceptions.DataException;
+<i>4</i>&nbsp;import data.exceptions.UserException;
+<i>5</i>&nbsp;import logic.facades.MySqlUserFacade;
+<i>6</i>&nbsp;import logic.facades.UserFacade;
+<i>7</i>&nbsp;import org.omg.CORBA.UnknownUserException;
+<i>8</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateUserList;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;import javax.servlet.ServletException;
+<i>11</i>&nbsp;import javax.servlet.annotation.WebServlet;
+<i>12</i>&nbsp;import javax.servlet.http.HttpServlet;
+<i>13</i>&nbsp;import javax.servlet.http.HttpServletRequest;
+<i>14</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>15</i>&nbsp;import java.io.IOException;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;@WebServlet(urlPatterns = &quot;/createEmployee&quot;)
+<b class="nc"><i>18</i>&nbsp;public class employeeCreateServlet extends HttpServlet</b>
+<i>19</i>&nbsp;{
+<i>20</i>&nbsp;	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+<i>21</i>&nbsp;	{
+<i>22</i>&nbsp;		//create employee from parameters of employeeCreatUser
+<i>23</i>&nbsp;		//create facade/userdao that creates employee
+<i>24</i>&nbsp;		//do this here lol
+<b class="nc"><i>25</i>&nbsp;		String username = request.getParameter(&quot;username&quot;);</b>
+<b class="nc"><i>26</i>&nbsp;		String password = request.getParameter(&quot;password&quot;);</b>
+<b class="nc"><i>27</i>&nbsp;		int phone = Integer.parseInt(request.getParameter(&quot;phoneNumber&quot;));</b>
+<b class="nc"><i>28</i>&nbsp;		String role = request.getParameter(&quot;employeeRole&quot;);</b>
+<b class="nc"><i>29</i>&nbsp;		UserFacade facade = new MySqlUserFacade();</b>
+<i>30</i>&nbsp;		try {
+<b class="nc"><i>31</i>&nbsp;			facade.getUserDAOInstance();</b>
+<b class="nc"><i>32</i>&nbsp;			facade.createEmployee(username, password, phone, evaluateRoleToInt(role));</b>
+<b class="nc"><i>33</i>&nbsp;			UpdateUserList.updateEmployeeListSession(request);</b>
+<b class="nc"><i>34</i>&nbsp;		} catch( UserException | DataException | UnknownUserException finalDist) {</b>
+<b class="nc"><i>35</i>&nbsp;			throw new ServletException(finalDist);</b>
+<b class="nc"><i>36</i>&nbsp;		}</b>
+<b class="nc"><i>37</i>&nbsp;		request.getRequestDispatcher(&quot;WEB-INF/employee/employees.jsp&quot;).forward(request, response);</b>
+<b class="nc"><i>38</i>&nbsp;	}</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+<i>41</i>&nbsp;	{
+<b class="nc"><i>42</i>&nbsp;		request.getRequestDispatcher(&quot;/WEB-INF/employee/employeeCreateUser.jsp&quot;).forward(request, response);</b>
+<b class="nc"><i>43</i>&nbsp;	}</b>
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;	private int evaluateRoleToInt(String role) throws UnknownUserException
+<i>46</i>&nbsp;	{
+<b class="nc"><i>47</i>&nbsp;		if(role.toUpperCase().equals(&quot;SALGSMEDARBEJDER&quot;))</b>
+<b class="nc"><i>48</i>&nbsp;			return 3;</b>
+<b class="nc"><i>49</i>&nbsp;		if(role.toUpperCase().equals(&quot;MATERIALEANSVARLIG&quot;))</b>
+<b class="nc"><i>50</i>&nbsp;			return 2;</b>
+<b class="nc"><i>51</i>&nbsp;		throw new UnknownUserException();</b>
+<i>52</i>&nbsp;	}
+<i>53</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

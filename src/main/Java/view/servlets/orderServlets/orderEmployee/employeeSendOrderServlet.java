@@ -31,7 +31,6 @@ public class employeeSendOrderServlet extends HttpServlet
 
 			orderFacade.updateOrderOffer(order);
 			UpdateOrderList.generateEmployeeOrders(session, (Employee) session.getAttribute("employee"));
-			//MySqlOrderFacade.updateOrderOffer(order );
 			request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 		} catch (DataException | OrderException finalDist) {
 			throw new ServletException(finalDist);
@@ -42,6 +41,5 @@ public class employeeSendOrderServlet extends HttpServlet
 	{
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		return orderFacade.orderById(orderId);
-		//return MySqlOrderFacade.orderById(orderId);
 	}
 }

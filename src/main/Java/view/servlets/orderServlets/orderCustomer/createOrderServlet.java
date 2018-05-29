@@ -1,5 +1,6 @@
 package view.servlets.orderServlets.orderCustomer;
 
+import configurations.Conf;
 import entities.OrderEntities.Order;
 import data.exceptions.*;
 import entities.userEntities.Customer;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet(urlPatterns = "/createOrder")
 public class createOrderServlet extends HttpServlet
@@ -22,6 +25,7 @@ public class createOrderServlet extends HttpServlet
 			Order order = UpdateOrderList.createOrderAndOrderLine(request, user);
 			request.getSession().setAttribute("order", order);
 			UpdateOrderList.generateCustomerOrders(request.getSession(), user);
+			Conf.getLogger().log(Level.INFO, "[UPDATE] {0} created an order", user.getUsername());
 			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 		} catch (DataException | MaterialException | OrderException | OrderLineException | ShedException finalDist) {
 			throw new ServletException(finalDist);

@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OrderFacade</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">logic.facades</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OrderFacade (logic.facades)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">OrderFacade</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package logic.facades;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import data.dao.MaterialDAO;
+<i>4</i>&nbsp;import data.dao.OrderDAO;
+<i>5</i>&nbsp;import data.dao.OrderLineDAO;
+<i>6</i>&nbsp;import data.dao.ShedDAO;
+<i>7</i>&nbsp;import data.exceptions.*;
+<i>8</i>&nbsp;import entities.OrderEntities.Material;
+<i>9</i>&nbsp;import entities.OrderEntities.Order;
+<i>10</i>&nbsp;import entities.OrderEntities.OrderLine;
+<i>11</i>&nbsp;import entities.OrderEntities.Shed;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;import java.util.List;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;public interface OrderFacade
+<i>16</i>&nbsp;{
+<i>17</i>&nbsp;	List&lt;Order&gt; allOrdersWithoutShed() throws OrderException, DataException;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;	Order createAndReturnOrder(Order order) throws DataException, OrderException;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;	Material materialById(int id) throws DataException, MaterialException;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;	void addEmployeeToOrder(int employeeId, int orderId) throws DataException;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;	Order orderById(int orderId) throws DataException, OrderException;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;	List&lt;Order&gt; ordersOfCustomer(int id) throws OrderException, DataException;
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;	List&lt;Order&gt; ordersAvailable() throws OrderException, DataException;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;	void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException;
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;	List&lt;Order&gt; employeeChosenOrders(int employeeId) throws OrderException, DataException;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;	void updateOrderOffer(Order order) throws OrderException, DataException;
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;	void createOrderLine(OrderLine orderLine) throws OrderLineException, DataException;
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;	Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;	void updateOrderLineAmount(int orderLineId, int amount) throws OrderLineException;
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;	List&lt;OrderLine&gt; orderLinesByOrderId(int orderId) throws OrderLineException, MaterialException;
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;	void deleteOrder(int orderId) throws OrderException;
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;	void deleteOrderLineByOrderId(int orderId) throws OrderLineException;
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;	List&lt;Material&gt; allMaterials() throws MaterialException;
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;	OrderDAO getInstanceOrderDAO() throws DataException;
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;	OrderDAO getInstanceOrderDAO(String connectionString) throws DataException;
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;	MaterialDAO getInstanceMaterialDAO() throws DataException;
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;	MaterialDAO getInstanceMaterialDAO(String connctionString) throws DataException;
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;	OrderLineDAO getInstanceOrderLineDAO() throws DataException;
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;	OrderLineDAO getInstanceOrderLineDAO(String connectionString) throws DataException;
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;	ShedDAO getInstanceShedDAO() throws DataException;
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;	ShedDAO getInstanceShedDAO(String connectionString) throws DataException;
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

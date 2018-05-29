@@ -27,10 +27,8 @@ public class createCustomerServlet extends HttpServlet
 			if(phoneIsValid(request)) {
 				int    phone    = Integer.parseInt(request.getParameter("phoneNumber"));
 				customer = userFacade.createCustomer(username, password, phone);
-				//customer = MySqlUserFacade.createCustomer(username, password, phone);
 			} else
 				customer = userFacade.createCustomerWithoutPhone(username, password);
-				//customer = MySqlUserFacade.createCustomerWithoutPhone(username, password);
 			request.getSession().setAttribute("customer", customer);
 			request.getRequestDispatcher("/WEB-INF/customer/customerHomepage.jsp").forward(request, response);
 		} catch (DataException | UserException finalExceptionLayer) {

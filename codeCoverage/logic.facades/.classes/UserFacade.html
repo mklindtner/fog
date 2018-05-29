@@ -1,0 +1,83 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UserFacade</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">logic.facades</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UserFacade (logic.facades)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">UserFacade</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package logic.facades;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import data.dao.UserDAO;
+<i>4</i>&nbsp;import data.exceptions.DataException;
+<i>5</i>&nbsp;import data.exceptions.UserException;
+<i>6</i>&nbsp;import entities.userEntities.Customer;
+<i>7</i>&nbsp;import entities.userEntities.Employee;
+<i>8</i>&nbsp;import entities.userEntities.User;
+<i>9</i>&nbsp;import entities.userEntities.unknownUser;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import java.util.List;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;public interface UserFacade
+<i>14</i>&nbsp;{
+<i>15</i>&nbsp;	List&lt;Employee&gt; getAllEmployees() throws DataException, UserException;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;	Customer createCustomer(String username, String password, int phone) throws DataException, UserException;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;	Customer createCustomerWithoutPhone(String username, String password) throws DataException, UserException;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;	User evaluateLogin(String username, String password) throws DataException, UserException, ClassCastException;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;	Customer customerByUsername(String username) throws UserException, ClassCastException;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;	UserDAO getUserDAOInstance() throws DataException;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;	void deleteEmployeeById(int employeeId) throws UserException;
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;	void createEmployee(String username, String password, int phone, int role) throws UserException, DataException;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;	void promoteEmployee(int employeeId) throws UserException;
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;	void demoteEmployee(int employeeId) throws UserException;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;	Customer customerByOrderId(int customerId) throws UserException;
+<i>36</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

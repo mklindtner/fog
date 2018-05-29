@@ -2,12 +2,13 @@ package data.dao;
 
 import data.exceptions.*;
 import entities.OrderEntities.Material;
+import entities.OrderEntities.Order;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 
 import java.sql.*;
 
-public class ServiceDAO
+public class UtilityDAO
 {
 	public static Customer getCustomerById(int id, Connection con) throws OrderException
 	{
@@ -82,6 +83,4 @@ public class ServiceDAO
 			throw new MaterialException(throwSql);
 		}
 	}
-
-
 }

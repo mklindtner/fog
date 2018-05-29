@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MySqlConnector</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">data</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MySqlConnector (data)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MySqlConnector</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61.5%
+  </span>
+  <span class="absValue">
+    (8/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    53.3%
+  </span>
+  <span class="absValue">
+    (24/ 45)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package data;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.mysql.cj.jdbc.MysqlDataSource;
+<i>4</i>&nbsp;import data.exceptions.DataException;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.sql.Connection;
+<i>7</i>&nbsp;import java.sql.SQLException;
+<i>8</i>&nbsp;
+<b class="nc"><i>9</i>&nbsp;public class MySqlConnector</b>
+<i>10</i>&nbsp;{
+<b class="fc"><i>11</i>&nbsp;	private static MysqlDataSource source = null;</b>
+<i>12</i>&nbsp;	private static Connection con;
+<i>13</i>&nbsp;	//instead of a file I could use an environment variable in the shell
+<i>14</i>&nbsp;	private final static String FILE               = &quot;LOCAL&quot;; //CLOUD
+<i>15</i>&nbsp;	private final static String APPLICATION_SERVER = &quot;APP&quot;;
+<i>16</i>&nbsp;	private final static String TEST_SERVER        = &quot;TEST&quot;;
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;	public static Connection createConnection(String connectionSelection) throws DataException</b>
+<b class="fc"><i>19</i>&nbsp;	{</b>
+<i>20</i>&nbsp;		String env = FILE;
+<i>21</i>&nbsp;		return (env.equals(&quot;CLOUD&quot;)) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
+<i>22</i>&nbsp;	}
+<i>23</i>&nbsp;
+<b class="fc"><i>24</i>&nbsp;	private static Connection findHostCloud(String connectionSelection) throws DataException</b>
+<b class="fc"><i>25</i>&nbsp;	{</b>
+<b class="fc"><i>26</i>&nbsp;		if (connectionSelection.equals(APPLICATION_SERVER))</b>
+<b class="fc"><i>27</i>&nbsp;			return connectCloudMySql();</b>
+<b class="fc"><i>28</i>&nbsp;		if (connectionSelection.equals(TEST_SERVER))</b>
+<i>29</i>&nbsp;			return connectTestCloudMySql();
+<i>30</i>&nbsp;		throw new DataException();
+<i>31</i>&nbsp;	}
+<i>32</i>&nbsp;
+<b class="nc"><i>33</i>&nbsp;	private static Connection findHostLocal(String connectionSelection) throws DataException</b>
+<b class="nc"><i>34</i>&nbsp;	{</b>
+<b class="nc"><i>35</i>&nbsp;		if (connectionSelection.equals(APPLICATION_SERVER))</b>
+<b class="nc"><i>36</i>&nbsp;			return connectLocalMySql();</b>
+<b class="nc"><i>37</i>&nbsp;		if (connectionSelection.equals(TEST_SERVER))</b>
+<i>38</i>&nbsp;			return connectLocalTestMysql();
+<i>39</i>&nbsp;		throw new DataException();
+<i>40</i>&nbsp;	}
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;	private static Connection connectLocalMySql() throws DataException
+<i>44</i>&nbsp;	{
+<b class="fc"><i>45</i>&nbsp;		insertLocalSourceInformation(&quot;fog&quot;, &quot;Coding4u@snail&quot;, &quot;fogdb&quot;);</b>
+<b class="fc"><i>46</i>&nbsp;		return connectionToSource();</b>
+<i>47</i>&nbsp;	}
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;	private static void insertLocalSourceInformation(String username, String password, String databaseName)
+<i>50</i>&nbsp;	{
+<b class="fc"><i>51</i>&nbsp;		if (source == null) {</b>
+<b class="fc"><i>52</i>&nbsp;			source = new MysqlDataSource();</b>
+<b class="fc"><i>53</i>&nbsp;			source.setUser(username);</b>
+<b class="fc"><i>54</i>&nbsp;			source.setPassword(password);</b>
+<b class="fc"><i>55</i>&nbsp;			source.setDatabaseName(databaseName);</b>
+<i>56</i>&nbsp;		}
+<b class="fc"><i>57</i>&nbsp;	}</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;	private static Connection connectionToSource() throws DataException
+<i>60</i>&nbsp;	{
+<i>61</i>&nbsp;		try {
+<b class="fc"><i>62</i>&nbsp;			if (con == null)</b>
+<b class="fc"><i>63</i>&nbsp;				con = source.getConnection();</b>
+<b class="fc"><i>64</i>&nbsp;			return con;</b>
+<b class="nc"><i>65</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>66</i>&nbsp;			throw new DataException(throwSql);</b>
+<i>67</i>&nbsp;		}
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;	}
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;	private static Connection connectLocalTestMysql() throws DataException
+<i>72</i>&nbsp;	{
+<b class="fc"><i>73</i>&nbsp;		insertLocalSourceInformation(&quot;fog&quot;, &quot;Coding4u@snail&quot;, &quot;fogtest&quot;);</b>
+<b class="fc"><i>74</i>&nbsp;		return connectionToSource();</b>
+<i>75</i>&nbsp;	}
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;	private static void insertRemoteSourceInformation(String MysqlUsername, String MysqlPassword, String host, String dbName)
+<i>78</i>&nbsp;	{
+<b class="nc"><i>79</i>&nbsp;		final String URL = String.format(&quot;jdbc:mysql://%s:3306/%s&quot;, host, dbName);</b>
+<b class="nc"><i>80</i>&nbsp;		if (source == null) {</b>
+<b class="nc"><i>81</i>&nbsp;			source = new MysqlDataSource();</b>
+<b class="nc"><i>82</i>&nbsp;			source.setUser(MysqlUsername);</b>
+<b class="nc"><i>83</i>&nbsp;			source.setPassword(MysqlPassword);</b>
+<b class="nc"><i>84</i>&nbsp;			source.setDatabaseName(dbName);</b>
+<b class="nc"><i>85</i>&nbsp;			source.setServerName(host);</b>
+<b class="nc"><i>86</i>&nbsp;			source.setUrl(URL);</b>
+<i>87</i>&nbsp;		}
+<b class="nc"><i>88</i>&nbsp;	}</b>
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;	private static Connection connectTestCloudMySql() throws DataException
+<i>91</i>&nbsp;	{
+<b class="nc"><i>92</i>&nbsp;		insertRemoteSourceInformation(&quot;fogRemote&quot;, &quot;&quot;, &quot;159.89.99.45&quot;, &quot;fogTestdb&quot;);</b>
+<b class="nc"><i>93</i>&nbsp;		return connectionToSource();</b>
+<i>94</i>&nbsp;	}
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;	/**
+<i>97</i>&nbsp;	 * used for fog cloud server, fog wasn&#39;t included as we only operate on one server-side, should this change the
+<i>98</i>&nbsp;	 * rename: connectionFogCloudMySql()
+<i>99</i>&nbsp;	 *
+<i>100</i>&nbsp;	 * @return
+<i>101</i>&nbsp;	 */
+<i>102</i>&nbsp;	private static Connection connectCloudMySql() throws DataException
+<i>103</i>&nbsp;	{
+<b class="nc"><i>104</i>&nbsp;		insertRemoteSourceInformation(&quot;fogRemote&quot;, &quot;&quot;, &quot;159.89.99.45&quot;, &quot;fogdb&quot;);</b>
+<b class="nc"><i>105</i>&nbsp;		return connectionToSource();</b>
+<i>106</i>&nbsp;	}
+<i>107</i>&nbsp;
+<i>108</i>&nbsp;	public static void closeConnections() {
+<b class="fc"><i>109</i>&nbsp;		source = null;</b>
+<b class="fc"><i>110</i>&nbsp;		con = null;</b>
+<b class="fc"><i>111</i>&nbsp;	}</b>
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

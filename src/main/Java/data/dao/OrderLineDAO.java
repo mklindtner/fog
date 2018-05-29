@@ -3,7 +3,6 @@ package data.dao;
 import data.MySqlConnector;
 import data.exceptions.MaterialException;
 import entities.OrderEntities.Material;
-import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.OrderLineException;
@@ -96,7 +95,7 @@ public class OrderLineDAO
 			int materialId = resultSet.getInt("materialId");
 			int length = resultSet.getInt("length");
 			boolean isTreeOrRoof = resultSet.getBoolean("isTreeOrRoof");
-			Material material = ServiceDAO.materialById(materialId, con);
+			Material material = UtilityDAO.materialById(materialId, con);
 
 			return new OrderLine
 					.OrderLineBuilder()

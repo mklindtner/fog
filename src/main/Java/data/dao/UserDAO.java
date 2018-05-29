@@ -8,7 +8,6 @@ import data.exceptions.DataException;
 import data.MySqlConnector;
 import data.exceptions.UserException;
 
-import javax.servlet.ServletException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -136,10 +135,6 @@ public class UserDAO
 		}
 	}
 
-	/**
-	 * finds employee by username
-	 */
-
 	public Employee employeeByUsername(String username) throws UserException, ClassCastException
 	{
 		String SQL = "Select * FROM employees WHERE username=?";
@@ -150,10 +145,6 @@ public class UserDAO
 		}
 	}
 
-
-	/**
-	 * helper method to find whether it's customer or employee
-	 */
 	private User defineUser(String username, PreparedStatement statement, boolean isCustomer) throws SQLException,
 																									 UserException
 	{
@@ -165,7 +156,7 @@ public class UserDAO
 			int    id                = rs.getInt("id");
 			int    phone             = rs.getInt("phone");
 			if (!isCustomer) {
-				String role = ServiceDAO.getRole(rs.getInt("role_id"), con);
+				String role = UtilityDAO.getRole(rs.getInt("role_id"), con);
 				return new Employee
 						.EmployeeBuilder(id, registration_date)
 						.createSimpleEmployee(username, password, role, phone)

@@ -11,7 +11,9 @@ public class MySqlConnector
 	private static MysqlDataSource source = null;
 	private static Connection con;
 	//instead of a file I could use an environment variable in the shell
-	private final static String FILE = "LOCAL"; //CLOUD
+	private final static String FILE               = "LOCAL"; //CLOUD
+	private final static String APPLICATION_SERVER = "APP";
+	private final static String TEST_SERVER        = "TEST";
 
 	public static Connection createConnection(String connectionSelection) throws DataException
 	{
@@ -19,27 +21,25 @@ public class MySqlConnector
 		return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
 	}
 
-	private static Connection findHostLocal(String connectionSelection) throws DataException
-	{
-		if (connectionSelection.equals("APP"))
-			return connectLocalMySql();
-		if (connectionSelection.equals("TEST"))
-			return connectLocalTestMysql();
-		throw new DataException();
-	}
-
 	private static Connection findHostCloud(String connectionSelection) throws DataException
 	{
-		if (connectionSelection.equals("APP"))
+		if (connectionSelection.equals(APPLICATION_SERVER))
 			return connectCloudMySql();
-		if (connectionSelection.equals("TEST"))
+		if (connectionSelection.equals(TEST_SERVER))
 			return connectTestCloudMySql();
 		throw new DataException();
 	}
 
-	/**
-	 * localServer
-	 */
+	private static Connection findHostLocal(String connectionSelection) throws DataException
+	{
+		if (connectionSelection.equals(APPLICATION_SERVER))
+			return connectLocalMySql();
+		if (connectionSelection.equals(TEST_SERVER))
+			return connectLocalTestMysql();
+		throw new DataException();
+	}
+
+
 	private static Connection connectLocalMySql() throws DataException
 	{
 		insertLocalSourceInformation("fog", "Coding4u@snail", "fogdb");

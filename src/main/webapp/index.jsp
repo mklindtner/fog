@@ -40,6 +40,7 @@
             <div class="form-group col-md-6">
                 <label for="length">Length</label>
                 <select class="form-control form-control-lg" id="length" name="length" required>
+                    <option disabled>choose a value</option>
                     <option>480</option>
                     cm
                     <option>540</option>
@@ -54,19 +55,18 @@
                     cm
                     <option>910</option>
                     cm
-                    <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="width">Width</label>
                 <select class="form-control form-control-lg" id="width" name="width" required>
+                    <option disabled>choose a value</option>
                     <option>300</option>
                     cm
                     <option>360</option>
                     cm
                     <option>390</option>
                     cm
-                    <option disabled>choose a value</option>
                 </select>
             </div>
         </div>
@@ -74,6 +74,7 @@
             <div class="col-md-6 col-md-6">
                 <label for="height">Height</label>
                 <select class="form-control form-control-lg" id="height" name="height" required>
+                    <option disabled>choose a value</option>
                     <option>480</option>
                     cm
                     <option>540</option>
@@ -88,15 +89,14 @@
                     cm
                     <option>910</option>
                     cm
-                    <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
                 <label for="slope">slope</label>
                 <select class="form-control form-control-lg" id="slope" name="slope" required>
+                    <option disabled>choose a value</option>
                     <option>45</option>
                     cm
-                    <option disabled>choose a value</option>
                 </select>
             </div>
             <div class="col-md-3 mb-3">
@@ -133,12 +133,6 @@
                     <br/>
                     <input type="checkbox" checked data-toggle="toggle" id="hasFloor" name="hasFloor">
                 </div>
-                <!--
-                <div class="col-md-4 col-md-3">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" id="hasFloor" name="hasFloor" value="hasFloor"> with Floor
-                    </label>
-                </div> -->
             </div>
         </div>
         <div class="form-row">
@@ -150,41 +144,10 @@
 </div>
 
 
+<!--
 <form method="get" action="TestServlet">
     <input type="submit" value="press me">
-</form>
-
-
-<!-- rem, spær, stolper -->
-<!--
-<h3>Login User</h3>
-<form method="get" action="login">
-    <input type="text" name="username" value="empTest" required>
-    <input type="password" name="password" value="123" required>
-    <input type="submit" value="login">
-</form>
-<form method="get" action="login">
-    <input type="text" name="username" value="customer" required>
-    <input type="password" name="password" value="123" required>
-    <input type="submit" value="login">
-</form>
-<h3>Create user</h3>
-<form method="post" action="createCustomer">
-    <input type="text" name="username" value="test" required>
-    <input type="text" name="password" value="123" required>
-    <input type="number" name="phone" value="213456" required>
-    <input type="submit" value="create User">
-</form>
-<form method="get" action="getCustomer">
-    <input type="text" name="username" value="testTwo">
-    <input type="submit" value="findCustomer">
-</form>
-<form method="get" action="redirect">
-    <input type="hidden" name="goToPage" value="customerCreateUser">
-    <input type="hidden" name="role" value="customer">
-    <input type="submit" value="go to create user">
-</form>
--->
+</form> -->
 </body>
 
 </html>

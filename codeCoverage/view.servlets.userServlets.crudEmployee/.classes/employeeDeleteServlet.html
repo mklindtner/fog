@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: employeeDeleteServlet</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">view.servlets.userServlets.crudEmployee</a> ]
+</div>
+
+<h1>Coverage Summary for Class: employeeDeleteServlet (view.servlets.userServlets.crudEmployee)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">employeeDeleteServlet</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package view.servlets.userServlets.crudEmployee;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import data.exceptions.DataException;
+<i>4</i>&nbsp;import data.exceptions.UserException;
+<i>5</i>&nbsp;import logic.facades.MySqlUserFacade;
+<i>6</i>&nbsp;import logic.facades.UserFacade;
+<i>7</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateUserList;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import javax.servlet.ServletException;
+<i>10</i>&nbsp;import javax.servlet.annotation.WebServlet;
+<i>11</i>&nbsp;import javax.servlet.http.HttpServlet;
+<i>12</i>&nbsp;import javax.servlet.http.HttpServletRequest;
+<i>13</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>14</i>&nbsp;import java.io.IOException;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;@WebServlet(urlPatterns = &quot;/deleteEmployee&quot;)
+<b class="nc"><i>17</i>&nbsp;public class employeeDeleteServlet extends HttpServlet</b>
+<i>18</i>&nbsp;{
+<i>19</i>&nbsp;	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+<i>20</i>&nbsp;	{
+<b class="nc"><i>21</i>&nbsp;		UserFacade facade = new MySqlUserFacade();</b>
+<i>22</i>&nbsp;		try {
+<b class="nc"><i>23</i>&nbsp;			facade.getUserDAOInstance();</b>
+<b class="nc"><i>24</i>&nbsp;			deleteEmployee(request, facade);</b>
+<b class="nc"><i>25</i>&nbsp;			request.getRequestDispatcher(&quot;/WEB-INF/employee/employees.jsp&quot;).forward(request, response);</b>
+<b class="nc"><i>26</i>&nbsp;		} catch(DataException | UserException finalDist) {</b>
+<b class="nc"><i>27</i>&nbsp;			throw new ServletException(finalDist);</b>
+<b class="nc"><i>28</i>&nbsp;		}</b>
+<b class="nc"><i>29</i>&nbsp;	}</b>
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;	private void deleteEmployee(HttpServletRequest request, UserFacade facade) throws DataException, UserException
+<i>32</i>&nbsp;	{
+<b class="nc"><i>33</i>&nbsp;		int employeeId = Integer.parseInt(request.getParameter(&quot;employeeId&quot;));</b>
+<b class="nc"><i>34</i>&nbsp;		facade.deleteEmployeeById(employeeId);</b>
+<b class="nc"><i>35</i>&nbsp;		UpdateUserList.updateEmployeeListSession(request);</b>
+<b class="nc"><i>36</i>&nbsp;	}</b>
+<i>37</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

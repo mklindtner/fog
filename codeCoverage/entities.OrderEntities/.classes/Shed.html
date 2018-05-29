@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Shed</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">entities.OrderEntities</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Shed (entities.OrderEntities)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Shed</td>
+<td class="coverageStat">
+  <span class="percent">
+    44.4%
+  </span>
+  <span class="absValue">
+    (4/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    70.6%
+  </span>
+  <span class="absValue">
+    (12/ 17)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Shed$ShedBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    68.8%
+  </span>
+  <span class="absValue">
+    (11/ 16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    82.8%
+  </span>
+  <span class="absValue">
+    (24/ 29)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package entities.OrderEntities;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.Objects;
+<i>4</i>&nbsp;
+<b class="fc"><i>5</i>&nbsp;public class Shed</b>
+<i>6</i>&nbsp;{
+<i>7</i>&nbsp;	private int id, length, width;
+<i>8</i>&nbsp;	private boolean hasFloor;
+<i>9</i>&nbsp;
+<b class="fc"><i>10</i>&nbsp;	private Shed(ShedBuilder ShedBuilder) {</b>
+<b class="fc"><i>11</i>&nbsp;		this.id = ShedBuilder.id;</b>
+<b class="fc"><i>12</i>&nbsp;		this.length = ShedBuilder.length;</b>
+<b class="fc"><i>13</i>&nbsp;		this.width = ShedBuilder.width;</b>
+<b class="fc"><i>14</i>&nbsp;		this.hasFloor = ShedBuilder.hasFloor;</b>
+<b class="fc"><i>15</i>&nbsp;	}</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;	public int getId()
+<i>18</i>&nbsp;	{
+<b class="fc"><i>19</i>&nbsp;		return this.id;</b>
+<i>20</i>&nbsp;	}
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;	public int getLength() {
+<b class="nc"><i>23</i>&nbsp;		return this.length;</b>
+<i>24</i>&nbsp;	}
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;	public int getWidth() {
+<b class="nc"><i>27</i>&nbsp;		return this.width;</b>
+<i>28</i>&nbsp;	}
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;	public boolean getFloor() {
+<b class="nc"><i>31</i>&nbsp;		return this.hasFloor;</b>
+<i>32</i>&nbsp;	}
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;	public static class ShedBuilder</b>
+<i>35</i>&nbsp;	{
+<i>36</i>&nbsp;		private int id, length, width;
+<i>37</i>&nbsp;		private boolean hasFloor;
+<i>38</i>&nbsp;
+<b class="fc"><i>39</i>&nbsp;		public ShedBuilder() {</b>
+<b class="fc"><i>40</i>&nbsp;		}</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;		public ShedBuilder insertLength(int length)
+<i>43</i>&nbsp;		{
+<b class="fc"><i>44</i>&nbsp;			this.length = length;</b>
+<b class="fc"><i>45</i>&nbsp;			return this;</b>
+<i>46</i>&nbsp;		}
+<i>47</i>&nbsp;		public ShedBuilder insertWidth(int width) {
+<b class="fc"><i>48</i>&nbsp;			this.width = width;</b>
+<b class="fc"><i>49</i>&nbsp;			return this;</b>
+<i>50</i>&nbsp;		}
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;		public ShedBuilder insertHasFloor(boolean hasFloor) {
+<b class="fc"><i>53</i>&nbsp;			this.hasFloor = hasFloor;</b>
+<b class="fc"><i>54</i>&nbsp;			return this;</b>
+<i>55</i>&nbsp;		}
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;		public ShedBuilder insertShedId(int id) {
+<b class="fc"><i>58</i>&nbsp;			this.id = id;</b>
+<b class="fc"><i>59</i>&nbsp;			return this;</b>
+<i>60</i>&nbsp;		}
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;		public Shed build() {
+<b class="fc"><i>63</i>&nbsp;			return new Shed(this);</b>
+<i>64</i>&nbsp;		}
+<i>65</i>&nbsp;	}
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;	@Override
+<i>68</i>&nbsp;	public String toString() {
+<b class="nc"><i>69</i>&nbsp;		return &quot;length: &quot; + length + &quot;, width: &quot; + width + &quot;, hasfloor: &quot; + hasFloor;</b>
+<i>70</i>&nbsp;	}
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;	@Override public boolean equals(Object o)
+<i>73</i>&nbsp;	{
+<b class="fc"><i>74</i>&nbsp;		if (this == o) return true;</b>
+<b class="fc"><i>75</i>&nbsp;		if (o == null || getClass() != o.getClass()) return false;</b>
+<b class="fc"><i>76</i>&nbsp;		Shed shed = (Shed) o;</b>
+<b class="fc"><i>77</i>&nbsp;		return length == shed.length &amp;&amp;</b>
+<i>78</i>&nbsp;			   width == shed.width &amp;&amp;
+<i>79</i>&nbsp;			   hasFloor == shed.hasFloor;
+<i>80</i>&nbsp;	}
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;	@Override public int hashCode()
+<i>83</i>&nbsp;	{
+<i>84</i>&nbsp;
+<b class="nc"><i>85</i>&nbsp;		return Objects.hash(length, width, hasFloor);</b>
+<i>86</i>&nbsp;	}
+<i>87</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

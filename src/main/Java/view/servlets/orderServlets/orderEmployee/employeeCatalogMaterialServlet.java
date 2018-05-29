@@ -20,10 +20,6 @@ import java.util.List;
 @WebServlet(urlPatterns = "/employeeCatalogMaterial")
 public class employeeCatalogMaterialServlet extends HttpServlet
 {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		OrderFacade facade = new MySqlOrderFacade();

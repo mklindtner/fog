@@ -1,6 +1,7 @@
 package view.servlets.orderServlets.helpers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class ErrorHandler
 {
@@ -12,6 +13,11 @@ public class ErrorHandler
 	public static void findCustomerError(HttpServletRequest request)
 	{
 		request.setAttribute("error", "unable to find customer");
+	}
+
+	public static void customerAlreadyExists(HttpServletRequest request)
+	{
+		request.setAttribute("error", "sorry that email is already in use");
 	}
 
 }

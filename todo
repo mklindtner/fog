@@ -8,10 +8,26 @@ Current:
     --backLog--
     SQL
         rollback(transactions) for index order (so no customer becomes created w/o order)
+            consider moving this logic into an dao method
+            two parameters now: orderLine and order for createOrder
     ListOfCustomer
         show list of customers if wrong
+    Should make password empty
 
 
+
+    ---Found mistakes---
+    move order/orderLine down til DATA and use transaction
+    ensure logger doesn't overwrite file
+    get proper stackTrace in exception
+    redirect to the error page in case of exception(?)
+    employee unable to accept, decline or create orders for customers
+    Material responsible cannot create new materials and add them to the formula
+    Transaction not created for create order and orderLine
+    Test for all classes
+        Test exceptions for all classes
+        Catch uncoverable exceptions in facade
+        Test more "complicated classes" --> like order (like i did)
 
     -- 2nd priorty--
     improve svg stykliste
@@ -20,6 +36,7 @@ Current:
      createUser
         confirm password
     Helper jsp footer & implement to employee (pagination)
+    Create exceptionHandler so I can stop runtime at logic layer
 
 
     --3rd Priority--
@@ -34,6 +51,15 @@ Current:
         create stklist w. shed
     Errorpage
         redirect etc.
+
+
+    --Thomas funktionaitet--
+    Glemt password
+        send email
+    Confirm password
+    B-crypt password
+
+
 
 
     --MistakesToFix--

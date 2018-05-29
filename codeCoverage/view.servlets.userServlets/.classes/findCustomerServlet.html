@@ -1,0 +1,113 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: findCustomerServlet</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">view.servlets.userServlets</a> ]
+</div>
+
+<h1>Coverage Summary for Class: findCustomerServlet (view.servlets.userServlets)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">findCustomerServlet</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package view.servlets.userServlets;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import entities.userEntities.Customer;
+<i>4</i>&nbsp;import data.exceptions.DataException;
+<i>5</i>&nbsp;import data.exceptions.UserException;
+<i>6</i>&nbsp;import logic.facades.MySqlUserFacade;
+<i>7</i>&nbsp;import logic.facades.UserFacade;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import javax.servlet.ServletException;
+<i>10</i>&nbsp;import javax.servlet.annotation.WebServlet;
+<i>11</i>&nbsp;import javax.servlet.http.HttpServlet;
+<i>12</i>&nbsp;import javax.servlet.http.HttpServletRequest;
+<i>13</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>14</i>&nbsp;import java.io.IOException;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;@WebServlet(urlPatterns = &quot;/getCustomer&quot;)
+<b class="nc"><i>17</i>&nbsp;public class findCustomerServlet extends HttpServlet</b>
+<i>18</i>&nbsp;{
+<i>19</i>&nbsp;	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+<i>20</i>&nbsp;	{
+<i>21</i>&nbsp;		try {
+<b class="nc"><i>22</i>&nbsp;			UserFacade userFacade = new MySqlUserFacade();</b>
+<b class="nc"><i>23</i>&nbsp;			userFacade.getUserDAOInstance();</b>
+<b class="nc"><i>24</i>&nbsp;			Customer customer = userFacade.customerByUsername(request.getParameter(&quot;username&quot;));</b>
+<b class="nc"><i>25</i>&nbsp;			request.setAttribute(&quot;foundCustomer&quot;, customer);</b>
+<b class="nc"><i>26</i>&nbsp;		} catch(UserException | DataException finalDistException) {</b>
+<b class="nc"><i>27</i>&nbsp;			throw new ServletException(finalDistException);</b>
+<b class="nc"><i>28</i>&nbsp;		}</b>
+<b class="nc"><i>29</i>&nbsp;	}</b>
+<i>30</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-28 14:34</div>
+</div>
+</body>
+</html>

@@ -16,7 +16,6 @@ public class Conf
 
 	public static Logger getLogger() {
 		if(LOGGER == null) {
-			//LOGGER =  Logger.getLogger("");
 			LOGGER = Logger.getLogger(Conf.class.getName());
 			addHandlers();
 		}

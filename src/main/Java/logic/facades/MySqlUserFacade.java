@@ -21,7 +21,7 @@ public class MySqlUserFacade implements UserFacade
 		return userDao;
 	}
 
-	public List<Employee> getAllEmployees() throws DataException, UserException
+	public List<Employee> getAllEmployees() throws UserException
 	{
 		return userDao.allEmployees();
 	}
