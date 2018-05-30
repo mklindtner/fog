@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 18)
+    (0/ 17)
   </span>
 </td>
 </tr>
@@ -77,8 +77,8 @@
 <i>3</i>&nbsp;import entities.userEntities.Customer;
 <i>4</i>&nbsp;import data.exceptions.DataException;
 <i>5</i>&nbsp;import data.exceptions.UserException;
-<i>6</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>7</i>&nbsp;import logic.facades.UserFacade;
+<i>6</i>&nbsp;import MySqlUserFacade;
+<i>7</i>&nbsp;import UserFacade;
 <i>8</i>&nbsp;
 <i>9</i>&nbsp;import javax.servlet.ServletException;
 <i>10</i>&nbsp;import javax.servlet.annotation.WebServlet;
@@ -108,7 +108,7 @@
 <b class="nc"><i>34</i>&nbsp;		} catch (DataException | UserException finalExceptionLayer) {</b>
 <b class="nc"><i>35</i>&nbsp;			throw new ServletException(finalExceptionLayer); //this should be output for exception</b>
 <b class="nc"><i>36</i>&nbsp;		}</b>
-<b class="nc"><i>37</i>&nbsp;	}</b>
+<i>37</i>&nbsp;	}
 <i>38</i>&nbsp;
 <i>39</i>&nbsp;	private boolean phoneIsValid(HttpServletRequest request) throws ServletException, IOException
 <i>40</i>&nbsp;	{
@@ -121,7 +121,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

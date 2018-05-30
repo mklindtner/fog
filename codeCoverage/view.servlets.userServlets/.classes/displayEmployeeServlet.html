@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 7)
+    (0/ 6)
   </span>
 </td>
 </tr>
@@ -75,8 +75,8 @@
 <div class="sourceCode"><i>1</i>&nbsp;package view.servlets.userServlets;
 <i>2</i>&nbsp;import data.exceptions.DataException;
 <i>3</i>&nbsp;import data.exceptions.UserException;
-<i>4</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>5</i>&nbsp;import logic.facades.UserFacade;
+<i>4</i>&nbsp;import MySqlUserFacade;
+<i>5</i>&nbsp;import UserFacade;
 <i>6</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateUserList;
 <i>7</i>&nbsp;
 <i>8</i>&nbsp;import javax.servlet.ServletException;
@@ -98,14 +98,14 @@
 <b class="nc"><i>24</i>&nbsp;			throw new ServletException(e);</b>
 <b class="nc"><i>25</i>&nbsp;		}</b>
 <b class="nc"><i>26</i>&nbsp;		request.getRequestDispatcher(&quot;/WEB-INF/employee/employees.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>27</i>&nbsp;	}</b>
+<i>27</i>&nbsp;	}
 <i>28</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 16)
+    (0/ 14)
   </span>
 </td>
 </tr>
@@ -79,8 +79,8 @@
 <i>5</i>&nbsp;import data.exceptions.OrderLineException;
 <i>6</i>&nbsp;import entities.OrderEntities.Order;
 <i>7</i>&nbsp;import entities.userEntities.Customer;
-<i>8</i>&nbsp;import logic.facades.MySqlOrderFacade;
-<i>9</i>&nbsp;import logic.facades.OrderFacade;
+<i>8</i>&nbsp;import MySqlOrderFacade;
+<i>9</i>&nbsp;import OrderFacade;
 <i>10</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateOrderList;
 <i>11</i>&nbsp;
 <i>12</i>&nbsp;import javax.servlet.ServletException;
@@ -104,7 +104,7 @@
 <b class="nc"><i>30</i>&nbsp;		} catch(OrderException | DataException | OrderLineException finalDist) {</b>
 <b class="nc"><i>31</i>&nbsp;			throw new ServletException(finalDist);</b>
 <b class="nc"><i>32</i>&nbsp;		}</b>
-<b class="nc"><i>33</i>&nbsp;	}</b>
+<i>33</i>&nbsp;	}
 <i>34</i>&nbsp;
 <i>35</i>&nbsp;	private void deleteOrder(int orderId) throws OrderException, DataException, OrderLineException
 <i>36</i>&nbsp;	{
@@ -113,14 +113,14 @@
 <b class="nc"><i>39</i>&nbsp;		facade.getInstanceOrderLineDAO();</b>
 <b class="nc"><i>40</i>&nbsp;		facade.deleteOrderLineByOrderId(orderId);</b>
 <b class="nc"><i>41</i>&nbsp;		facade.deleteOrder(orderId);</b>
-<b class="nc"><i>42</i>&nbsp;	}</b>
+<i>42</i>&nbsp;	}
 <i>43</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

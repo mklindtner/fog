@@ -10,38 +10,299 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Java/data/exceptions/ApplicationException.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/configurations/Conf.java" afterPath="$PROJECT_DIR$/src/main/Java/configurations/Conf.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" afterPath="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/.classes/Conf.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/.classes/Conf.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/.classes/VerySimpleFomarter.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/.classes/VerySimpleFomarter.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/configurations/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/MaterialDAO.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/MaterialDAO.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/OrderDAO.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/OrderDAO.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/OrderLineDAO.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/OrderLineDAO.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/ServiceDAO.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/ServiceDAO.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/ShedDAO.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/ShedDAO.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/UserDAO.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/.classes/UserDAO.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/ApplicationException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/ApplicationException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/DataException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/DataException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/DatabaseConnectionException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/DatabaseConnectionException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/LoginException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/LoginException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/MaterialException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/MaterialException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/OrderException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/OrderException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/OrderLineException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/OrderLineException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/ShedException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/ShedException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/UserException.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/.classes/UserException.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data.exceptions/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/.classes/MySqlConnector.html" afterPath="$PROJECT_DIR$/codeCoverage/data/.classes/MySqlConnector.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/data/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/Material.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/Material.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/Order.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/Order.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/OrderLine.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/OrderLine.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/Shed.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/.classes/Shed.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.OrderEntities/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/.classes/BillOfMaterial.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/.classes/BillOfMaterial.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.billOfMaterial/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/Customer.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/Customer.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/Employee.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/Employee.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/Roles.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/Roles.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/User.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/User.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/unknownUser.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/.classes/unknownUser.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/entities.userEntities/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index.html" afterPath="$PROJECT_DIR$/codeCoverage/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/MySqlOrderFacade.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/MySqlOrderFacade.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/MySqlUserFacade.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/MySqlUserFacade.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/OrderFacade.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/OrderFacade.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/UserFacade.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/.classes/UserFacade.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.facades/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/.classes/BillOfMaterials.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/.classes/BillOfMaterials.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/.classes/SVGUtil.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/.classes/SVGUtil.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/logic.generators/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/ErrorHandler.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/ErrorHandler.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateOrderList.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateOrderList.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateUserList.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateUserList.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/paginationHelper.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/paginationHelper.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/createOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/createOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerAcceptOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerAcceptOfferServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerDeclineOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerDeclineOfferServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeAddToOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeAddToOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogMaterialServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeChooseOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeChooseOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditBillOfMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditBillOfMaterialServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditOrderOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditOrderOfferServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeOfferOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeOfferOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeSendOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeSendOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/generateBillOfMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/generateBillOfMaterialServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/specificOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/specificOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeCreateServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeCreateServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDeleteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDeleteServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDemoteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDemoteServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeePromoteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeePromoteServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/createCustomerServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/createCustomerServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/displayEmployeeServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/displayEmployeeServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/employeeAsCustomerServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/employeeAsCustomerServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/findCustomerServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/findCustomerServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/loginServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/loginServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/cartportPictureServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/cartportPictureServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/createOrderAndUserServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/createOrderAndUserServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/logoutServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/logoutServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/redirectToPageServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/redirectToPageServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/.classes/TestServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view/.classes/TestServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/ShedDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/dao/UtilityDAO.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/OrderFacade.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/facades/UserFacade.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateUserList.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateUserList.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeAddToOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeAddToOrderServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogMaterialServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditBillOfMaterialServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOrderOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditOrderOfferServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/specificOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/specificOrderServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/createCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/createCustomerServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeCreateServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeCreateServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDeleteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDeleteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDemoteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDemoteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeePromoteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeePromoteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ServiceDAOTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/MySqlConnector.class" afterPath="$PROJECT_DIR$/target/classes/data/MySqlConnector.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/createCustomerServlet.class" afterPath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/createCustomerServlet.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCreateUser.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCreateUser.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BillOfMaterialTest/BillOfMaterialTest.java" afterPath="$PROJECT_DIR$/src/test/java/BillOfMaterialTest/BillOfMaterialTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceMethods.java" afterPath="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceMethods.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceSeed.java" afterPath="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceSeed.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ConnectionTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ConnectionTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/ShedDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/ShedDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/UserDAOTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/UtilityDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/daoTest/UtilityDAOTest.java" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/loginServlet.class" afterPath="$PROJECT_DIR$/target/classes/view/servlets/userServlets/loginServlet.class" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog.war" afterPath="$PROJECT_DIR$/target/maven_fog.war" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/MySqlConnector.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/data/MySqlConnector.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/createCustomerServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/createCustomerServlet.class" />
       <change beforePath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/loginServlet.class" afterPath="$PROJECT_DIR$/target/maven_fog/WEB-INF/classes/view/servlets/userServlets/loginServlet.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven_fog/index.jsp" afterPath="$PROJECT_DIR$/target/maven_fog/index.jsp" />
       <change beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -61,7 +322,7 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/maven_fog$All_in_maven_fog__1_.coverage" NAME="All in maven_fog (1) Coverage Results" MODIFIED="1526572479559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/maven_fog$LocalDevelopmentFog.coverage" NAME="LocalDevelopmentFog Coverage Results" MODIFIED="1527500607571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/maven_fog$GlassFish_Embedded_3_1__All_in_maven_fog.coverage" NAME="GlassFish Embedded 3.1: All in maven_fog Coverage Results" MODIFIED="1527500620308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/maven_fog$GlassFish_Embedded_3_1__All_in_maven_fog.coverage" NAME="GlassFish Embedded 3.1: All in maven_fog Coverage Results" MODIFIED="1527667145297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OPEN_IN_BROWSER" value="true" />
@@ -78,105 +339,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="createOrderAndUserServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createOrderAndUserServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+            <state relative-caret-position="84">
+              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Conf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/configurations/Conf.java">
+      <file leaf-file-name="loginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="32" column="46" lean-forward="false" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java">
+      <file leaf-file-name="UserFacadeImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="19" column="73" lean-forward="false" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+            <state relative-caret-position="280">
+              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderLineDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="868">
-              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-              <folding>
-                <marker date="1527574835591" expanded="true" signature="818:953" ph="Insert into orderLines... " />
-                <marker date="1527574835591" expanded="true" signature="1829:1870" ph="UPDATE orderLines... " />
-                <marker date="1527574835591" expanded="true" signature="2301:2352" ph="Select * FRO... orderLines" />
-                <marker date="1527574835591" expanded="true" signature="3893:3942" ph="delete from orderLines... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySqlUserFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1344">
-              <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-              <folding>
-                <marker date="1527574835579" expanded="true" signature="772:792" ph="Select * FRO... orders" />
-                <marker date="1527574835579" expanded="true" signature="1341:1387" ph="Select * FRO... orders" />
-                <marker date="1527574835579" expanded="true" signature="1341:1403" ph="Select * FRO... orders" />
-                <marker date="1527574835579" expanded="true" signature="2044:2224" ph="INSERT INTO orders... " />
-                <marker date="1527574835579" expanded="true" signature="3429:3460" ph="SELECT * FRO... orders" />
-                <marker date="1527574835579" expanded="true" signature="5632:5676" ph="update orders... " />
-                <marker date="1527574835579" expanded="true" signature="6284:6319" ph="select * fro... orders" />
-                <marker date="1527574835579" expanded="true" signature="6904:6952" ph="update orders... " />
-                <marker date="1527574835579" expanded="true" signature="7519:7565" ph="select * FRO... orders" />
-                <marker date="1527574835579" expanded="true" signature="7519:7581" ph="select * FRO... orders" />
-                <marker date="1527574835579" expanded="true" signature="8156:8247" ph="UPDATE orders... " />
-                <marker date="1527574835579" expanded="true" signature="8974:9031" ph="Select custo... orders" />
-                <marker date="1527574835579" expanded="true" signature="9597:9633" ph="delete from orders... " />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3080">
-              <caret line="110" column="20" lean-forward="false" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+            <state relative-caret-position="-142">
+              <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
               <folding>
-                <marker date="1527574835567" expanded="true" signature="805:824" ph="Select * FRO... roles" />
-                <marker date="1527574835567" expanded="true" signature="1259:1330" ph="Select * FRO... employees" />
-                <marker date="1527574835567" expanded="true" signature="2212:2235" ph="Select * FRO... customers" />
-                <marker date="1527574835567" expanded="true" signature="3065:3147" ph="INSERT INTO customers... " />
-                <marker date="1527574835567" expanded="true" signature="3603:3675" ph="INSERT INTO customers... " />
-                <marker date="1527574835567" expanded="true" signature="4125:4165" ph="Select * FRO... customers" />
-                <marker date="1527574835567" expanded="true" signature="4505:4545" ph="Select * FRO... employees" />
-                <marker date="1527574835567" expanded="true" signature="5828:5921" ph="INSERT INTO employees... " />
-                <marker date="1527574835567" expanded="true" signature="7344:7378" ph="Select * FRO... customers" />
-                <marker date="1527574835567" expanded="true" signature="8112:8144" ph="delete from employee... " />
-                <marker date="1527574835567" expanded="true" signature="8450:8501" ph="Update EMPLOYEES... " />
-                <marker date="1527574835567" expanded="true" signature="8863:8914" ph="Update employees... " />
-                <marker date="1527574835567" expanded="true" signature="9226:9270" ph="select * FRO... customers" />
+                <marker date="1527712953850" expanded="true" signature="810:829" ph="Select * FRO... roles" />
+                <marker date="1527712953850" expanded="true" signature="1264:1335" ph="Select * FRO... employees" />
+                <marker date="1527712953850" expanded="true" signature="2217:2240" ph="Select * FRO... customers" />
+                <marker date="1527712953850" expanded="true" signature="3070:3152" ph="INSERT INTO customers... " />
+                <marker date="1527712953850" expanded="true" signature="3608:3680" ph="INSERT INTO customers... " />
+                <marker date="1527712953850" expanded="true" signature="4130:4170" ph="Select * FRO... customers" />
+                <marker date="1527712953850" expanded="true" signature="4510:4550" ph="Select * FRO... employees" />
+                <marker date="1527712953850" expanded="true" signature="5833:5926" ph="INSERT INTO employees... " />
+                <marker date="1527712953850" expanded="true" signature="7319:7353" ph="Select * FRO... customers" />
+                <marker date="1527712953850" expanded="true" signature="8087:8119" ph="delete from employee... " />
+                <marker date="1527712953850" expanded="true" signature="8425:8476" ph="Update EMPLOYEES... " />
+                <marker date="1527712953850" expanded="true" signature="8838:8889" ph="Update employees... " />
+                <marker date="1527712953850" expanded="true" signature="9201:9245" ph="select * FRO... customers" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BillOfMaterials.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customerCreateUser.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerCreateUser.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1848">
+              <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderFacadeImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1631">
+              <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,10 +439,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Arquillian JUnit Test Class" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -239,12 +491,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/CustomerAsEmployeeServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/specificOrder.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerHeader.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeEditOffer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/logic/facades/UserFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHeader.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeHomepage.jsp" />
@@ -258,7 +504,6 @@
         <option value="$PROJECT_DIR$/src/main/Java/entities/userEntities/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/Java/entities/OrderEntities/Order.java" />
         <option value="$PROJECT_DIR$/src/test/java/BillOfMaterialTest/BillOfMaterialTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceSeed.java" />
         <option value="$PROJECT_DIR$/src/test/java/ServiceClasses/ServiceMethods.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/ServiceDAOTest.java" />
@@ -276,20 +521,27 @@
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/exceptions/ApplicationException.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/ServiceDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySqlConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/todo" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java" />
         <option value="$PROJECT_DIR$/src/main/Java/configurations/Conf.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/todo" />
+        <option value="$PROJECT_DIR$/logs/devLogs/dev-log.0.0.log" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/logicFacade/LogicMySqlOrderFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/logicFacade/LogicOrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCreateUser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java" />
       </list>
     </option>
   </component>
@@ -357,6 +609,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="maven_fog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="maven_fog" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="maven_fog" type="616d4139:PackageViewModuleNode" />
+              <item name="BillOfMaterialTest" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="maven_fog" type="616d4139:PackageViewModuleNode" />
+              <item name="configurations" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="maven_fog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="maven_fog" type="1039202d:NonAndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -407,43 +692,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="facades" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
               <item name="generators" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="generators" type="462c0819:PsiDirectoryNode" />
+              <item name="facades" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
@@ -589,44 +847,27 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="maven_fog" type="58d84e3e:PackageViewProjectNode" />
-              <item name="maven_fog" type="616d4139:PackageViewModuleNode" />
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="BillOfMaterialTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="maven_fog" type="58d84e3e:PackageViewProjectNode" />
-              <item name="maven_fog" type="616d4139:PackageViewModuleNode" />
-              <item name="BillOfMaterialTest" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="maven_fog" type="58d84e3e:PackageViewProjectNode" />
-              <item name="maven_fog" type="616d4139:PackageViewModuleNode" />
-              <item name="configurations" type="1f31426a:PackageElementNode" />
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="daoTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="maven_fog" type="1abcf292:AndroidViewProjectNode" />
-              <item name="maven_fog" type="1039202d:NonAndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1105,17 +1346,12 @@
       <workItem from="1526980644644" duration="594000" />
       <workItem from="1526981275528" duration="78733000" />
       <workItem from="1527494038662" duration="26329000" />
-      <workItem from="1527573743426" duration="1090000" />
+      <workItem from="1527573743426" duration="24359000" />
+      <workItem from="1527697594060" duration="5341000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_maven_fog - 2018.05.23 at 12h 01m 04s.xml">
-      <configuration name="All in maven_fog" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_maven_fog - 2018.05.23 at 12h 01m 13s.xml">
-      <configuration name="All in maven_fog" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_maven_fog - 2018.05.23 at 12h 10m 25s.xml">
       <configuration name="All in maven_fog" configurationId="JUnit" />
     </history-entry>
@@ -1126,6 +1362,12 @@
       <configuration name="GlassFish Embedded 3.1: All in maven_fog" configurationId="ArquillianJUnit" />
     </history-entry>
     <history-entry file="GlassFish_Embedded_3_1__All_in_maven_fog - 2018.05.28 at 13h 23m 19s.xml">
+      <configuration name="GlassFish Embedded 3.1: All in maven_fog" configurationId="ArquillianJUnit" />
+    </history-entry>
+    <history-entry file="GlassFish_Embedded_3_1__All_in_maven_fog - 2018.05.30 at 09h 59m 13s.xml">
+      <configuration name="GlassFish Embedded 3.1: All in maven_fog" configurationId="ArquillianJUnit" />
+    </history-entry>
+    <history-entry file="GlassFish_Embedded_3_1__All_in_maven_fog - 2018.05.30 at 18h 32m 33s.xml">
       <configuration name="GlassFish Embedded 3.1: All in maven_fog" configurationId="ArquillianJUnit" />
     </history-entry>
     <history-entry file="ShedDAOTest - 2018.05.23 at 11h 56m 18s.xml">
@@ -1142,35 +1384,37 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="784579000" />
+    <option name="totallyTimeSpent" value="813189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36125654" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.49344262" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36125654" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36125654" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3548922" sideWeight="0.5852459" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35931453" sideWeight="0.5852459" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3427308" sideWeight="0.4147541" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.49344262" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3504699" sideWeight="0.4147541" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39895287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1180,7 +1424,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5065574" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1211,7 +1454,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36125654" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5065574" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3504699" sideWeight="0.5852459" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3548922" sideWeight="0.5852459" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3427308" sideWeight="0.4147541" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1227,14 +1470,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="197" />
     </breakpoint-manager>
     <watches-manager>
@@ -1264,54 +1499,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-296">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/createCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/findCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/cartportPictureServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1370,6 +1557,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,7 +1573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1404,32 +1591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerCreateUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/hidden.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BillOfMaterialTest/BillOfMaterialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/facades/OrderFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-814">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1438,7 +1603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1450,16 +1614,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/MaterialDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/MaterialDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding>
-            <marker date="1526928070709" expanded="true" signature="625:659" ph="Select * FRO... materials" />
-            <marker date="1526928070709" expanded="true" signature="1033:1086" ph="Select * FRO... materials" />
-            <marker date="1526928070709" expanded="true" signature="1922:1983" ph="Insert Into materials... " />
-            <marker date="1526928070709" expanded="true" signature="2492:2515" ph="Select * FRO... materials" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1503,22 +1662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/facades/MySqlOrderFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="96" column="26" lean-forward="true" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerOrders.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-56">
@@ -1535,140 +1678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/facades/UserFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/facades/MySqlUserFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3080">
-          <caret line="110" column="20" lean-forward="false" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-          <folding>
-            <marker date="1527574835567" expanded="true" signature="805:824" ph="Select * FRO... roles" />
-            <marker date="1527574835567" expanded="true" signature="1259:1330" ph="Select * FRO... employees" />
-            <marker date="1527574835567" expanded="true" signature="2212:2235" ph="Select * FRO... customers" />
-            <marker date="1527574835567" expanded="true" signature="3065:3147" ph="INSERT INTO customers... " />
-            <marker date="1527574835567" expanded="true" signature="3603:3675" ph="INSERT INTO customers... " />
-            <marker date="1527574835567" expanded="true" signature="4125:4165" ph="Select * FRO... customers" />
-            <marker date="1527574835567" expanded="true" signature="4505:4545" ph="Select * FRO... employees" />
-            <marker date="1527574835567" expanded="true" signature="5828:5921" ph="INSERT INTO employees... " />
-            <marker date="1527574835567" expanded="true" signature="7344:7378" ph="Select * FRO... customers" />
-            <marker date="1527574835567" expanded="true" signature="8112:8144" ph="delete from employee... " />
-            <marker date="1527574835567" expanded="true" signature="8450:8501" ph="Update EMPLOYEES... " />
-            <marker date="1527574835567" expanded="true" signature="8863:8914" ph="Update employees... " />
-            <marker date="1527574835567" expanded="true" signature="9226:9270" ph="select * FRO... customers" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28">
-          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1344">
-          <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding>
-            <marker date="1527574835579" expanded="true" signature="772:792" ph="Select * FRO... orders" />
-            <marker date="1527574835579" expanded="true" signature="1341:1387" ph="Select * FRO... orders" />
-            <marker date="1527574835579" expanded="true" signature="1341:1403" ph="Select * FRO... orders" />
-            <marker date="1527574835579" expanded="true" signature="2044:2224" ph="INSERT INTO orders... " />
-            <marker date="1527574835579" expanded="true" signature="3429:3460" ph="SELECT * FRO... orders" />
-            <marker date="1527574835579" expanded="true" signature="5632:5676" ph="update orders... " />
-            <marker date="1527574835579" expanded="true" signature="6284:6319" ph="select * fro... orders" />
-            <marker date="1527574835579" expanded="true" signature="6904:6952" ph="update orders... " />
-            <marker date="1527574835579" expanded="true" signature="7519:7565" ph="select * FRO... orders" />
-            <marker date="1527574835579" expanded="true" signature="7519:7581" ph="select * FRO... orders" />
-            <marker date="1527574835579" expanded="true" signature="8156:8247" ph="UPDATE orders... " />
-            <marker date="1527574835579" expanded="true" signature="8974:9031" ph="Select custo... orders" />
-            <marker date="1527574835579" expanded="true" signature="9597:9633" ph="delete from orders... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding>
-            <marker date="1527574835591" expanded="true" signature="818:953" ph="Insert into orderLines... " />
-            <marker date="1527574835591" expanded="true" signature="1829:1870" ph="UPDATE orderLines... " />
-            <marker date="1527574835591" expanded="true" signature="2301:2352" ph="Select * FRO... orderLines" />
-            <marker date="1527574835591" expanded="true" signature="3893:3942" ph="delete from orderLines... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="19" column="73" lean-forward="false" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/configurations/Conf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/function/Supplier.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1676,108 +1689,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="230" column="30" lean-forward="false" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
-          <folding>
-            <marker date="1524850021000" expanded="true" signature="0:104" ph="/.../" />
-            <marker date="1524850021000" expanded="true" signature="141:607" ph="..." />
-            <marker date="1524850021000" expanded="true" signature="1712:1730" ph="/**...*/" />
-            <marker date="1524850021000" expanded="true" signature="1830:1896" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="1945:2026" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="2111:2441" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="2500:2684" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="2734:2847" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="2881:3138" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="3180:3216" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="3278:3485" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="3567:3875" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="3946:4031" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="4115:4291" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="4342:4515" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="4563:4619" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="4699:5025" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="5073:5156" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="5200:5260" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="5326:5393" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="5425:5460" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="5498:6383" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="6424:6799" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="6846:6986" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="7043:7197" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="7257:7483" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="7545:7723" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="7786:7960" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="8033:8221" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="8295:8522" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="8606:8847" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="8934:9247" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="9336:9601" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="9691:9952" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="10052:10327" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="10381:10610" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="10672:10889" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="10895:10913" ph="/**...*/" />
-            <marker date="1524850021000" expanded="true" signature="11016:11249" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="11255:11273" ph="/**...*/" />
-            <marker date="1524850021000" expanded="true" signature="11389:11708" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="11714:11732" ph="/**...*/" />
-            <marker date="1524850021000" expanded="true" signature="11850:12121" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="12233:12575" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="12581:12599" ph="/**...*/" />
-            <marker date="1524850021000" expanded="true" signature="12718:12985" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="13097:13364" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="13417:13477" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="13543:13613" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="13681:14046" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14098:14159" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14224:14295" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14364:14642" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14680:14725" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14764:14810" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14846:14889" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="14927:14972" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15008:15051" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15088:15132" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15170:15215" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15263:15308" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15357:15403" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15449:15492" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15540:15585" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15631:15674" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15721:15765" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15813:15858" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="15922:16114" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16155:16203" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16233:16273" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16317:16406" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16436:16469" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16537:16634" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16705:16822" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16859:16911" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="16951:17022" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="17075:17153" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="17197:17243" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="17323:17757" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="17425:17749" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="17467:17739" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="17845:19910" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="19988:20871" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="20928:21624" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="21656:21691" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="21732:22034" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="22078:23094" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="23149:23531" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="23573:24311" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="24372:25658" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="25671:26002" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26048:26554" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26191:26202" ph="{}" />
-            <marker date="1524850021000" expanded="true" signature="26273:26548" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26370:26494" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26408:26480" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26600:27350" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26748:26839" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="26874:26974" ph="{...}" />
-            <marker date="1524850021000" expanded="true" signature="27049:27344" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UtilityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2352">
+          <caret line="84" column="5" lean-forward="false" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/configurations/Conf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/OrderLineDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BillOfMaterialTest/BillOfMaterialTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="39" column="58" lean-forward="false" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeCoverage/data.dao/index_SORT_BY_LINE.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1785,32 +1743,168 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="0">
-          <caret line="0" column="40" lean-forward="true" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="40" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/dao/UtilityDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2352">
-          <caret line="84" column="5" lean-forward="false" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <marker date="1527574835603" expanded="true" signature="349:383" ph="Select * FRO... customers" />
-            <marker date="1527574835603" expanded="true" signature="1102:1132" ph="Select * FRO... roles" />
-            <marker date="1527574835603" expanded="true" signature="1538:1568" ph="Select * FRO... sheds" />
-            <marker date="1527574835603" expanded="true" signature="2304:2348" ph="Select * FRO... materials" />
-          </folding>
+        <state relative-caret-position="-254">
+          <caret line="25" column="109" lean-forward="false" selection-start-line="25" selection-start-column="109" selection-end-line="25" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="74" column="29" lean-forward="false" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/OrderDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="103" column="63" lean-forward="false" selection-start-line="103" selection-start-column="63" selection-end-line="103" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/generateBillOfMaterialServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/logicFacade/LogicOrderFacade.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/shared/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3752">
+          <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employeeCreateUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/employee/employees.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2100">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="78" column="41" lean-forward="false" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        <state relative-caret-position="84">
+          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding>
+            <marker date="1527712953850" expanded="true" signature="810:829" ph="Select * FRO... roles" />
+            <marker date="1527712953850" expanded="true" signature="1264:1335" ph="Select * FRO... employees" />
+            <marker date="1527712953850" expanded="true" signature="2217:2240" ph="Select * FRO... customers" />
+            <marker date="1527712953850" expanded="true" signature="3070:3152" ph="INSERT INTO customers... " />
+            <marker date="1527712953850" expanded="true" signature="3608:3680" ph="INSERT INTO customers... " />
+            <marker date="1527712953850" expanded="true" signature="4130:4170" ph="Select * FRO... customers" />
+            <marker date="1527712953850" expanded="true" signature="4510:4550" ph="Select * FRO... employees" />
+            <marker date="1527712953850" expanded="true" signature="5833:5926" ph="INSERT INTO employees... " />
+            <marker date="1527712953850" expanded="true" signature="7319:7353" ph="Select * FRO... customers" />
+            <marker date="1527712953850" expanded="true" signature="8087:8119" ph="delete from employee... " />
+            <marker date="1527712953850" expanded="true" signature="8425:8476" ph="Update EMPLOYEES... " />
+            <marker date="1527712953850" expanded="true" signature="8838:8889" ph="Update employees... " />
+            <marker date="1527712953850" expanded="true" signature="9201:9245" ph="select * FRO... customers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1631">
+          <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="32" column="46" lean-forward="false" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/customer/customerCreateUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

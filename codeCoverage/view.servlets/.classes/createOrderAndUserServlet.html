@@ -74,45 +74,50 @@
 
 <div class="sourceCode"><i>1</i>&nbsp;package view.servlets;
 <i>2</i>&nbsp;
-<i>3</i>&nbsp;import data.exceptions.*;
-<i>4</i>&nbsp;import entities.userEntities.Customer;
-<i>5</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>6</i>&nbsp;import logic.facades.UserFacade;
-<i>7</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateOrderList;
-<i>8</i>&nbsp;
-<i>9</i>&nbsp;import javax.servlet.ServletException;
-<i>10</i>&nbsp;import javax.servlet.annotation.WebServlet;
-<i>11</i>&nbsp;import javax.servlet.http.HttpServlet;
-<i>12</i>&nbsp;import javax.servlet.http.HttpServletRequest;
-<i>13</i>&nbsp;import javax.servlet.http.HttpServletResponse;
-<i>14</i>&nbsp;import java.io.IOException;
-<i>15</i>&nbsp;
-<i>16</i>&nbsp;@WebServlet(urlPatterns = &quot;/indexCreateOrderUser&quot;)
-<b class="nc"><i>17</i>&nbsp;public class createOrderAndUserServlet extends HttpServlet</b>
-<i>18</i>&nbsp;{
-<i>19</i>&nbsp;	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-<i>20</i>&nbsp;	{
-<b class="nc"><i>21</i>&nbsp;		UserFacade facade = new MySqlUserFacade();</b>
-<b class="nc"><i>22</i>&nbsp;		String username = request.getParameter(&quot;contactInformation&quot;);</b>
-<i>23</i>&nbsp;		try {
-<b class="nc"><i>24</i>&nbsp;			facade.getUserDAOInstance();</b>
-<b class="nc"><i>25</i>&nbsp;			Customer   user   = facade.createCustomerWithoutPhone(username, &quot;123&quot;);</b>
-<b class="nc"><i>26</i>&nbsp;			UpdateOrderList.createOrderAndOrderLine(request, user);</b>
-<b class="nc"><i>27</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>28</i>&nbsp;		} catch(DataException | UserException | OrderLineException | MaterialException | OrderException | ShedException</b>
-<i>29</i>&nbsp;				finalDist) {
-<b class="nc"><i>30</i>&nbsp;			request.setAttribute(&quot;error&quot;, &quot;sorry that user already exists&quot;);</b>
-<b class="nc"><i>31</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>32</i>&nbsp;		}</b>
-<b class="nc"><i>33</i>&nbsp;	}</b>
-<i>34</i>&nbsp;
-<i>35</i>&nbsp;}
+<i>3</i>&nbsp;import configurations.Conf;
+<i>4</i>&nbsp;import data.exceptions.*;
+<i>5</i>&nbsp;import entities.userEntities.Customer;
+<i>6</i>&nbsp;import MySqlUserFacade;
+<i>7</i>&nbsp;import UserFacade;
+<i>8</i>&nbsp;import view.servlets.orderServlets.helpers.ErrorHandler;
+<i>9</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateOrderList;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import javax.servlet.ServletException;
+<i>12</i>&nbsp;import javax.servlet.annotation.WebServlet;
+<i>13</i>&nbsp;import javax.servlet.http.HttpServlet;
+<i>14</i>&nbsp;import javax.servlet.http.HttpServletRequest;
+<i>15</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>16</i>&nbsp;import java.io.IOException;
+<i>17</i>&nbsp;import java.util.logging.Level;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;@WebServlet(urlPatterns = &quot;/indexCreateOrderUser&quot;)
+<b class="nc"><i>20</i>&nbsp;public class createOrderAndUserServlet extends HttpServlet</b>
+<i>21</i>&nbsp;{
+<i>22</i>&nbsp;	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+<i>23</i>&nbsp;	{
+<b class="nc"><i>24</i>&nbsp;		UserFacade facade = new MySqlUserFacade();</b>
+<b class="nc"><i>25</i>&nbsp;		String username = request.getParameter(&quot;contactInformation&quot;);</b>
+<i>26</i>&nbsp;		try {
+<b class="nc"><i>27</i>&nbsp;			facade.getUserDAOInstance();</b>
+<b class="nc"><i>28</i>&nbsp;			Customer   user   = facade.createCustomerWithoutPhone(username, &quot;123&quot;);</b>
+<b class="nc"><i>29</i>&nbsp;			UpdateOrderList.createOrderAndOrderLine(request, user);</b>
+<b class="nc"><i>30</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
+<b class="nc"><i>31</i>&nbsp;		} catch(DataException | UserException | OrderLineException | MaterialException | OrderException | ShedException</b>
+<i>32</i>&nbsp;				finalDist)
+<i>33</i>&nbsp;		{
+<b class="nc"><i>34</i>&nbsp;			Conf.getLogger().log(Level.WARNING, &quot;[Exception] &quot; + finalDist.getMessage());</b>
+<b class="nc"><i>35</i>&nbsp;			ErrorHandler.customerAlreadyExists(request);</b>
+<b class="nc"><i>36</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
+<b class="nc"><i>37</i>&nbsp;		}</b>
+<i>38</i>&nbsp;	}
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

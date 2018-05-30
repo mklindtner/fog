@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 16)
+    (0/ 15)
   </span>
 </td>
 </tr>
@@ -78,8 +78,8 @@
 <i>4</i>&nbsp;import data.exceptions.DataException;
 <i>5</i>&nbsp;import data.exceptions.OrderException;
 <i>6</i>&nbsp;import entities.userEntities.Employee;
-<i>7</i>&nbsp;import logic.facades.MySqlOrderFacade;
-<i>8</i>&nbsp;import logic.facades.OrderFacade;
+<i>7</i>&nbsp;import MySqlOrderFacade;
+<i>8</i>&nbsp;import OrderFacade;
 <i>9</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateOrderList;
 <i>10</i>&nbsp;
 <i>11</i>&nbsp;import javax.servlet.ServletException;
@@ -109,7 +109,7 @@
 <b class="nc"><i>35</i>&nbsp;		} catch (DataException | OrderException finalDist) {</b>
 <b class="nc"><i>36</i>&nbsp;			throw new ServletException(finalDist);</b>
 <b class="nc"><i>37</i>&nbsp;		}</b>
-<b class="nc"><i>38</i>&nbsp;	}</b>
+<i>38</i>&nbsp;	}
 <i>39</i>&nbsp;
 <i>40</i>&nbsp;	private Order findOrder(HttpServletRequest request, OrderFacade orderFacade) throws DataException, OrderException
 <i>41</i>&nbsp;	{
@@ -122,7 +122,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

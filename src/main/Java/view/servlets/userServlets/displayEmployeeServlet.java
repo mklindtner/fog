@@ -1,8 +1,6 @@
 package view.servlets.userServlets;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
 import view.servlets.orderServlets.helpers.UpdateUserList;
 
 import javax.servlet.ServletException;

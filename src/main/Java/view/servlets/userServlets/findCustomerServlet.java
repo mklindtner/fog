@@ -3,8 +3,8 @@ package view.servlets.userServlets;
 import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +19,7 @@ public class findCustomerServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		try {
-			UserFacade userFacade = new MySqlUserFacade();
+			UserFacade userFacade = new UserFacadeImpl();
 			userFacade.getUserDAOInstance();
 			Customer customer = userFacade.customerByUsername(request.getParameter("username"));
 			request.setAttribute("foundCustomer", customer);

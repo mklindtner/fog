@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 14)
+    (0/ 13)
   </span>
 </td>
 </tr>
@@ -78,8 +78,8 @@
 <i>4</i>&nbsp;import data.exceptions.OrderException;
 <i>5</i>&nbsp;import data.exceptions.UserException;
 <i>6</i>&nbsp;import entities.userEntities.Customer;
-<i>7</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>8</i>&nbsp;import logic.facades.UserFacade;
+<i>7</i>&nbsp;import MySqlUserFacade;
+<i>8</i>&nbsp;import UserFacade;
 <i>9</i>&nbsp;import view.servlets.orderServlets.helpers.ErrorHandler;
 <i>10</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateOrderList;
 <i>11</i>&nbsp;
@@ -109,14 +109,14 @@
 <b class="nc"><i>35</i>&nbsp;			request.getRequestDispatcher(&quot;/WEB-INF/employee/employeeHomepage.jsp&quot;).forward(request, response);</b>
 <b class="nc"><i>36</i>&nbsp;		}</b>
 <b class="nc"><i>37</i>&nbsp;		request.getRequestDispatcher(&quot;/WEB-INF/customer/customerOrders.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>38</i>&nbsp;	}</b>
+<i>38</i>&nbsp;	}
 <i>39</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

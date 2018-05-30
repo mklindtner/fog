@@ -1,13 +1,10 @@
 package daoTest;
 
-import data.MySqlConnector;
-import data.dao.ShedDAO;
+import data.MySQLDAO.ShedDAO;
 import data.exceptions.DataException;
 import data.exceptions.ShedException;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.sql.Connection;
 
 import static junit.framework.TestCase.assertNotNull;
 

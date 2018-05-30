@@ -1,7 +1,7 @@
 package ServiceClasses;
 
 import data.MySqlConnector;
-import data.dao.*;
+import data.MySQLDAO.*;
 import data.exceptions.*;
 import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
@@ -9,8 +9,8 @@ import entities.OrderEntities.OrderLine;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -88,7 +88,7 @@ public class ServiceSeed
 
 	private static void populateCustomerTableFacade() throws DataException, UserException
 	{
-		UserFacade userFacade = new MySqlUserFacade();
+		UserFacade userFacade = new UserFacadeImpl();
 		userFacade.getUserDAOInstance();
 		customers.add(userFacade.createCustomer("testUser4", "123", PHONE));
 		customers.add(userFacade.createCustomer("testUser5", "123", PHONE));

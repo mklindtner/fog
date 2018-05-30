@@ -3,8 +3,8 @@ package view.servlets.userServlets;
 import entities.userEntities.Customer;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +22,7 @@ public class createCustomerServlet extends HttpServlet
 		String password = request.getParameter("password");
 		Customer customer;
 		try {
-			UserFacade userFacade = new MySqlUserFacade();
+			UserFacade userFacade = new UserFacadeImpl();
 			userFacade.getUserDAOInstance();
 			if(phoneIsValid(request)) {
 				int    phone    = Integer.parseInt(request.getParameter("phoneNumber"));

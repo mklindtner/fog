@@ -3,7 +3,7 @@ package daoTest;
 import ServiceClasses.ServiceMethods;
 import ServiceClasses.ServiceSeed;
 import data.MySqlConnector;
-import data.dao.UtilityDAO;
+import data.MySQLDAO.UtilityDAO;
 import data.exceptions.*;
 import entities.OrderEntities.Material;
 import org.junit.After;

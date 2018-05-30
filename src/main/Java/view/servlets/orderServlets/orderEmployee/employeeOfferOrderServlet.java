@@ -4,8 +4,8 @@ import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import entities.userEntities.Employee;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
@@ -26,7 +26,7 @@ public class employeeOfferOrderServlet extends HttpServlet
 		Employee    employee = (Employee) session.getAttribute("employee");
 		order = editOrder(request, order);
 		try {
-			OrderFacade orderFacade = new MySqlOrderFacade();
+			OrderFacade orderFacade = new OrderFacadeImpl();
 			orderFacade.getInstanceOrderDAO();
 			orderFacade.updateOrderOffer(order);
 			UpdateOrderList.generateEmployeeOrders(session, employee);

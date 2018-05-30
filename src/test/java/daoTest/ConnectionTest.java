@@ -1,7 +1,7 @@
 package daoTest;
 
 import data.MySqlConnector;
-import data.dao.*;
+import data.MySQLDAO.*;
 import data.exceptions.DataException;
 import org.junit.After;
 import org.junit.Test;

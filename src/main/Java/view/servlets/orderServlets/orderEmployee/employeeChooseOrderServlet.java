@@ -3,8 +3,8 @@ package view.servlets.orderServlets.orderEmployee;
 import entities.userEntities.Employee;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class employeeChooseOrderServlet extends HttpServlet
 		Employee employee = (Employee) request.getSession().getAttribute("employee");
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		try {
-			OrderFacade orderFacade = new MySqlOrderFacade();
+			OrderFacade orderFacade = new OrderFacadeImpl();
 			orderFacade.getInstanceOrderDAO().employeeChooseOrder(employee.getId(), orderId);
 			UpdateOrderList.generateEmployeeOrders(request.getSession(), employee);
 			UpdateOrderList.generateOrdersAvailable(request.getSession());

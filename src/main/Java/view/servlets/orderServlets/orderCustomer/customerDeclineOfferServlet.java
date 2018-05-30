@@ -3,10 +3,9 @@ package view.servlets.orderServlets.orderCustomer;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.OrderLineException;
-import entities.OrderEntities.Order;
 import entities.userEntities.Customer;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
@@ -34,7 +33,7 @@ public class customerDeclineOfferServlet extends HttpServlet
 
 	private void deleteOrder(int orderId) throws OrderException, DataException, OrderLineException
 	{
-		OrderFacade facade = new MySqlOrderFacade();
+		OrderFacade facade = new OrderFacadeImpl();
 		facade.getInstanceOrderDAO();
 		facade.getInstanceOrderLineDAO();
 		facade.deleteOrderLineByOrderId(orderId);

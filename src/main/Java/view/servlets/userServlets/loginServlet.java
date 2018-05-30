@@ -7,8 +7,8 @@ import entities.userEntities.User;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.UserException;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 import view.servlets.orderServlets.helpers.ErrorHandler;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
@@ -30,7 +30,7 @@ public class loginServlet extends HttpServlet
 			String      username = request.getParameter("username");
 			String      password = request.getParameter("password");
 			HttpSession session  = request.getSession();
-			UserFacade userFacade = new MySqlUserFacade();
+			UserFacade userFacade = new UserFacadeImpl();
 			userFacade.getUserDAOInstance();
 			User user = userFacade.evaluateLogin(username, password);
 			if (user instanceof Customer) {
@@ -46,8 +46,7 @@ public class loginServlet extends HttpServlet
 				Conf.getLogger().log(Level.INFO, "[LOGGED] {0} signed in", user.getUsername());
 				request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
 			}
-			ErrorHandler.loginError(request);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			throw new DataException();
 		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {
 			ErrorHandler.loginError(request);
 			request.getRequestDispatcher("index.jsp").forward(request, response);

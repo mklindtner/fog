@@ -3,8 +3,8 @@ package view.servlets.orderServlets.orderEmployee;
 import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ public class employeeCatalogOrderServlet extends HttpServlet
 	{
 		String employeeChoice = request.getParameter("employeeChoice");
 		try {
-			OrderFacade orderFacade       = new MySqlOrderFacade();
+			OrderFacade orderFacade       = new OrderFacadeImpl();
 			orderFacade.getInstanceOrderDAO();
 			switch(employeeChoice) {
 				case "ordersWithoutShed":

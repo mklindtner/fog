@@ -2,8 +2,8 @@ package view.servlets.userServlets.crudEmployee;
 
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 import view.servlets.orderServlets.helpers.UpdateUserList;
 
 import javax.servlet.ServletException;
@@ -19,7 +19,7 @@ public class employeePromoteServlet extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		int employeeId = Integer.parseInt(request.getParameter("employeeId"));
-		UserFacade facade = new MySqlUserFacade();
+		UserFacade facade = new UserFacadeImpl();
 		try {
 			facade.getUserDAOInstance();
 			facade.promoteEmployee(employeeId);

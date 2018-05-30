@@ -17,7 +17,7 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">data.dao</a> ]
+    [ <a href="../index.html">data.MySQLDAO</a> ]
 </div>
 
 <h1>Coverage Summary for Class: UserDAO (data.dao)</h1>
@@ -72,7 +72,7 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package data.dao;
+<div class="sourceCode"><i>1</i>&nbsp;package data.MySQLDAO;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import entities.userEntities.Customer;
 <i>4</i>&nbsp;import entities.userEntities.Employee;
@@ -82,310 +82,309 @@
 <i>8</i>&nbsp;import data.MySqlConnector;
 <i>9</i>&nbsp;import data.exceptions.UserException;
 <i>10</i>&nbsp;
-<i>11</i>&nbsp;import javax.servlet.ServletException;
-<i>12</i>&nbsp;import java.sql.Connection;
-<i>13</i>&nbsp;import java.sql.PreparedStatement;
-<i>14</i>&nbsp;import java.sql.ResultSet;
-<i>15</i>&nbsp;import java.sql.SQLException;
-<i>16</i>&nbsp;import java.util.ArrayList;
-<i>17</i>&nbsp;import java.util.List;
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;public class UserDAO
-<i>20</i>&nbsp;{
-<i>21</i>&nbsp;	Connection con;
-<i>22</i>&nbsp;
-<i>23</i>&nbsp;	public UserDAO() throws DataException
-<b class="fc"><i>24</i>&nbsp;	{</b>
-<b class="fc"><i>25</i>&nbsp;		con = MySqlConnector.createConnection(&quot;APP&quot;);</b>
-<b class="fc"><i>26</i>&nbsp;	}</b>
-<i>27</i>&nbsp;
-<i>28</i>&nbsp;	public UserDAO(String connectionSelection) throws DataException
-<b class="fc"><i>29</i>&nbsp;	{</b>
-<b class="fc"><i>30</i>&nbsp;		con = MySqlConnector.createConnection(connectionSelection);</b>
-<b class="fc"><i>31</i>&nbsp;	}</b>
-<i>32</i>&nbsp;
-<i>33</i>&nbsp;	public List&lt;String&gt; employeeRoles() throws DataException
-<i>34</i>&nbsp;	{
-<b class="nc"><i>35</i>&nbsp;		String       SQL   = &quot;Select * FROM roles&quot;;</b>
-<b class="nc"><i>36</i>&nbsp;		List&lt;String&gt; Roles = new ArrayList&lt;&gt;();</b>
-<b class="nc"><i>37</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>38</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="nc"><i>39</i>&nbsp;			while (rs.next()) {</b>
-<b class="nc"><i>40</i>&nbsp;				String role = rs.getString(&quot;role&quot;);</b>
-<b class="nc"><i>41</i>&nbsp;				Roles.add(role);</b>
-<b class="nc"><i>42</i>&nbsp;			}</b>
-<b class="nc"><i>43</i>&nbsp;			return Roles;</b>
-<b class="nc"><i>44</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>45</i>&nbsp;			throw new DataException(throwSql);</b>
-<i>46</i>&nbsp;		}
-<i>47</i>&nbsp;	}
-<i>48</i>&nbsp;
-<i>49</i>&nbsp;	public List&lt;Employee&gt; allEmployees() throws UserException
-<i>50</i>&nbsp;	{
-<b class="fc"><i>51</i>&nbsp;		String         SQL       = &quot;Select * FROM employees LEFT JOIN roles ON employees.role_id = roles.id&quot;;</b>
-<b class="fc"><i>52</i>&nbsp;		List&lt;Employee&gt; employees = new ArrayList&lt;&gt;();</b>
-<b class="fc"><i>53</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>54</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="fc"><i>55</i>&nbsp;			while (rs.next()) {</b>
-<b class="fc"><i>56</i>&nbsp;				String username        = rs.getString(&quot;username&quot;);</b>
-<b class="fc"><i>57</i>&nbsp;				String password        = rs.getString(&quot;password&quot;);</b>
-<b class="fc"><i>58</i>&nbsp;				int    phone           = rs.getInt(&quot;phone&quot;);</b>
-<b class="fc"><i>59</i>&nbsp;				String role            = rs.getString(&quot;role&quot;);</b>
-<b class="fc"><i>60</i>&nbsp;				String registered_date = rs.getString(&quot;reg_date&quot;);</b>
-<b class="fc"><i>61</i>&nbsp;				int    id              = rs.getInt(&quot;id&quot;);</b>
-<b class="fc"><i>62</i>&nbsp;				Employee employee = new Employee</b>
-<i>63</i>&nbsp;						.EmployeeBuilder(id, registered_date)
-<b class="fc"><i>64</i>&nbsp;						.createSimpleEmployee(username, password, role, phone)</b>
-<b class="fc"><i>65</i>&nbsp;						.build();</b>
-<b class="fc"><i>66</i>&nbsp;				employees.add(employee);</b>
-<b class="fc"><i>67</i>&nbsp;			}</b>
-<b class="fc"><i>68</i>&nbsp;			return employees;</b>
-<b class="fc"><i>69</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>70</i>&nbsp;			throw new UserException(throwSql);</b>
-<i>71</i>&nbsp;		}
-<i>72</i>&nbsp;	}
-<i>73</i>&nbsp;
-<i>74</i>&nbsp;	public List&lt;Customer&gt; allCustomers() throws DataException
-<i>75</i>&nbsp;	{
-<b class="fc"><i>76</i>&nbsp;		String         SQL       = &quot;Select * FROM customers&quot;;</b>
-<b class="fc"><i>77</i>&nbsp;		List&lt;Customer&gt; customers = new ArrayList&lt;&gt;();</b>
-<b class="fc"><i>78</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>79</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="fc"><i>80</i>&nbsp;			while (rs.next()) {</b>
-<b class="fc"><i>81</i>&nbsp;				String username = rs.getString(&quot;username&quot;);</b>
-<b class="fc"><i>82</i>&nbsp;				String password = rs.getString(&quot;password&quot;);</b>
-<b class="fc"><i>83</i>&nbsp;				String reg_date = rs.getString(&quot;reg_date&quot;);</b>
-<b class="fc"><i>84</i>&nbsp;				int    phone    = rs.getInt(&quot;phone&quot;);</b>
-<b class="fc"><i>85</i>&nbsp;				int    id       = rs.getInt(&quot;id&quot;);</b>
-<b class="fc"><i>86</i>&nbsp;				customers.add(new Customer.CustomerBuilder(id, reg_date)</b>
-<b class="fc"><i>87</i>&nbsp;									  .createSimpleCustomer(username, password, phone)</b>
-<b class="fc"><i>88</i>&nbsp;									  .build()</b>
-<i>89</i>&nbsp;				);
-<b class="fc"><i>90</i>&nbsp;			}</b>
-<b class="fc"><i>91</i>&nbsp;			return customers;</b>
-<b class="fc"><i>92</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>93</i>&nbsp;			throw new DataException(throwSql);</b>
-<i>94</i>&nbsp;		}
-<i>95</i>&nbsp;	}
-<i>96</i>&nbsp;
-<i>97</i>&nbsp;	public Customer createAndReturnCustomer(String username, String password, int phone) throws DataException,
-<i>98</i>&nbsp;																								UserException
-<i>99</i>&nbsp;	{
-<b class="fc"><i>100</i>&nbsp;		String SQL = &quot;INSERT INTO customers(username, password, reg_date, phone) VALUES (?, ?, now(), ?)&quot;;</b>
-<b class="fc"><i>101</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>102</i>&nbsp;			statement.setString(1, username);</b>
-<b class="fc"><i>103</i>&nbsp;			statement.setString(2, password);</b>
-<b class="fc"><i>104</i>&nbsp;			statement.setInt(3, phone);</b>
-<b class="fc"><i>105</i>&nbsp;			statement.executeUpdate();</b>
-<b class="fc"><i>106</i>&nbsp;			return customerByUsername(username);</b>
-<b class="fc"><i>107</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>108</i>&nbsp;			throw new DataException(throwSql);</b>
-<i>109</i>&nbsp;		}
-<i>110</i>&nbsp;	}
-<i>111</i>&nbsp;
-<i>112</i>&nbsp;	public Customer createAndReturnCustomer(String username, String password) throws DataException, UserException
-<i>113</i>&nbsp;	{
-<b class="nc"><i>114</i>&nbsp;		String SQL = &quot;INSERT INTO customers(username, password, reg_date) VALUES (?, ?, now())&quot;;</b>
-<b class="nc"><i>115</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>116</i>&nbsp;			statement.setString(1, username);</b>
-<b class="nc"><i>117</i>&nbsp;			statement.setString(2, password);</b>
-<b class="nc"><i>118</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>119</i>&nbsp;			return customerByUsername(username);</b>
-<b class="nc"><i>120</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>121</i>&nbsp;			throw new DataException(throwSql);</b>
-<i>122</i>&nbsp;		}
-<i>123</i>&nbsp;	}
+<i>11</i>&nbsp;import java.sql.Connection;
+<i>12</i>&nbsp;import java.sql.PreparedStatement;
+<i>13</i>&nbsp;import java.sql.ResultSet;
+<i>14</i>&nbsp;import java.sql.SQLException;
+<i>15</i>&nbsp;import java.util.ArrayList;
+<i>16</i>&nbsp;import java.util.List;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;public class UserDAO
+<i>19</i>&nbsp;{
+<i>20</i>&nbsp;	Connection con;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;	public UserDAO() throws DataException
+<b class="fc"><i>23</i>&nbsp;	{</b>
+<b class="fc"><i>24</i>&nbsp;		con = MySqlConnector.createConnection(&quot;APP&quot;);</b>
+<b class="fc"><i>25</i>&nbsp;	}</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;	public UserDAO(String connectionSelection) throws DataException
+<b class="fc"><i>28</i>&nbsp;	{</b>
+<b class="fc"><i>29</i>&nbsp;		con = MySqlConnector.createConnection(connectionSelection);</b>
+<b class="fc"><i>30</i>&nbsp;	}</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;	public List&lt;String&gt; employeeRoles() throws DataException
+<i>33</i>&nbsp;	{
+<b class="nc"><i>34</i>&nbsp;		String       SQL   = &quot;Select * FROM roles&quot;;</b>
+<b class="nc"><i>35</i>&nbsp;		List&lt;String&gt; Roles = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>36</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>37</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="nc"><i>38</i>&nbsp;			while (rs.next()) {</b>
+<b class="nc"><i>39</i>&nbsp;				String role = rs.getString(&quot;role&quot;);</b>
+<b class="nc"><i>40</i>&nbsp;				Roles.add(role);</b>
+<b class="nc"><i>41</i>&nbsp;			}</b>
+<b class="nc"><i>42</i>&nbsp;			return Roles;</b>
+<b class="nc"><i>43</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>44</i>&nbsp;			throw new DataException(throwSql);</b>
+<i>45</i>&nbsp;		}
+<i>46</i>&nbsp;	}
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;	public List&lt;Employee&gt; allEmployees() throws UserException
+<i>49</i>&nbsp;	{
+<b class="fc"><i>50</i>&nbsp;		String         SQL       = &quot;Select * FROM employees LEFT JOIN roles ON employees.role_id = roles.id&quot;;</b>
+<b class="fc"><i>51</i>&nbsp;		List&lt;Employee&gt; employees = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>52</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>53</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>54</i>&nbsp;			while (rs.next()) {</b>
+<b class="fc"><i>55</i>&nbsp;				String username        = rs.getString(&quot;username&quot;);</b>
+<b class="fc"><i>56</i>&nbsp;				String password        = rs.getString(&quot;password&quot;);</b>
+<b class="fc"><i>57</i>&nbsp;				int    phone           = rs.getInt(&quot;phone&quot;);</b>
+<b class="fc"><i>58</i>&nbsp;				String role            = rs.getString(&quot;role&quot;);</b>
+<b class="fc"><i>59</i>&nbsp;				String registered_date = rs.getString(&quot;reg_date&quot;);</b>
+<b class="fc"><i>60</i>&nbsp;				int    id              = rs.getInt(&quot;id&quot;);</b>
+<b class="fc"><i>61</i>&nbsp;				Employee employee = new Employee</b>
+<i>62</i>&nbsp;						.EmployeeBuilder(id, registered_date)
+<b class="fc"><i>63</i>&nbsp;						.createSimpleEmployee(username, password, role, phone)</b>
+<b class="fc"><i>64</i>&nbsp;						.build();</b>
+<b class="fc"><i>65</i>&nbsp;				employees.add(employee);</b>
+<b class="fc"><i>66</i>&nbsp;			}</b>
+<b class="fc"><i>67</i>&nbsp;			return employees;</b>
+<b class="fc"><i>68</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>69</i>&nbsp;			throw new UserException(throwSql);</b>
+<i>70</i>&nbsp;		}
+<i>71</i>&nbsp;	}
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;	public List&lt;Customer&gt; allCustomers() throws DataException
+<i>74</i>&nbsp;	{
+<b class="fc"><i>75</i>&nbsp;		String         SQL       = &quot;Select * FROM customers&quot;;</b>
+<b class="fc"><i>76</i>&nbsp;		List&lt;Customer&gt; customers = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>77</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>78</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>79</i>&nbsp;			while (rs.next()) {</b>
+<b class="fc"><i>80</i>&nbsp;				String username = rs.getString(&quot;username&quot;);</b>
+<b class="fc"><i>81</i>&nbsp;				String password = rs.getString(&quot;password&quot;);</b>
+<b class="fc"><i>82</i>&nbsp;				String reg_date = rs.getString(&quot;reg_date&quot;);</b>
+<b class="fc"><i>83</i>&nbsp;				int    phone    = rs.getInt(&quot;phone&quot;);</b>
+<b class="fc"><i>84</i>&nbsp;				int    id       = rs.getInt(&quot;id&quot;);</b>
+<b class="fc"><i>85</i>&nbsp;				customers.add(new Customer.CustomerBuilder(id, reg_date)</b>
+<b class="fc"><i>86</i>&nbsp;									  .createSimpleCustomer(username, password, phone)</b>
+<b class="fc"><i>87</i>&nbsp;									  .build()</b>
+<i>88</i>&nbsp;				);
+<b class="fc"><i>89</i>&nbsp;			}</b>
+<b class="fc"><i>90</i>&nbsp;			return customers;</b>
+<b class="fc"><i>91</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>92</i>&nbsp;			throw new DataException(throwSql);</b>
+<i>93</i>&nbsp;		}
+<i>94</i>&nbsp;	}
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;	public Customer createAndReturnCustomer(String username, String password, int phone) throws DataException,
+<i>97</i>&nbsp;																								UserException
+<i>98</i>&nbsp;	{
+<b class="fc"><i>99</i>&nbsp;		String SQL = &quot;INSERT INTO customers(username, password, reg_date, phone) VALUES (?, ?, now(), ?)&quot;;</b>
+<b class="fc"><i>100</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>101</i>&nbsp;			statement.setString(1, username);</b>
+<b class="fc"><i>102</i>&nbsp;			statement.setString(2, password);</b>
+<b class="fc"><i>103</i>&nbsp;			statement.setInt(3, phone);</b>
+<b class="fc"><i>104</i>&nbsp;			statement.executeUpdate();</b>
+<b class="fc"><i>105</i>&nbsp;			return customerByUsername(username);</b>
+<b class="fc"><i>106</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>107</i>&nbsp;			throw new DataException(throwSql);</b>
+<i>108</i>&nbsp;		}
+<i>109</i>&nbsp;	}
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;	public Customer createAndReturnCustomer(String username, String password) throws DataException, UserException
+<i>112</i>&nbsp;	{
+<b class="nc"><i>113</i>&nbsp;		String SQL = &quot;INSERT INTO customers(username, password, reg_date) VALUES (?, ?, now())&quot;;</b>
+<b class="nc"><i>114</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>115</i>&nbsp;			statement.setString(1, username);</b>
+<b class="nc"><i>116</i>&nbsp;			statement.setString(2, password);</b>
+<b class="nc"><i>117</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>118</i>&nbsp;			return customerByUsername(username);</b>
+<b class="nc"><i>119</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>120</i>&nbsp;			throw new DataException(throwSql);</b>
+<i>121</i>&nbsp;		}
+<i>122</i>&nbsp;	}
+<i>123</i>&nbsp;
 <i>124</i>&nbsp;
-<i>125</i>&nbsp;
-<i>126</i>&nbsp;	/**
-<i>127</i>&nbsp;	 * finds customer by username
-<i>128</i>&nbsp;	 */
-<i>129</i>&nbsp;	public Customer customerByUsername(String username) throws UserException, ClassCastException
-<i>130</i>&nbsp;	{
-<b class="fc"><i>131</i>&nbsp;		String SQL = &quot;Select * FROM customers WHERE username=?&quot;;</b>
-<b class="fc"><i>132</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>133</i>&nbsp;			return (Customer) defineUser(username, statement, true);</b>
-<b class="fc"><i>134</i>&nbsp;		} catch (SQLException | UserException throwSql) {</b>
-<b class="nc"><i>135</i>&nbsp;			throw new UserException(throwSql);</b>
-<i>136</i>&nbsp;		}
-<i>137</i>&nbsp;	}
-<i>138</i>&nbsp;
-<i>139</i>&nbsp;	public Employee employeeByUsername(String username) throws UserException, ClassCastException
-<i>140</i>&nbsp;	{
-<b class="fc"><i>141</i>&nbsp;		String SQL = &quot;Select * FROM employees WHERE username=?&quot;;</b>
-<b class="fc"><i>142</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>143</i>&nbsp;			return (Employee) defineUser(username, statement, false);</b>
-<b class="fc"><i>144</i>&nbsp;		} catch (SQLException | UserException throwSql) {</b>
-<b class="nc"><i>145</i>&nbsp;			throw new UserException(throwSql);</b>
-<i>146</i>&nbsp;		}
-<i>147</i>&nbsp;	}
-<i>148</i>&nbsp;
-<i>149</i>&nbsp;	private User defineUser(String username, PreparedStatement statement, boolean isCustomer) throws SQLException,
-<i>150</i>&nbsp;																									 UserException
-<i>151</i>&nbsp;	{
-<b class="fc"><i>152</i>&nbsp;		statement.setString(1, username);</b>
-<b class="fc"><i>153</i>&nbsp;		ResultSet rs = statement.executeQuery();</b>
-<b class="fc"><i>154</i>&nbsp;		if (rs.next()) {</b>
-<b class="fc"><i>155</i>&nbsp;			String password          = rs.getString(&quot;password&quot;);</b>
-<b class="fc"><i>156</i>&nbsp;			String registration_date = rs.getString(&quot;reg_date&quot;);</b>
-<b class="fc"><i>157</i>&nbsp;			int    id                = rs.getInt(&quot;id&quot;);</b>
-<b class="fc"><i>158</i>&nbsp;			int    phone             = rs.getInt(&quot;phone&quot;);</b>
-<b class="fc"><i>159</i>&nbsp;			if (!isCustomer) {</b>
-<b class="fc"><i>160</i>&nbsp;				String role = ServiceDAO.getRole(rs.getInt(&quot;role_id&quot;), con);</b>
-<b class="fc"><i>161</i>&nbsp;				return new Employee</b>
-<i>162</i>&nbsp;						.EmployeeBuilder(id, registration_date)
-<b class="fc"><i>163</i>&nbsp;						.createSimpleEmployee(username, password, role, phone)</b>
-<b class="fc"><i>164</i>&nbsp;						.build();</b>
-<i>165</i>&nbsp;			}
-<b class="fc"><i>166</i>&nbsp;			if (isCustomer) {</b>
-<b class="fc"><i>167</i>&nbsp;				return new Customer</b>
-<i>168</i>&nbsp;						.CustomerBuilder(id, registration_date)
-<b class="fc"><i>169</i>&nbsp;						.createSimpleCustomer(username, password, phone)</b>
-<b class="fc"><i>170</i>&nbsp;						.build();</b>
-<i>171</i>&nbsp;			}
-<i>172</i>&nbsp;		}
-<b class="nc"><i>173</i>&nbsp;		return new unknownUser();</b>
-<i>174</i>&nbsp;	}
-<i>175</i>&nbsp;
-<i>176</i>&nbsp;	public Employee createAndReturnEmployee(String username, String password, int phone, int role) throws UserException, DataException
-<i>177</i>&nbsp;	{
-<b class="fc"><i>178</i>&nbsp;		String SQL = &quot;INSERT INTO employees(username, password, phone, role_id, reg_date) VALUES(?, ?, ?, ?, NOW())&quot;;</b>
-<b class="fc"><i>179</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>180</i>&nbsp;			statement.setString(1, username);</b>
-<b class="fc"><i>181</i>&nbsp;			statement.setString(2, password);</b>
-<b class="fc"><i>182</i>&nbsp;			statement.setInt(3, phone);</b>
-<b class="fc"><i>183</i>&nbsp;			statement.setInt(4, role);</b>
-<b class="fc"><i>184</i>&nbsp;			statement.executeUpdate();</b>
-<b class="fc"><i>185</i>&nbsp;			return employeeByUsername(username);</b>
-<b class="fc"><i>186</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>187</i>&nbsp;			throw new DataException(throwSql);</b>
-<i>188</i>&nbsp;		}
-<i>189</i>&nbsp;	}
-<i>190</i>&nbsp;
-<i>191</i>&nbsp;	public boolean isCustomer(String username) throws DataException
-<i>192</i>&nbsp;	{
-<b class="nc"><i>193</i>&nbsp;		List&lt;Customer&gt; customers = allCustomers();</b>
-<b class="nc"><i>194</i>&nbsp;		for (int i = 0; i &lt; customers.size(); i++) {</b>
-<b class="nc"><i>195</i>&nbsp;			Customer customer = customers.get(i);</b>
-<b class="nc"><i>196</i>&nbsp;			if (customer.getUsername().equals(username))</b>
-<b class="nc"><i>197</i>&nbsp;				return true;</b>
-<i>198</i>&nbsp;		}
-<b class="nc"><i>199</i>&nbsp;		return false;</b>
-<i>200</i>&nbsp;	}
-<i>201</i>&nbsp;
-<i>202</i>&nbsp;	public boolean isEmployee(String username) throws UserException
-<i>203</i>&nbsp;	{
-<b class="nc"><i>204</i>&nbsp;		List&lt;Employee&gt; employees = allEmployees();</b>
-<b class="nc"><i>205</i>&nbsp;		for (int i = 0; i &lt; employees.size(); i++) {</b>
-<b class="nc"><i>206</i>&nbsp;			Employee emp = employees.get(i);</b>
-<b class="nc"><i>207</i>&nbsp;			if (emp.getUsername().equals(emp))</b>
-<b class="nc"><i>208</i>&nbsp;				return true;</b>
-<i>209</i>&nbsp;		}
-<b class="nc"><i>210</i>&nbsp;		return false;</b>
-<i>211</i>&nbsp;	}
-<i>212</i>&nbsp;
-<i>213</i>&nbsp;	public boolean customerHasValidLogin(String username, String password) throws UserException, DataException
-<i>214</i>&nbsp;	{
-<b class="nc"><i>215</i>&nbsp;		return customerByUsername(username).getPassword().equals(password) ? true : false;</b>
-<i>216</i>&nbsp;	}
-<i>217</i>&nbsp;
-<i>218</i>&nbsp;	public boolean employeeHasValidLogin(String username, String password) throws UserException, DataException
-<i>219</i>&nbsp;	{
-<b class="nc"><i>220</i>&nbsp;		return employeeByUsername(username).getPassword().equals(password) ? true : false;</b>
-<i>221</i>&nbsp;	}
-<i>222</i>&nbsp;
-<i>223</i>&nbsp;	public Customer getCustomerById(int id) throws UserException, DataException
-<i>224</i>&nbsp;	{
-<b class="nc"><i>225</i>&nbsp;		final String SQL = &quot;Select * FROM customers WHERE id=?&quot;;</b>
-<b class="nc"><i>226</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>227</i>&nbsp;			statement.setInt(1, id);</b>
-<b class="nc"><i>228</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="nc"><i>229</i>&nbsp;			if (rs.next()) {</b>
-<b class="nc"><i>230</i>&nbsp;				String username          = rs.getString(&quot;username&quot;);</b>
-<b class="nc"><i>231</i>&nbsp;				String password          = rs.getString(&quot;password&quot;);</b>
-<b class="nc"><i>232</i>&nbsp;				int    phone             = rs.getInt(&quot;phone&quot;);</b>
-<b class="nc"><i>233</i>&nbsp;				String registration_date = rs.getString(&quot;reg_date&quot;);</b>
-<b class="nc"><i>234</i>&nbsp;				return new Customer</b>
-<i>235</i>&nbsp;						.CustomerBuilder(id, registration_date)
-<b class="nc"><i>236</i>&nbsp;						.createSimpleCustomer(username, password, phone)</b>
-<b class="nc"><i>237</i>&nbsp;						.build();</b>
-<i>238</i>&nbsp;			}
-<b class="nc"><i>239</i>&nbsp;			throw new SQLException();</b>
-<b class="nc"><i>240</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>241</i>&nbsp;			throw new UserException(throwSql);</b>
-<i>242</i>&nbsp;		}
-<i>243</i>&nbsp;	}
-<i>244</i>&nbsp;
-<i>245</i>&nbsp;	public void deleteEmployeeById(int employeeId) throws UserException
-<i>246</i>&nbsp;	{
-<b class="nc"><i>247</i>&nbsp;		final String SQL = &quot;delete from employees WHERE id=?&quot;;</b>
-<b class="nc"><i>248</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>249</i>&nbsp;			statement.setInt(1, employeeId);</b>
-<b class="nc"><i>250</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>251</i>&nbsp;		} catch(SQLException throwSql) {</b>
-<b class="nc"><i>252</i>&nbsp;			throw new UserException(throwSql);</b>
-<b class="nc"><i>253</i>&nbsp;		}</b>
-<b class="nc"><i>254</i>&nbsp;	}</b>
-<i>255</i>&nbsp;
-<i>256</i>&nbsp;	public void promoteEmployee(int employeeId) throws UserException
-<i>257</i>&nbsp;	{
-<b class="nc"><i>258</i>&nbsp;		final String SQL = &quot;Update employees SET role_id=2 WHERE employees.id=?&quot;;</b>
-<b class="nc"><i>259</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL))</b>
-<i>260</i>&nbsp;		{
-<b class="nc"><i>261</i>&nbsp;			statement.setInt(1, employeeId);</b>
-<b class="nc"><i>262</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>263</i>&nbsp;		} catch(SQLException throwSql) {</b>
-<b class="nc"><i>264</i>&nbsp;			throw new UserException(throwSql);</b>
-<b class="nc"><i>265</i>&nbsp;		}</b>
-<b class="nc"><i>266</i>&nbsp;	}</b>
-<i>267</i>&nbsp;
-<i>268</i>&nbsp;	public Connection getCon()
-<i>269</i>&nbsp;	{
-<b class="fc"><i>270</i>&nbsp;		return this.con;</b>
-<i>271</i>&nbsp;	}
+<i>125</i>&nbsp;	/**
+<i>126</i>&nbsp;	 * finds customer by username
+<i>127</i>&nbsp;	 */
+<i>128</i>&nbsp;	public Customer customerByUsername(String username) throws UserException, ClassCastException
+<i>129</i>&nbsp;	{
+<b class="fc"><i>130</i>&nbsp;		String SQL = &quot;Select * FROM customers WHERE username=?&quot;;</b>
+<b class="fc"><i>131</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>132</i>&nbsp;			return (Customer) defineUser(username, statement, true);</b>
+<b class="fc"><i>133</i>&nbsp;		} catch (SQLException | UserException throwSql) {</b>
+<b class="nc"><i>134</i>&nbsp;			throw new UserException(throwSql);</b>
+<i>135</i>&nbsp;		}
+<i>136</i>&nbsp;	}
+<i>137</i>&nbsp;
+<i>138</i>&nbsp;	public Employee employeeByUsername(String username) throws UserException, ClassCastException
+<i>139</i>&nbsp;	{
+<b class="fc"><i>140</i>&nbsp;		String SQL = &quot;Select * FROM employees WHERE username=?&quot;;</b>
+<b class="fc"><i>141</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>142</i>&nbsp;			return (Employee) defineUser(username, statement, false);</b>
+<b class="fc"><i>143</i>&nbsp;		} catch (SQLException | UserException throwSql) {</b>
+<b class="nc"><i>144</i>&nbsp;			throw new UserException(throwSql);</b>
+<i>145</i>&nbsp;		}
+<i>146</i>&nbsp;	}
+<i>147</i>&nbsp;
+<i>148</i>&nbsp;	private User defineUser(String username, PreparedStatement statement, boolean isCustomer) throws SQLException,
+<i>149</i>&nbsp;																									 UserException
+<i>150</i>&nbsp;	{
+<b class="fc"><i>151</i>&nbsp;		statement.setString(1, username);</b>
+<b class="fc"><i>152</i>&nbsp;		ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>153</i>&nbsp;		if (rs.next()) {</b>
+<b class="fc"><i>154</i>&nbsp;			String password          = rs.getString(&quot;password&quot;);</b>
+<b class="fc"><i>155</i>&nbsp;			String registration_date = rs.getString(&quot;reg_date&quot;);</b>
+<b class="fc"><i>156</i>&nbsp;			int    id                = rs.getInt(&quot;id&quot;);</b>
+<b class="fc"><i>157</i>&nbsp;			int    phone             = rs.getInt(&quot;phone&quot;);</b>
+<b class="fc"><i>158</i>&nbsp;			if (!isCustomer) {</b>
+<b class="fc"><i>159</i>&nbsp;				String role = UtilityDAO.getRole(rs.getInt(&quot;role_id&quot;), con);</b>
+<b class="fc"><i>160</i>&nbsp;				return new Employee</b>
+<i>161</i>&nbsp;						.EmployeeBuilder(id, registration_date)
+<b class="fc"><i>162</i>&nbsp;						.createSimpleEmployee(username, password, role, phone)</b>
+<b class="fc"><i>163</i>&nbsp;						.build();</b>
+<i>164</i>&nbsp;			}
+<b class="fc"><i>165</i>&nbsp;			if (isCustomer) {</b>
+<b class="fc"><i>166</i>&nbsp;				return new Customer</b>
+<i>167</i>&nbsp;						.CustomerBuilder(id, registration_date)
+<b class="fc"><i>168</i>&nbsp;						.createSimpleCustomer(username, password, phone)</b>
+<b class="fc"><i>169</i>&nbsp;						.build();</b>
+<i>170</i>&nbsp;			}
+<i>171</i>&nbsp;		}
+<b class="nc"><i>172</i>&nbsp;		return new unknownUser();</b>
+<i>173</i>&nbsp;	}
+<i>174</i>&nbsp;
+<i>175</i>&nbsp;	public Employee createAndReturnEmployee(String username, String password, int phone, int role) throws UserException, DataException
+<i>176</i>&nbsp;	{
+<b class="fc"><i>177</i>&nbsp;		String SQL = &quot;INSERT INTO employees(username, password, phone, role_id, reg_date) VALUES(?, ?, ?, ?, NOW())&quot;;</b>
+<b class="fc"><i>178</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>179</i>&nbsp;			statement.setString(1, username);</b>
+<b class="fc"><i>180</i>&nbsp;			statement.setString(2, password);</b>
+<b class="fc"><i>181</i>&nbsp;			statement.setInt(3, phone);</b>
+<b class="fc"><i>182</i>&nbsp;			statement.setInt(4, role);</b>
+<b class="fc"><i>183</i>&nbsp;			statement.executeUpdate();</b>
+<b class="fc"><i>184</i>&nbsp;			return employeeByUsername(username);</b>
+<b class="fc"><i>185</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>186</i>&nbsp;			throw new DataException(throwSql);</b>
+<i>187</i>&nbsp;		}
+<i>188</i>&nbsp;	}
+<i>189</i>&nbsp;
+<i>190</i>&nbsp;	public boolean isCustomer(String username) throws DataException
+<i>191</i>&nbsp;	{
+<b class="nc"><i>192</i>&nbsp;		List&lt;Customer&gt; customers = allCustomers();</b>
+<b class="nc"><i>193</i>&nbsp;		for (int i = 0; i &lt; customers.size(); i++) {</b>
+<b class="nc"><i>194</i>&nbsp;			Customer customer = customers.get(i);</b>
+<b class="nc"><i>195</i>&nbsp;			if (customer.getUsername().equals(username))</b>
+<b class="nc"><i>196</i>&nbsp;				return true;</b>
+<i>197</i>&nbsp;		}
+<b class="nc"><i>198</i>&nbsp;		return false;</b>
+<i>199</i>&nbsp;	}
+<i>200</i>&nbsp;
+<i>201</i>&nbsp;	public boolean isEmployee(String username) throws UserException
+<i>202</i>&nbsp;	{
+<b class="nc"><i>203</i>&nbsp;		List&lt;Employee&gt; employees = allEmployees();</b>
+<b class="nc"><i>204</i>&nbsp;		for (int i = 0; i &lt; employees.size(); i++) {</b>
+<b class="nc"><i>205</i>&nbsp;			Employee emp = employees.get(i);</b>
+<b class="nc"><i>206</i>&nbsp;			if (emp.getUsername().equals(emp))</b>
+<b class="nc"><i>207</i>&nbsp;				return true;</b>
+<i>208</i>&nbsp;		}
+<b class="nc"><i>209</i>&nbsp;		return false;</b>
+<i>210</i>&nbsp;	}
+<i>211</i>&nbsp;
+<i>212</i>&nbsp;	public boolean customerHasValidLogin(String username, String password) throws UserException
+<i>213</i>&nbsp;	{
+<b class="nc"><i>214</i>&nbsp;		return customerByUsername(username).getPassword().equals(password) ? true : false;</b>
+<i>215</i>&nbsp;	}
+<i>216</i>&nbsp;
+<i>217</i>&nbsp;	public boolean employeeHasValidLogin(String username, String password) throws UserException
+<i>218</i>&nbsp;	{
+<b class="nc"><i>219</i>&nbsp;		return employeeByUsername(username).getPassword().equals(password) ? true : false;</b>
+<i>220</i>&nbsp;	}
+<i>221</i>&nbsp;
+<i>222</i>&nbsp;	public Customer getCustomerById(int id) throws UserException, DataException
+<i>223</i>&nbsp;	{
+<b class="nc"><i>224</i>&nbsp;		final String SQL = &quot;Select * FROM customers WHERE id=?&quot;;</b>
+<b class="nc"><i>225</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>226</i>&nbsp;			statement.setInt(1, id);</b>
+<b class="nc"><i>227</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="nc"><i>228</i>&nbsp;			if (rs.next()) {</b>
+<b class="nc"><i>229</i>&nbsp;				String username          = rs.getString(&quot;username&quot;);</b>
+<b class="nc"><i>230</i>&nbsp;				String password          = rs.getString(&quot;password&quot;);</b>
+<b class="nc"><i>231</i>&nbsp;				int    phone             = rs.getInt(&quot;phone&quot;);</b>
+<b class="nc"><i>232</i>&nbsp;				String registration_date = rs.getString(&quot;reg_date&quot;);</b>
+<b class="nc"><i>233</i>&nbsp;				return new Customer</b>
+<i>234</i>&nbsp;						.CustomerBuilder(id, registration_date)
+<b class="nc"><i>235</i>&nbsp;						.createSimpleCustomer(username, password, phone)</b>
+<b class="nc"><i>236</i>&nbsp;						.build();</b>
+<i>237</i>&nbsp;			}
+<b class="nc"><i>238</i>&nbsp;			throw new SQLException();</b>
+<b class="nc"><i>239</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>240</i>&nbsp;			throw new UserException(throwSql);</b>
+<i>241</i>&nbsp;		}
+<i>242</i>&nbsp;	}
+<i>243</i>&nbsp;
+<i>244</i>&nbsp;	public void deleteEmployeeById(int employeeId) throws UserException
+<i>245</i>&nbsp;	{
+<b class="nc"><i>246</i>&nbsp;		final String SQL = &quot;delete from employees WHERE id=?&quot;;</b>
+<b class="nc"><i>247</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>248</i>&nbsp;			statement.setInt(1, employeeId);</b>
+<b class="nc"><i>249</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>250</i>&nbsp;		} catch(SQLException throwSql) {</b>
+<b class="nc"><i>251</i>&nbsp;			throw new UserException(throwSql);</b>
+<b class="nc"><i>252</i>&nbsp;		}</b>
+<b class="nc"><i>253</i>&nbsp;	}</b>
+<i>254</i>&nbsp;
+<i>255</i>&nbsp;	public void promoteEmployee(int employeeId) throws UserException
+<i>256</i>&nbsp;	{
+<b class="nc"><i>257</i>&nbsp;		final String SQL = &quot;Update employees SET role_id=2 WHERE employees.id=?&quot;;</b>
+<b class="nc"><i>258</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL))</b>
+<i>259</i>&nbsp;		{
+<b class="nc"><i>260</i>&nbsp;			statement.setInt(1, employeeId);</b>
+<b class="nc"><i>261</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>262</i>&nbsp;		} catch(SQLException throwSql) {</b>
+<b class="nc"><i>263</i>&nbsp;			throw new UserException(throwSql);</b>
+<b class="nc"><i>264</i>&nbsp;		}</b>
+<b class="nc"><i>265</i>&nbsp;	}</b>
+<i>266</i>&nbsp;
+<i>267</i>&nbsp;	public Connection getCon()
+<i>268</i>&nbsp;	{
+<b class="fc"><i>269</i>&nbsp;		return this.con;</b>
+<i>270</i>&nbsp;	}
+<i>271</i>&nbsp;
 <i>272</i>&nbsp;
-<i>273</i>&nbsp;
-<i>274</i>&nbsp;	public void demoteEmployee(int employeeId) throws UserException
-<i>275</i>&nbsp;	{
-<b class="nc"><i>276</i>&nbsp;		final String SQL = &quot;Update employees SET role_id=3 WHERE employees.id=?&quot;;</b>
-<b class="nc"><i>277</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>278</i>&nbsp;			statement.setInt(1, employeeId);</b>
-<b class="nc"><i>279</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>280</i>&nbsp;		} catch(SQLException throwSql) {</b>
-<b class="nc"><i>281</i>&nbsp;			throw new UserException(throwSql);</b>
-<b class="nc"><i>282</i>&nbsp;		}</b>
-<b class="nc"><i>283</i>&nbsp;	}</b>
-<i>284</i>&nbsp;
-<i>285</i>&nbsp;	public Customer customerByOrderId(int customerId) throws UserException
-<i>286</i>&nbsp;	{
-<b class="nc"><i>287</i>&nbsp;		final String SQL = &quot;select * FROM customers WHERE customers.id=?&quot;;</b>
-<b class="nc"><i>288</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL))</b>
-<i>289</i>&nbsp;		{
-<b class="nc"><i>290</i>&nbsp;			statement.setInt(1, customerId);</b>
-<b class="nc"><i>291</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="nc"><i>292</i>&nbsp;			rs.next();</b>
-<b class="nc"><i>293</i>&nbsp;			int id = rs.getInt(&quot;id&quot;);</b>
-<b class="nc"><i>294</i>&nbsp;			String username = rs.getString(&quot;username&quot;);</b>
-<b class="nc"><i>295</i>&nbsp;			String password = rs.getString(&quot;password&quot;);</b>
-<b class="nc"><i>296</i>&nbsp;			int phone = rs.getInt(&quot;phone&quot;);</b>
-<b class="nc"><i>297</i>&nbsp;			String reg_date = rs.getString(&quot;reg_date&quot;);</b>
-<b class="nc"><i>298</i>&nbsp;			return new Customer</b>
-<i>299</i>&nbsp;					.CustomerBuilder(id, reg_date)
-<b class="nc"><i>300</i>&nbsp;					.insertUsername(username)</b>
-<b class="nc"><i>301</i>&nbsp;					.insertPassword(password)</b>
-<b class="nc"><i>302</i>&nbsp;					.insertPhone(phone)</b>
-<b class="nc"><i>303</i>&nbsp;					.build();</b>
-<b class="nc"><i>304</i>&nbsp;		} catch(SQLException throwSQl) {</b>
-<b class="nc"><i>305</i>&nbsp;			throw new UserException(throwSQl);</b>
-<i>306</i>&nbsp;		}
-<i>307</i>&nbsp;	}
-<i>308</i>&nbsp;}
+<i>273</i>&nbsp;	public void demoteEmployee(int employeeId) throws UserException
+<i>274</i>&nbsp;	{
+<b class="nc"><i>275</i>&nbsp;		final String SQL = &quot;Update employees SET role_id=3 WHERE employees.id=?&quot;;</b>
+<b class="nc"><i>276</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>277</i>&nbsp;			statement.setInt(1, employeeId);</b>
+<b class="nc"><i>278</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>279</i>&nbsp;		} catch(SQLException throwSql) {</b>
+<b class="nc"><i>280</i>&nbsp;			throw new UserException(throwSql);</b>
+<b class="nc"><i>281</i>&nbsp;		}</b>
+<b class="nc"><i>282</i>&nbsp;	}</b>
+<i>283</i>&nbsp;
+<i>284</i>&nbsp;	public Customer customerByOrderId(int customerId) throws UserException
+<i>285</i>&nbsp;	{
+<b class="nc"><i>286</i>&nbsp;		final String SQL = &quot;select * FROM customers WHERE customers.id=?&quot;;</b>
+<b class="nc"><i>287</i>&nbsp;		try(PreparedStatement statement = con.prepareStatement(SQL))</b>
+<i>288</i>&nbsp;		{
+<b class="nc"><i>289</i>&nbsp;			statement.setInt(1, customerId);</b>
+<b class="nc"><i>290</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="nc"><i>291</i>&nbsp;			rs.next();</b>
+<b class="nc"><i>292</i>&nbsp;			int id = rs.getInt(&quot;id&quot;);</b>
+<b class="nc"><i>293</i>&nbsp;			String username = rs.getString(&quot;username&quot;);</b>
+<b class="nc"><i>294</i>&nbsp;			String password = rs.getString(&quot;password&quot;);</b>
+<b class="nc"><i>295</i>&nbsp;			int phone = rs.getInt(&quot;phone&quot;);</b>
+<b class="nc"><i>296</i>&nbsp;			String reg_date = rs.getString(&quot;reg_date&quot;);</b>
+<b class="nc"><i>297</i>&nbsp;			return new Customer</b>
+<i>298</i>&nbsp;					.CustomerBuilder(id, reg_date)
+<b class="nc"><i>299</i>&nbsp;					.insertUsername(username)</b>
+<b class="nc"><i>300</i>&nbsp;					.insertPassword(password)</b>
+<b class="nc"><i>301</i>&nbsp;					.insertPhone(phone)</b>
+<b class="nc"><i>302</i>&nbsp;					.build();</b>
+<b class="nc"><i>303</i>&nbsp;		} catch(SQLException throwSQl) {</b>
+<b class="nc"><i>304</i>&nbsp;			throw new UserException(throwSQl);</b>
+<i>305</i>&nbsp;		}
+<i>306</i>&nbsp;	}
+<i>307</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

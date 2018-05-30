@@ -90,38 +90,37 @@
 <i>16</i>&nbsp;
 <i>17</i>&nbsp;	public static Logger getLogger() {
 <b class="nc"><i>18</i>&nbsp;		if(LOGGER == null) {</b>
-<i>19</i>&nbsp;			//LOGGER =  Logger.getLogger(&quot;&quot;);
-<b class="nc"><i>20</i>&nbsp;			LOGGER = Logger.getLogger(Conf.class.getName());</b>
-<b class="nc"><i>21</i>&nbsp;			addHandlers();</b>
-<i>22</i>&nbsp;		}
-<b class="nc"><i>23</i>&nbsp;		return LOGGER;</b>
-<i>24</i>&nbsp;	}
-<i>25</i>&nbsp;
-<i>26</i>&nbsp;	private static void addHandlers()
-<i>27</i>&nbsp;	{
-<b class="nc"><i>28</i>&nbsp;		LOGGER.addHandler(new ConsoleHandler());</b>
-<b class="nc"><i>29</i>&nbsp;		VerySimpleFomarter vsf = new VerySimpleFomarter();</b>
-<i>30</i>&nbsp;		try {
-<i>31</i>&nbsp;			if (Conf.ISPRODUCTION) {
-<i>32</i>&nbsp;				FileHandler handler = new FileHandler(Conf.LOGFILEPATH);
-<i>33</i>&nbsp;				handler.setFormatter(vsf);
-<i>34</i>&nbsp;				LOGGER.addHandler(handler);
-<i>35</i>&nbsp;			} else {
-<b class="nc"><i>36</i>&nbsp;				FileHandler handler = new FileHandler(&quot;/home/mkl/java/2semester/maven_fog/logs/devLogs/dev-log.%u.%g.log&quot;);</b>
-<b class="nc"><i>37</i>&nbsp;				handler.setFormatter(vsf);</b>
-<b class="nc"><i>38</i>&nbsp;				LOGGER.addHandler(handler);</b>
-<i>39</i>&nbsp;			}
-<b class="nc"><i>40</i>&nbsp;		} catch(IOException IOException)</b>
-<i>41</i>&nbsp;		{
-<b class="nc"><i>42</i>&nbsp;		}</b>
-<i>43</i>&nbsp;	}
-<i>44</i>&nbsp;}
+<b class="nc"><i>19</i>&nbsp;			LOGGER = Logger.getLogger(Conf.class.getName());</b>
+<b class="nc"><i>20</i>&nbsp;			addHandlers();</b>
+<i>21</i>&nbsp;		}
+<b class="nc"><i>22</i>&nbsp;		return LOGGER;</b>
+<i>23</i>&nbsp;	}
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;	private static void addHandlers()
+<i>26</i>&nbsp;	{
+<b class="nc"><i>27</i>&nbsp;		LOGGER.addHandler(new ConsoleHandler());</b>
+<b class="nc"><i>28</i>&nbsp;		VerySimpleFomarter vsf = new VerySimpleFomarter();</b>
+<i>29</i>&nbsp;		try {
+<i>30</i>&nbsp;			if (Conf.ISPRODUCTION) {
+<i>31</i>&nbsp;				FileHandler handler = new FileHandler(Conf.LOGFILEPATH);
+<i>32</i>&nbsp;				handler.setFormatter(vsf);
+<i>33</i>&nbsp;				LOGGER.addHandler(handler);
+<i>34</i>&nbsp;			} else {
+<b class="nc"><i>35</i>&nbsp;				FileHandler handler = new FileHandler(&quot;/home/mkl/java/2semester/maven_fog/logs/devLogs/dev-log.%u.%g.log&quot;);</b>
+<b class="nc"><i>36</i>&nbsp;				handler.setFormatter(vsf);</b>
+<b class="nc"><i>37</i>&nbsp;				LOGGER.addHandler(handler);</b>
+<i>38</i>&nbsp;			}
+<b class="nc"><i>39</i>&nbsp;		} catch(IOException IOException)</b>
+<i>40</i>&nbsp;		{
+<b class="nc"><i>41</i>&nbsp;		}</b>
+<i>42</i>&nbsp;	}
+<i>43</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

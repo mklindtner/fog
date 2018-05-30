@@ -4,8 +4,8 @@ import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import data.exceptions.UserException;
 import entities.userEntities.Customer;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 import view.servlets.orderServlets.helpers.ErrorHandler;
 import view.servlets.orderServlets.helpers.UpdateOrderList;
 
@@ -23,7 +23,7 @@ public class employeeAsCustomerServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		HttpSession session = request.getSession();
-		UserFacade userFacade = new MySqlUserFacade();
+		UserFacade userFacade = new UserFacadeImpl();
 		String customerUsername = request.getParameter("customerByUsername");
 		try {
 			userFacade.getUserDAOInstance();

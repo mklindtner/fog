@@ -39,11 +39,6 @@
                             <option>materialeAnsvarlig</option>
                         </select>
                     </div>
-                    <!--
-                    <div class="form-group col-md-6">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" class="form-control" name="" id="confirm_password" placeholder="Confirm Password">
-                    </div> -->
                 </fieldset>
 
                 <fieldset>

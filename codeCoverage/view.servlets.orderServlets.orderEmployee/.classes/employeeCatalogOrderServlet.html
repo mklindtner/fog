@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 21)
+    (0/ 18)
   </span>
 </td>
 </tr>
@@ -77,8 +77,8 @@
 <i>3</i>&nbsp;import entities.OrderEntities.Order;
 <i>4</i>&nbsp;import data.exceptions.DataException;
 <i>5</i>&nbsp;import data.exceptions.OrderException;
-<i>6</i>&nbsp;import logic.facades.MySqlOrderFacade;
-<i>7</i>&nbsp;import logic.facades.OrderFacade;
+<i>6</i>&nbsp;import MySqlOrderFacade;
+<i>7</i>&nbsp;import OrderFacade;
 <i>8</i>&nbsp;
 <i>9</i>&nbsp;import javax.servlet.ServletException;
 <i>10</i>&nbsp;import javax.servlet.annotation.WebServlet;
@@ -110,27 +110,27 @@
 <b class="nc"><i>36</i>&nbsp;			throw new ServletException(finalDelegation);</b>
 <b class="nc"><i>37</i>&nbsp;		}</b>
 <i>38</i>&nbsp;
-<b class="nc"><i>39</i>&nbsp;	}</b>
+<i>39</i>&nbsp;	}
 <i>40</i>&nbsp;
 <i>41</i>&nbsp;	private void ordersWithoutShed(HttpServletRequest request, OrderFacade orderFacade) throws OrderException, DataException {
 <b class="nc"><i>42</i>&nbsp;		List&lt;Order&gt; ordersWithoutShed = orderFacade.allOrdersWithoutShed();</b>
 <b class="nc"><i>43</i>&nbsp;		request.setAttribute(&quot;ordersWithoutShed&quot;, ordersWithoutShed);</b>
 <b class="nc"><i>44</i>&nbsp;		request.setAttribute(&quot;choice&quot;, &quot;ordersWithoutShed&quot;); //for now as I&#39;m unsure if any of them will be different</b>
-<b class="nc"><i>45</i>&nbsp;	}</b>
+<i>45</i>&nbsp;	}
 <i>46</i>&nbsp;
 <i>47</i>&nbsp;	private void ordersAvailable(HttpServletRequest request, OrderFacade orderFacade) throws OrderException, DataException {
 <i>48</i>&nbsp;
 <b class="nc"><i>49</i>&nbsp;		List&lt;Order&gt; ordersAvailable = orderFacade.ordersAvailable();</b>
 <b class="nc"><i>50</i>&nbsp;		request.setAttribute(&quot;ordersAvailable&quot;, ordersAvailable);</b>
 <b class="nc"><i>51</i>&nbsp;		request.setAttribute(&quot;choice&quot;, &quot;ordersAvailable&quot;);</b>
-<b class="nc"><i>52</i>&nbsp;	}</b>
+<i>52</i>&nbsp;	}
 <i>53</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

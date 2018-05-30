@@ -2,8 +2,8 @@ package view.servlets.userServlets.crudEmployee;
 
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import logic.facades.MySqlUserFacade;
-import logic.facades.UserFacade;
+import logic.generators.facades.UserFacadeImpl;
+import logic.generators.facades.UserFacade;
 import org.omg.CORBA.UnknownUserException;
 import view.servlets.orderServlets.helpers.UpdateUserList;
 
@@ -26,7 +26,7 @@ public class employeeCreateServlet extends HttpServlet
 		String password = request.getParameter("password");
 		int phone = Integer.parseInt(request.getParameter("phoneNumber"));
 		String role = request.getParameter("employeeRole");
-		UserFacade facade = new MySqlUserFacade();
+		UserFacade facade = new UserFacadeImpl();
 		try {
 			facade.getUserDAOInstance();
 			facade.createEmployee(username, password, phone, evaluateRoleToInt(role));

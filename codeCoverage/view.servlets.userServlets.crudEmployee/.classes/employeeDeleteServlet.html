@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 13)
+    (0/ 11)
   </span>
 </td>
 </tr>
@@ -76,8 +76,8 @@
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import data.exceptions.DataException;
 <i>4</i>&nbsp;import data.exceptions.UserException;
-<i>5</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>6</i>&nbsp;import logic.facades.UserFacade;
+<i>5</i>&nbsp;import MySqlUserFacade;
+<i>6</i>&nbsp;import UserFacade;
 <i>7</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateUserList;
 <i>8</i>&nbsp;
 <i>9</i>&nbsp;import javax.servlet.ServletException;
@@ -100,21 +100,21 @@
 <b class="nc"><i>26</i>&nbsp;		} catch(DataException | UserException finalDist) {</b>
 <b class="nc"><i>27</i>&nbsp;			throw new ServletException(finalDist);</b>
 <b class="nc"><i>28</i>&nbsp;		}</b>
-<b class="nc"><i>29</i>&nbsp;	}</b>
+<i>29</i>&nbsp;	}
 <i>30</i>&nbsp;
 <i>31</i>&nbsp;	private void deleteEmployee(HttpServletRequest request, UserFacade facade) throws DataException, UserException
 <i>32</i>&nbsp;	{
 <b class="nc"><i>33</i>&nbsp;		int employeeId = Integer.parseInt(request.getParameter(&quot;employeeId&quot;));</b>
 <b class="nc"><i>34</i>&nbsp;		facade.deleteEmployeeById(employeeId);</b>
 <b class="nc"><i>35</i>&nbsp;		UpdateUserList.updateEmployeeListSession(request);</b>
-<b class="nc"><i>36</i>&nbsp;	}</b>
+<i>36</i>&nbsp;	}
 <i>37</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

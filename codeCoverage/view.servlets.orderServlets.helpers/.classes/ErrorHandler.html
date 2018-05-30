@@ -53,7 +53,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 3)
+    (0/ 4)
   </span>
 </td>
 <td class="coverageStat">
@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 3)
+    (0/ 4)
   </span>
 </td>
 </tr>
@@ -75,26 +75,33 @@
 <div class="sourceCode"><i>1</i>&nbsp;package view.servlets.orderServlets.helpers;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import javax.servlet.http.HttpServletRequest;
-<i>4</i>&nbsp;
-<b class="nc"><i>5</i>&nbsp;public class ErrorHandler</b>
-<i>6</i>&nbsp;{
-<i>7</i>&nbsp;	public static void loginError(HttpServletRequest request)
-<i>8</i>&nbsp;	{
-<b class="nc"><i>9</i>&nbsp;		request.setAttribute(&quot;error&quot;, &quot;login or password is incorrect&quot;);</b>
-<i>10</i>&nbsp;	}
-<i>11</i>&nbsp;
-<i>12</i>&nbsp;	public static void findCustomerError(HttpServletRequest request)
-<i>13</i>&nbsp;	{
-<b class="nc"><i>14</i>&nbsp;		request.setAttribute(&quot;error&quot;, &quot;unable to find customer&quot;);</b>
-<i>15</i>&nbsp;	}
-<i>16</i>&nbsp;
-<i>17</i>&nbsp;}
+<i>4</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>5</i>&nbsp;
+<b class="nc"><i>6</i>&nbsp;public class ErrorHandler</b>
+<i>7</i>&nbsp;{
+<i>8</i>&nbsp;	public static void loginError(HttpServletRequest request)
+<i>9</i>&nbsp;	{
+<b class="nc"><i>10</i>&nbsp;		request.setAttribute(&quot;error&quot;, &quot;login or password is incorrect&quot;);</b>
+<i>11</i>&nbsp;	}
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;	public static void findCustomerError(HttpServletRequest request)
+<i>14</i>&nbsp;	{
+<b class="nc"><i>15</i>&nbsp;		request.setAttribute(&quot;error&quot;, &quot;unable to find customer&quot;);</b>
+<i>16</i>&nbsp;	}
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;	public static void customerAlreadyExists(HttpServletRequest request)
+<i>19</i>&nbsp;	{
+<b class="nc"><i>20</i>&nbsp;		request.setAttribute(&quot;error&quot;, &quot;sorry that email is already in use&quot;);</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;	}
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

@@ -6,8 +6,8 @@ import entities.OrderEntities.OrderLine;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 import logic.generators.BillOfMaterials;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +19,7 @@ public class UpdateOrderList
 	public static void generateEmployeeOrders(HttpSession session, Employee employee) throws OrderException,
 																							 DataException
 	{
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
 		List<Order> employeeOrders = orderFacade.employeeChosenOrders(employee.getId());
 		session.setAttribute("employeeOrders", employeeOrders);
@@ -27,7 +27,7 @@ public class UpdateOrderList
 
 	public static void generateOrdersAvailable(HttpSession session) throws OrderException, DataException
 	{
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
 		session.setAttribute("ordersAvailable", orderFacade.ordersAvailable());
 
@@ -36,7 +36,7 @@ public class UpdateOrderList
 	public static void generateCustomerOrders(HttpSession session, Customer customer) throws OrderException,
 																							 DataException
 	{
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
 		List<Order> customerOrders = orderFacade.ordersOfCustomer(customer.getId());
 		session.setAttribute("customerOrders", customerOrders);
@@ -47,7 +47,7 @@ public class UpdateOrderList
 																								  DataException,
 																								  OrderException, ShedException
 	{
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
 		Shed  shed;
 		Order order = createOrder(request, user);
@@ -65,7 +65,7 @@ public class UpdateOrderList
 		String id_string = request.getParameter("orderId");
 		int    orderId;
 		orderId = Integer.parseInt(id_string);
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
 		request.getSession().setAttribute("order", orderFacade.orderById(orderId));
 	}
@@ -75,7 +75,7 @@ public class UpdateOrderList
 																							   OrderLineException
 	{
 		HttpSession session = request.getSession();
-		OrderFacade facade = new MySqlOrderFacade();
+		OrderFacade facade = new OrderFacadeImpl();
 		facade.getInstanceOrderLineDAO();
 
 		List<OrderLine> orderLines = facade.orderLinesByOrderId(order.getId());

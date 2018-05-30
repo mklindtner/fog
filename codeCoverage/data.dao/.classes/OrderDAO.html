@@ -17,7 +17,7 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">data.dao</a> ]
+    [ <a href="../index.html">data.MySQLDAO</a> ]
 </div>
 
 <h1>Coverage Summary for Class: OrderDAO (data.dao)</h1>
@@ -72,7 +72,7 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package data.dao;
+<div class="sourceCode"><i>1</i>&nbsp;package data.MySQLDAO;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import configurations.Conf;
 <i>4</i>&nbsp;import data.MySqlConnector;
@@ -175,231 +175,227 @@
 <b class="fc"><i>101</i>&nbsp;			resultId.next();</b>
 <b class="fc"><i>102</i>&nbsp;			return orderById(resultId.getInt(1));</b>
 <b class="fc"><i>103</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>104</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>105</i>&nbsp;								 new Object[]{&quot;createAndReturnOrder&quot;,
-<i>106</i>&nbsp;											  &quot;execute&quot;
-<i>107</i>&nbsp;								 }
-<i>108</i>&nbsp;			);
-<b class="nc"><i>109</i>&nbsp;			throw new OrderException(throwSql);</b>
-<i>110</i>&nbsp;		}
-<i>111</i>&nbsp;	}
-<i>112</i>&nbsp;
-<i>113</i>&nbsp;
-<i>114</i>&nbsp;	public Order orderById(int id) throws OrderException, DataException
-<i>115</i>&nbsp;	{
-<b class="fc"><i>116</i>&nbsp;		final String SQL = &quot;SELECT * FROM orders WHERE id=?&quot;;</b>
-<b class="fc"><i>117</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>118</i>&nbsp;			statement.setInt(1, id);</b>
-<b class="fc"><i>119</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="fc"><i>120</i>&nbsp;			rs.next();</b>
-<b class="fc"><i>121</i>&nbsp;			return returnOrder(rs);</b>
-<b class="fc"><i>122</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>123</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>124</i>&nbsp;								 new Object[]{&quot;orderById&quot;,
-<i>125</i>&nbsp;											  &quot;execute&quot;
-<i>126</i>&nbsp;								 }
-<i>127</i>&nbsp;			);
-<b class="nc"><i>128</i>&nbsp;			throw new OrderException(throwSql);</b>
-<i>129</i>&nbsp;		}
-<i>130</i>&nbsp;	}
-<i>131</i>&nbsp;
-<i>132</i>&nbsp;
-<i>133</i>&nbsp;	private Order returnOrder(ResultSet rs) throws OrderException
-<i>134</i>&nbsp;	{
-<i>135</i>&nbsp;		try {
-<b class="fc"><i>136</i>&nbsp;			int          id         = rs.getInt(&quot;id&quot;);</b>
-<b class="fc"><i>137</i>&nbsp;			String       created_at = rs.getString(&quot;created_at&quot;);</b>
-<b class="fc"><i>138</i>&nbsp;			int          height     = rs.getInt(&quot;height&quot;);</b>
-<b class="fc"><i>139</i>&nbsp;			int          width      = rs.getInt(&quot;width&quot;);</b>
-<b class="fc"><i>140</i>&nbsp;			int          length     = rs.getInt(&quot;length&quot;);</b>
-<b class="fc"><i>141</i>&nbsp;			int          slope      = rs.getInt(&quot;slope&quot;);</b>
-<b class="fc"><i>142</i>&nbsp;			Customer     customer   = ServiceDAO.getCustomerById(rs.getInt(&quot;customerId&quot;), con);</b>
-<b class="fc"><i>143</i>&nbsp;			Order.Status status     = Order.Status.valueOf(rs.getString(&quot;status&quot;));</b>
-<b class="fc"><i>144</i>&nbsp;			int          shedId     = rs.getInt(&quot;shedId&quot;);</b>
-<b class="fc"><i>145</i>&nbsp;			int          price      = rs.getInt(&quot;price&quot;);</b>
-<i>146</i>&nbsp;			Shed         shed;
-<i>147</i>&nbsp;
-<b class="fc"><i>148</i>&nbsp;			if (shedId != 0) {</b>
-<b class="fc"><i>149</i>&nbsp;				shed = ServiceDAO.shedById(shedId, con);</b>
-<b class="fc"><i>150</i>&nbsp;				return new Order</b>
-<i>151</i>&nbsp;						.OrderBuilder(id, created_at)
-<b class="fc"><i>152</i>&nbsp;						.insertRequiredHeight(height)</b>
-<b class="fc"><i>153</i>&nbsp;						.insertRequiredLength(length)</b>
-<b class="fc"><i>154</i>&nbsp;						.insertRequiredWidth(width)</b>
-<b class="fc"><i>155</i>&nbsp;						.insertRequiredSlope(slope)</b>
-<b class="fc"><i>156</i>&nbsp;						.insertRequiredCustomer(customer)</b>
-<b class="fc"><i>157</i>&nbsp;						.insertOptionalStatus(status)</b>
-<b class="fc"><i>158</i>&nbsp;						.insertOptionalShed(shed)</b>
-<b class="fc"><i>159</i>&nbsp;						.insertOptionalPrice(price)</b>
-<b class="fc"><i>160</i>&nbsp;						.build();</b>
-<i>161</i>&nbsp;			}
-<b class="fc"><i>162</i>&nbsp;			return new Order</b>
-<i>163</i>&nbsp;					.OrderBuilder(id, created_at)
-<b class="fc"><i>164</i>&nbsp;					.insertRequiredHeight(height)</b>
-<b class="fc"><i>165</i>&nbsp;					.insertRequiredLength(length)</b>
-<b class="fc"><i>166</i>&nbsp;					.insertRequiredWidth(width)</b>
-<b class="fc"><i>167</i>&nbsp;					.insertRequiredSlope(slope)</b>
-<b class="fc"><i>168</i>&nbsp;					.insertRequiredCustomer(customer)</b>
-<b class="fc"><i>169</i>&nbsp;					.insertOptionalStatus(status)</b>
-<b class="fc"><i>170</i>&nbsp;					.insertOptionalPrice(price)</b>
-<b class="fc"><i>171</i>&nbsp;					.build();</b>
-<i>172</i>&nbsp;
-<b class="nc"><i>173</i>&nbsp;		} catch (SQLException | ShedException throwSql) {</b>
-<b class="nc"><i>174</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;[{0}] were unable to {1}&quot;,</b>
-<i>175</i>&nbsp;								 new Object[]{&quot;returnOrder&quot;,
-<i>176</i>&nbsp;											  &quot;execute&quot;
-<i>177</i>&nbsp;								 }
-<i>178</i>&nbsp;			);
-<b class="nc"><i>179</i>&nbsp;			throw new OrderException(throwSql);</b>
-<i>180</i>&nbsp;		}
-<i>181</i>&nbsp;	}
-<i>182</i>&nbsp;
-<i>183</i>&nbsp;
-<i>184</i>&nbsp;	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException
-<i>185</i>&nbsp;	{
-<b class="nc"><i>186</i>&nbsp;		final String SQL = &quot;update orders SET status=? where orders.id=?&quot;;</b>
-<b class="nc"><i>187</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>188</i>&nbsp;			statement.setString(1, &quot;OFFER&quot;);</b>
-<b class="nc"><i>189</i>&nbsp;			statement.setInt(2, orderId);</b>
-<b class="nc"><i>190</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>191</i>&nbsp;			addEmployeeToOrder(employeeId, orderId);</b>
-<b class="nc"><i>192</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>193</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>194</i>&nbsp;								 new Object[]{&quot;employeeChooseOrder&quot;,
-<i>195</i>&nbsp;											  &quot;find employee or order&quot;
-<i>196</i>&nbsp;								 }
-<i>197</i>&nbsp;			);
-<b class="nc"><i>198</i>&nbsp;			throw new OrderException(throwSql);</b>
-<b class="nc"><i>199</i>&nbsp;		}</b>
-<b class="nc"><i>200</i>&nbsp;	}</b>
-<i>201</i>&nbsp;
-<i>202</i>&nbsp;	public List&lt;Order&gt; ordersAvailable() throws OrderException
-<i>203</i>&nbsp;	{
-<b class="nc"><i>204</i>&nbsp;		List&lt;Order&gt;  ordersAvailable = new ArrayList&lt;&gt;();</b>
-<b class="nc"><i>205</i>&nbsp;		final String SQL             = &quot;select * from orders where status=?&quot;;</b>
-<b class="nc"><i>206</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>207</i>&nbsp;			statement.setString(1, &quot;PENDING&quot;);</b>
-<b class="nc"><i>208</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="nc"><i>209</i>&nbsp;			while (rs.next()) {</b>
-<b class="nc"><i>210</i>&nbsp;				ordersAvailable.add(returnOrder(rs));</b>
-<i>211</i>&nbsp;			}
-<b class="nc"><i>212</i>&nbsp;			return ordersAvailable;</b>
-<b class="nc"><i>213</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>214</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>215</i>&nbsp;								 new Object[]{&quot;ordersAvailable&quot;,
-<i>216</i>&nbsp;											  &quot;execute&quot;
-<i>217</i>&nbsp;								 }
-<i>218</i>&nbsp;			);
-<b class="nc"><i>219</i>&nbsp;			throw new OrderException(throwSql);</b>
-<i>220</i>&nbsp;		}
-<i>221</i>&nbsp;	}
-<i>222</i>&nbsp;
-<i>223</i>&nbsp;
-<i>224</i>&nbsp;	public void addEmployeeToOrder(int employeeId, int ordersId) throws DataException
-<i>225</i>&nbsp;	{
-<b class="nc"><i>226</i>&nbsp;		final String SQL = &quot;update orders set employeeId=? where orders.id=?&quot;;</b>
-<b class="nc"><i>227</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>228</i>&nbsp;			statement.setInt(1, employeeId);</b>
-<b class="nc"><i>229</i>&nbsp;			statement.setInt(2, ordersId);</b>
-<b class="nc"><i>230</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>231</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>232</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>233</i>&nbsp;								 new Object[]{&quot;addEmployeeToOrder&quot;,
-<i>234</i>&nbsp;											  &quot;execute&quot;
-<i>235</i>&nbsp;								 }
-<i>236</i>&nbsp;			);
-<b class="nc"><i>237</i>&nbsp;			throw new DataException(throwSql);</b>
-<b class="nc"><i>238</i>&nbsp;		}</b>
-<b class="nc"><i>239</i>&nbsp;	}</b>
-<i>240</i>&nbsp;
-<i>241</i>&nbsp;
-<i>242</i>&nbsp;	public List&lt;Order&gt; employeesChosenOrders(int employeeId) throws OrderException
-<i>243</i>&nbsp;	{
-<b class="nc"><i>244</i>&nbsp;		List&lt;Order&gt;  employeeOrders = new ArrayList&lt;&gt;();</b>
-<b class="nc"><i>245</i>&nbsp;		final String SQL            = &quot;select * FROM orders WHERE orders.employeeId=? order by status&quot;;</b>
-<b class="nc"><i>246</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>247</i>&nbsp;			statement.setInt(1, employeeId);</b>
-<b class="nc"><i>248</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="nc"><i>249</i>&nbsp;			while (rs.next())</b>
-<b class="nc"><i>250</i>&nbsp;				employeeOrders.add(returnOrder(rs));</b>
-<b class="nc"><i>251</i>&nbsp;			return employeeOrders;</b>
-<b class="nc"><i>252</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>253</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>254</i>&nbsp;								 new Object[]{&quot;employeesChosenOrders&quot;,
-<i>255</i>&nbsp;											  &quot;find employeeOrders&quot;
-<i>256</i>&nbsp;								 }
-<i>257</i>&nbsp;			);
+<b class="nc"><i>104</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;[Exception]&quot; + throwSql.getMessage());</b>
+<b class="nc"><i>105</i>&nbsp;			throw new OrderException(throwSql);</b>
+<i>106</i>&nbsp;		}
+<i>107</i>&nbsp;	}
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;
+<i>110</i>&nbsp;	public Order orderById(int id) throws OrderException, DataException
+<i>111</i>&nbsp;	{
+<b class="fc"><i>112</i>&nbsp;		final String SQL = &quot;SELECT * FROM orders WHERE id=?&quot;;</b>
+<b class="fc"><i>113</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>114</i>&nbsp;			statement.setInt(1, id);</b>
+<b class="fc"><i>115</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>116</i>&nbsp;			rs.next();</b>
+<b class="fc"><i>117</i>&nbsp;			return returnOrder(rs);</b>
+<b class="fc"><i>118</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>119</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>120</i>&nbsp;								 new Object[]{&quot;orderById&quot;,
+<i>121</i>&nbsp;											  &quot;execute&quot;
+<i>122</i>&nbsp;								 }
+<i>123</i>&nbsp;			);
+<b class="nc"><i>124</i>&nbsp;			throw new OrderException(throwSql);</b>
+<i>125</i>&nbsp;		}
+<i>126</i>&nbsp;	}
+<i>127</i>&nbsp;
+<i>128</i>&nbsp;
+<i>129</i>&nbsp;	private Order returnOrder(ResultSet rs) throws OrderException
+<i>130</i>&nbsp;	{
+<i>131</i>&nbsp;		try {
+<b class="fc"><i>132</i>&nbsp;			int          id         = rs.getInt(&quot;id&quot;);</b>
+<b class="fc"><i>133</i>&nbsp;			String       created_at = rs.getString(&quot;created_at&quot;);</b>
+<b class="fc"><i>134</i>&nbsp;			int          height     = rs.getInt(&quot;height&quot;);</b>
+<b class="fc"><i>135</i>&nbsp;			int          width      = rs.getInt(&quot;width&quot;);</b>
+<b class="fc"><i>136</i>&nbsp;			int          length     = rs.getInt(&quot;length&quot;);</b>
+<b class="fc"><i>137</i>&nbsp;			int          slope      = rs.getInt(&quot;slope&quot;);</b>
+<b class="fc"><i>138</i>&nbsp;			Customer     customer   = UtilityDAO.getCustomerById(rs.getInt(&quot;customerId&quot;), con);</b>
+<b class="fc"><i>139</i>&nbsp;			Order.Status status     = Order.Status.valueOf(rs.getString(&quot;status&quot;));</b>
+<b class="fc"><i>140</i>&nbsp;			int          shedId     = rs.getInt(&quot;shedId&quot;);</b>
+<b class="fc"><i>141</i>&nbsp;			int          price      = rs.getInt(&quot;price&quot;);</b>
+<i>142</i>&nbsp;			Shed         shed;
+<i>143</i>&nbsp;
+<b class="fc"><i>144</i>&nbsp;			if (shedId != 0) {</b>
+<b class="fc"><i>145</i>&nbsp;				shed = UtilityDAO.shedById(shedId, con);</b>
+<b class="fc"><i>146</i>&nbsp;				return new Order</b>
+<i>147</i>&nbsp;						.OrderBuilder(id, created_at)
+<b class="fc"><i>148</i>&nbsp;						.insertRequiredHeight(height)</b>
+<b class="fc"><i>149</i>&nbsp;						.insertRequiredLength(length)</b>
+<b class="fc"><i>150</i>&nbsp;						.insertRequiredWidth(width)</b>
+<b class="fc"><i>151</i>&nbsp;						.insertRequiredSlope(slope)</b>
+<b class="fc"><i>152</i>&nbsp;						.insertRequiredCustomer(customer)</b>
+<b class="fc"><i>153</i>&nbsp;						.insertOptionalStatus(status)</b>
+<b class="fc"><i>154</i>&nbsp;						.insertOptionalShed(shed)</b>
+<b class="fc"><i>155</i>&nbsp;						.insertOptionalPrice(price)</b>
+<b class="fc"><i>156</i>&nbsp;						.build();</b>
+<i>157</i>&nbsp;			}
+<b class="fc"><i>158</i>&nbsp;			return new Order</b>
+<i>159</i>&nbsp;					.OrderBuilder(id, created_at)
+<b class="fc"><i>160</i>&nbsp;					.insertRequiredHeight(height)</b>
+<b class="fc"><i>161</i>&nbsp;					.insertRequiredLength(length)</b>
+<b class="fc"><i>162</i>&nbsp;					.insertRequiredWidth(width)</b>
+<b class="fc"><i>163</i>&nbsp;					.insertRequiredSlope(slope)</b>
+<b class="fc"><i>164</i>&nbsp;					.insertRequiredCustomer(customer)</b>
+<b class="fc"><i>165</i>&nbsp;					.insertOptionalStatus(status)</b>
+<b class="fc"><i>166</i>&nbsp;					.insertOptionalPrice(price)</b>
+<b class="fc"><i>167</i>&nbsp;					.build();</b>
+<i>168</i>&nbsp;
+<b class="nc"><i>169</i>&nbsp;		} catch (SQLException | ShedException throwSql) {</b>
+<b class="nc"><i>170</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;[{0}] were unable to {1}&quot;,</b>
+<i>171</i>&nbsp;								 new Object[]{&quot;returnOrder&quot;,
+<i>172</i>&nbsp;											  &quot;execute&quot;
+<i>173</i>&nbsp;								 }
+<i>174</i>&nbsp;			);
+<b class="nc"><i>175</i>&nbsp;			throw new OrderException(throwSql);</b>
+<i>176</i>&nbsp;		}
+<i>177</i>&nbsp;	}
+<i>178</i>&nbsp;
+<i>179</i>&nbsp;
+<i>180</i>&nbsp;	public void employeeChooseOrder(int employeeId, int orderId) throws OrderException, DataException
+<i>181</i>&nbsp;	{
+<b class="nc"><i>182</i>&nbsp;		final String SQL = &quot;update orders SET status=? where orders.id=?&quot;;</b>
+<b class="nc"><i>183</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>184</i>&nbsp;			statement.setString(1, &quot;OFFER&quot;);</b>
+<b class="nc"><i>185</i>&nbsp;			statement.setInt(2, orderId);</b>
+<b class="nc"><i>186</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>187</i>&nbsp;			addEmployeeToOrder(employeeId, orderId);</b>
+<b class="nc"><i>188</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>189</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>190</i>&nbsp;								 new Object[]{&quot;employeeChooseOrder&quot;,
+<i>191</i>&nbsp;											  &quot;find employee or order&quot;
+<i>192</i>&nbsp;								 }
+<i>193</i>&nbsp;			);
+<b class="nc"><i>194</i>&nbsp;			throw new OrderException(throwSql);</b>
+<b class="nc"><i>195</i>&nbsp;		}</b>
+<b class="nc"><i>196</i>&nbsp;	}</b>
+<i>197</i>&nbsp;
+<i>198</i>&nbsp;	public List&lt;Order&gt; ordersAvailable() throws OrderException
+<i>199</i>&nbsp;	{
+<b class="nc"><i>200</i>&nbsp;		List&lt;Order&gt;  ordersAvailable = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>201</i>&nbsp;		final String SQL             = &quot;select * from orders where status=?&quot;;</b>
+<b class="nc"><i>202</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>203</i>&nbsp;			statement.setString(1, &quot;PENDING&quot;);</b>
+<b class="nc"><i>204</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="nc"><i>205</i>&nbsp;			while (rs.next()) {</b>
+<b class="nc"><i>206</i>&nbsp;				ordersAvailable.add(returnOrder(rs));</b>
+<i>207</i>&nbsp;			}
+<b class="nc"><i>208</i>&nbsp;			return ordersAvailable;</b>
+<b class="nc"><i>209</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>210</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>211</i>&nbsp;								 new Object[]{&quot;ordersAvailable&quot;,
+<i>212</i>&nbsp;											  &quot;execute&quot;
+<i>213</i>&nbsp;								 }
+<i>214</i>&nbsp;			);
+<b class="nc"><i>215</i>&nbsp;			throw new OrderException(throwSql);</b>
+<i>216</i>&nbsp;		}
+<i>217</i>&nbsp;	}
+<i>218</i>&nbsp;
+<i>219</i>&nbsp;
+<i>220</i>&nbsp;	public void addEmployeeToOrder(int employeeId, int ordersId) throws DataException
+<i>221</i>&nbsp;	{
+<b class="nc"><i>222</i>&nbsp;		final String SQL = &quot;update orders set employeeId=? where orders.id=?&quot;;</b>
+<b class="nc"><i>223</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>224</i>&nbsp;			statement.setInt(1, employeeId);</b>
+<b class="nc"><i>225</i>&nbsp;			statement.setInt(2, ordersId);</b>
+<b class="nc"><i>226</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>227</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>228</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>229</i>&nbsp;								 new Object[]{&quot;addEmployeeToOrder&quot;,
+<i>230</i>&nbsp;											  &quot;execute&quot;
+<i>231</i>&nbsp;								 }
+<i>232</i>&nbsp;			);
+<b class="nc"><i>233</i>&nbsp;			throw new DataException(throwSql);</b>
+<b class="nc"><i>234</i>&nbsp;		}</b>
+<b class="nc"><i>235</i>&nbsp;	}</b>
+<i>236</i>&nbsp;
+<i>237</i>&nbsp;
+<i>238</i>&nbsp;	public List&lt;Order&gt; employeesChosenOrders(int employeeId) throws OrderException
+<i>239</i>&nbsp;	{
+<b class="nc"><i>240</i>&nbsp;		List&lt;Order&gt;  employeeOrders = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>241</i>&nbsp;		final String SQL            = &quot;select * FROM orders WHERE orders.employeeId=? order by status&quot;;</b>
+<b class="nc"><i>242</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>243</i>&nbsp;			statement.setInt(1, employeeId);</b>
+<b class="nc"><i>244</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="nc"><i>245</i>&nbsp;			while (rs.next())</b>
+<b class="nc"><i>246</i>&nbsp;				employeeOrders.add(returnOrder(rs));</b>
+<b class="nc"><i>247</i>&nbsp;			return employeeOrders;</b>
+<b class="nc"><i>248</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>249</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>250</i>&nbsp;								 new Object[]{&quot;employeesChosenOrders&quot;,
+<i>251</i>&nbsp;											  &quot;find employeeOrders&quot;
+<i>252</i>&nbsp;								 }
+<i>253</i>&nbsp;			);
+<i>254</i>&nbsp;
+<b class="nc"><i>255</i>&nbsp;			throw new OrderException(throwSql);</b>
+<i>256</i>&nbsp;		}
+<i>257</i>&nbsp;	}
 <i>258</i>&nbsp;
-<b class="nc"><i>259</i>&nbsp;			throw new OrderException(throwSql);</b>
-<i>260</i>&nbsp;		}
-<i>261</i>&nbsp;	}
-<i>262</i>&nbsp;
-<i>263</i>&nbsp;
-<i>264</i>&nbsp;	public void updateOrderOffer(Order order) throws OrderException
-<i>265</i>&nbsp;	{
-<b class="nc"><i>266</i>&nbsp;		final String SQL = &quot;UPDATE orders SET height=?, width=?, length=?, slope=?, price=?, status=? WHERE orders.id=?&quot;;</b>
-<b class="nc"><i>267</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>268</i>&nbsp;			statement.setInt(1, order.getHeight());</b>
-<b class="nc"><i>269</i>&nbsp;			statement.setInt(2, order.getWidth());</b>
-<b class="nc"><i>270</i>&nbsp;			statement.setInt(3, order.getLength());</b>
-<b class="nc"><i>271</i>&nbsp;			statement.setInt(4, order.getSlope());</b>
-<b class="nc"><i>272</i>&nbsp;			statement.setInt(5, order.getPrice());</b>
-<b class="nc"><i>273</i>&nbsp;			statement.setString(6, order.getStatus().name());</b>
-<b class="nc"><i>274</i>&nbsp;			statement.setInt(7, order.getId());</b>
-<b class="nc"><i>275</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>276</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>277</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>278</i>&nbsp;								 new Object[]{&quot;updateOrderOffer&quot;,
-<i>279</i>&nbsp;											  &quot;execute&quot;
-<i>280</i>&nbsp;								 }
-<i>281</i>&nbsp;			);
-<b class="nc"><i>282</i>&nbsp;			throw new OrderException(throwSql);</b>
-<b class="nc"><i>283</i>&nbsp;		}</b>
-<b class="nc"><i>284</i>&nbsp;	}</b>
-<i>285</i>&nbsp;
-<i>286</i>&nbsp;
-<i>287</i>&nbsp;	public int findCustomerIdByOrder(Order order) throws OrderException
-<i>288</i>&nbsp;	{
-<b class="fc"><i>289</i>&nbsp;		final String SQL = &quot;Select customerId FROM orders WHERE orders.customerId = ?&quot;;</b>
-<b class="fc"><i>290</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="fc"><i>291</i>&nbsp;			statement.setInt(1, order.getCustomer().getId());</b>
-<b class="fc"><i>292</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
-<b class="fc"><i>293</i>&nbsp;			rs.next();</b>
-<b class="fc"><i>294</i>&nbsp;			int customerId = rs.getInt(&quot;customerId&quot;);</b>
-<b class="fc"><i>295</i>&nbsp;			return customerId;</b>
-<b class="fc"><i>296</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>297</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
-<i>298</i>&nbsp;								 new Object[]{&quot;findCustomerIdByOrder&quot;,
-<i>299</i>&nbsp;											  &quot;execute&quot;
-<i>300</i>&nbsp;								 }
-<i>301</i>&nbsp;			);
-<b class="nc"><i>302</i>&nbsp;			throw new OrderException(throwSql);</b>
-<i>303</i>&nbsp;		}
-<i>304</i>&nbsp;	}
-<i>305</i>&nbsp;
-<i>306</i>&nbsp;	public void deleteOrder(int orderId) throws OrderException
-<i>307</i>&nbsp;	{
-<b class="nc"><i>308</i>&nbsp;		final String SQL = &quot;delete from orders WHERE orders.id=?&quot;;</b>
-<b class="nc"><i>309</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
-<b class="nc"><i>310</i>&nbsp;			statement.setInt(1, orderId);</b>
-<b class="nc"><i>311</i>&nbsp;			statement.executeUpdate();</b>
-<b class="nc"><i>312</i>&nbsp;		} catch (SQLException throwSql) {</b>
-<b class="nc"><i>313</i>&nbsp;			throw new OrderException(throwSql);</b>
-<b class="nc"><i>314</i>&nbsp;		}</b>
-<b class="nc"><i>315</i>&nbsp;	}</b>
-<i>316</i>&nbsp;
-<i>317</i>&nbsp;	public Connection getCon()
-<i>318</i>&nbsp;	{
-<b class="fc"><i>319</i>&nbsp;		return this.con;</b>
-<i>320</i>&nbsp;	}
-<i>321</i>&nbsp;
-<i>322</i>&nbsp;}
+<i>259</i>&nbsp;
+<i>260</i>&nbsp;	public void updateOrderOffer(Order order) throws OrderException
+<i>261</i>&nbsp;	{
+<b class="nc"><i>262</i>&nbsp;		final String SQL = &quot;UPDATE orders SET height=?, width=?, length=?, slope=?, price=?, status=? WHERE orders.id=?&quot;;</b>
+<b class="nc"><i>263</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>264</i>&nbsp;			statement.setInt(1, order.getHeight());</b>
+<b class="nc"><i>265</i>&nbsp;			statement.setInt(2, order.getWidth());</b>
+<b class="nc"><i>266</i>&nbsp;			statement.setInt(3, order.getLength());</b>
+<b class="nc"><i>267</i>&nbsp;			statement.setInt(4, order.getSlope());</b>
+<b class="nc"><i>268</i>&nbsp;			statement.setInt(5, order.getPrice());</b>
+<b class="nc"><i>269</i>&nbsp;			statement.setString(6, order.getStatus().name());</b>
+<b class="nc"><i>270</i>&nbsp;			statement.setInt(7, order.getId());</b>
+<b class="nc"><i>271</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>272</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>273</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>274</i>&nbsp;								 new Object[]{&quot;updateOrderOffer&quot;,
+<i>275</i>&nbsp;											  &quot;execute&quot;
+<i>276</i>&nbsp;								 }
+<i>277</i>&nbsp;			);
+<b class="nc"><i>278</i>&nbsp;			throw new OrderException(throwSql);</b>
+<b class="nc"><i>279</i>&nbsp;		}</b>
+<b class="nc"><i>280</i>&nbsp;	}</b>
+<i>281</i>&nbsp;
+<i>282</i>&nbsp;
+<i>283</i>&nbsp;	public int findCustomerIdByOrder(Order order) throws OrderException
+<i>284</i>&nbsp;	{
+<b class="fc"><i>285</i>&nbsp;		final String SQL = &quot;Select customerId FROM orders WHERE orders.customerId = ?&quot;;</b>
+<b class="fc"><i>286</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="fc"><i>287</i>&nbsp;			statement.setInt(1, order.getCustomer().getId());</b>
+<b class="fc"><i>288</i>&nbsp;			ResultSet rs = statement.executeQuery();</b>
+<b class="fc"><i>289</i>&nbsp;			rs.next();</b>
+<b class="fc"><i>290</i>&nbsp;			int customerId = rs.getInt(&quot;customerId&quot;);</b>
+<b class="fc"><i>291</i>&nbsp;			return customerId;</b>
+<b class="fc"><i>292</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>293</i>&nbsp;			Conf.getLogger().log(Level.SEVERE, &quot;{0} were unable to {1}&quot;,</b>
+<i>294</i>&nbsp;								 new Object[]{&quot;findCustomerIdByOrder&quot;,
+<i>295</i>&nbsp;											  &quot;execute&quot;
+<i>296</i>&nbsp;								 }
+<i>297</i>&nbsp;			);
+<b class="nc"><i>298</i>&nbsp;			throw new OrderException(throwSql);</b>
+<i>299</i>&nbsp;		}
+<i>300</i>&nbsp;	}
+<i>301</i>&nbsp;
+<i>302</i>&nbsp;	public void deleteOrder(int orderId) throws OrderException
+<i>303</i>&nbsp;	{
+<b class="nc"><i>304</i>&nbsp;		final String SQL = &quot;delete from orders WHERE orders.id=?&quot;;</b>
+<b class="nc"><i>305</i>&nbsp;		try (PreparedStatement statement = con.prepareStatement(SQL)) {</b>
+<b class="nc"><i>306</i>&nbsp;			statement.setInt(1, orderId);</b>
+<b class="nc"><i>307</i>&nbsp;			statement.executeUpdate();</b>
+<b class="nc"><i>308</i>&nbsp;		} catch (SQLException throwSql) {</b>
+<b class="nc"><i>309</i>&nbsp;			throw new OrderException(throwSql);</b>
+<b class="nc"><i>310</i>&nbsp;		}</b>
+<b class="nc"><i>311</i>&nbsp;	}</b>
+<i>312</i>&nbsp;
+<i>313</i>&nbsp;	public Connection getCon()
+<i>314</i>&nbsp;	{
+<b class="fc"><i>315</i>&nbsp;		return this.con;</b>
+<i>316</i>&nbsp;	}
+<i>317</i>&nbsp;
+<i>318</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

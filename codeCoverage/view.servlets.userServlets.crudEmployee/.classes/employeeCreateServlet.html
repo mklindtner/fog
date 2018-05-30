@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 21)
+    (0/ 19)
   </span>
 </td>
 </tr>
@@ -76,8 +76,8 @@
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import data.exceptions.DataException;
 <i>4</i>&nbsp;import data.exceptions.UserException;
-<i>5</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>6</i>&nbsp;import logic.facades.UserFacade;
+<i>5</i>&nbsp;import MySqlUserFacade;
+<i>6</i>&nbsp;import UserFacade;
 <i>7</i>&nbsp;import org.omg.CORBA.UnknownUserException;
 <i>8</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateUserList;
 <i>9</i>&nbsp;
@@ -109,12 +109,12 @@
 <b class="nc"><i>35</i>&nbsp;			throw new ServletException(finalDist);</b>
 <b class="nc"><i>36</i>&nbsp;		}</b>
 <b class="nc"><i>37</i>&nbsp;		request.getRequestDispatcher(&quot;WEB-INF/employee/employees.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>38</i>&nbsp;	}</b>
+<i>38</i>&nbsp;	}
 <i>39</i>&nbsp;
 <i>40</i>&nbsp;	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 <i>41</i>&nbsp;	{
 <b class="nc"><i>42</i>&nbsp;		request.getRequestDispatcher(&quot;/WEB-INF/employee/employeeCreateUser.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>43</i>&nbsp;	}</b>
+<i>43</i>&nbsp;	}
 <i>44</i>&nbsp;
 <i>45</i>&nbsp;	private int evaluateRoleToInt(String role) throws UnknownUserException
 <i>46</i>&nbsp;	{
@@ -130,7 +130,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

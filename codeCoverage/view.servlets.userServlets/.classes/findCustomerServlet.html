@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 9)
+    (0/ 8)
   </span>
 </td>
 </tr>
@@ -77,8 +77,8 @@
 <i>3</i>&nbsp;import entities.userEntities.Customer;
 <i>4</i>&nbsp;import data.exceptions.DataException;
 <i>5</i>&nbsp;import data.exceptions.UserException;
-<i>6</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>7</i>&nbsp;import logic.facades.UserFacade;
+<i>6</i>&nbsp;import MySqlUserFacade;
+<i>7</i>&nbsp;import UserFacade;
 <i>8</i>&nbsp;
 <i>9</i>&nbsp;import javax.servlet.ServletException;
 <i>10</i>&nbsp;import javax.servlet.annotation.WebServlet;
@@ -100,14 +100,14 @@
 <b class="nc"><i>26</i>&nbsp;		} catch(UserException | DataException finalDistException) {</b>
 <b class="nc"><i>27</i>&nbsp;			throw new ServletException(finalDistException);</b>
 <b class="nc"><i>28</i>&nbsp;		}</b>
-<b class="nc"><i>29</i>&nbsp;	}</b>
+<i>29</i>&nbsp;	}
 <i>30</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

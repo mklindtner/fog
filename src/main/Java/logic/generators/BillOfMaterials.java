@@ -1,14 +1,14 @@
 package logic.generators;
 
-import data.dao.MaterialDAO;
+import data.MySQLDAO.MaterialDAO;
 import entities.OrderEntities.Material;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderLineException;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 
 import java.util.List;
 
@@ -81,7 +81,7 @@ public class BillOfMaterials
 
 	public void saveOrderLinesToDB(String connectionString) throws OrderLineException, DataException
 	{
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderLineDAO(connectionString);
 		for (OrderLine orderLine : order.getOrderLines())
 			orderFacade.createOrderLine(orderLine);

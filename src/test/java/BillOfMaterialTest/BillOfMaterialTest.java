@@ -2,7 +2,7 @@ package BillOfMaterialTest;
 
 import ServiceClasses.ServiceMethods;
 import ServiceClasses.ServiceSeed;
-import data.dao.OrderDAO;
+import data.MySQLDAO.OrderDAO;
 import data.exceptions.*;
 import entities.OrderEntities.Order;
 import entities.OrderEntities.OrderLine;

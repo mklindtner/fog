@@ -18,6 +18,7 @@ public class ErrorHandler
 	public static void customerAlreadyExists(HttpServletRequest request)
 	{
 		request.setAttribute("error", "sorry that email is already in use");
+
 	}
 
 }

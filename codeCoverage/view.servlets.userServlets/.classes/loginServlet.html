@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 25)
+    (0/ 22)
   </span>
 </td>
 </tr>
@@ -81,8 +81,8 @@
 <i>7</i>&nbsp;import data.exceptions.DataException;
 <i>8</i>&nbsp;import data.exceptions.OrderException;
 <i>9</i>&nbsp;import data.exceptions.UserException;
-<i>10</i>&nbsp;import logic.facades.MySqlUserFacade;
-<i>11</i>&nbsp;import logic.facades.UserFacade;
+<i>10</i>&nbsp;import MySqlUserFacade;
+<i>11</i>&nbsp;import UserFacade;
 <i>12</i>&nbsp;import view.servlets.orderServlets.helpers.ErrorHandler;
 <i>13</i>&nbsp;import view.servlets.orderServlets.helpers.UpdateOrderList;
 <i>14</i>&nbsp;
@@ -98,7 +98,7 @@
 <i>24</i>&nbsp;@WebServlet(urlPatterns = &quot;/login&quot;)
 <b class="nc"><i>25</i>&nbsp;public class loginServlet extends HttpServlet</b>
 <i>26</i>&nbsp;{
-<i>27</i>&nbsp;	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+<i>27</i>&nbsp;	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 <i>28</i>&nbsp;	{
 <i>29</i>&nbsp;		try {
 <b class="nc"><i>30</i>&nbsp;			String      username = request.getParameter(&quot;username&quot;);</b>
@@ -120,20 +120,19 @@
 <b class="nc"><i>46</i>&nbsp;				Conf.getLogger().log(Level.INFO, &quot;[LOGGED] {0} signed in&quot;, user.getUsername());</b>
 <b class="nc"><i>47</i>&nbsp;				request.getRequestDispatcher(&quot;/WEB-INF/employee/employeeHomepage.jsp&quot;).forward(request, response);</b>
 <i>48</i>&nbsp;			}
-<b class="nc"><i>49</i>&nbsp;			ErrorHandler.loginError(request);</b>
-<b class="nc"><i>50</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>51</i>&nbsp;		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {</b>
-<b class="nc"><i>52</i>&nbsp;			ErrorHandler.loginError(request);</b>
-<b class="nc"><i>53</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
-<b class="nc"><i>54</i>&nbsp;		}</b>
-<b class="nc"><i>55</i>&nbsp;	}</b>
-<i>56</i>&nbsp;}
+<b class="nc"><i>49</i>&nbsp;			throw new DataException();</b>
+<b class="nc"><i>50</i>&nbsp;		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {</b>
+<b class="nc"><i>51</i>&nbsp;			ErrorHandler.loginError(request);</b>
+<b class="nc"><i>52</i>&nbsp;			request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);</b>
+<i>53</i>&nbsp;		}
+<i>54</i>&nbsp;	}
+<i>55</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-05-28 14:34</div>
+    <div style="float:right;">generated on 2018-05-30 10:00</div>
 </div>
 </body>
 </html>

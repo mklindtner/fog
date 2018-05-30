@@ -2,16 +2,13 @@ package daoTest;
 
 import ServiceClasses.ServiceMethods;
 import ServiceClasses.ServiceSeed;
-import data.dao.OrderDAO;
+import data.MySQLDAO.OrderDAO;
 import data.exceptions.*;
 import entities.OrderEntities.Order;
-import entities.billOfMaterial.BillOfMaterial;
-import logic.generators.BillOfMaterials;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
@@ -23,8 +20,7 @@ public class OrderDAOTest
 	private final String USER_PASSWORD = "123";
 
 	@Before
-	public void setUp() throws DataException, UserException, OrderException, ShedException, MaterialException,
-							   SQLException
+	public void setUp() throws DataException, UserException, OrderException, ShedException, MaterialException
 	{
 		ServiceSeed.establishConnections();
 		ServiceSeed.populateTables();
@@ -41,7 +37,7 @@ public class OrderDAOTest
 	}
 
 	@Test
-	public void firstOrder() throws OrderException, DataException
+	public void firstOrder() throws OrderException
 	{
 		List<Order> ordersActual = orderDAO.allOrders();
 		assertEquals(ordersActual.get(0), ServiceMethods.expectedFirstOrder());
@@ -49,7 +45,7 @@ public class OrderDAOTest
 	}
 
 	@Test
-	public void customerOrders() throws OrderException, DataException, UserException
+	public void customerOrders() throws OrderException
 	{
 		List<Order> ordersActual         = orderDAO.allOrders();
 		int         userId               = orderDAO.findCustomerIdByOrder(ordersActual.get(0));

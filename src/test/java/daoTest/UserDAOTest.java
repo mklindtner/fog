@@ -2,7 +2,7 @@ package daoTest;
 
 import ServiceClasses.ServiceMethods;
 import ServiceClasses.ServiceSeed;
-import data.dao.UserDAO;
+import data.MySQLDAO.UserDAO;
 import data.exceptions.*;
 import entities.userEntities.Customer;
 import entities.userEntities.Employee;

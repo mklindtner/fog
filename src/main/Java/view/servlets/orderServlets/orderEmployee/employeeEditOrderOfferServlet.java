@@ -4,8 +4,8 @@ import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
 import data.exceptions.OrderException;
-import logic.facades.MySqlOrderFacade;
-import logic.facades.OrderFacade;
+import logic.generators.facades.OrderFacadeImpl;
+import logic.generators.facades.OrderFacade;
 import logic.generators.BillOfMaterials;
 
 import javax.servlet.ServletException;
@@ -33,7 +33,7 @@ public class employeeEditOrderOfferServlet extends HttpServlet
 	private void billOfMaterialWithoutShed(int orderId, HttpSession session) throws DataException, OrderException,
 																	   MaterialException {
 
-		OrderFacade orderFacade = new MySqlOrderFacade();
+		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
 		Order           order           = orderFacade.orderById(orderId);
 		BillOfMaterials billOfMaterials = new BillOfMaterials(order);

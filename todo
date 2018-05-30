@@ -13,6 +13,7 @@ Current:
     ListOfCustomer
         show list of customers if wrong
     Should make password empty
+    ErrorHandler should be logging all exceptions
 
 
 
@@ -65,9 +66,6 @@ Current:
     --MistakesToFix--
     Exception when after creating customer and goes to customerList
 
-Spørgsmål:
-BillOfMaterials
-    linje 610 - doesn't check for loop, how can i in test?
 
 JUnit:
 Create test for customer login
@@ -76,7 +74,3 @@ Create test for reg_date for customer/employee
 Create test for id for customer/employee
     -mby create method in dao
 Create test for Facades(is that REALLY neccessary?)
-Refactor so that service instantiates tabels and drops them later
-OrderDAOTEST
-    - should have generator added with order method that returns order
-    - Figure out why I get a integrityConstraintError when I run more than two tests?111+!?!?!!?
