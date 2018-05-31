@@ -1,5 +1,6 @@
 package logic.generators.facades;
 
+import configurations.Conf;
 import data.MySQLDAO.MaterialDAO;
 import data.MySQLDAO.OrderDAO;
 import data.MySQLDAO.OrderLineDAO;
@@ -11,6 +12,7 @@ import entities.OrderEntities.OrderLine;
 import entities.OrderEntities.Shed;
 
 import java.util.List;
+import java.util.logging.Level;
 
 public class OrderFacadeImpl implements OrderFacade
 {
@@ -103,6 +105,7 @@ public class OrderFacadeImpl implements OrderFacade
 			return orderDAO.ordersAvailable();
 		} catch(OrderException finalDist)
 		{
+			Conf.getLogger().log(Level.SEVERE, "[RUNTIME ERROR] " + finalDist.getMessage());
 			throw new data.exceptions.ApplicationException(finalDist);
 		}
 	}
