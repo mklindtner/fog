@@ -5,7 +5,7 @@ import data.exceptions.OrderLineException;
 import entities.OrderEntities.Order;
 import data.exceptions.DataException;
 import data.exceptions.MaterialException;
-import view.servlets.orderServlets.helpers.UpdateOrderList;
+import view.servlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

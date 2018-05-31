@@ -4,7 +4,7 @@ import configurations.Conf;
 import entities.OrderEntities.Order;
 import data.exceptions.*;
 import entities.userEntities.Customer;
-import view.servlets.orderServlets.helpers.UpdateOrderList;
+import view.servlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @WebServlet(urlPatterns = "/createOrder")
 public class createOrderServlet extends HttpServlet

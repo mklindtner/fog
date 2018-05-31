@@ -5,8 +5,8 @@ import data.exceptions.*;
 import entities.userEntities.Customer;
 import logic.generators.facades.UserFacadeImpl;
 import logic.generators.facades.UserFacade;
-import view.servlets.orderServlets.helpers.ErrorHandler;
-import view.servlets.orderServlets.helpers.UpdateOrderList;
+import view.servlets.helpers.ErrorHandler;
+import view.servlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

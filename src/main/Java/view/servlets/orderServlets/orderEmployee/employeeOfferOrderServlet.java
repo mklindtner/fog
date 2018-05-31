@@ -6,7 +6,7 @@ import data.exceptions.OrderException;
 import entities.userEntities.Employee;
 import logic.generators.facades.OrderFacadeImpl;
 import logic.generators.facades.OrderFacade;
-import view.servlets.orderServlets.helpers.UpdateOrderList;
+import view.servlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

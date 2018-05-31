@@ -2,7 +2,7 @@ package view.servlets;
 
 import data.exceptions.DataException;
 import data.exceptions.OrderException;
-import view.servlets.orderServlets.helpers.UpdateOrderList;
+import view.servlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

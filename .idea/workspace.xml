@@ -11,7 +11,69 @@
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java" afterPath="$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index.html" afterPath="$PROJECT_DIR$/codeCoverage/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/ErrorHandler.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/ErrorHandler.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateOrderList.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateOrderList.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateUserList.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateUserList.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/paginationHelper.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/paginationHelper.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_NAME_DESC.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/createOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/createOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerAcceptOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerAcceptOfferServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerDeclineOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerDeclineOfferServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogMaterialServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeChooseOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeChooseOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditBillOfMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditBillOfMaterialServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeOfferOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeOfferOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeSendOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeSendOrderServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/generateBillOfMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/generateBillOfMaterialServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeCreateServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeCreateServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDeleteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDeleteServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDemoteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDemoteServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeePromoteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeePromoteServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/displayEmployeeServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/displayEmployeeServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/employeeAsCustomerServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/employeeAsCustomerServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/loginServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/loginServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/cartportPictureServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/cartportPictureServlet.html" />
+      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/createOrderAndUserServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/createOrderAndUserServlet.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/cartportPictureServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/cartportPictureServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateUserList.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/paginationHelper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditBillOfMaterialServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/generateBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/generateBillOfMaterialServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeCreateServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeCreateServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDeleteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDeleteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDemoteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDemoteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeePromoteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeePromoteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="421">
-              <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+              <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -125,21 +187,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderFacadeImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrderFacadeImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="455">
-              <caret line="108" column="70" lean-forward="true" selection-start-line="108" selection-start-column="70" selection-end-line="108" selection-end-column="70" />
+              <caret line="108" column="70" lean-forward="false" selection-start-line="108" selection-start-column="70" selection-end-line="108" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/DAO.java">
+      <file leaf-file-name="ApplicationException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/data/exceptions/ApplicationException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="56">
-              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -155,18 +227,6 @@
                 <marker date="1527752258983" expanded="true" signature="1053:1106" ph="Select * FRO... materials" />
                 <marker date="1527752258983" expanded="true" signature="1942:2003" ph="Insert Into materials... " />
                 <marker date="1527752258983" expanded="true" signature="2512:2535" ph="Select * FRO... materials" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShedDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/ShedDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-              <folding>
-                <marker date="1527752259007" expanded="true" signature="590:649" ph="Insert INTO sheds... " />
               </folding>
             </state>
           </provider>
@@ -266,7 +326,6 @@
         <option value="$PROJECT_DIR$/logs/devLogs/dev-log.0.0.log" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/daoTest/OrderDAOTest.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/logicFacade/LogicMySqlOrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/logicFacade/LogicOrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" />
@@ -281,6 +340,7 @@
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
       </list>
     </option>
   </component>
@@ -432,6 +492,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="MySQLDAO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -467,6 +536,16 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="orderServlets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
@@ -1041,7 +1120,7 @@
       <workItem from="1526981275528" duration="78733000" />
       <workItem from="1527494038662" duration="26329000" />
       <workItem from="1527573743426" duration="24359000" />
-      <workItem from="1527697594060" duration="10604000" />
+      <workItem from="1527697594060" duration="11415000" />
     </task>
     <servers />
   </component>
@@ -1078,11 +1157,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="818452000" />
+    <option name="totallyTimeSpent" value="819263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36125654" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
@@ -1102,7 +1180,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07643979" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07643979" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35931453" sideWeight="0.5852459" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3427308" sideWeight="0.4147541" order="6" side_tool="true" content_ui="tabs" />
@@ -1279,15 +1357,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/exceptions/ApplicationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateUserList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateUserList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
@@ -1356,7 +1426,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/ErrorHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -1444,7 +1514,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateOrderList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="78" column="41" lean-forward="false" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
@@ -1574,14 +1644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1372">
@@ -1623,7 +1685,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
-          <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+          <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1631,7 +1693,23 @@
     <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
-          <caret line="108" column="70" lean-forward="true" selection-start-line="108" selection-start-column="70" selection-end-line="108" selection-end-column="70" />
+          <caret line="108" column="70" lean-forward="false" selection-start-line="108" selection-start-column="70" selection-end-line="108" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/exceptions/ApplicationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
           <folding />
         </state>
       </provider>

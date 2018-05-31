@@ -1,7 +1,7 @@
 package view.servlets.userServlets;
 import data.exceptions.DataException;
 import data.exceptions.UserException;
-import view.servlets.orderServlets.helpers.UpdateUserList;
+import view.servlets.helpers.UpdateUserList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

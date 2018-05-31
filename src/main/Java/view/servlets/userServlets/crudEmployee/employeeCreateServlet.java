@@ -5,7 +5,7 @@ import data.exceptions.UserException;
 import logic.generators.facades.UserFacadeImpl;
 import logic.generators.facades.UserFacade;
 import org.omg.CORBA.UnknownUserException;
-import view.servlets.orderServlets.helpers.UpdateUserList;
+import view.servlets.helpers.UpdateUserList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
