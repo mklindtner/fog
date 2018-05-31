@@ -28,7 +28,7 @@ public class createOrderServlet extends HttpServlet
 			Conf.getLogger().log(Level.INFO, "[UPDATE] {0} created an order", user.getUsername());
 			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 		} catch (DataException | MaterialException | OrderException | OrderLineException | ShedException finalDist) {
-			Conf.getLogger().log(Level.SEVERE, "[LOGGED] " + finalDist.getMessage());
+			Conf.getLogger().log(Level.SEVERE, "[ERROR] " + finalDist.getMessage());
 			request.getRequestDispatcher("/WEB-INF/SHARED/errorPage.jsp").forward(request, response);
 		}
 

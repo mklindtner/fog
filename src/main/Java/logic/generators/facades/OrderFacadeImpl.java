@@ -67,7 +67,7 @@ public class OrderFacadeImpl implements OrderFacade
 		return shedDAO;
 	}
 
-	public List<Order> allOrdersWithoutShed() throws OrderException, DataException
+	public List<Order> allOrdersWithoutShed() throws OrderException
 	{
 		return orderDAO.allOrders();
 	}
@@ -112,22 +112,22 @@ public class OrderFacadeImpl implements OrderFacade
 		orderDAO.employeeChooseOrder(employeeId, orderId);
 	}
 
-	public List<Order> employeeChosenOrders(int employeeId) throws OrderException, DataException
+	public List<Order> employeeChosenOrders(int employeeId) throws OrderException
 	{
 		return orderDAO.employeesChosenOrders(employeeId);
 	}
 
-	public void updateOrderOffer(Order order) throws OrderException, DataException
+	public void updateOrderOffer(Order order) throws OrderException
 	{
 		orderDAO.updateOrderOffer(order);
 	}
 
-	public void createOrderLine(OrderLine orderLine) throws OrderLineException, DataException
+	public void createOrderLine(OrderLine orderLine) throws OrderLineException
 	{
 		orderLineDAO.createOrderLine(orderLine);
 	}
 
-	public Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws DataException, ShedException
+	public Shed createShed(int shedLength, int shedWidth, boolean hasFloor) throws ShedException
 	{
 		return shedDAO.createAndReturnShed(shedLength, shedWidth, hasFloor);
 	}
