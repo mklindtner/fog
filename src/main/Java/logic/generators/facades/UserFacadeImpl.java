@@ -20,6 +20,11 @@ public class UserFacadeImpl implements UserFacade
 			userDao = new UserDAO();
 		return userDao;
 	}
+	/*
+	public UserFacadeImpl() throws DataException {
+		if(userDao == null)
+			userDao = new UserDAO();
+	} */
 
 	public List<Employee> getAllEmployees() throws UserException
 	{

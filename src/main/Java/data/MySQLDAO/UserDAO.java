@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO
+public class UserDAO implements DAO
 {
 	Connection con;
 

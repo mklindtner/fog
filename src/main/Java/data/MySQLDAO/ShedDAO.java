@@ -7,7 +7,7 @@ import entities.OrderEntities.Shed;
 
 import java.sql.*;
 
-public class ShedDAO
+public class ShedDAO implements DAO
 {
 	Connection con;
 	public ShedDAO() throws DataException

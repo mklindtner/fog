@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-public class OrderDAO
+public class OrderDAO implements DAO
 {
 	Connection con;
 

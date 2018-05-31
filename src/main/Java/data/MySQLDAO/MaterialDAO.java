@@ -10,7 +10,7 @@ import java.util.List;
 
 import java.sql.*;
 
-public class MaterialDAO
+public class MaterialDAO implements DAO
 {
 	private Connection con;
 

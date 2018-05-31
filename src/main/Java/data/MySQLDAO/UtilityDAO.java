@@ -7,7 +7,7 @@ import entities.userEntities.Customer;
 
 import java.sql.*;
 
-public class UtilityDAO
+public class UtilityDAO implements DAO
 {
 	public static Customer getCustomerById(int id, Connection con) throws OrderException
 	{
