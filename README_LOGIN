@@ -1,0 +1,15 @@
+Chief:
+user: Martin@companyEmail.com
+password: 123
+
+MaterialResponsible:
+user: employeeResp@companyEmail.com
+password: 123
+
+Employee
+user: employeeWorker@companyEmail.com
+password: 123
+
+Customer
+user: peter@hotmail.com
+password: 123

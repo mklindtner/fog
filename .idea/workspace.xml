@@ -10,70 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b19d9a4-13b4-4072-b550-e4fa41730011" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/README_LOGIN" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index.html" afterPath="$PROJECT_DIR$/codeCoverage/index.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_BLOCK_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_CLASS_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_LINE_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_METHOD_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/index_SORT_BY_NAME_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/ErrorHandler.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/ErrorHandler.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateOrderList.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateOrderList.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateUserList.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/UpdateUserList.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/paginationHelper.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/.classes/paginationHelper.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_BLOCK_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_CLASS_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_LINE_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_METHOD_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_NAME_DESC.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.helpers/index_SORT_BY_NAME_DESC.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/createOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/createOrderServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerAcceptOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerAcceptOfferServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerDeclineOfferServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderCustomer/.classes/customerDeclineOfferServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeCatalogMaterialServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeChooseOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeChooseOrderServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditBillOfMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeEditBillOfMaterialServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeOfferOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeOfferOrderServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeSendOrderServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.orderEmployee/.classes/employeeSendOrderServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/generateBillOfMaterialServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.orderServlets.shared/.classes/generateBillOfMaterialServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeCreateServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeCreateServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDeleteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDeleteServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDemoteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeeDemoteServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeePromoteServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets.crudEmployee/.classes/employeePromoteServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/displayEmployeeServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/displayEmployeeServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/employeeAsCustomerServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/employeeAsCustomerServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/loginServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets.userServlets/.classes/loginServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/cartportPictureServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/cartportPictureServlet.html" />
-      <change beforePath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/createOrderAndUserServlet.html" afterPath="$PROJECT_DIR$/codeCoverage/view.servlets/.classes/createOrderAndUserServlet.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/cartportPictureServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/cartportPictureServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/ErrorHandler.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateOrderList.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/UpdateUserList.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/helpers/paginationHelper.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerAcceptOfferServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/customerDeclineOfferServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeChooseOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeEditBillOfMaterialServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeOfferOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeSendOrderServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/generateBillOfMaterialServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/shared/generateBillOfMaterialServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeCreateServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeCreateServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDeleteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDeleteServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDemoteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeeDemoteServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeePromoteServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/crudEmployee/employeePromoteServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/displayEmployeeServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/employeeAsCustomerServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" afterPath="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -122,8 +61,28 @@
       <file leaf-file-name="UserFacadeImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-280">
-              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="332">
+              <caret line="46" column="63" lean-forward="false" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateOrderList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateOrderList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="78" column="41" lean-forward="false" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README_LOGIN" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README_LOGIN">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -139,50 +98,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dev-log.0.0.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/devLogs/dev-log.0.0.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1372">
-              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="392">
+              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
-                <marker date="1527752258975" expanded="true" signature="825:844" ph="Select * FRO... roles" />
-                <marker date="1527752258975" expanded="true" signature="1279:1350" ph="Select * FRO... employees" />
-                <marker date="1527752258975" expanded="true" signature="2232:2255" ph="Select * FRO... customers" />
-                <marker date="1527752258975" expanded="true" signature="3085:3167" ph="INSERT INTO customers... " />
-                <marker date="1527752258975" expanded="true" signature="3623:3695" ph="INSERT INTO customers... " />
-                <marker date="1527752258975" expanded="true" signature="4145:4185" ph="Select * FRO... customers" />
-                <marker date="1527752258975" expanded="true" signature="4525:4565" ph="Select * FRO... employees" />
-                <marker date="1527752258975" expanded="true" signature="5848:5941" ph="INSERT INTO employees... " />
-                <marker date="1527752258975" expanded="true" signature="7334:7368" ph="Select * FRO... customers" />
-                <marker date="1527752258975" expanded="true" signature="8102:8134" ph="delete from employee... " />
-                <marker date="1527752258975" expanded="true" signature="8440:8491" ph="Update EMPLOYEES... " />
-                <marker date="1527752258975" expanded="true" signature="8853:8904" ph="Update employees... " />
-                <marker date="1527752258975" expanded="true" signature="9216:9260" ph="select * FRO... customers" />
+                <marker date="1527837576587" expanded="true" signature="825:844" ph="Select * FRO... roles" />
+                <marker date="1527837576587" expanded="true" signature="1279:1350" ph="Select * FRO... employees" />
+                <marker date="1527837576587" expanded="true" signature="2232:2255" ph="Select * FRO... customers" />
+                <marker date="1527837576587" expanded="true" signature="3085:3167" ph="INSERT INTO customers... " />
+                <marker date="1527837576587" expanded="true" signature="3623:3695" ph="INSERT INTO customers... " />
+                <marker date="1527837576587" expanded="true" signature="4103:4143" ph="Select * FRO... customers" />
+                <marker date="1527837576587" expanded="true" signature="4483:4523" ph="Select * FRO... employees" />
+                <marker date="1527837576587" expanded="true" signature="5806:5899" ph="INSERT INTO employees... " />
+                <marker date="1527837576587" expanded="true" signature="7292:7326" ph="Select * FRO... customers" />
+                <marker date="1527837576587" expanded="true" signature="8060:8092" ph="delete from employee... " />
+                <marker date="1527837576587" expanded="true" signature="8398:8449" ph="Update EMPLOYEES... " />
+                <marker date="1527837576587" expanded="true" signature="8811:8862" ph="Update employees... " />
+                <marker date="1527837576587" expanded="true" signature="9174:9218" ph="select * FRO... customers" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilityDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UtilityDAO.java">
+      <file leaf-file-name="UpdateUserList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateUserList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-              <folding>
-                <marker date="1527752258991" expanded="true" signature="332:366" ph="Select * FRO... customers" />
-                <marker date="1527752258991" expanded="true" signature="1085:1115" ph="Select * FRO... roles" />
-                <marker date="1527752258991" expanded="true" signature="1521:1551" ph="Select * FRO... sheds" />
-                <marker date="1527752258991" expanded="true" signature="2287:2331" ph="Select * FRO... materials" />
-              </folding>
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -207,27 +152,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="242">
+              <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaterialDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/MaterialDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding>
-                <marker date="1527752258983" expanded="true" signature="645:679" ph="Select * FRO... materials" />
-                <marker date="1527752258983" expanded="true" signature="1053:1106" ph="Select * FRO... materials" />
-                <marker date="1527752258983" expanded="true" signature="1942:2003" ph="Insert Into materials... " />
-                <marker date="1527752258983" expanded="true" signature="2512:2535" ph="Select * FRO... materials" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -290,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/ServiceClasses/ServiceSeed.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/facades/OrderFacade.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/dao/OrderLineDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/entities/userEntities/Customer.java" />
@@ -335,12 +264,13 @@
         <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/OrderLineDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/ShedDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UtilityDAO.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderCustomer/createOrderServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Java/logic/generators/facades/OrderFacadeImpl.java" />
         <option value="$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java" />
+        <option value="$PROJECT_DIR$/README_LOGIN" />
       </list>
     </option>
   </component>
@@ -536,6 +466,16 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven_fog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="maven_fog" type="b2602c69:ProjectViewProjectNode" />
@@ -1120,7 +1060,7 @@
       <workItem from="1526981275528" duration="78733000" />
       <workItem from="1527494038662" duration="26329000" />
       <workItem from="1527573743426" duration="24359000" />
-      <workItem from="1527697594060" duration="11415000" />
+      <workItem from="1527697594060" duration="15153000" />
     </task>
     <servers />
   </component>
@@ -1157,10 +1097,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="819263000" />
+    <option name="totallyTimeSpent" value="823001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36125654" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
@@ -1180,7 +1121,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07643979" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07643979" sideWeight="0.49806523" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35931453" sideWeight="0.5852459" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3427308" sideWeight="0.4147541" order="6" side_tool="true" content_ui="tabs" />
@@ -1271,14 +1212,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/orderServlets/orderEmployee/employeeCatalogOrderServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-688">
@@ -1353,14 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateUserList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1514,14 +1439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateOrderList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="78" column="41" lean-forward="false" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/BillOfMaterials.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
@@ -1644,36 +1561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1372">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <marker date="1527752258975" expanded="true" signature="825:844" ph="Select * FRO... roles" />
-            <marker date="1527752258975" expanded="true" signature="1279:1350" ph="Select * FRO... employees" />
-            <marker date="1527752258975" expanded="true" signature="2232:2255" ph="Select * FRO... customers" />
-            <marker date="1527752258975" expanded="true" signature="3085:3167" ph="INSERT INTO customers... " />
-            <marker date="1527752258975" expanded="true" signature="3623:3695" ph="INSERT INTO customers... " />
-            <marker date="1527752258975" expanded="true" signature="4145:4185" ph="Select * FRO... customers" />
-            <marker date="1527752258975" expanded="true" signature="4525:4565" ph="Select * FRO... employees" />
-            <marker date="1527752258975" expanded="true" signature="5848:5941" ph="INSERT INTO employees... " />
-            <marker date="1527752258975" expanded="true" signature="7334:7368" ph="Select * FRO... customers" />
-            <marker date="1527752258975" expanded="true" signature="8102:8134" ph="delete from employee... " />
-            <marker date="1527752258975" expanded="true" signature="8440:8491" ph="Update EMPLOYEES... " />
-            <marker date="1527752258975" expanded="true" signature="8853:8904" ph="Update employees... " />
-            <marker date="1527752258975" expanded="true" signature="9216:9260" ph="select * FRO... customers" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-280">
-          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/createOrderAndUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1708,8 +1595,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/userServlets/loginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        <state relative-caret-position="242">
+          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/logic/generators/facades/UserFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="46" column="63" lean-forward="false" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/data/MySQLDAO/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding>
+            <marker date="1527837576587" expanded="true" signature="825:844" ph="Select * FRO... roles" />
+            <marker date="1527837576587" expanded="true" signature="1279:1350" ph="Select * FRO... employees" />
+            <marker date="1527837576587" expanded="true" signature="2232:2255" ph="Select * FRO... customers" />
+            <marker date="1527837576587" expanded="true" signature="3085:3167" ph="INSERT INTO customers... " />
+            <marker date="1527837576587" expanded="true" signature="3623:3695" ph="INSERT INTO customers... " />
+            <marker date="1527837576587" expanded="true" signature="4103:4143" ph="Select * FRO... customers" />
+            <marker date="1527837576587" expanded="true" signature="4483:4523" ph="Select * FRO... employees" />
+            <marker date="1527837576587" expanded="true" signature="5806:5899" ph="INSERT INTO employees... " />
+            <marker date="1527837576587" expanded="true" signature="7292:7326" ph="Select * FRO... customers" />
+            <marker date="1527837576587" expanded="true" signature="8060:8092" ph="delete from employee... " />
+            <marker date="1527837576587" expanded="true" signature="8398:8449" ph="Update EMPLOYEES... " />
+            <marker date="1527837576587" expanded="true" signature="8811:8862" ph="Update employees... " />
+            <marker date="1527837576587" expanded="true" signature="9174:9218" ph="select * FRO... customers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateUserList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/view/servlets/helpers/UpdateOrderList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="78" column="41" lean-forward="false" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README_LOGIN">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>

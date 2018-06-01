@@ -121,10 +121,6 @@ public class UserDAO implements DAO
 		}
 	}
 
-
-	/**
-	 * finds customer by username
-	 */
 	public Customer customerByUsername(String username) throws UserException, ClassCastException
 	{
 		String SQL = "Select * FROM customers WHERE username=?";
