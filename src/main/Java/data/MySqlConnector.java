@@ -6,11 +6,16 @@ import data.exceptions.DataException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * MySQLConnector creates a connection to the cloud/local environment dependent on the variable @FILE
+ * This class also creates a conection to the test or application database dependent on the
+ * @param string provided in the createConnection.
+ *
+ */
 public class MySqlConnector
 {
 	private static MysqlDataSource source = null;
 	private static Connection con;
-	//instead of a file I could use an environment variable in the shell
 	private final static String FILE               = "LOCAL"; //CLOUD
 	private final static String APPLICATION_SERVER = "APP";
 	private final static String TEST_SERVER        = "TEST";
@@ -21,6 +26,12 @@ public class MySqlConnector
 		return (env.equals("CLOUD")) ? findHostCloud(connectionSelection) : findHostLocal(connectionSelection);
 	}
 
+	/**
+	 * uses the cloud to decide
+	 * @param connectionSelection whether the application or test server have been chosen
+	 * if neither is true
+	 * @throws DataException
+	*/
 	private static Connection findHostCloud(String connectionSelection) throws DataException
 	{
 		if (connectionSelection.equals(APPLICATION_SERVER))
@@ -30,6 +41,12 @@ public class MySqlConnector
 		throw new DataException();
 	}
 
+	/**
+	 * uses the localhost to decide
+	 * @param connectionSelection whether the application or test server have been chosen
+	 * if netiher is true
+	 * @throws DataException
+	 */
 	private static Connection findHostLocal(String connectionSelection) throws DataException
 	{
 		if (connectionSelection.equals(APPLICATION_SERVER))
@@ -40,12 +57,22 @@ public class MySqlConnector
 	}
 
 
+	/**
+	 * creates the specific connection to an application localHost
+	 * @return a the source connection
+	 */
 	private static Connection connectLocalMySql() throws DataException
 	{
 		insertLocalSourceInformation("fog", "Coding4u@snail", "fogdb");
 		return connectionToSource();
 	}
 
+	/**
+	 * sets the MySqlDataSource to the specified localhost with a
+	 * @param username
+	 * @param password
+	 * @param databaseName
+	 */
 	private static void insertLocalSourceInformation(String username, String password, String databaseName)
 	{
 		if (source == null) {
@@ -56,6 +83,9 @@ public class MySqlConnector
 		}
 	}
 
+	/**
+	 * returns the current source, the source behaves as a simple singleton
+	 */
 	private static Connection connectionToSource() throws DataException
 	{
 		try {
@@ -68,6 +98,9 @@ public class MySqlConnector
 
 	}
 
+	/**
+	 *
+	 */
 	private static Connection connectLocalTestMysql() throws DataException
 	{
 		insertLocalSourceInformation("fog", "Coding4u@snail", "fogtest");
@@ -93,12 +126,6 @@ public class MySqlConnector
 		return connectionToSource();
 	}
 
-	/**
-	 * used for fog cloud server, fog wasn't included as we only operate on one server-side, should this change the
-	 * rename: connectionFogCloudMySql()
-	 *
-	 * @return
-	 */
 	private static Connection connectCloudMySql() throws DataException
 	{
 		insertRemoteSourceInformation("fogRemote", "", "159.89.99.45", "fogdb");

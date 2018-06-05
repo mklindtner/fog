@@ -16,7 +16,6 @@ Current:
     ErrorHandler should be logging all exceptions
 
 
-
     ---Found mistakes---
     move order/orderLine down til DATA and use transaction
     ensure logger doesn't overwrite file
@@ -74,3 +73,10 @@ Create test for reg_date for customer/employee
 Create test for id for customer/employee
     -mby create method in dao
 Create test for Facades(is that REALLY neccessary?)
+
+
+
+Til eksamen:
+Print kaspers svar ud + billeder
+Print wiki side ud og afkryds layer
+Print hele rapporten til alle 4 (mig incl.)

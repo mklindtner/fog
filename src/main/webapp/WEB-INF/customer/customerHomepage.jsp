@@ -44,6 +44,7 @@
                     <div class="form-group col-md-6">
                         <label for="height">Height</label>
                         <select class="form-control form-control-lg" name="height" id="height" required>
+                            <option disabled>choose a value</option>
                             <option>480</option>cm
                             <option>540</option>cm
                             <option>600</option>cm
@@ -51,23 +52,23 @@
                             <option>780</option>cm
                             <option>810</option>cm
                             <option>910</option>cm
-                            <option disabled>choose a value</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="width">Width</label>
                         <select class="form-control form-control-lg" name="width" id="width" required>
+                            <option disabled>choose a value</option>
                             <option>300</option>cm
                             <option>360</option>cm
                             <option>390</option>cm
-                            <option disabled>choose a value</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="length">Length</label>
                         <select class="form-control form-control-lg" name="length" id="length" required>
+                            <option disabled>choose a value</option>
                             <option>480</option>cm
                             <option>540</option>cm
                             <option>600</option>cm
@@ -75,15 +76,14 @@
                             <option>780</option>cm
                             <option>810</option>cm
                             <option>910</option>cm
-                            <option disabled>choose a value</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="slope">Slope</label>
                         <select class="form-control form-control-lg" name="slope" id="slope" required>
-                            <option>45</option>cm
                             <option disabled>choose a value</option>
+                            <option>45</option>cm
                         </select>
                     </div>
                 </fieldset>
@@ -93,15 +93,15 @@
                     <div class="form-group col-md-4">
                         <label for="ShedWidth">shedWidth</label>
                         <select class="form-control form-control-lg" name="shedWidth" id="shedWidth" >
-                            <option>45</option>cm
                             <option>None</option>
+                            <option>45</option>cm
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="shedLength">ShedLength</label>
                         <select class="form-control form-control-lg" name="shedLength" id="shedLength">
-                            <option>45</option>cm
                             <option>None</option>
+                            <option>45</option>cm
                         </select>
                     </div>
 

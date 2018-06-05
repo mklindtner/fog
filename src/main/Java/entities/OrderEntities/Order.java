@@ -251,7 +251,6 @@ public class Order
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Order order = (Order) o;
-		//should check for orderLines too
 		return height == order.height &&
 			   width == order.width &&
 			   length == order.length &&

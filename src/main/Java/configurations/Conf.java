@@ -4,6 +4,7 @@ package configurations;
 import java.io.IOException;
 import java.util.logging.*;
 
+
 public class Conf
 {
 	private static Logger LOGGER;
@@ -11,12 +12,13 @@ public class Conf
 	public static final boolean ISPRODUCTION  = false;
 
 	//for local
-	public static final String LOGFILEPATH = "/home/mkl/.IntelliJIdea2017.3/system/tomcat/Unnamed_maven_fog/logs/maven_fog.txt";
+	//public static final String LOGFILEPATH = "/home/mkl/" + "" +".IntelliJIdea2017.3/system/tomcat/Unnamed_maven_fog/logs/maven_fog.txt";
 
-
+	//for host
+	public static final String LOGFILEPATH = "/home/fluffy/maven_fog/logger/dev-log.%u.%g.log";
 	public static Logger getLogger() {
 		if(LOGGER == null) {
-			LOGGER = Logger.getLogger(Conf.class.getName());
+				LOGGER = Logger.getLogger(Conf.class.getName());
 			addHandlers();
 		}
 		return LOGGER;
