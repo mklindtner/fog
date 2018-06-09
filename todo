@@ -1,29 +1,17 @@
 Current:
-    validators (so no exceptions)
-    Tests (focus on making more or?) (THIS)
+    javaDoc (spørg thomas)
+    notifcation of email
+    Tests crawlers
     SETUP REMOTE intellij
-    CRAWLERS
 
     --- ALL functionality done, Sprint done ---
     --backLog--
-    SQL
-        rollback(transactions) for index order (so no customer becomes created w/o order)
-            consider moving this logic into an dao method
-            two parameters now: orderLine and order for createOrder
-    ListOfCustomer
-        show list of customers if wrong
-    Should make password empty
     ErrorHandler should be logging all exceptions
 
 
     ---Found mistakes---
-    move order/orderLine down til DATA and use transaction
-    ensure logger doesn't overwrite file
-    get proper stackTrace in exception
-    redirect to the error page in case of exception(?)
     employee unable to accept, decline or create orders for customers
     Material responsible cannot create new materials and add them to the formula
-    Transaction not created for create order and orderLine
     Test for all classes
         Test exceptions for all classes
         Catch uncoverable exceptions in facade
@@ -39,6 +27,10 @@ Current:
     Create exceptionHandler so I can stop runtime at logic layer
 
 
+    --focus--
+    webcralwers
+    logger creates new file
+
     --3rd Priority--
     Employee Homepage
         -see rejected offers (able to throw them out too)
@@ -49,17 +41,12 @@ Current:
             when solved: set developmentState depending on local or remote environemnt
     Stykliste
         create stklist w. shed
-    Errorpage
-        redirect etc.
 
 
     --Thomas funktionaitet--
     Glemt password
         send email
-    Confirm password
     B-crypt password
-
-
 
 
     --MistakesToFix--

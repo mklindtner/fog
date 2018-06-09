@@ -8,6 +8,7 @@ import data.exceptions.DataException;
 import data.MySqlConnector;
 import data.exceptions.UserException;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -240,10 +241,10 @@ public class UserDAO implements DAO
 	public void deleteEmployeeById(int employeeId) throws UserException
 	{
 		final String SQL = "delete from employees WHERE id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, employeeId);
 			statement.executeUpdate();
-		} catch(SQLException throwSql) {
+		} catch (SQLException throwSql) {
 			throw new UserException(throwSql);
 		}
 	}
@@ -251,11 +252,10 @@ public class UserDAO implements DAO
 	public void promoteEmployee(int employeeId) throws UserException
 	{
 		final String SQL = "Update employees SET role_id=2 WHERE employees.id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL))
-		{
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, employeeId);
 			statement.executeUpdate();
-		} catch(SQLException throwSql) {
+		} catch (SQLException throwSql) {
 			throw new UserException(throwSql);
 		}
 	}
@@ -269,10 +269,10 @@ public class UserDAO implements DAO
 	public void demoteEmployee(int employeeId) throws UserException
 	{
 		final String SQL = "Update employees SET role_id=3 WHERE employees.id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL)) {
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, employeeId);
 			statement.executeUpdate();
-		} catch(SQLException throwSql) {
+		} catch (SQLException throwSql) {
 			throw new UserException(throwSql);
 		}
 	}
@@ -280,15 +280,14 @@ public class UserDAO implements DAO
 	public Customer customerByOrderId(int customerId) throws UserException
 	{
 		final String SQL = "select * FROM customers WHERE customers.id=?";
-		try(PreparedStatement statement = con.prepareStatement(SQL))
-		{
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
 			statement.setInt(1, customerId);
 			ResultSet rs = statement.executeQuery();
 			rs.next();
-			int id = rs.getInt("id");
+			int    id       = rs.getInt("id");
 			String username = rs.getString("username");
 			String password = rs.getString("password");
-			int phone = rs.getInt("phone");
+			int    phone    = rs.getInt("phone");
 			String reg_date = rs.getString("reg_date");
 			return new Customer
 					.CustomerBuilder(id, reg_date)
@@ -296,8 +295,33 @@ public class UserDAO implements DAO
 					.insertPassword(password)
 					.insertPhone(phone)
 					.build();
-		} catch(SQLException throwSQl) {
+		} catch (SQLException throwSQl) {
 			throw new UserException(throwSQl);
+		}
+	}
+
+	public List<Customer> customers() throws UserException
+	{
+		final String   SQL       = "Select * FROM customers";
+		List<Customer> customers = new ArrayList<>();
+		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				int    id       = rs.getInt("id");
+				String username = rs.getString("username");
+				int    phone    = rs.getInt("phone");
+				String reg_date = rs.getString("reg_date");
+				customers.add(
+						new Customer
+								.CustomerBuilder(id, reg_date)
+								.insertUsername(username)
+								.insertPhone(phone)
+								.build()
+				);
+			}
+			return customers;
+		} catch (SQLException throwSql) {
+			throw new UserException(throwSql);
 		}
 	}
 }

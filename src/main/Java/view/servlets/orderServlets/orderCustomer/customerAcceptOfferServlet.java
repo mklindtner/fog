@@ -6,6 +6,8 @@ import data.exceptions.DataException;
 import data.exceptions.OrderException;
 import logic.generators.facades.OrderFacadeImpl;
 import logic.generators.facades.OrderFacade;
+import view.servlets.helpers.ErrorHandler;
+import view.servlets.helpers.InfoHandler;
 import view.servlets.helpers.UpdateOrderList;
 
 import javax.servlet.ServletException;
@@ -29,8 +31,10 @@ public class customerAcceptOfferServlet extends HttpServlet
 			orderFacade.getInstanceOrderDAO();
 			changeOrderStatus(orderId, orderFacade);
 			UpdateOrderList.generateCustomerOrders(session, customer);
+			InfoHandler.acceptOrder(customer.getUsername(), orderId);
 			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 		} catch( OrderException | DataException finalDist) {
+			ErrorHandler.acceptOrderError(request, finalDist);
 			throw new ServletException( finalDist );
 		}
 	}
@@ -38,7 +42,7 @@ public class customerAcceptOfferServlet extends HttpServlet
 	private void changeOrderStatus(int orderId, OrderFacade orderFacade) throws DataException, OrderException {
 		Order order = orderFacade.orderById(orderId);
 		order.setStatus(Order.Status.ACCEPTED);
-		orderFacade.updateOrderOffer(order );
+		orderFacade.updateOrderOffer(order);
 	}
 }
 

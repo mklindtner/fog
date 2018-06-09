@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.logging.Level;
 
+/**
+ * creates order and user, used when a user is not logged into the system and still want to place an order.
+ * The default password is always "123"
+ */
 @WebServlet(urlPatterns = "/indexCreateOrderUser")
 public class createOrderAndUserServlet extends HttpServlet
 {
@@ -31,8 +35,7 @@ public class createOrderAndUserServlet extends HttpServlet
 		} catch(DataException | UserException | OrderLineException | MaterialException | OrderException | ShedException
 				finalDist)
 		{
-			Conf.getLogger().log(Level.WARNING, "[Exception] " + finalDist.getMessage());
-			ErrorHandler.customerAlreadyExists(request);
+			ErrorHandler.customerAlreadyExists(request, finalDist);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

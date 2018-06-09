@@ -78,6 +78,9 @@ public class BillOfMaterials
 		return order.getOrderLines();
 	}
 
+	public Order getOrder() {
+		return order;
+	}
 
 	public void saveOrderLinesToDB(String connectionString) throws OrderLineException, DataException
 	{

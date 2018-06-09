@@ -12,6 +12,11 @@ import entities.OrderEntities.Shed;
 
 import java.util.List;
 
+/**
+ * The logic-facade for any order-DAO operation, the data Layer and Presentation layer both goes through this layer
+ * when sending/recieving information, consider each layer closed
+ * This interface uses multiple DAO's for mysql, but an implementation could decide to only use one if desired
+ */
 public interface OrderFacade
 {
 	List<Order> allOrdersWithoutShed() throws OrderException, DataException;
@@ -63,5 +68,8 @@ public interface OrderFacade
 	ShedDAO getInstanceShedDAO() throws DataException;
 
 	ShedDAO getInstanceShedDAO(String connectionString) throws DataException;
+
+	Order orderOrderLine(Order order, List<OrderLine> orderLine) throws OrderException, DataException,
+																	   OrderLineException;
 
 }

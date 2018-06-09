@@ -20,11 +20,6 @@ public class UserFacadeImpl implements UserFacade
 			userDao = new UserDAO();
 		return userDao;
 	}
-	/*
-	public UserFacadeImpl() throws DataException {
-		if(userDao == null)
-			userDao = new UserDAO();
-	} */
 
 	public List<Employee> getAllEmployees() throws UserException
 	{
@@ -81,5 +76,11 @@ public class UserFacadeImpl implements UserFacade
 	{
 		return userDao.customerByOrderId(customerId);
 	}
+
+	@Override public List<Customer> customers() throws UserException
+	{
+		return userDao.customers();
+	}
+
 
 }

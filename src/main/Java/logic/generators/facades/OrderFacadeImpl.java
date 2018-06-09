@@ -158,4 +158,10 @@ public class OrderFacadeImpl implements OrderFacade
 		return materialDAO.allMaterials();
 	}
 
+	public Order orderOrderLine(Order order, List<OrderLine> orderLine) throws OrderException, DataException,
+																		 OrderLineException
+	{
+		return orderDAO.createOrderTest(order, orderLine);
+	}
+
 }

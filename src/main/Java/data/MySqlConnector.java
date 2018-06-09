@@ -9,7 +9,6 @@ import java.sql.SQLException;
 /**
  * MySQLConnector creates a connection to the cloud/local environment dependent on the variable @FILE
  * This class also creates a conection to the test or application database dependent on the
- * @param string provided in the createConnection.
  *
  */
 public class MySqlConnector

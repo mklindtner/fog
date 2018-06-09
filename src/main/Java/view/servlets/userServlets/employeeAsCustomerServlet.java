@@ -30,10 +30,15 @@ public class employeeAsCustomerServlet extends HttpServlet
 			Customer    customer       = userFacade.customerByUsername(customerUsername);
 			UpdateOrderList.generateCustomerOrders(session, customer);
 			session.setAttribute("customer", customer);
+			request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {
-			ErrorHandler.findCustomerError(request);
-			request.getRequestDispatcher("/WEB-INF/employee/employeeHomepage.jsp").forward(request, response);
+			try {
+				userFacade.getUserDAOInstance();
+				request.setAttribute("customers", userFacade.customers());
+				request.getRequestDispatcher("/WEB-INF/employee/listOfCustomers.jsp").forward(request,response);
+			} catch(DataException | UserException dae) {
+				throw new ServletException(dae);
+			}
 		}
-		request.getRequestDispatcher("/WEB-INF/customer/customerOrders.jsp").forward(request, response);
 	}
 }

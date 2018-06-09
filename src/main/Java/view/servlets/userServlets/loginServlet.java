@@ -48,7 +48,7 @@ public class loginServlet extends HttpServlet
 			}
 			throw new DataException();
 		} catch (DataException | UserException | OrderException | ClassCastException finalDist) {
-			ErrorHandler.loginError(request);
+			ErrorHandler.loginError(request, finalDist);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

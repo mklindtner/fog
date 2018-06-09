@@ -12,9 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-    hej med dig
     <%
-        Order order = (Order) request.getSession().getAttribute("order");
         List orders = (List) request.getSession().getAttribute("ordersWithoutShed");
         for(int i = 0; i < orders.size(); i++ ) {
         	Order currentOrder = (Order) orders.get(i);

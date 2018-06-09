@@ -24,6 +24,11 @@ public class OrderLineDAO implements DAO
 		con = MySqlConnector.createConnection("APP");
 	}
 
+	public OrderLineDAO(Connection currentCon)
+	{
+		this.con = currentCon;
+	}
+
 	public OrderLineDAO(String connectionSelection) throws DataException
 	{
 		con = MySqlConnector.createConnection(connectionSelection);

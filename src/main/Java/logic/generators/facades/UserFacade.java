@@ -9,6 +9,12 @@ import entities.userEntities.User;
 
 import java.util.List;
 
+/**
+ * The logic facade for any DAO-user operation, the data Layer and Presentation layer both goes through this layer
+ * when sending/recieving information, consider each layer closed
+ * This interface uses one DAO for MYSQL, but multiple can be implemented if desired
+ */
+
 public interface UserFacade
 {
 	List<Employee> getAllEmployees() throws DataException, UserException;
@@ -32,4 +38,6 @@ public interface UserFacade
 	void demoteEmployee(int employeeId) throws UserException;
 
 	Customer customerByOrderId(int customerId) throws UserException;
+
+	List<Customer> customers() throws UserException;
 }

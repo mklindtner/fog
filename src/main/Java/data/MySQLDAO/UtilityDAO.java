@@ -2,13 +2,25 @@ package data.MySQLDAO;
 
 import data.exceptions.*;
 import entities.OrderEntities.Material;
+import entities.OrderEntities.OrderLine;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 
 import java.sql.*;
 
+/**
+ * Utility class for the data layer, the purpose of this class is diminish couplings between daos.
+ * Whenever a DAO must use another DAO it should go through this class
+ */
 public class UtilityDAO implements DAO
 {
+	/**
+	 *
+	 * @param id identifies customer
+	 * @param con connection provided by the DAO calling this class
+	 * @return customer
+	 * @throws OrderException chosen because the exception happends within the orderDAO
+	 */
 	public static Customer getCustomerById(int id, Connection con) throws OrderException
 	{
 		String SQL = "Select * FROM customers WHERE id=?";
@@ -81,5 +93,11 @@ public class UtilityDAO implements DAO
 		} catch (SQLException throwSql) {
 			throw new MaterialException(throwSql);
 		}
+	}
+
+	public static void createOrderLine(OrderLine orderLine, Connection con) throws OrderLineException
+	{
+		OrderLineDAO orderLineDAO = new OrderLineDAO(con);
+		orderLineDAO.createOrderLine(orderLine);
 	}
 }

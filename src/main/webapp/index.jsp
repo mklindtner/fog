@@ -95,7 +95,13 @@
                 <label for="slope">slope</label>
                 <select class="form-control form-control-lg" id="slope" name="slope" required>
                     <option disabled>choose a value</option>
+                    <option>0</option>
+                    cm
                     <option>45</option>
+                    cm
+                    <option>90</option>
+                    cm
+                    <option>180</option>
                     cm
                 </select>
             </div>
@@ -107,8 +113,8 @@
         </div>
         <div class="form-row">
             <div class="col-md-4 col-md-3">
-                <div class="btn-group-toggle" data-toggle="buttons" style="padding-top: 20px;">
-                    <a class="btn btn-secondary active" id="checkShedTwo">WithShed</a>
+                <div style="padding-top: 20px;">
+                    <a class="btn btn-dark active" id="checkShedTwo">WithShed</a>
                 </div>
             </div>
             <div class="hidden" id="shedVisible">
@@ -118,6 +124,10 @@
                         <option>None</option>
                         <option>60</option>
                         cm
+                        <option>80</option>
+                        cm
+                        <option>100</option>
+                        cm
                     </select>
                 </div>
                 <div class="col-md-4 col-md-3">
@@ -125,6 +135,10 @@
                     <select class="form-control form-control-lg" id="shedLength" name="shedLength" required>
                         <option>None</option>
                         <option>40</option>
+                        cm
+                        <option>60</option>
+                        cm
+                        <option>80</option>
                         cm
                     </select>
                 </div>

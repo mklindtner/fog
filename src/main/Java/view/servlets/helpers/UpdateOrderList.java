@@ -14,6 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * utility class for the presentation layer, the purpose of this class is to update changes to the order list for the
+ * proper user. This is a static class
+ */
 public class UpdateOrderList
 {
 	public static void generateEmployeeOrders(HttpSession session, Employee employee) throws OrderException,
@@ -49,14 +53,14 @@ public class UpdateOrderList
 	{
 		OrderFacade orderFacade = new OrderFacadeImpl();
 		orderFacade.getInstanceOrderDAO();
-		Shed  shed;
+		Shed shed;
 		Order order = createOrder(request, user);
 		if (haveShed(request)) {
 			shed = createShed(request, orderFacade);
 			order.setshed(shed);
 		}
-		order = orderFacade.createAndReturnOrder(order);
-		saveOrderLineDB(order);
+		order = addOrderLineToOrder(order);
+		orderFacade.orderOrderLine(order, order.getOrderLines());
 		return order;
 	}
 
@@ -124,6 +128,16 @@ public class UpdateOrderList
 		else
 			billOfMaterials.createCarportListWithoutShed();
 		billOfMaterials.saveOrderLinesToDB("APP");
+	}
+
+	private static Order addOrderLineToOrder(Order order) throws MaterialException, OrderLineException, DataException
+	{
+		BillOfMaterials billOfMaterials = new BillOfMaterials(order);
+		if(order.getShed() != null)
+			billOfMaterials.createCarportList();
+		else
+			billOfMaterials.createCarportListWithoutShed();
+		return billOfMaterials.getOrder();
 	}
 
 }

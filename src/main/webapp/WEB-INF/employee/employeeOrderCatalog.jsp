@@ -54,6 +54,7 @@
                 <th scope="col">Height</th>
                 <th scope="col">Width</th>
                 <th scope="col">Length</th>
+                <th scope="col">Ordered By</th>
             </tr>
             </thead>
             <tbody>
@@ -71,6 +72,9 @@
                 <td><%=order.getWidth()%>
                 </td>
                 <td><%=order.getLength()%>
+                </td>
+                <td>
+                    <%=order.getCustomer().getUsername()%>
                 </td>
                 <td>
                     <form method="post" action="employeeChooseOrder">

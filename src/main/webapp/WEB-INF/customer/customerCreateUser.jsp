@@ -12,6 +12,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="/js/confirmPassword.js"></script>
     <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
@@ -29,13 +30,14 @@
 
                     <div class="form-group col-md-6">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" onkeyup="check();" />
                     </div>
-                    <!--
+
                     <div class="form-group col-md-6">
                         <label for="confirm_password">Confirm Password</label>
-                        <input type="password" class="form-control" name="" id="confirm_password" placeholder="Confirm Password">
-                    </div> -->
+                        <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirm_Password" onkeyup="check();" />
+                        <span id="message"></span>
+                    </div>
                 </fieldset>
 
                 <fieldset>

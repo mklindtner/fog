@@ -2,8 +2,10 @@ package data.MySQLDAO;
 
 import configurations.Conf;
 import data.MySqlConnector;
+import data.exceptions.OrderLineException;
 import data.exceptions.ShedException;
 import entities.OrderEntities.Order;
+import entities.OrderEntities.OrderLine;
 import entities.OrderEntities.Shed;
 import entities.userEntities.Customer;
 import data.exceptions.DataException;
@@ -17,7 +19,6 @@ import java.util.logging.Level;
 public class OrderDAO implements DAO
 {
 	Connection con;
-
 
 	public OrderDAO() throws DataException
 	{
@@ -107,7 +108,7 @@ public class OrderDAO implements DAO
 	}
 
 
-	public Order orderById(int id) throws OrderException, DataException
+	public Order orderById(int id) throws OrderException
 	{
 		final String SQL = "SELECT * FROM orders WHERE id=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
@@ -261,11 +262,12 @@ public class OrderDAO implements DAO
 	{
 		final String SQL = "UPDATE orders SET height=?, width=?, length=?, slope=?, price=?, status=? WHERE orders.id=?";
 		try (PreparedStatement statement = con.prepareStatement(SQL)) {
+			int price = order.getPrice();
 			statement.setInt(1, order.getHeight());
 			statement.setInt(2, order.getWidth());
 			statement.setInt(3, order.getLength());
 			statement.setInt(4, order.getSlope());
-			statement.setInt(5, order.getPrice());
+			statement.setInt(5, price);
 			statement.setString(6, order.getStatus().name());
 			statement.setInt(7, order.getId());
 			statement.executeUpdate();
@@ -308,6 +310,39 @@ public class OrderDAO implements DAO
 		} catch (SQLException throwSql) {
 			throw new OrderException(throwSql);
 		}
+	}
+
+	public Order createOrderTest(Order order, List<OrderLine> orderLine) throws OrderException, DataException,
+																		   OrderLineException
+	{
+		try {
+			con.setAutoCommit(false);
+			Order uncommitedOrder = createAndReturnOrder(order);
+			for(OrderLine currentOrderLine: orderLine) {
+				currentOrderLine.setOrderId(uncommitedOrder.getId());
+				UtilityDAO.createOrderLine(currentOrderLine, con);
+			}
+
+			con.commit();
+			return uncommitedOrder;
+		} catch(SQLException commitError) {
+			if(con != null) {
+				try {
+					con.rollback();
+				} catch(SQLException except) {
+					Conf.getLogger().log(Level.SEVERE, "[ROLLBACK UNABLE] " + except.getMessage());
+				}
+			}
+			throw new OrderException(commitError);
+		} finally {
+			try {
+				con.setAutoCommit(true);
+			} catch(SQLException e) {
+				Conf.getLogger().log(Level.SEVERE, "[COMMMIT UNABLE] " + e.getMessage());
+				throw new OrderException(e);
+			}
+		}
+
 	}
 
 	public Connection getCon()
