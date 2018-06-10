@@ -10,19 +10,15 @@ Current:
 
 
     ---Found mistakes---
-    employee unable to accept, decline or create orders for customers
+    employee should be unable to accept, decline or create orders for customers
     Material responsible cannot create new materials and add them to the formula
     Test for all classes
         Test exceptions for all classes
-        Catch uncoverable exceptions in facade
-        Test more "complicated classes" --> like order (like i did)
 
     -- 2nd priorty--
     improve svg stykliste
         create skur
         fix current picture
-     createUser
-        confirm password
     Helper jsp footer & implement to employee (pagination)
     Create exceptionHandler so I can stop runtime at logic layer
 
