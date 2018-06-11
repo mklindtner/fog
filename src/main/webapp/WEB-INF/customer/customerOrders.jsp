@@ -202,7 +202,7 @@
                 <% if (order.getPrice() > 0) { %>
                 <%=order.getPrice()%>
                 <% } else {%>
-                <i>no price</i>
+                <i>1no price</i>
                 <% }%>
             </td>
             <td>

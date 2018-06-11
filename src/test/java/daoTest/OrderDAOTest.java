@@ -33,7 +33,6 @@ public class OrderDAOTest
 	{
 		ServiceSeed.eraseTablesAndCloseConnection();
 		ServiceSeed.resetLists();
-
 	}
 
 	@Test

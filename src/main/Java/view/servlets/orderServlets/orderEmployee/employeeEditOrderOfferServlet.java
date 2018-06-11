@@ -23,14 +23,14 @@ public class employeeEditOrderOfferServlet extends HttpServlet
 	{
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		try {
-			billOfMaterialWithoutShed(orderId,request.getSession());
+			billOfMaterial(orderId,request.getSession());
 			request.getRequestDispatcher("/WEB-INF/employee/employeeEditOffer.jsp").forward(request, response);
 		} catch (DataException | OrderException | MaterialException finalDist) {
 			throw new ServletException(finalDist);
 		}
 	}
 
-	private void billOfMaterialWithoutShed(int orderId, HttpSession session) throws DataException, OrderException,
+	private void billOfMaterial(int orderId, HttpSession session) throws DataException, OrderException,
 																	   MaterialException {
 
 		OrderFacade orderFacade = new OrderFacadeImpl();
